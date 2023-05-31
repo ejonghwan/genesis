@@ -1,7 +1,23 @@
 * {
-    margin: 0; 
-    padding: 0;
+    // margin: 0; 
+    // padding: 0;
     box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, h5, h6, fieldset, ul, ol, dl, dt, dd, p, button, figure, xmp {
+    margin: 0;
+    padding: 0;
+}
+
+legend, caption {
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    color: transparent;
+}
+
+a[href^="tel"] {
+    cursor: default;
 }
 
 ol, ul, li {
@@ -12,4 +28,19 @@ a {
     text-decoration: none;
     color: inherit;
 }
+
+button, input, optgroup, select, textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+// ul:after,ol:after {
+//     content: '';
+//     display: block;
+//     clear: both;
+// }
 
