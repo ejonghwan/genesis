@@ -1,0 +1,59 @@
+@charset "utf-8";
+@font-face {
+	font-family: 'SpoqaHanSansNeo';
+	src: local('SpoqaHanSansNeo1'),
+	    url('/pconts/fonts/shcard/SpoqaHanSansNeo-Thin.woff2') format('woff2'),
+	    url('/pconts/fonts/SpoqaHanSansNeo-Thin.woff') format('woff'),
+	    url('/pconts/fonts/SpoqaHanSansNeo-Thin.woff') format('truetype'),
+        url('/pconts/fonts/SpoqaHanSansNeo-Thin.eot') format('embeded-opentype');
+	font-weight: 100;
+	font-style: normal;
+	font-display:swap;
+}
+@font-face{
+	font-family: 'SpoqaHanSansNeo';
+	src: local('SpoqaHanSansNeo'),
+	    url('/pconts/fonts/shcard/SpoqaHanSansNeo-Light.woff2') format('woff2'),
+	    url('/pconts/fonts/SpoqaHanSansNeo-Light.woff') format('woff'),
+	    url('/pconts/fonts/SpoqaHanSansNeo-Light.woff') format('truetype'),
+        url('/pconts/fonts/SpoqaHanSansNeo-Light.eot') format('embeded-opentype');
+	font-weight: 200;
+	font-style: normal;
+	font-display:swap;
+}
+@font-face{
+	font-family: 'SpoqaHanSansNeo';
+	src: local('SpoqaHanSansNeo2'),
+        url('/pconts/fonts/shcard/SpoqaHanSansNeo-Regular.woff2') format('woff2'),
+	    url('/pconts/fonts/SpoqaHanSansNeo-Regular.woff') format('woff'),
+	    url('/pconts/fonts/SpoqaHanSansNeo-Regular.woff') format('truetype'),
+        url('/pconts/fonts/SpoqaHanSansNeo-Regular.eot') format('embeded-opentype');
+	font-weight: 400;
+	font-style: normal;
+	font-display:swap;
+}
+@font-face{
+	font-family: 'SpoqaHanSansNeo';
+	src: local('SpoqaHanSansNeo'),
+        url('/pconts/fonts/shcard/SpoqaHanSansNeo-Medium.woff2') format('woff2'),
+	    url('/pconts/fonts/SpoqaHanSansNeo-Medium.woff') format('woff'),
+	    url('/pconts/fonts/SpoqaHanSansNeo-Medium.woff') format('truetype'),
+        url('/pconts/fonts/SpoqaHanSansNeo-Medium.eot') format('embeded-opentype');
+	font-weight: 700;
+	font-style: normal;
+	font-display:swap;
+}
+@font-face{
+	font-family: 'SpoqaHanSansNeo';
+	src: local('SpoqaHanSansNeo'),
+        url('/pconts/fonts/shcard/SpoqaHanSansNeo-Bold.woff2') format('woff2'),
+	    url('/pconts/fonts/SpoqaHanSansNeo-Bold.woff') format('woff'),
+	    url('/pconts/fonts/SpoqaHanSansNeo-Bold.woff') format('truetype'),
+        url('/pconts/fonts/SpoqaHanSansNeo-Bold.eot') format('embeded-opentype');
+	font-weight: 900;
+	font-style: normal;
+	font-display:swap;
+}
+
+
+

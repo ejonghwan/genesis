@@ -1,0 +1,14 @@
+$pc: 1100px;
+$tablet: 980px;
+$mobile: 640px;
+
+
+//common
+@import "common/_reset";
+@import "common/common";
+@import "common/fonts";
+@import "common/_header";
+@import "common/_footer";
+
+//main
+@import "main/topBanner";

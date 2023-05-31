@@ -1,0 +1,16 @@
+
+
+
+// 텍스트 가림 1
+.blind {
+    position: absolute;
+    left: -999px;
+    top: -999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    margin-left: -1px;
+    border: 0 none !important;
+    background: transparent !important;
+    color: transparent !important;
+}
