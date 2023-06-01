@@ -789,5 +789,39 @@ figure::before {
     width: 100%;
   }
 }
+.g_content ul {
+  display: flex;
+  gap: 10px;
+}
+.g_content ulli {
+  flex: 0 0 auto;
+}
+
+.g_content_img {
+  height: 200px;
+  margin-bottom: 20px;
+}
+.g_content_img img {
+  object-fit: cover;
+}
+
+.g_content_txt strong {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.g_content_txt p {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+@media screen and (max-width: 640px) {
+  ul {
+    flex-wrap: wrap;
+  }
+  ulli {
+    width: 100%;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

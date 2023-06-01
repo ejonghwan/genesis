@@ -1,0 +1,44 @@
+.g_content {
+    ul {
+        display: flex;
+        gap: 10px;
+
+        &li {
+            flex: 0 0 auto;
+        }
+    }
+}
+
+
+.g_content_img {
+    height: 200px;
+    margin-bottom: 20px;
+    img {
+        object-fit: cover;
+    }
+}
+
+.g_content_txt {
+    strong {
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+    p {
+        margin-top: 5px;
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+    }
+
+}
+
+
+
+
+@include mobile {
+    ul {
+        flex-wrap: wrap;
+        &li {
+            width: 100%;
+        }
+    }
+}

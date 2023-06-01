@@ -32,6 +32,7 @@ $mobile: 640px;
 
 //main
 @import "main/main_visual";
-@import "main/sub_visual";
-@import "main/evt_banner";
-@import "main/load_banner";
+@import "main/main_sub_visual";
+@import "main/main_evt_banner";
+@import "main/main_load_banner";
+@import "main/main_content";
