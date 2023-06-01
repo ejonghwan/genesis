@@ -9,6 +9,13 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta name="description" content="채워넣기">
     <script src="https://kit.fontawesome.com/62fc7514da.js" crossorigin="anonymous"></script>
+
+    <!-- swiper 임시 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <!-- swiper 임시 -->
+
+
     <link rel="canonical" href="메인 유알엘 넣기">
     <link rel="stylesheet" href="/src/css/style.css">
 </head>
@@ -30,7 +37,10 @@
     <header id="header">
         <div class="g_inner">
             <nav class="header_wrap">
-                <h1><a href="javascript:;" role="button"><span class="blind">제네시스 로고</span></a>
+                <h1>
+                    <a href="javascript:;" role="button">
+                        <span class="blind">제네시스 로고</span>
+                    </a>
                 </h1>
                 <ul class="header_nav">
                     <li><a href="javascript:;" role="button">모델</a></li>
@@ -39,8 +49,13 @@
                     <li><a href="javascript:;" role="button">멤버스</a></li>
                     <li><a href="javascript:;" role="button">제네시스</a></li>
                 </ul>
-                <ul class="header_nav">
-                    <li><a href="javascript:;" role="button">고객센터</a></li>
+                <ul class="header_ico">
+                    <li>
+                        <a href="javascript:;" role="button">
+                            <i class="fa-brands fa-square-facebook"></i>
+                            <span class="blind">고객센터</span>
+                        </a>
+                    </li>
                     <li>
                         <a href="javascript:;" role="button">
                             <i class="fa-brands fa-square-facebook"></i>
@@ -55,8 +70,6 @@
                     </li>
                 </ul>
                 <button class="header_all_menu" type="button">
-                    <span class="line"></span>
-                    <span class="line"></span>
                     <span class="line"></span>
                     <span class="blind">전체 메뉴 열기</span>
                 </button>
@@ -73,66 +86,93 @@
 
             <!-- main video -->
             <section class="main_visual">
-                <div class="main_visual_title g_slide">
-                    <ul>
-                        <li class="active">
-                            <h2>Lorem, ipsum dolor.</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, tempora.</p>
-                        </li>
-                        <!-- <li>
-                            <h2>Lorem, ipsum dolor.</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, tempora.</p>
-                        </li>
-                        <li>
-                            <h2>Lorem, ipsum dolor.</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, tempora.</p>
-                        </li>
-                        <li>
-                            <h2>Lorem, ipsum dolor.</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, tempora.</p>
-                        </li>
-                        <li>
-                            <h2>Lorem, ipsum dolor.</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, tempora.</p>
-                        </li> -->
-                    </ul>
-                </div>
                 <!-- 슬라이드 두개 연동해서 동영상 끝날 때쯤 (텍스트랑 슬라이드 2개) 같이 변경되게함.  -->
-                <div class="main_visual_slide type1 g_slide">
-                    <ul> 
-                        <li class="active">
+                <div class="swiper mySwiper main_visual_slide type1 g_slide">
+                    <ul class="swiper-wrapper"> 
+                        <li class="swiper-slide active">
+                            <div class="g_inner main_visual_title">
+                                <h2>G90</h2>
+                                <p>Lorem ipsum dolor sit amet <br />consectetur adipisicing elit.</p>
+                            </div>
                             <figure class="main_visual_slide_video">
                                 <video src="/src/img/main/testv.mp4" autoplay muted loop></video>
                             </figure>
                         </li>
-                        <li>동영상?</li>
-                        <li>동영상?</li>
-                        <li>동영상?</li>
-                        <li>동영상?</li>
+                        <li class="swiper-slide active">
+                            <div class="g_inner main_visual_title">
+                                <h2>G70</h2>
+                                <p>Lorem ipsum dolor sit amet <br />consectetur</p>
+                            </div>
+                            <figure class="main_visual_slide_video">
+                                <video src="/src/img/main/g80.mp4" autoplay muted loop></video>
+                            </figure>
+                        </li>
+                        <li class="swiper-slide active">
+                            <div class="g_inner main_visual_title">
+                                <h2>GV70</h2>
+                                <p>Lorem ipsum dolor sit amet <br />consectetur adipisicing elit.</p>
+                            </div>
+                            <figure class="main_visual_slide_video">
+                                <video src="/src/img/main/gv70.mp4" autoplay muted loop></video>
+                            </figure>
+                        </li>
+                        <li class="swiper-slide active">
+                            <div class="g_inner main_visual_title">
+                                <h2>GV60</h2>
+                                <p>consectetur adipisicing elit. <br />Corrupti, tempora.</p>
+                            </div>
+                            <figure class="main_visual_slide_video">
+                                <video src="/src/img/main/gv60.mp4" autoplay muted loop></video>
+                            </figure>
+                        </li>
+                       
                     </ul>
-                    <div class="progress"></div>
+                    div
+                    <!-- <div class="swiper-button-next"></div> -->
+                    <!-- <div class="swiper-button-prev"></div> -->
+                    <!-- <div class="swiper-pagination"></div> -->
                 </div>
+
+
+                <script>
+                    // 임시
+                    var swiper = new Swiper(".mySwiper", {
+                      spaceBetween: 30,
+                      effect: "fade",
+                      loop: true,
+                      navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                      },
+                      pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true,
+                      },
+                    });
+                </script>
+
+
                 <div class="main_visual_slide type2">
                     <ul>
                         <li>
                             <strong>Lorem.</strong>
-                            <p>Lorem ipsum dolor sit amet.</p>
+                            <p>3,470</p>
                         </li>
                         <li>
-                            <strong>Lorem.</strong>
-                            <p>Lorem ipsum dolor sit amet.</p>
+                            <strong>배기량(cc)</strong>
+                            <p>3,470</p>
                         </li>
                         <li>
-                            <strong>Lorem.</strong>
-                            <p>Lorem ipsum dolor sit amet.</p>
+                            <strong>최고출력(ps)</strong>
+                            <p>415</p>
                         </li>
                         <li>
-                            <strong>Lorem.</strong>
-                            <p>Lorem ipsum dolor sit amet.</p>
+                            <strong>최대토크(kgf·m)</strong>
+                            <p>56.0</p>
                         </li>
                         <li>
-                            <strong>Lorem.</strong>
-                            <p>Lorem ipsum dolor sit amet.</p>
+                            <strong>엔진 타입</strong>
+                            <p class="last">가솔린 3.5 터보 48V 일렉트릭 슈퍼차저</p>
                         </li>
                     </ul>
                     <div class="progress"></div>
@@ -170,7 +210,7 @@
                     <ul>
                         <li>
                             <div class="img_wrap">
-                                <img src="/src/img/common/footer-logo.png" alt="">
+                                <img src="/src/img/car/g90/glosy_u/01.png" alt="">
                             </div>
                         </li>
                         <li></li>
@@ -181,7 +221,7 @@
                     <div class="progress"></div>
                 </div>
                 <!-- 여긴 제원들 참고자료 인터렉션. 위에꺼랑 연동해서  -->
-                <div class="sub_visual_slide type2">
+                <!-- <div class="sub_visual_slide type2">
                     <ul>
                         <li>
                             <div class="sub_visual_slide_txt">
@@ -196,22 +236,34 @@
                         <li></li>
                     </ul>
                     <div class="progress"></div>
-                </div>
+                </div> -->
             </section>
             <!-- sub slide-->
         </article>
 
         <!-- 제네시스 경험 -->
-        <article class="g_inner">
+        <article class="g_inner right_full">
             <h2>Experience Genesis</h2>
             <ul class="g_list type1">
                 <!-- data -->
-                <li><a href="javascript:;" role="button">이미지들</a></li>
-                <li><a href="javascript:;" role="button">이미지들</a></li>
-                <li><a href="javascript:;" role="button">이미지들</a></li>
-                <li><a href="javascript:;" role="button">이미지들</a></li>
-                <li><a href="javascript:;" role="button">이미지들</a></li>
-                <li><a href="javascript:;" role="button">이미지들</a></li>
+                <li><a href="javascript:;" role="button">
+                    <img src="/src/img/main/dummy.jpg" alt="" loading="lazy">
+                </a></li>
+                <li><a href="javascript:;" role="button">
+                    <img src="/src/img/main/dummy.jpg" alt="" loading="lazy">
+                </a></li>
+                <li><a href="javascript:;" role="button">
+                    <img src="/src/img/main/dummy.jpg" alt="" loading="lazy">
+                </a></li>
+                <li><a href="javascript:;" role="button">
+                    <img src="/src/img/main/dummy.jpg" alt="" loading="lazy">
+                </a></li>
+                <li><a href="javascript:;" role="button">
+                    <img src="/src/img/main/dummy.jpg" alt="" loading="lazy">
+                </a></li>
+                <li><a href="javascript:;" role="button">
+                    <img src="/src/img/main/dummy.jpg" alt="" loading="lazy">
+                </a></li>
             </ul>
             <button>더보기</button>
         </article>
@@ -580,5 +632,23 @@
     </section>
     <!-- //전체메뉴 -->
 </div>
+
+
+
+
+    <script>
+        const menu = document.querySelector('.header_all_menu')
+        
+        menu.addEventListener('click', e => {
+            if(!menu.classList.contains('on')) {
+                menu.classList.add('on')
+            } else {
+                menu.classList.remove('on')
+            }
+            
+        })
+    </script>
+
+
 </body>
 </html>

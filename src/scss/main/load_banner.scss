@@ -1,6 +1,7 @@
 .load_wrap {
     display: flex;
     height: 500px;
+    flex-wrap: wrap;
     .left {
         background-color: rgb(94, 140, 181);
         flex: 0 0 auto;
@@ -24,4 +25,16 @@
             font-size: 2rem;
         }
     }
+}
+
+
+
+
+@include mobile {
+
+    .load_wrap .left, 
+    .load_wrap .right {
+        width: 100%;
+    }
+    
 }

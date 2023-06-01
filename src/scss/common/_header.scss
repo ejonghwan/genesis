@@ -29,6 +29,7 @@
 
 .header_wrap {
     display: flex;
+    align-items: center;
 }
 
 .header_nav {
@@ -40,10 +41,129 @@
     }
 }
 
-.header_all_menu {
-    background-color: none;
-    width: 25px;
-    height: 18px;
+.header_ico {
+    display: flex;
+    color: #fff;
     margin-left: auto;
-    background-color: rgb(255, 255, 255);
+    li {
+        margin-left: 20px;
+    }
+}
+
+
+
+
+// .header_all_menu {
+//     background-color: inherit;
+//     width: 25px;
+//     height: 18px;
+//     margin-left: 35px;
+//     background-color: rgb(255, 255, 255);
+// }
+
+// all menu
+button.header_all_menu {
+    width:25px;
+    height:13px;
+    border:none;
+    background:transparent;
+    position:relative;
+    cursor:pointer;
+    margin-left: 35px;
+    &:focus {
+      outline: none;
+    }
+
+    & {
+        &:after,
+        &:before,
+        span {
+        width:100%;
+        height:2px;
+        border-radius:100px;
+        position:absolute;
+        display:block;
+        background:#fff;
+        
+        }
+
+        &:after,
+        &:before {
+        content:"";
+        transition: 0.3s width 0.4s;
+        }
+
+        &:after {
+        top:0px;
+        left:0px;
+        margin-top:0px;
+        }
+
+        &:before {
+        bottom:0px;
+        right:0px;
+        margin-bottom:0px;
+        }
+
+        span.line {
+            top:50%;
+            margin-top:-1px;
+            transition: transform 0.3s, opacity 0.3s;
+            opacity: 0;
+                &:before {
+                content:"";
+                background:#fff;
+                width:100%;
+                height:2px;
+                border-radius:100px;
+                position:absolute;
+                left:0px;
+                transition: transform 0.3s, opacity 0.3s ;
+                }
+        }
+
+        &.on {
+            &:after {
+                transition: all 0.2s;
+                width:0%;
+                left:0px;
+            }
+
+            &:before {
+                transition: all 0.2s;
+                width:0%;
+                right:0px;
+            }
+
+            span.line {
+                transform:rotate(45deg);
+                transition: 0.3s transform 0.4s ;
+                opacity: 1;
+                    &:before {
+                    transform:rotate(-90deg);
+                    transition: 0.3s transform 0.4s ;
+                    }
+            }
+        }
+    }
+  
+}
+
+
+
+
+
+
+
+@include tablet {
+    header {
+
+    }
+}
+
+
+@include mobile {
+    .header_nav {
+        display: none;
+    }
 }

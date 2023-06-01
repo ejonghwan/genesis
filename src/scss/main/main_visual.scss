@@ -7,19 +7,28 @@
 
 
 .main_visual_title {
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0;
-    margin: auto;
-    z-index: 5;
-    width: 400px;
+    // position: absolute;
+    // top: 0px;
+    // bottom: 0px;
+    // left: 0px;
+    // right: 0;
+    // margin: auto;
+    // width: 400px;
+    z-index: 10;
+    margin-top: 100px;
+    text-align: right;
     height: 100px;
     color: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
     h2 {
-        font-size: 2rem;
+        font-size: 8rem;
         color: #fff;
+        margin-bottom: 0;
+    }
+    p {
+        font-size: 1.3rem;
     }
 }
 
@@ -39,21 +48,22 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        opacity: .3;
+        // opacity: .3;
+        opacity: 1;
     }
 }
 
 
 .main_visual_slide.type2 {
     position: absolute;
-    bottom: -80px;
+    bottom: -100px;
     right: 0;
     left: 0;
     margin: auto;
     width: 100%;
-    height: 200px;
+    // height: 100%;
     z-index: 10;
-
+    
     ul {
         display: flex;
         height: 100%;
@@ -64,12 +74,27 @@
         li {
             flex: 0 0 auto;
             width: 150px;
-            height: 100%;
+            // height: 100%;
             backdrop-filter: blur(10px);
-            // border-radius: 8px;
             box-shadow: 1px 1px 13px 0px rgba(0, 0, 0, 0.4);
             color: #fff;
-            padding: 30px;
+            padding: 30px 10px;
+             // border-radius: 8px;
+            // border: 1px solid rgba(255, 255, 255, .05);
+            text-align: center;
+
+            strong {
+                font-size: 1.3rem;
+                font-weight: 300;
+                opacity: .8;
+            }
+            p {
+                font-size: 3rem;
+                margin-top: 20px;
+            }
+            p.last {
+                font-size: 1.2rem;
+            }
         }
 
         // @for $i from 
@@ -83,3 +108,61 @@ video {
 }
 
 
+
+// swiper 임시
+.main_visual_slide.type1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+
+figure::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background: rgb(12, 13, 26);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    pointer-events: none;
+}
+
+
+
+
+
+@include tablet {
+    .main_visual_slide.type2 {
+        width: 100%;
+        ul {
+            li {
+                width: calc(20% - 5px);
+            }
+        }
+    }
+}
+
+
+@include mobile {
+    .main_visual_slide.type2 {
+        ul {
+            flex-wrap: wrap;
+            li {
+                width: 33.33333333%;
+                flex: 1 1 auto;
+                padding: 10px;
+                
+                p {
+                    margin-top: 10px;
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}

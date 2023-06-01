@@ -2,6 +2,26 @@ $pc: 1100px;
 $tablet: 980px;
 $mobile: 640px;
 
+@mixin pc {
+    @media screen and (max-width: $pc) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: $tablet) {
+        @content;
+    }
+}
+
+
+@mixin mobile {
+    @media screen and (max-width: $mobile) {
+        @content;
+    }
+}
+
+
 
 //common
 @import "common/_reset";
