@@ -1,0 +1,27 @@
+.load_wrap {
+    display: flex;
+    height: 500px;
+    .left {
+        background-color: rgb(94, 140, 181);
+        flex: 0 0 auto;
+        width: 50%;
+        color: #fff;
+        padding: 20px;
+        
+        strong {
+            font-size: 2rem;
+        }
+    }
+
+    .right {
+        background-color: rgb(61, 95, 124);
+        flex: 0 0 auto;
+        width: 50%;
+        color: #fff;
+        padding: 20px;
+
+        strong {
+            font-size: 2rem;
+        }
+    }
+}

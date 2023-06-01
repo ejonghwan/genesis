@@ -36,6 +36,7 @@ button, input, optgroup, select, textarea {
 button {
     cursor: pointer;
     border: none;
+    background-color: inherit;
 }
 
 // ul:after,ol:after {
