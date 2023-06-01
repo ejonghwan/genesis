@@ -2,11 +2,11 @@
 @font-face {
 	font-family: 'NotoSansKR';
 	src: local('NotoSansKR'),
-	    url('/src/fonts/NotoSansKR-Thin.woff2') format('woff2'),
+	    url('/src/fonts/NotoSansKR-Thin.woff2') format('woff2');
 	    // url('/src/fonts/NotoSansKR-Thin.woff') format('woff'),
 	    // url('/src/fonts/NotoSansKR-Thin.woff') format('truetype'),
 	    // url('/src/fonts/NotoSansKR-Thin.otf') format('truetype'),
-        url('/src/fonts/NotoSansKR-Thin.eot') format('embeded-opentype');
+        // url('/src/fonts/NotoSansKR-Thin.eot') format('embeded-opentype');
 	font-weight: 100;
 	font-style: normal;
 	font-display:swap;
@@ -14,7 +14,7 @@
 @font-face{
 	font-family: 'NotoSansKR';
 	src: local('NotoSansKR'),
-	    url('/src/fonts/NotoSansKR-Light.woff2') format('woff2');
+	    url('/src/assets/fonts/NotoSansKR-Light.woff2') format('woff2');
 	font-weight: 200;
 	font-style: normal;
 	font-display:swap;
@@ -22,7 +22,7 @@
 @font-face{
 	font-family: 'NotoSansKR';
 	src: local('NotoSansKR'),
-        url('/src/fonts/NotoSansKR-Regular.woff2') format('woff2');
+        url('/src/assets/fonts/NotoSansKR-Regular.woff2') format('woff2');
 	font-weight: 400;
 	font-style: normal;
 	font-display:swap;
@@ -30,7 +30,7 @@
 @font-face{
 	font-family: 'NotoSansKR';
 	src: local('NotoSansKR'),
-        url('/src/fonts/NotoSansKR-Medium.woff2') format('woff2');
+        url('/src/assets/fonts/NotoSansKR-Medium.woff2') format('woff2');
 	font-weight: 500;
 	font-style: normal;
 	font-display:swap;
@@ -38,7 +38,7 @@
 @font-face{
 	font-family: 'NotoSansKR';
 	src: local('NotoSansKR'),
-        url('/src/fonts/NotoSansKR-Bold.woff2') format('woff2');
+        url('/src/assets/fonts/NotoSansKR-Bold.woff2') format('woff2');
 	font-weight: 700;
 	font-style: normal;
 	font-display:swap;
@@ -46,7 +46,7 @@
 @font-face{
 	font-family: 'NotoSansKR';
 	src: local('NotoSansKR'),
-        url('/src/fonts/NotoSansKR-Black.woff2') format('woff2');
+        url('/src/assets/fonts/NotoSansKR-Black.woff2') format('woff2');
 	font-weight: 900;
 	font-style: normal;
 	font-display:swap;
