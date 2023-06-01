@@ -68,7 +68,7 @@ h3 {font-size: 16px; color: #444;}
 
 
 // list 
-.g_list.type1{
+.g_list.type1 {
     display: flex;
     flex-wrap: wrap;
     // gap: 10px;
@@ -241,7 +241,7 @@ h3 {font-size: 16px; color: #444;}
         margin-right: 20px;
         & > li {
             width: 300px;
-            margin: 0;
+            // margin: 0;
         }
         & > li + li {
             margin-left: 10px;
