@@ -26,6 +26,7 @@
 <div class="wrap">
 
     <!-- header -->
+    <!-- 스크롤 올릴땐 없애고 내릴떄 내려오게. 픽스 -->
     <header id="header">
         <div class="g_inner">
             <nav class="header_wrap">
@@ -299,6 +300,7 @@
         <section class="footer_sec_share">
             <div class="g_inner">
                 <ul>
+                    <li class="txt">Share</li>
                     <li><a href="javascript:;" role="button">
                         <i class="fa-brands fa-square-facebook"></i>
                         <span class="blind">페이스북</span>
@@ -331,12 +333,12 @@
             </div>
         </section>
         <!-- //공지사항 -->
-        <section class="footer_sec type1">
+        <section class="footer_sec all_menu">
             <div class="g_inner">
                 <!-- 모델 -->
-                <div>
-                    <strong>모델</strong>
-                    <ul>
+                <div class="item">
+                    <strong class="tit">모델</strong>
+                    <ul class="">
                         <li><a href="javascript:;" role="button">G90 LONG WHEEL BASE</a></li>
                         <li><a href="javascript:;" role="button">G90</a></li>
                         <li><a href="javascript:;" role="button">G80</a></li>
@@ -351,9 +353,9 @@
                 </div>
                 <!-- //모델 -->
                 <!-- 구매 -->
-                <div>
-                    <strong>구매</strong>
-                    <ul>
+                <div class="item">
+                    <strong class="tit">구매</strong>
+                    <ul class="">
                         <li><a href="javascript:;" role="button">견적내기</a></li>
                         <li><a href="javascript:;" role="button">구매 프로그램</a></li>
                         <li><a href="javascript:;" role="button">전기차 구매가이드</a></li>
@@ -364,9 +366,9 @@
                 </div>
                 <!-- //구매 -->
                 <!-- 체험 -->
-                <div>
-                    <strong>체험</strong>
-                    <ul>
+                <div class="item">
+                    <strong class="tit">체험</strong>
+                    <ul class="">
                         <li><a href="javascript:;" role="button">스페이스</a></li>
                         <li><a href="javascript:;" role="button">시승 신청</a></li>
                         <li><a href="javascript:;" role="button">전시장 찾기</a></li>
@@ -375,9 +377,9 @@
                 </div>
                 <!-- //체험 -->
                 <!-- 멤버스 -->
-                <div>
-                    <strong>멤버스</strong>
-                    <ul>
+                <div class="item">
+                    <strong class="tit">멤버스</strong>
+                    <ul class="">
                         <li><a href="javascript:;" role="button">제네시스 멤버십</a></li>
                         <li><a href="javascript:;" role="button">MY GENESIS 앱</a></li>
                         <li><a href="javascript:;" role="button">테크놀로지</a></li>
@@ -386,9 +388,9 @@
                 </div>
                 <!-- //멤버스 -->
                 <!-- 제네시스 -->
-                <div>
-                    <strong>제네시스</strong>
-                    <ul>
+                <div class="item">
+                    <strong class="tit">제네시스</strong>
+                    <ul class="">
                         <li><a href="javascript:;" role="button">브랜드</a></li>
                         <li><a href="javascript:;" role="button">콘셉트카</a></li>
                         <li><a href="javascript:;" role="button">모터쇼</a></li>
@@ -397,9 +399,9 @@
                 </div>
                 <!-- //제네시스 -->
                 <!-- 고객센터 -->
-                <div>
-                    <strong>고객센터</strong>
-                    <ul>
+                <div class="item">
+                    <strong class="tit">고객센터</strong>
+                    <ul class="">
                         <li><a href="javascript:;" role="button">고객센터 안내</a></li>
                         <li><a href="javascript:;" role="button">공지사항</a></li>
                         <li><a href="javascript:;" role="button">이벤트</a></li>
@@ -411,15 +413,15 @@
                 </div>
                 <!-- //고객센터 -->
                 <!-- 마이페이지 -->
-                <div>
-                    <strong>마이페이지</strong>
+                <div class="item">
+                    <strong class="tit">마이페이지</strong>
                 </div>
                 <!-- //마이페이지 -->
             </div>
         </section>
-        <section class="footer_sec">
+        <section class="footer_sec mid sitemap">
             <div class="g_inner">
-                <ul>
+                <ul class="item">
                     <li><a href="javascript:;" role="button">사이트맵</a></li>
                     <li><a href="javascript:;" role="button">이용약관</a></li>
                     <li><a href="javascript:;" role="button">개인정보 처리방침</a></li>
@@ -428,11 +430,25 @@
                     <li><a href="javascript:;" role="button">자동차 교환 및 환불 중재 규정 안내</a></li>
                     <li><a href="javascript:;" role="button">하자 재발 통보 안내</a></li>
                 </ul>
+                <ul class="item sns">
+                    <li><a href="javascript:;" role="button">
+                        <i class="fa-brands fa-square-facebook"></i>
+                        <span class="blind">페이스북</span>
+                    </a></li>
+                    <li><a href="javascript:;" role="button">
+                        <i class="fa-brands fa-square-facebook"></i>
+                        <span class="blind">인스타그램</span>
+                    </a></li>
+                    <li><a href="javascript:;" role="button">
+                        <i class="fa-brands fa-square-facebook"></i>
+                        <span class="blind">유튜브</span>
+                    </a></li>
+                </ul>
             </div>
         </section>
-        <section class="footer_sec">
+        <section class="footer_sec mid line_black_long">
             <div class="g_inner">
-                <ul>
+                <ul class="item">
                     <li><a href="javascript:;" role="button">제네시스 월드와이드</a></li>
                     <li><a href="javascript:;" role="button">프라이버시 센터</a></li>
                     <li><a href="javascript:;" role="button">제네시스 부티크</a></li>
@@ -443,17 +459,8 @@
                 </ul>
             </div>
         </section>
-        <section class="footer_sec">
-            <div class="g_inner">
-                <ul>
-                    <li><a href="javascript:;" role="button">페이스북</a></li>
-                    <li><a href="javascript:;" role="button">인스타그램</a></li>
-                    <li><a href="javascript:;" role="button">유튜브</a></li>
-                </ul>
-            </div>
-        </section>
-        <section class="footer_sec">
-            <img src="" alt="">
+        
+        <section class="footer_sec btm line_black_long">
             <p class="copyright">
                 © Copyright 2023 Hyundai Motor Company.<br />All Rights Reserved.
             </p>
@@ -467,7 +474,7 @@
 <!-- 팝업 -->
 <div id="__flying_partition__">
     <!-- 전체메뉴 -->
-    <section id="pupup_type1" class="all_menu">
+    <section id="pupup_type1" class="all_menu" style="display:none;">
         <!-- 팝업헤더 -->
         <div class="pupup_type1_header">
             <h2 class="all_menu_title">전체메뉴</h2>

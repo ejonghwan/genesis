@@ -2,6 +2,27 @@
     .g_inner {
         margin-bottom: 0;
     }
+
+
+    .copyright {
+        padding-top: 60px;
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 50px;
+            background: url('/src/img/common/footer-logo.png') no-repeat center/100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            opacity: .9;
+        }
+        
+    } 
 }
 
 .footer_sec_notice {
@@ -28,6 +49,11 @@
         li + li {
             margin-left: 20px;
         }
+
+        .txt {
+            font-size: 1.4rem;
+
+        }
     }
     button {
         color: #fff;
@@ -46,3 +72,80 @@
 .footer_sec {
     background-color: #0d1117;
 }
+
+.footer_sec.all_menu {
+
+    padding-bottom: 60px;
+
+    .g_inner {
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+
+    .item {
+        width: 25%;
+        margin-top: 60px;
+        .tit {
+            color: #e7e7e7;
+            font-weight: 500;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        ul > li {
+            margin-top: 8px;
+            
+            a {
+                display: block;
+                color: #9a9a9a;
+                font-size: 1.3rem;
+                &:hover {
+                    color: #b5b5b5;
+                    // transform: translateY(-1px);
+                }
+            }
+            
+        }
+    }
+}
+
+
+
+
+.footer_sec.mid {
+    background-color: #000;
+    padding: 20px 0;
+    ul {
+        display: flex;
+
+        a {
+            color: #9a9a9a;
+            &:hover {
+                color: #b5b5b5;
+            }
+        }
+    }
+}
+
+.footer_sec.mid.sitemap {
+    .g_inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .sns a {
+        line-height: 0;
+        font-size: 2.5rem;
+        color: #fff;
+        margin-left: 10px;
+    }
+}
+
+.footer_sec.btm {
+    background-color: #000;
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+}
+
