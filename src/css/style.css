@@ -142,7 +142,7 @@ h3 {
 .g_slide.s_type3 li {
   padding: 50px 30px 0;
   height: 500px;
-  background: url("/src/assets/images/main/dummy.jpg") no-repeat center/cover;
+  background: url("../../src/assets/images/main/dummy.jpg") no-repeat center/cover;
 }
 .g_slide.s_type3 .tit {
   color: #fff;
@@ -248,42 +248,42 @@ h3 {
 }
 @font-face {
   font-family: "NotoSansKR";
-  src: local("NotoSansKR"), url("/src/fonts/NotoSansKR-Thin.woff2") format("woff2");
+  src: local("NotoSansKR"), url("../../src/fonts/NotoSansKR-Thin.woff2") format("woff2");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "NotoSansKR";
-  src: local("NotoSansKR"), url("/src/assets/fonts/NotoSansKR-Light.woff2") format("woff2");
+  src: local("NotoSansKR"), url("../../src/assets/fonts/NotoSansKR-Light.woff2") format("woff2");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "NotoSansKR";
-  src: local("NotoSansKR"), url("/src/assets/fonts/NotoSansKR-Regular.woff2") format("woff2");
+  src: local("NotoSansKR"), url("../../src/assets/fonts/NotoSansKR-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "NotoSansKR";
-  src: local("NotoSansKR"), url("/src/assets/fonts/NotoSansKR-Medium.woff2") format("woff2");
+  src: local("NotoSansKR"), url("../../src/assets/fonts/NotoSansKR-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "NotoSansKR";
-  src: local("NotoSansKR"), url("/src/assets/fonts/NotoSansKR-Bold.woff2") format("woff2");
+  src: local("NotoSansKR"), url("../../src/assets/fonts/NotoSansKR-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "NotoSansKR";
-  src: local("NotoSansKR"), url("/src/assets/fonts/NotoSansKR-Black.woff2") format("woff2");
+  src: local("NotoSansKR"), url("../../src/assets/fonts/NotoSansKR-Black.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -300,7 +300,7 @@ h3 {
   margin: 0 auto;
 }
 #header h1 {
-  background: url("/src/assets/images/main/footer-logo.png") no-repeat center/100%;
+  background: url("../../src/assets/images/main/footer-logo.png") no-repeat center/100%;
   width: 70px;
   height: 20px;
   margin-top: 2px;
@@ -422,7 +422,7 @@ button.header_all_menu.on span.line:before {
   display: block;
   width: 100px;
   height: 50px;
-  background: url("/src/assets/images/main/footer-logo.png") no-repeat center/100%;
+  background: url("../../src/assets/images/main/footer-logo.png") no-repeat center/100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -741,7 +741,7 @@ figure::before {
 
 .evt_banner {
   padding: 100px 0;
-  background: black url("/src/assets/images/main/dummy.jpg") no-repeat center/cover;
+  background: black url("../../src/assets/images/main/dummy.jpg") no-repeat center/cover;
   background-attachment: fixed;
   margin-bottom: 60px;
 }
