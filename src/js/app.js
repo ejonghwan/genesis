@@ -1,5 +1,9 @@
+import Ui from './ui/Ui.js'
+import Tab from './ui/Tab.js'
 
-import MainContrllers from './controllers/MainControllers.js'
 
-document.addEventListener('DOMContentLoaded', e => new MainContrllers().init())
 
+export {
+    Ui, 
+    Tab,
+}

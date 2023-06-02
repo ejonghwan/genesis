@@ -18,11 +18,11 @@
 
     <link rel="canonical" href="메인 유알엘 넣기">
     <link rel="stylesheet" href="./src/css/style.css">
-    <script type="module" src="./src/js/app.js"></script>
+   
 </head>
 
 
-
+<!-- sass --watch src/scss/style.scss:src/css/style.css -->
 
 
 <body>
@@ -44,7 +44,7 @@
                     </a>
                 </h1>
                 <ul class="header_nav">
-                    <li><a href="javascript:;" role="button">모델</a></li>
+                    <li><a href="javascript:;" role="button" onclick="">모델</a></li>
                     <li><a href="javascript:;" role="button">구매</a></li>
                     <li><a href="javascript:;" role="button">체험</a></li>
                     <li><a href="javascript:;" role="button">멤버스</a></li>
@@ -747,7 +747,7 @@
 
 
 
-    <script>
+    <script type="module">
         const menu = document.querySelector('.header_all_menu')
         
         menu.addEventListener('click', e => {
@@ -758,7 +758,18 @@
             }
             
         })
+
+
+       
     </script>
+
+    <script type="module">
+        import { Tab, Ui } from './src/js/app.js';
+        const hh = new Tab(document.querySelector('.tab_wrap'))
+        
+        console.log(hh)
+    </script>
+    
 
 
 </body>
