@@ -32,14 +32,13 @@ class Ui {
 
     toggleClass(removeEls, addEl, className) {
         // if(!this.typeCheck(removeEls, Array)) removeEls = [removeEls];
-        let cur;
         for(let i = 0; i < removeEls.length; i++) {
             this.removeClass(removeEls[i], className);
             for(let j = 0; j < removeEls.length; j++) {
                 this.addClass(addEl, className);
             }
         }
-        return cur;
+        return addEl;
     }
 
     setAttr(target, attr, str) {
@@ -53,7 +52,7 @@ class Ui {
 
     evtAssign(selector, evtTarget) {
         let isTarget = target => [...target.querySelectorAll(selector)].includes(target) || target.closest(selector)
-        return isTarget(evtTarget)
+        return isTarget ? isTarget(evtTarget): false; 
     }
 
     typeCheck(type, checkType) {

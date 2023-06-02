@@ -3,30 +3,33 @@ import Ui from './Ui.js'
 class Tab extends Ui {
     constructor(el) {
         super()
-        this.el = el;
-        this.tabHeaders = this.el.querySelectorAll('.tab_header > .tab_header_item')
-        this.tabBodys = this.el.querySelectorAll('.tab_body > li')
-          
-        this.el.addEventListener('click', e => {
+        this.el = document.querySelector(el);
+        this.tabHeaders = document.querySelectorAll(`${el} > .tab_wrap > .tab_header > .tab_header_item`)
+        this.tabBodys = document.querySelectorAll(`${el} > .tab_wrap > .tab_body > li`)
 
-            // console.log(e.target, '.tab_header_item')
+        
+        this.init();
+        this.el.addEventListener('click', this.toggle.bind(this), false)
 
-            let targetEl = this.evtAssign('.tab_header_item', e.target)
-            let idx = this.toggleClass(this.tabHeaders, targetEl, 'active')
-            // this.toggleClass(this.tabBodys, this.tabBodys, 'active')
-
-            console.log(idx)
-
-
-            // console.log(e.target.classList.add('hoho'))
-            // this.addClass(e.target, 'hoho?')
-        })
     }
 
     init() {
-        
+        for(let i = 0; i < this.tabHeaders.length; i++) {
+            this.setAttr(this.tabHeaders[i], 'data-num', i)
+            this.setAttr(this.tabBodys[i], 'data-num', i)
+        }
+    }
 
-      
+
+    toggle(e) {
+        // e.preventDefault()
+        e.stopPropagation()
+        let addEl = this.evtAssign('.tab_header_item', e.target)
+        if(!addEl) return;
+ 
+        let toggle = this.toggleClass(this.tabHeaders, addEl, 'active')
+        let idx = toggle.dataset.num
+        this.toggleClass(this.tabBodys, this.tabBodys[idx], 'active')
     }
 
 

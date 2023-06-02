@@ -195,7 +195,15 @@
                             el: ".swiper-scrollbar",
                             hide: true,
                         },
+
+                        on: {
+                            slideChange: function() {
+                            console.log(13213)
+                        }
+                        }
                     });
+
+                    
                 </script>
 
                 <div class="main_visual_slide type2">
@@ -244,14 +252,64 @@
                                 <li class="tab_header_item"><button type="button">SUV</button></li>
                             </ul>
                             <ul class="tab_body">
-                                <li>tab content1</li>
-                                <li>tab content2</li>
-                                <li>tab content3</li>
+                                <li class="tab_body_item">
+                                    test
+                                    <br />
+                                    <br />
+                                    <br />
+                                    
+                    <article class="tab type2">
+                        <div class="tab_wrap">
+                            <ul class="tab_header">
+                                <li class="tab_header_item active"><button type="button">ALL</button></li>
+                                <li class="tab_header_item"><button type="button">SEDAN</button></li>
+                                <li class="tab_header_item"><button type="button">SUV</button></li>
+                            </ul>
+                            <ul class="tab_body">
+                                <li class="tab_body_item">tab content1</li>
+                                <li class="tab_body_item">tab content2</li>
+                                <li class="tab_body_item">tab content3</li>
                             </ul>
                         </div>
                     </article>
+                                    <br />
+                                    <br />
+                                    <br />
+                                </li>
+                                <li class="tab_body_item">tab content2</li>
+                                <li class="tab_body_item">tab content3</li>
+                            </ul>
+                        </div>
+                    </article>
+
                     
                 </article>
+
+               
+
+    <script type="module">
+        import { Tab, Ui } from './src/js/app.js';
+
+
+        const hh = new Tab('.tab.type1')
+        const hh2 = new Tab('.tab.type2')
+    
+
+
+        
+        // function asd() {
+        //     console.log('asd')
+        //     window.addEventListener('click', e => {console.log('inner')})
+        // }
+
+        // asd();
+        // asd();
+        // asd();
+
+    </script>
+    
+
+
                 <div class="sub_visual_slide type1">
                     <ul>
                         <li>
@@ -762,15 +820,5 @@
 
        
     </script>
-
-    <script type="module">
-        import { Tab, Ui } from './src/js/app.js';
-        const hh = new Tab(document.querySelector('.tab_wrap'))
-        
-        console.log(hh)
-    </script>
-    
-
-
 </body>
 </html>
