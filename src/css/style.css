@@ -172,6 +172,24 @@ h3 {
   color: #fff;
 }
 
+.tab.type1 {
+  width: 100%;
+}
+.tab.type1 .tab_header {
+  display: flex;
+}
+.tab.type1 .tab_header_item {
+  flex: 1 0 auto;
+  border: 1px solid red;
+}
+.tab.type1 .tab_header_item button {
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
 .line_black_small {
   position: relative;
 }
