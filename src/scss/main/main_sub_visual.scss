@@ -2,11 +2,9 @@
 
 .sub_visual {
     height: 800px;
-    // background-color: #621414;
     background-color: #080911;
     position: relative;
-
-    padding-top: 120px;
+    padding-top: 60px;
 
     &::before {
         content: "";
@@ -82,7 +80,6 @@
     }
     .img_wrap {
         width: 700px;
-       
     }
 }
 

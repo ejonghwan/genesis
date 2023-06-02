@@ -1,5 +1,5 @@
 .main_visual {
-    height: 500px;
+    height: 100vh;
     background-color: #02020d;
     padding: 50px;
     position: relative;
@@ -7,13 +7,6 @@
 
 
 .main_visual_title {
-    // position: absolute;
-    // top: 0px;
-    // bottom: 0px;
-    // left: 0px;
-    // right: 0;
-    // margin: auto;
-    // width: 400px;
     z-index: 10;
     margin-top: 100px;
     text-align: right;
@@ -56,12 +49,11 @@
 
 .main_visual_slide.type2 {
     position: absolute;
-    bottom: -100px;
+    bottom: 0px;
     right: 0;
     left: 0;
     margin: auto;
     width: 100%;
-    // height: 100%;
     z-index: 10;
     
     ul {
@@ -69,18 +61,15 @@
         height: 100%;
         gap: 5px;
         justify-content: center;
-        // background-color: black;
+        backdrop-filter: blur(10px);
         
         li {
             flex: 0 0 auto;
             width: 150px;
             // height: 100%;
-            backdrop-filter: blur(10px);
-            box-shadow: 1px 1px 13px 0px rgba(0, 0, 0, 0.4);
+            // box-shadow: 1px 1px 13px 0px rgba(0, 0, 0, 0.4);
             color: #fff;
             padding: 30px 10px;
-             // border-radius: 8px;
-            // border: 1px solid rgba(255, 255, 255, .05);
             text-align: center;
 
             strong {
@@ -124,7 +113,7 @@ figure::before {
     content: '';
     width: 100%;
     height: 100%;
-    opacity: 0.5;
+    opacity: 0.3;
     background: rgb(12, 13, 26);
     position: absolute;
     top: 0;

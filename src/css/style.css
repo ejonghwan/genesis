@@ -291,10 +291,11 @@ h3 {
 #header {
   width: 100%;
   position: absolute;
-  top: 30px;
+  top: 0px;
   left: 0;
   color: rgb(179, 179, 179);
   z-index: 100;
+  backdrop-filter: blur(3px);
 }
 #header .g_inner {
   margin: 0 auto;
@@ -315,6 +316,7 @@ h3 {
 .header_wrap {
   display: flex;
   align-items: center;
+  height: 80px;
 }
 
 .header_nav {
@@ -534,7 +536,7 @@ button.header_all_menu.on span.line:before {
 }
 
 .main_visual {
-  height: 500px;
+  height: 100vh;
   background-color: #02020d;
   padding: 50px;
   position: relative;
@@ -571,7 +573,7 @@ button.header_all_menu.on span.line:before {
 
 .main_visual_slide.type2 {
   position: absolute;
-  bottom: -100px;
+  bottom: 0px;
   right: 0;
   left: 0;
   margin: auto;
@@ -583,12 +585,11 @@ button.header_all_menu.on span.line:before {
   height: 100%;
   gap: 5px;
   justify-content: center;
+  backdrop-filter: blur(10px);
 }
 .main_visual_slide.type2 ul li {
   flex: 0 0 auto;
   width: 150px;
-  backdrop-filter: blur(10px);
-  box-shadow: 1px 1px 13px 0px rgba(0, 0, 0, 0.4);
   color: #fff;
   padding: 30px 10px;
   text-align: center;
@@ -624,7 +625,7 @@ figure::before {
   content: "";
   width: 100%;
   height: 100%;
-  opacity: 0.5;
+  opacity: 0.3;
   background: rgb(12, 13, 26);
   position: absolute;
   top: 0;
@@ -659,7 +660,7 @@ figure::before {
   height: 800px;
   background-color: #080911;
   position: relative;
-  padding-top: 120px;
+  padding-top: 60px;
 }
 .sub_visual::before {
   content: "";
