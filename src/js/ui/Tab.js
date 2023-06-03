@@ -53,7 +53,7 @@ class Tab extends Ui {
         let toggle = this.toggleClass(this.tabHeaders, addEl, 'active')
         let idx = toggle.dataset.tab;
         this.toggleClass(this.tabBodys, this.tabBodys[idx], 'active')
-        this.toggleAttr(this.tabHeaders, this.tabHeaders[idx], 'aria-selected', 'true')
+        this.toggleAttr(this.tabHeaders, this.tabHeaders[idx], 'aria-selected', 'false', 'true')
         
     }
 
