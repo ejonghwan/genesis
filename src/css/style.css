@@ -189,6 +189,15 @@ h3 {
   height: 100%;
   padding: 10px;
 }
+.tab.type1 .tab_header_item.active {
+  background-color: red;
+}
+.tab.type1 .tab_body_item {
+  display: none;
+}
+.tab.type1 .tab_body_item.active {
+  display: block;
+}
 
 .line_black_small {
   position: relative;

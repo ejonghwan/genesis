@@ -245,9 +245,10 @@
                     </div>
                 
                     <article class="tab type1">
+                        <strong id="tab_type1_tit" class="blind">제네시스 종류 선택</strong>
                         <div class="tab_wrap">
-                            <ul class="tab_header">
-                                <li class="tab_header_item active"><button type="button">ALL</button></li>
+                            <ul class="tab_header" aria-labelledby="tab_type1_tit">
+                                <li class="tab_header_item"><button type="button">ALL</button></li>
                                 <li class="tab_header_item"><button type="button">SEDAN</button></li>
                                 <li class="tab_header_item"><button type="button">SUV</button></li>
                             </ul>
@@ -261,7 +262,7 @@
                     <article class="tab type2">
                         <div class="tab_wrap">
                             <ul class="tab_header">
-                                <li class="tab_header_item active"><button type="button">ALL</button></li>
+                                <li class="tab_header_item"><button type="button">ALL</button></li>
                                 <li class="tab_header_item"><button type="button">SEDAN</button></li>
                                 <li class="tab_header_item"><button type="button">SUV</button></li>
                             </ul>
@@ -282,32 +283,7 @@
                         </div>
                     </article>
 
-                    
                 </article>
-
-               
-
-    <script type="module">
-        import { Tab, Ui } from './src/js/app.js';
-
-
-        const hh = new Tab('.tab.type1')
-        const hh2 = new Tab('.tab.type2')
-    
-
-
-        
-        // function asd() {
-        //     console.log('asd')
-        //     window.addEventListener('click', e => {console.log('inner')})
-        // }
-
-        // asd();
-        // asd();
-        // asd();
-
-    </script>
-    
 
 
                 <div class="sub_visual_slide type1">
@@ -817,8 +793,18 @@
             
         })
 
+        import { Tab, Ui } from './src/js/app.js';
 
-       
+
+        const hh = new Tab('.tab.type1', {
+            startTab: 0,
+        })
+        const hh2 = new Tab('.tab.type2', {
+            startTab: 1,
+        })
     </script>
+
+    
+
 </body>
 </html>

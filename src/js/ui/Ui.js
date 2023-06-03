@@ -41,6 +41,19 @@ class Ui {
         return addEl;
     }
 
+    // this.toggleAttr(this.tabHeaders, this.tabHeaders[idx], 'aria-selected', 'true')
+
+    toggleAttr(removeEls, addEl, attrName, str) {
+        // if(!this.typeCheck(removeEls, Array)) removeEls = [removeEls];
+        for(let i = 0; i < removeEls.length; i++) {
+            this.removeAttr(removeEls[i], attrName, str)
+            for(let j = 0; j < removeEls.length; j++) {
+                this.setAttr(attrName, str)
+            }
+        }
+        return addEl;
+    }
+
     setAttr(target, attr, str) {
         target.setAttribute(attr, str)
         return this;
