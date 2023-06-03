@@ -12,10 +12,6 @@ class Tab extends Ui {
 
         this.init();
         this.el.addEventListener('click', this.toggle.bind(this), false)
-
-
-
-        console.log('startTab', startTab)
     }
 
     init() {
@@ -29,7 +25,6 @@ class Tab extends Ui {
             this.setAttr(this.tabHeaders[i], 'role', 'tab')
             this.setAttr(this.tabHeaders[i], 'aria-selected', 'false')
             this.setAttr(this.tabHeaders[i], 'aria-controls', `${this.selectName.replace(/[^\w\s]/g, '')}_con_${i}`)
-
             this.setAttr(this.tabBodys[i], 'id', `${this.selectName.replace(/[^\w\s]/g, '')}_con_${i}`)
             this.setAttr(this.tabBodys[i], 'role', 'tabpanel')
             this.setAttr(this.tabBodys[i], 'aria-labelledby', `${this.selectName.replace(/[^\w\s]/g, '')}_${i}`)
@@ -47,8 +42,8 @@ class Tab extends Ui {
     toggle(e) {
         // e.preventDefault()
         e.stopPropagation()
-        let addEl = this.evtAssign('.tab_header_item', e.target)
-        if(!addEl) return;
+        let addEl = this.evtAssign('.tab_header_item', e.target) //타겟보다 아래요소 클릭됐을 때
+        if(!addEl) return; //위임 중 다른거 클릭됐을 때
  
         let toggle = this.toggleClass(this.tabHeaders, addEl, 'active')
         let idx = toggle.dataset.tab;
