@@ -272,6 +272,15 @@ h3 {
   .s_type3_nav {
     margin-top: -100px;
   }
+  .accordion_mo .acco_head.on {
+    background-color: red;
+  }
+  .accordion_mo .acco_body.on {
+    display: block;
+  }
+  .accordion_mo .acco_body {
+    display: none;
+  }
 }
 @font-face {
   font-family: "NotoSansKR";

@@ -11,7 +11,7 @@ class Tab extends Ui {
         this.tabBodys = document.querySelectorAll(`${el} > .tab_wrap > .tab_body > li`)
 
         this.init();
-        this.el.addEventListener('click', this.toggle.bind(this), false)
+        this.el.addEventListener('click', this.action.bind(this), false)
     }
 
     init() {
@@ -39,8 +39,8 @@ class Tab extends Ui {
     }
 
 
-    toggle(e) {
-        // e.preventDefault()
+    action(e) {
+        e.preventDefault()
         e.stopPropagation()
         let addEl = this.evtAssign('.tab_header_item', e.target) //타겟보다 아래요소 클릭됐을 때
         if(!addEl) return; //위임 중 다른거 클릭됐을 때

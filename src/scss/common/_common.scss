@@ -182,8 +182,8 @@ h3 {font-size: 16px; color: #444;}
 }
 
 
-// accordion
-
+// accordion 모바일만
+.accordion_mo {} 
 
 
 
@@ -288,6 +288,20 @@ h3 {font-size: 16px; color: #444;}
 
     .s_type3_nav {
         margin-top: -100px;
+    }
+
+    // 모바일만
+    .accordion_mo {
+        .acco_head.on {
+            background-color: red;
+        }
+
+        .acco_body.on {
+            display: block;
+        }
+        .acco_body {
+            display: none;
+        }
     }
     
 }

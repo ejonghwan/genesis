@@ -7,25 +7,30 @@ class Ui {
 
    
     emit(el, event, data) {
+        if(!el) return;
         const evt = new CustomEvent(event, { detail: data });
         el.dispatchEvent(evt);
         return this;
     }
 
     show(target) {
+        if(!target) return;
         target.style.display = '';
     }
 
     hide(target) {
+        if(!target) return;
         target.style.display = 'none'; 
     }
 
     addClass(target, className) {
+        if(!target) return;
         target.classList.add(className)
         return this;
     }
 
     removeClass(target, className) {
+        if(!target) return;
         target.classList.remove(className)
         return this;
     }
@@ -53,11 +58,13 @@ class Ui {
     }
 
     setAttr(target, attr, str) {
+        if(!target) return;
         target.setAttribute(attr, str)
         return this;
     }
 
     removeAttr(target, attr, str) {
+        if(!target) return;
         target.removeAttribute(attr, str)
     }
 
