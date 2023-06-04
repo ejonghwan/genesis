@@ -164,14 +164,23 @@
 @include mobile {
     .footer_sec.all_menu {
         padding: 15px 0;
+
+        .item.con_none {
+            & > .acco_head {
+                &::after {content: none;}
+                &::before {content: none;}
+            }
+        }
+
         .item {
             width: 100%;
             margin-top: 0;
-            padding: 15px 0;
+            padding: 0;
             & > .acco_head {
                 display: flex;
                 align-items: center;
-
+                padding: 15px 0;
+                width: 100%;
                 .tit {
                     margin-bottom: 0;
                 }
@@ -182,6 +191,33 @@
     #footer {
         .copyright::before {
             width: 80px;
+        }
+    }
+
+    .footer_sec.sitemap {
+
+        .g_inner {
+            flex-wrap: wrap;
+        }
+
+        ul {
+            li {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        .item.sns { 
+            flex: 1 1 auto;
+            width: 100%;
+            margin-top: 10px;
+
+            li:first-child {
+                a {
+                    margin: 0;
+                }
+            }
+            
         }
     }
 }

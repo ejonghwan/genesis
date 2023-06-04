@@ -292,15 +292,101 @@ h3 {font-size: 16px; color: #444;}
 
     // 모바일만
     .accordion_mo {
-        .acco_head.on {
-            background-color: red;
+
+        .item.con_none {
+            .item {
+                & > .acco_head {
+                    &::after {content: none;}
+                    &::before {content: none;}
+                }
+            }
         }
 
+        .item {
+            width: 100%;
+            margin-top: 0;
+            padding: 0;
+
+            & > .acco_head {
+                display: flex;
+                align-items: center;
+                padding: 15px 0;
+                width: 100%;
+                position: relative;
+
+
+                .tit {
+                    margin-bottom: 0;
+                }
+
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 8px;
+                    height: 1px;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    margin: auto;
+                    background-color: #fff;
+                    transform: rotate(-45deg);
+                }
+
+                &::before {
+                    content: '';
+                    display: block;
+                    width: 8px;
+                    height: 1px;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                    right: 5px;
+                    background-color: #fff;
+                    transform: rotate(45deg);
+                }
+                
+            }
+        }
+        .acco_head.on {
+            &::after {
+                content: '';
+                display: block;
+                width: 8px;
+                height: 1px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                background-color: #fff;
+                transform: rotate(-135deg);
+            }
+
+            &::before {
+                content: '';
+                display: block;
+                width: 8px;
+                height: 1px;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                right: 5px;
+                background-color: #fff;
+                transform: rotate(135deg);
+            }
+        }
+
+
+        
         .acco_body.on {
             display: block;
         }
         .acco_body {
             display: none;
+            margin-bottom: 30px;
         }
     }
     
