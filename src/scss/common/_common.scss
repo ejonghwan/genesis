@@ -4,13 +4,35 @@ html {
     font-size: 10px;
 }
 
+*::-webkit-scrollbar  { 
+    width: 7px; 
+}
+*::-webkit-scrollbar-thumb {
+    height: 30%; /* 스크롤바의 길이 */
+    background: #545151; /* 스크롤바의 색상 */
+    border-radius: 10px;
+};   
+*::-webkit-scrollbar-track {
+    background: #0d1117;  /*스크롤바 뒷 배경 색상*/
+}
+
 body {
     width: 100%;
     height: 100%;
     font: normal 1.4rem/1.5 'NotoSansKR', 'sans-serif';
     color: #555;
-    
 }
+
+
+.pd_none {
+    padding: 0;
+}
+
+.mg_none {
+    margin: 0;
+}
+
+
 
 #skip_conts {
     position: relative;
@@ -148,6 +170,39 @@ h3 {font-size: 16px; color: #444;}
 }
 
 
+// mid line 
+.btw_line {
+    display: flex;
+    flex-wrap: wrap;
+    li {
+        padding: 2px 7px;
+        position: relative;
+        display: flex;
+       
+        align-items: center;
+
+        &:first-child {
+            padding-left:0;
+        }
+        &:first-child::before {
+            content: none;
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            height: 6px;
+            width: 1px;
+            background: #2d2d2d;
+            position: absolute;
+            top: -1px;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    }
+}
+
 
 // tab
 .tab.type1 {
@@ -184,6 +239,38 @@ h3 {font-size: 16px; color: #444;}
 
 // accordion 모바일만
 .accordion_mo {} 
+
+
+
+
+// popup 
+.popup.on {
+    display: block !important;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0d1117;
+    z-index: 100;
+}
+
+.all_menu_title {
+    font-size: 1.5rem; color: #fff;
+}
+
+ 
+.pupup_type1_body {
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+}
+
+
+body.popop_active {
+    overflow: hidden;
+}
+
+
 
 
 
@@ -240,8 +327,6 @@ h3 {font-size: 16px; color: #444;}
 
 
 @include tablet {
-
-
     .g_inner {
         width: 100%;
         padding-left: 20px;
