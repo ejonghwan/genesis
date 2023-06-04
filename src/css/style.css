@@ -571,6 +571,31 @@ button.header_all_menu.on span.line:before {
   position: relative;
 }
 
+@media screen and (max-width: 980px) {
+  .footer_sec.all_menu .item {
+    width: 33.3333%;
+  }
+}
+@media screen and (max-width: 640px) {
+  .footer_sec.all_menu {
+    padding: 15px 0;
+  }
+  .footer_sec.all_menu .item {
+    width: 100%;
+    margin-top: 0;
+    padding: 15px 0;
+  }
+  .footer_sec.all_menu .item > .acco_head {
+    display: flex;
+    align-items: center;
+  }
+  .footer_sec.all_menu .item > .acco_head .tit {
+    margin-bottom: 0;
+  }
+  #footer .copyright::before {
+    width: 80px;
+  }
+}
 .main_visual {
   height: 100vh;
   background-color: #02020d;

@@ -663,7 +663,10 @@
             <article class="">
                 <!-- 모델 -->
                 <div class="item">
-                    <button type="button" class="acco_head"><strong>모델</strong></button>
+                    <button type="button" class="acco_head">
+                        <strong>모델</strong>
+                        <span class="blind">자세히보기</span>
+                    </button>
                     <ul class="acco_body">
                         <li><a href="javascript:;" role="button">G90 LONG WHEEL BASE</a></li>
                         <li><a href="javascript:;" role="button">G90</a></li>
@@ -680,7 +683,10 @@
                 <!-- //모델 -->
                 <!-- 구매 -->
                 <div class="item">
-                    <button type="button" class="acco_head"><strong>구매</strong></button>
+                    <button type="button" class="acco_head">
+                        <strong>구매</strong>
+                        <span class="blind">자세히보기</span>
+                    </button>
                     <u class="acco_body">
                         <li><a href="javascript:;" role="button">견적내기</a></li>
                         <li><a href="javascript:;" role="button">구매 프로그램</a></li>
@@ -693,7 +699,10 @@
                 <!-- //구매 -->
                 <!-- 체험 -->
                 <div class="item">
-                    <button type="button" class="acco_head"><strong>체험</strong></button>
+                    <button type="button" class="acco_head">
+                        <strong>체험</strong>
+                        <span class="blind">자세히보기</span>
+                    </button>
                     <ul class="acco_body">
                         <li><a href="javascript:;" role="button">스페이스</a></li>
                         <li><a href="javascript:;" role="button">시승 신청</a></li>
@@ -704,7 +713,10 @@
                 <!-- //체험 -->
                 <!-- 멤버스 -->
                 <div class="item">
-                    <button type="button" class="acco_head"><strong>멤버스</strong></button>
+                    <button type="button" class="acco_head">
+                        <strong>멤버스</strong>
+                        <span class="blind">자세히보기</span>
+                    </button>
                     <ul class="acco_body">
                         <li><a href="javascript:;" role="button">제네시스 멤버십</a></li>
                         <li><a href="javascript:;" role="button">MY GENESIS 앱</a></li>
@@ -715,7 +727,10 @@
                 <!-- //멤버스 -->
                 <!-- 제네시스 -->
                 <div class="item">
-                    <button type="button" class="acco_head"><strong>제네시스</strong></button>
+                    <button type="button" class="acco_head">
+                        <strong>제네시스</strong>
+                        <span class="blind">자세히보기</span>
+                    </button>
                     <ul class="acco_body">
                         <li><a href="javascript:;" role="button">브랜드</a></li>
                         <li><a href="javascript:;" role="button">콘셉트카</a></li>
@@ -726,7 +741,10 @@
                 <!-- //제네시스 -->
                 <!-- 고객센터 -->
                 <div class="item">
-                    <button type="button" class="acco_head"><strong>고객센터</strong></button>
+                    <button type="button" class="acco_head">
+                        <strong>고객센터</strong>
+                        <span class="blind">자세히보기</span>
+                    </button>
                     <ul class="acco_body">
                         <li><a href="javascript:;" role="button">고객센터 안내</a></li>
                         <li><a href="javascript:;" role="button">공지사항</a></li>
@@ -740,7 +758,12 @@
                 <!-- //고객센터 -->
                 <!-- 마이페이지 -->
                 <div class="item">
-                    <button type="button" class="aco_btn"><strong>마이페이지</strong></button>
+                    <button type="button" class="aco_btn">
+                        <strong>마이페이지</strong>
+                        <ul class="acco_body">
+                            <li><span class="blind">하위메뉴 없음</span></li>
+                        </ul>
+                    </button>
                 </div>
                 <!-- //마이페이지 -->
             </article>
@@ -779,6 +802,7 @@
         })
 
         const aco = new Accordion('.footer_sec.all_menu', {
+            startTab: false,
             oneTab: true,
         })
      

@@ -147,3 +147,41 @@
     position: relative;
 }
 
+
+
+
+
+
+
+@include tablet {
+    .footer_sec.all_menu {
+        .item {width: 33.3333%;}
+    }
+
+}
+
+
+@include mobile {
+    .footer_sec.all_menu {
+        padding: 15px 0;
+        .item {
+            width: 100%;
+            margin-top: 0;
+            padding: 15px 0;
+            & > .acco_head {
+                display: flex;
+                align-items: center;
+
+                .tit {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    #footer {
+        .copyright::before {
+            width: 80px;
+        }
+    }
+}
