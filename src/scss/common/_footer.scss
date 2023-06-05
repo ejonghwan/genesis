@@ -94,7 +94,7 @@
             margin-top: 8px;
             
             a {
-                display: block;
+                display: inline-block;
                 color: #9a9a9a;
                 font-size: 1.3rem;
                 &:hover {
@@ -162,9 +162,15 @@
     }
 
     .footer_sec.mid.sitemap {
-
+        padding: 30px 0;
         .g_inner {
             flex-wrap: wrap;
+            justify-content: center;
+
+            .item.btw_line {
+                justify-content: center;
+                max-width: 350px;
+            }
         }
 
         ul {
@@ -177,8 +183,12 @@
         .item.sns { 
             flex: 1 1 auto;
             width: 100%;
-            margin-top: 10px;
+            margin-top: 20px;
+            justify-content: center;
 
+            li {
+                margin-left: 5px;
+            }
             li:first-child {
                 a {
                     margin: 0;

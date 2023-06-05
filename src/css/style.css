@@ -56,17 +56,23 @@ html {
 *::-webkit-scrollbar-thumb {
   height: 30%; /* 스크롤바의 길이 */
   background: #545151; /* 스크롤바의 색상 */
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 *::-webkit-scrollbar-track {
   background: #0d1117; /*스크롤바 뒷 배경 색상*/
 }
 
+*:focus {
+  outline: solid rgb(66, 66, 66);
+  border-radius: 2px;
+}
+
 body {
   width: 100%;
   height: 100%;
-  font: normal 1.4rem/1.5 "NotoSansKR", "sans-serif";
+  font: normal 1.4rem/1.5 "SpoqaHanSans", "sans-serif";
+  font-weight: 500;
   color: #555;
 }
 
@@ -76,6 +82,11 @@ body {
 
 .mg_none {
   margin: 0;
+}
+
+.g_sans {
+  font-family: "GenesisSansKR" !important;
+  font-weight: 500 !important;
 }
 
 #skip_conts {
@@ -431,44 +442,58 @@ body.popop_active {
   }
 }
 @font-face {
-  font-family: "NotoSansKR";
-  src: local("NotoSansKR"), url("../../src/fonts/NotoSansKR-Thin.woff2") format("woff2");
-  font-weight: 100;
+  font-family: "SpoqaHanSans";
+  src: local("SpoqaHanSans"), url("../../src/assets/fonts/SpoqaHanSansNeo-Thin.woff2") format("woff2");
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "NotoSansKR";
-  src: local("NotoSansKR"), url("../../src/assets/fonts/NotoSansKR-Light.woff2") format("woff2");
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "NotoSansKR";
-  src: local("NotoSansKR"), url("../../src/assets/fonts/NotoSansKR-Regular.woff2") format("woff2");
+  font-family: "SpoqaHanSans";
+  src: local("SpoqaHanSans"), url("../../src/assets/fonts/SpoqaHanSansNeo-Light.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "NotoSansKR";
-  src: local("NotoSansKR"), url("../../src/assets/fonts/NotoSansKR-Medium.woff2") format("woff2");
+  font-family: "SpoqaHanSans";
+  src: local("SpoqaHanSans"), url("../../src/assets/fonts/SpoqaHanSansNeo-Regular.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "NotoSansKR";
-  src: local("NotoSansKR"), url("../../src/assets/fonts/NotoSansKR-Bold.woff2") format("woff2");
+  font-family: "SpoqaHanSans";
+  src: local("SpoqaHanSans"), url("../../src/assets/fonts/SpoqaHanSansNeo-Medium.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SpoqaHanSans";
+  src: local("SpoqaHanSans"), url("../../src/assets/fonts/SpoqaHanSansNeo-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "NotoSansKR";
-  src: local("NotoSansKR"), url("../../src/assets/fonts/NotoSansKR-Black.woff2") format("woff2");
-  font-weight: 900;
+  font-family: "GenesisSansKR";
+  src: local("GenesisSansKR"), url("../../src/assets/fonts/GenesisSansHeadKRLight.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "GenesisSansKR";
+  src: local("GenesisSansKR"), url("../../src/assets/fonts/GenesisSansHeadKRRegular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "GenesisSansKR";
+  src: local("GenesisSansKR"), url("../../src/assets/fonts/GenesisSansHeadOffice-Regular.woff2") format("woff2");
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
@@ -488,7 +513,7 @@ body.popop_active {
   background: url("../../src/assets/images/main/footer-logo.png") no-repeat center/100%;
   width: 70px;
   height: 20px;
-  margin-top: 2px;
+  margin-top: 0px;
   margin-right: 40px;
 }
 #header h1 a {
@@ -545,9 +570,6 @@ button.header_all_menu {
   position: relative;
   cursor: pointer;
   margin-left: 35px;
-}
-button.header_all_menu:focus {
-  outline: none;
 }
 button.header_all_menu:after, button.header_all_menu:before,
 button.header_all_menu span {
@@ -703,7 +725,7 @@ button.header_all_menu.on span.line:before {
   margin-top: 8px;
 }
 .footer_sec.all_menu .item ul > li a {
-  display: block;
+  display: inline-block;
   color: #9a9a9a;
   font-size: 1.3rem;
 }
@@ -748,8 +770,16 @@ button.header_all_menu.on span.line:before {
   .footer_sec.all_menu .item {
     width: 33.3333%;
   }
+  .footer_sec.mid.sitemap {
+    padding: 30px 0;
+  }
   .footer_sec.mid.sitemap .g_inner {
     flex-wrap: wrap;
+    justify-content: center;
+  }
+  .footer_sec.mid.sitemap .g_inner .item.btw_line {
+    justify-content: center;
+    max-width: 350px;
   }
   .footer_sec.mid.sitemap ul li {
     display: flex;
@@ -758,7 +788,11 @@ button.header_all_menu.on span.line:before {
   .footer_sec.mid.sitemap .item.sns {
     flex: 1 1 auto;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 20px;
+    justify-content: center;
+  }
+  .footer_sec.mid.sitemap .item.sns li {
+    margin-left: 5px;
   }
   .footer_sec.mid.sitemap .item.sns li:first-child a {
     margin: 0;
@@ -1051,12 +1085,13 @@ figure::before {
   display: flex;
   gap: 10px;
 }
-.g_content ulli {
+.g_content ul li {
   flex: 0 0 auto;
+  width: calc(33.33333% - 10px);
 }
 
 .g_content_img {
-  height: 200px;
+  height: 100px;
   margin-bottom: 20px;
 }
 .g_content_img img {
@@ -1074,10 +1109,10 @@ figure::before {
 }
 
 @media screen and (max-width: 640px) {
-  ul {
+  .g_content ul {
     flex-wrap: wrap;
   }
-  ulli {
+  .g_content ul li {
     width: 100%;
   }
 }
