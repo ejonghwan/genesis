@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+<body>
+
+    <h2>Fonts</h2> 
+    <p></p>
+
+
+
+
+<script type="module">
+    import { Tab, Ui, Accordion, Popup } from './src/js/app.js';
+
+    const hh = new Tab('.tab.type1', {
+        startTab: 0,
+    })
+
+    const aco = new Accordion('.footer_sec.all_menu', {
+        startTab: false,
+        oneTab: true,
+    })
+
+    const popupMenu = new Accordion('.footer_sec.all_menu.pop', {
+        startTab: false,
+        oneTab: true,
+    })
+
+    console.log(Popup)
+ 
+</script>
+
+    
+</body>
+</html>

@@ -55,8 +55,6 @@ const common = {
             } else {
                 popupEl.classList.remove('on')
             }
-
-
         })
     },
 }
