@@ -1,4 +1,5 @@
 import Ui from '../ui/Ui.js';
+import Accessibility from './Accessibility.js'
 
 class Popup extends Ui {
     constructor(el, btn) {
@@ -7,12 +8,23 @@ class Popup extends Ui {
         this.popupbtn = document.querySelector(btn)
         this.body = document.querySelector('body')
 
-
+        // this.init();
         this.popupbtn.addEventListener('click', this.popOpen.bind(this))
+    }
+
+    init() {
+        console.log('popup class')
     }
 
 
     popOpen() {
+        // 접근성 테스트 
+        const acc = new Accessibility(['header', 'footer', 'main', '#skip_conts']);
+        acc.disable()
+
+        // acc.focus('.popup')
+
+
         // 임시 테스트
         if(!this.popupbtn.classList.contains('on')) {
             this.popupbtn.classList.add('on')
