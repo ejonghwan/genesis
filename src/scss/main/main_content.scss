@@ -3,15 +3,16 @@
         display: flex;
         gap: 10px;
 
-        &li {
+        li {
             flex: 0 0 auto;
+            width: calc(33.33333% - 10px);
         }
     }
 }
 
 
 .g_content_img {
-    height: 200px;
+    height: 100px;
     margin-bottom: 20px;
     img {
         object-fit: cover;
@@ -35,10 +36,12 @@
 
 
 @include mobile {
-    ul {
-        flex-wrap: wrap;
-        &li {
-            width: 100%;
+    .g_content {
+        ul {
+            flex-wrap: wrap;
+            li {
+                width: 100%;
+            }
         }
     }
 }

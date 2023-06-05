@@ -79,6 +79,11 @@ body {
   margin: 0;
 }
 
+.g_sans {
+  font-family: "GenesisSansKR" !important;
+  font-weight: 500 !important;
+}
+
 #skip_conts {
   position: relative;
 }
@@ -503,7 +508,7 @@ body.popop_active {
   background: url("../../src/assets/images/main/footer-logo.png") no-repeat center/100%;
   width: 70px;
   height: 20px;
-  margin-top: 2px;
+  margin-top: 0px;
   margin-right: 40px;
 }
 #header h1 a {
@@ -1060,12 +1065,13 @@ figure::before {
   display: flex;
   gap: 10px;
 }
-.g_content ulli {
+.g_content ul li {
   flex: 0 0 auto;
+  width: calc(33.33333% - 10px);
 }
 
 .g_content_img {
-  height: 200px;
+  height: 100px;
   margin-bottom: 20px;
 }
 .g_content_img img {
@@ -1083,10 +1089,10 @@ figure::before {
 }
 
 @media screen and (max-width: 640px) {
-  ul {
+  .g_content ul {
     flex-wrap: wrap;
   }
-  ulli {
+  .g_content ul li {
     width: 100%;
   }
 }

@@ -1,9 +1,10 @@
 import Ui from '../ui/Ui.js';
 
 class Popup extends Ui {
-    constructor() {
-        this.popupbtn = document.querySelector('.popup_btn')
-        this.popupEl = document.querySelector('.popup')
+    constructor(el, btn) {
+        super();
+        this.popupEl = document.querySelector(el)
+        this.popupbtn = document.querySelector(btn)
         this.body = document.querySelector('body')
 
 

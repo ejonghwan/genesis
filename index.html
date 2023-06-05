@@ -15,10 +15,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <!-- swiper 임시 -->
 
-
     <link rel="canonical" href="메인 유알엘 넣기">
     <link rel="stylesheet" href="./src/css/style.css">
-    <script src="./src/js/common/common.js" defer></script>
    
 </head>
 
@@ -135,7 +133,7 @@
                     <ul class="swiper-wrapper"> 
                         <li class="swiper-slide active">
                             <div class="g_inner main_visual_title">
-                                <h2>G90</h2>
+                                <h2 class="g_sans">G90</h2>
                                 <p>Lorem ipsum dolor sit amet <br />consectetur adipisicing elit.</p>
                             </div>
                             <figure class="main_visual_slide_video">
@@ -144,7 +142,7 @@
                         </li>
                         <li class="swiper-slide active">
                             <div class="g_inner main_visual_title">
-                                <h2>G70</h2>
+                                <h2 class="g_sans">G70</h2>
                                 <p>Lorem ipsum dolor sit amet <br />consectetur</p>
                             </div>
                             <figure class="main_visual_slide_video">
@@ -153,7 +151,7 @@
                         </li>
                         <li class="swiper-slide active">
                             <div class="g_inner main_visual_title">
-                                <h2>GV70</h2>
+                                <h2 class="g_sans">GV70</h2>
                                 <p>Lorem ipsum dolor sit amet <br />consectetur adipisicing elit.</p>
                             </div>
                             <figure class="main_visual_slide_video">
@@ -162,7 +160,7 @@
                         </li>
                         <li class="swiper-slide active">
                             <div class="g_inner main_visual_title">
-                                <h2>GV60</h2>
+                                <h2 class="g_sans">GV60</h2>
                                 <p>consectetur adipisicing elit. <br />Corrupti, tempora.</p>
                             </div>
                             <figure class="main_visual_slide_video">
@@ -797,6 +795,7 @@
         startTab: 0,
     })
 
+
     const aco = new Accordion('.footer_sec.all_menu', {
         startTab: false,
         oneTab: true,
@@ -806,6 +805,8 @@
         startTab: false,
         oneTab: true,
     })
+
+    const allMenuPopup = new Popup('.popup.all_menu', '.popup_btn')
 
     console.log(Popup)
  
