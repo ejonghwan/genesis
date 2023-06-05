@@ -194,4 +194,15 @@ button.header_all_menu {
     .header_nav {
         display: none;
     }
+
+    
+    .g_inner.accordion_mo.type1.pd_none {
+        .item {
+            margin-bottom: 0px;
+        }
+        .item:last-child {
+            padding: 20px 0;
+        }
+    } 
+    
 }

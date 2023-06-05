@@ -612,6 +612,12 @@ button.header_all_menu.on span.line:before {
   .header_nav {
     display: none;
   }
+  .g_inner.accordion_mo.type1.pd_none .item {
+    margin-bottom: 0px;
+  }
+  .g_inner.accordion_mo.type1.pd_none .item:last-child {
+    padding: 20px 0;
+  }
 }
 #footer .g_inner {
   margin-bottom: 0;
@@ -690,7 +696,7 @@ button.header_all_menu.on span.line:before {
 .footer_sec.all_menu .item .tit {
   color: #e7e7e7;
   font-weight: 500;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   display: block;
 }
 .footer_sec.all_menu .item ul > li {

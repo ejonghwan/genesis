@@ -21,7 +21,6 @@ class Accordion extends Ui {
         for(let i = 0; i < this.heads.length; i++) {
             this.setAttr(this.heads[i], 'data-acco_head', i)
             
-
             //접근성
             this.setAttr(this.heads[i], 'aria-expanded', 'false')
             this.setAttr(this.heads[i], 'aria-controls', `${this.selectName.replace(/[^\w\s]/g, '')}_accoHead_${i}`)
