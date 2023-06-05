@@ -1,21 +1,54 @@
 @charset "utf-8";
 
 
-// Genesis Sans
 
-// text
+// Spoqa Han Sans Neo
 @font-face{
-	font-family: 'GenesisSansKR';
-	src: local('GenesisSansKR'),
-	    url('../../src/assets/fonts/GenesisSansTextKRRegular.woff2') format('woff2');
-	font-weight: 200;
+	font-family: 'SpoqaHanSans';
+	src: local('SpoqaHanSans'),
+	    url('../../src/assets/fonts/SpoqaHanSansNeo-Thin.woff2') format('woff2');
+	font-weight: 300;
 	font-style: normal;
 	font-display:swap;
 }
 @font-face{
+	font-family: 'SpoqaHanSans';
+	src: local('SpoqaHanSans'),
+	    url('../../src/assets/fonts/SpoqaHanSansNeo-Light.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display:swap;
+}
+@font-face{
+	font-family: 'SpoqaHanSans';
+	src: local('SpoqaHanSans'),
+	    url('../../src/assets/fonts/SpoqaHanSansNeo-Regular.woff2') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+	font-display:swap;
+}
+@font-face{
+	font-family: 'SpoqaHanSans';
+	src: local('SpoqaHanSans'),
+	    url('../../src/assets/fonts/SpoqaHanSansNeo-Medium.woff2') format('woff2');
+	font-weight: 600;
+	font-style: normal;
+	font-display:swap;
+}
+@font-face{
+	font-family: 'SpoqaHanSans';
+	src: local('SpoqaHanSans'),
+	    url('../../src/assets/fonts/SpoqaHanSansNeo-Bold.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+	font-display:swap;
+}
+
+// Genesis Sans Head
+@font-face{
 	font-family: 'GenesisSansKR';
 	src: local('GenesisSansKR'),
-	    url('../../src/assets/fonts/GenesisSansTextOffice-Regular.woff2') format('woff2');
+	    url('../../src/assets/fonts/GenesisSansHeadKRLight.woff2') format('woff2');
 	font-weight: 300;
 	font-style: normal;
 	font-display:swap;
@@ -23,26 +56,8 @@
 @font-face{
 	font-family: 'GenesisSansKR';
 	src: local('GenesisSansKR'),
-	    url('../../src/assets/fonts/GenesisSansTextKRMedium.woff2') format('woff2');
-	font-weight: 400;
-	font-style: normal;
-	font-display:swap;
-}
-
-// head
-@font-face{
-	font-family: 'GenesisSansKR';
-	src: local('GenesisSansKR'),
-	    url('../../src/assets/fonts/GenesisSansHeadKRLight.woff2') format('woff2');
-	font-weight: 500;
-	font-style: normal;
-	font-display:swap;
-}
-@font-face{
-	font-family: 'GenesisSansKR';
-	src: local('GenesisSansKR'),
         url('../../src/assets/fonts/GenesisSansHeadKRRegular.woff2') format('woff2');
-	font-weight: 600;
+	font-weight: 400;
 	font-style: normal;
 	font-display:swap;
 }
@@ -50,10 +65,66 @@
 	font-family: 'GenesisSansKR';
 	src: local('GenesisSansKR'),
         url('../../src/assets/fonts/GenesisSansHeadOffice-Regular.woff2') format('woff2');
-	font-weight: 700;
+	font-weight: 500;
 	font-style: normal;
 	font-display:swap;
 }
+
+
+
+
+// Genesis Sans
+// text
+// @font-face{
+// 	font-family: 'GenesisSansKR';
+// 	src: local('GenesisSansKR'),
+// 	    url('../../src/assets/fonts/GenesisSansTextOffice-Regular.woff2') format('woff2');
+// 	font-weight: 200;
+// 	font-style: normal;
+// 	font-display:swap;
+// }
+// @font-face{
+// 	font-family: 'GenesisSansKR';
+// 	src: local('GenesisSansKR'),
+// 	    url('../../src/assets/fonts/GenesisSansTextKRRegular.woff2') format('woff2');
+// 	font-weight: 300;
+// 	font-style: normal;
+// 	font-display:swap;
+// }
+// @font-face{
+// 	font-family: 'GenesisSansKR';
+// 	src: local('GenesisSansKR'),
+// 	    url('../../src/assets/fonts/GenesisSansTextKRMedium.woff2') format('woff2');
+// 	font-weight: 400;
+// 	font-style: normal;
+// 	font-display:swap;
+// }
+
+// // head
+// @font-face{
+// 	font-family: 'GenesisSansKR';
+// 	src: local('GenesisSansKR'),
+// 	    url('../../src/assets/fonts/GenesisSansHeadKRLight.woff2') format('woff2');
+// 	font-weight: 500;
+// 	font-style: normal;
+// 	font-display:swap;
+// }
+// @font-face{
+// 	font-family: 'GenesisSansKR';
+// 	src: local('GenesisSansKR'),
+//         url('../../src/assets/fonts/GenesisSansHeadKRRegular.woff2') format('woff2');
+// 	font-weight: 600;
+// 	font-style: normal;
+// 	font-display:swap;
+// }
+// @font-face{
+// 	font-family: 'GenesisSansKR';
+// 	src: local('GenesisSansKR'),
+//         url('../../src/assets/fonts/GenesisSansHeadOffice-Regular.woff2') format('woff2');
+// 	font-weight: 700;
+// 	font-style: normal;
+// 	font-display:swap;
+// }
 
 
 

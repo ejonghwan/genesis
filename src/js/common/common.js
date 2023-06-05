@@ -1,5 +1,3 @@
-
-
 const common = {
     val: {
         body: document.querySelector('body'),
