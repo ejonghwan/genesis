@@ -1,6 +1,7 @@
 import Ui from '../ui/Ui.js';
 import Accessibility from './Accessibility.js'
 
+
 class Popup extends Ui {
     constructor(el, btn, { accList, nextFocus, prevFocus }) {
         super();
