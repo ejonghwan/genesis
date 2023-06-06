@@ -1,7 +1,8 @@
 import Ui from './Ui.js'
+import request from '../api/request.js'
 
 class Tab extends Ui {
-    constructor(el, { startTab }) {
+    constructor(el, { startTab, data }) {
         super()
         this.selectName = el
         this.startTab = startTab;
@@ -9,9 +10,13 @@ class Tab extends Ui {
         this.tabHeader = document.querySelector('.tab_header')
         this.tabHeaders = document.querySelectorAll(`${el} > .tab_wrap > .tab_header > .tab_header_item`)
         this.tabBodys = document.querySelectorAll(`${el} > .tab_wrap > .tab_body > li`)
+        this.data = data;
+
+        console.log('this.data:', this.data)
 
         this.init();
         this.el.addEventListener('click', this.action.bind(this), false)
+
     }
 
     init() {
@@ -50,6 +55,11 @@ class Tab extends Ui {
         this.toggleClass(this.tabBodys, this.tabBodys[idx], 'active')
         this.toggleAttr(this.tabHeaders, this.tabHeaders[idx], 'aria-selected', 'false', 'true')
         
+    }
+
+    async rander() {
+        const data = await request(this.data);
+        return data;
     }
 
 

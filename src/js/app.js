@@ -4,6 +4,8 @@ import Accordion from './ui/Accordion.js'
 import Popup from './ui/Popup.js'
 import Common from './ui/Common.js'
 import Accessibility from './ui/Accessibility.js'
+import Animete from './ui/Animete.js'
+
 
 
 
@@ -17,4 +19,5 @@ export {
     Accordion,
     Popup,
     Accessibility,
+    Animete,
 }

@@ -1,4 +1,5 @@
 [{
+    "type": "SEDAN",
     "carName": "G90",
     "engine": [
         { 
@@ -183,6 +184,7 @@
 },
 
 {
+    "type": "SEDAN",
     "carName": "G80",
     "engine": [
         { 
@@ -431,6 +433,7 @@
 },
 
 {
+    "type": "SEDAN",
     "carName": "G80 ELECTRIFIED",
     "engine": [
         { 
@@ -679,6 +682,7 @@
 },
 
 {
+    "type": "SEDAN",
     "carName": "G70",
     "engine": [
         { 

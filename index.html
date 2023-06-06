@@ -258,46 +258,12 @@
                             <ul class="tab_body">
                                 <li class="tab_body_item">
                                     <!-- tab1 -->
-                                    <div class="sub_visual_slide type1">
-                                        <ul>
-                                            <li>
-                                                <div class="img_wrap">
-                                                    <img src="./src/assets/images/car/g90/glosy_u/01.png" alt="">
-                                                </div>
-                                            </li>
-                                            <li></li>
-                                            <li></li>
-                                            <li></li>
-                                            <li></li>
-                                        </ul>
-                                        <div class="progress"></div>
+                                    <div class="swiper tab_all">
+                                        <div class="swiper-wrapper"></div>
+                                        <div class="swiper-pagination"></div>
                                     </div>
-                                    <div class="sub_visual_color">
-                                        <div>
-                                            <span>글로시 (유광)</span>
-                                            <ul>
-                                                <li><button type="button">color1</button></li>
-                                                <li><button type="button">color2</button></li>
-                                                <li><button type="button">color3</button></li>
-                                                <li><button type="button">color4</button></li>
-                                                <li><button type="button">color5</button></li>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <span>매트 (무광)</span>
-                                            <ul>
-                                                <li><button type="button">color1</button></li>
-                                                <li><button type="button">color2</button></li>
-                                                <li><button type="button">color3</button></li>
-                                                <li><button type="button">color4</button></li>
-                                                <li><button type="button">color5</button></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <a href="javascript">견적내러가기</a>
-                                        <a href="javascript">디자인 자세히보기</a>
-                                    </div>
+
+                                   
                                     <!-- //tab1 -->
                                 </li>
                                 <li class="tab_body_item">tab content2</li>
@@ -568,7 +534,7 @@
                 </div>
                 <!-- //멤버스 -->
                 <!-- 제네시스 -->
-                <div class="item">
+                <!-- <div class="item">
                     <button type="button" class="acco_head"><strong class="tit">제네시스</strong></button>
                     <ul class="acco_body">
                         <li><a href="javascript:;" role="button">브랜드</a></li>
@@ -576,10 +542,10 @@
                         <li><a href="javascript:;" role="button">모터쇼</a></li>
                         <li><a href="javascript:;" role="button">로드트립</a></li>
                     </ul>
-                </div>
+                </div> -->
                 <!-- //제네시스 -->
                 <!-- 고객센터 -->
-                <div class="item">
+                <!-- <div class="item">
                     <button type="button" class="acco_head"><strong class="tit">고객센터</strong></button>
                     <ul class="acco_body">
                         <li><a href="javascript:;" role="button">고객센터 안내</a></li>
@@ -590,12 +556,12 @@
                         <li><a href="javascript:;" role="button">PR 센터</a></li>
                         <li><a href="javascript:;" role="button">마이 페이지</a></li>
                     </ul>
-                </div>
+                </div> -->
                 <!-- //고객센터 -->
                 <!-- 마이페이지 -->
-                <div class="item con_none">
+                <!-- <div class="item con_none">
                     <button type="button" class="acco_head"><strong class="tit">마이페이지</strong></button>
-                </div>
+                </div> -->
                 <!-- //마이페이지 -->
             </div>
         </section>
@@ -645,7 +611,6 @@
                 © Copyright 2023 Hyundai Motor Company.<br />All Rights Reserved.
             </p>
         </section>
-        
     </footer>
     <!-- //footer -->
 </div>
@@ -789,12 +754,87 @@
 
 
 <script type="module">
-    import { Tab, Ui, Accordion, Popup } from './src/js/app.js';
+    import { Tab, Ui, Accordion, Popup, Animete } from './src/js/app.js';
 
-    const hh = new Tab('.tab.type1', {
+    const tab = new Tab('.tab.type1', {
         startTab: 0,
+        data: {
+            url: "./src/js/api/data/car.json", 
+            mode: 'cors',
+        } 
+        
     })
 
+    tab.rander().then(function(data){
+        let tab_all = document.querySelector('.tab_all .swiper-wrapper')
+        let d;
+        console.log(data)
+        console.log(tab_all)
+
+
+        for(let i = 0; i < data.length; i++) {
+            d += `
+                <div class="swiper-slide">
+                    <strong>${data[i].carName}</strong> 
+                    <ul class="main_car_info">
+                        <li>
+                            <div>${ data[i].outerColor.map(item => `
+                                <p>${item.material}</p>
+                                <div class="color_wrap">
+                                    ${item.value.map(value => `
+                                        <a role="button" href="javascript:;" class="color">
+                                            <img src="./src/assets/images/car/${data[i].carName}/${value.color}" alt="" />
+                                        </a>
+                                    ` ).join(' ')}
+                                </div>
+                            `).join(' ')}
+                            </div>
+
+                            <div>${ data[i].outerColor.map(item => `
+                                <div class="car_wrap">
+                                    ${item.value.map(value => `
+                                        <div class="car">
+                                            <img src="./src/assets/images/car/${data[i].carName}/${value.car}" alt="" />
+                                            <span class="color_name">
+                                            ${data[i].carName}/${value.colorName}
+                                            </span>
+                                        </div>
+                                       
+                                    ` ).join(' ')}
+                                </div>
+                            `).join(' ')}
+                            </div>
+
+                            
+                        </li>    
+                    </ul>
+                </div>
+            `;
+        }
+
+        tab_all.innerHTML += d 
+        
+    }).then(function() {
+        var swiper = new Swiper(".tab_all", {
+            pagination: {
+                el: ".swiper-pagination",
+                dynamicBullets: true,
+            },
+            grabCursor: true,
+            effect: "creative",
+            creativeEffect: {
+                prev: {
+                shadow: true,
+                translate: [0, 0, -400],
+                },
+                next: {
+                translate: ["100%", 0, 0],
+                },
+            },
+        });
+    });
+
+   
 
     const aco = new Accordion('.footer_sec.all_menu', {
         startTab: false,
@@ -812,11 +852,9 @@
         prevFocus: ".popup_btn",
     })
 
-    console.log(Popup)
- 
 </script>
 
-    
+
 
 </body>
 </html>

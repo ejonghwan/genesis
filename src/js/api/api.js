@@ -1,1 +1,3 @@
-'hoho'
+export default {
+    
+}
