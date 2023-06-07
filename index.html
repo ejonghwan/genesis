@@ -259,7 +259,10 @@
                                 <li class="tab_body_item">
                                     <!-- tab1 -->
                                     <div class="swiper tab_all">
-                                        <div class="swiper-wrapper"></div>
+                                        <div class="swiper-wrapper">
+                                        </div>
+                                        <div class="swiper-button-next"></div>
+                                         <div class="swiper-button-prev"></div>
                                         <div class="swiper-pagination"></div>
                                     </div>
 
@@ -748,6 +751,7 @@
         <!-- //팝업 바디 -->
     </section>
     <!-- //전체메뉴 팝업 -->
+
 </div>
 
 
@@ -767,13 +771,12 @@
         
     })      
 
-    tab.rander().then(function(data){
+    tab.rander().then(function(data) {
         let tab_all = document.querySelector('.tab_all .swiper-wrapper')
-        let d;
+        let d = '';
 
         for(let i = 0; i < data.length; i++) {
-            d += `
-                <div class="swiper-slide">
+            d += `<div class="swiper-slide">
                     <strong>${data[i].carName}</strong> 
                     <ul class="main_car_info">
                         <li>
@@ -782,15 +785,15 @@
                                 <div class="color_wrap">
                                     ${item.value.map((value, idx) => `
                                         <div>
-                                            <a role="button" href="javascript:;" class="color" data-color="${data[i].carName}_${idx}">
-                                                <img src="./src/assets/images/car/${data[i].carName}/${value.color}" alt="" />
+                                            <a role="button" href="javascript:;" class="color" data-color="${data[i].carName}_${item.type}_${idx}">
+                                                <img src="./src/assets/images/car/${data[i].carName}/${value.color}" alt="" loading="lazy" />
                                             </a>
                                         </div>
                                     ` ).join(' ')}
                                 </div>
                                 <div class="color_name_wrap">
                                     ${item.value.map((value, idx) => `
-                                        <span class="color_name" data-colorName="${data[i].carName}_${idx}">
+                                        <span class="color_name" data-colorName="${data[i].carName}_${item.type}_${idx}">
                                             ${value.colorName}
                                         </span>
                                     ` ).join(' ')}
@@ -801,7 +804,7 @@
                             <div>${ data[i].outerColor.map(item => `
                                 <div class="car_wrap">
                                     ${item.value.map((value, idx) => `
-                                        <div class="car" style="background-image: url(./src/assets/images/car/${data[i].carName}/${value.car})" data-car="${data[i].carName}_${idx}">
+                                        <div class="car" style="background-image: url(./src/assets/images/car/${data[i].carName}/${value.car})" data-car="${data[i].carName}_${item.type}_${idx}">
                                         </div>
                                     ` ).join(' ')}
                                 </div>
@@ -813,11 +816,15 @@
                 </div>
             `;
         }
-
         tab_all.innerHTML += d 
         
-    }).then(function() {
-        const tab_all = new Swiper(".tab_all", {
+
+
+        const tab_inner_swiper = new Swiper(".tab_all", {
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
             pagination: {
                 el: ".swiper-pagination",
                 dynamicBullets: true,
@@ -842,27 +849,19 @@
         const carImage = document.querySelectorAll('.swiper-slide.swiper-slide-visible.swiper-slide-active .car_wrap .car')
         const carName = document.querySelectorAll('.swiper-slide.swiper-slide-visible.swiper-slide-active .color_name_wrap .color_name')
        
-        console.log(colors)
-
         warp.addEventListener('click', e => {
-            // console.log(e.target.dataset)
             let target = ui.evtAssign('.color', e.target)
             let dataset = target.dataset.color;
             let selet_color = document.querySelector(`[data-color='${dataset}']`)
             let selet_colorName = document.querySelector(`[data-colorName='${dataset}']`)
             let selet_car = document.querySelector(`[data-car='${dataset}']`)
             
-
             ui.toggleClass(colors, selet_color, 'on')
             ui.toggleClass(carName, selet_colorName, 'on')
             ui.toggleClass(carImage, selet_car, 'on')
-
-
-            // console.log(selet_colorName, selet_car)
         })
 
-
-    });
+    })
     // tab
 
    
@@ -886,10 +885,10 @@
 
 
 
-const key = 'AIzaSyChzicx_fRjO6YQhLL-C8tDxCq0E46sxtk'
-const list = 'PLQytOX-GQNjpnWvXUwth7PTdoEA2kZX16'
-const num = 10;
-const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${list}&key=${key}&maxResults=${num}`
+// const key = 'AIzaSyChzicx_fRjO6YQhLL-C8tDxCq0E46sxtk'
+// const list = 'PLQytOX-GQNjpnWvXUwth7PTdoEA2kZX16'
+// const num = 10;
+// const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${list}&key=${key}&maxResults=${num}`
 
 </script>
 

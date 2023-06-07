@@ -1039,7 +1039,7 @@ figure::before {
   height: 50px;
 }
 .main_car_info .color_wrap .color.on {
-  border: 1px solid red;
+  border: 2px solid red;
 }
 .main_car_info .car_wrap {
   display: flex;

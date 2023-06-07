@@ -22,6 +22,7 @@
 
     "outerColor": [
         {
+            "type": "u",
             "material": "글로시 (유광)",
             "value": [
                 { 
@@ -78,6 +79,7 @@
             "price": "0"
         },
         {
+            "type": "m",
             "material": "매트 (무광)",
             "value": [
                 { 
@@ -207,6 +209,7 @@
 
     "outerColor": [
         {
+            "type": "u",
             "material": "글로시 (유광)",
             "value": [
                 { 
@@ -264,6 +267,7 @@
             "price": "0"
         },
         {
+            "type": "m",
             "material": "매트 (무광)",
             "value": [
                 { 
@@ -456,6 +460,7 @@
 
     "outerColor": [
         {
+            "type": "u",
             "material": "글로시 (유광)",
             "value": [
                 { 
@@ -513,6 +518,7 @@
             "price": "0"
         },
         {
+            "type": "m",
             "material": "매트 (무광)",
             "value": [
                 { 
@@ -705,6 +711,7 @@
 
     "outerColor": [
         {
+            "type": "u",
             "material": "글로시 (유광)", 
             "value": [
                 { 
@@ -766,6 +773,7 @@
             "price": "0"
         },
         {
+            "type": "m",
             "material": "매트 (무광)",
             "value": [
                 { 
