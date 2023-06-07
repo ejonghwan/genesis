@@ -3,18 +3,22 @@ import Ui from './Ui.js'
 
 
 class Ani extends Ui {
-    constructor(el, { limit }) {
+    constructor(el, { limit, els }) {
         super();
 
         this.el = el;
         this.num = 0;
         this.limit = limit;
-        this.speed = 2;
+        this.duration  = 300;
+        this.startTime = performance.now();
         this.animate();
+        this.els = els;
+        // this.prevEl = null;
+        console.log(this.els)
 
-        this.width 
-       
-        // console.log(el, limit)
+        for(let i = 0; i < this.els.length; i++) {
+            this.els[i].style.zIndex = 0;
+        }
 
     }
 
@@ -24,16 +28,30 @@ class Ani extends Ui {
     }
 
 
-    animate() {
+    animate(time) {
         let ani = requestAnimationFrame(this.animate.bind(this))
+
+        let timelast = time - this.startTime;
+		let progress = timelast / this.duration || 500;
+        progress < 0 && (progress = 0);
+		progress > 1 && (progress = 1);
+
+        console.log('t?', progress * window.innerWidth)
+        
+
         this.num++
         if(this.limit < this.num) {
             cancelAnimationFrame(ani)
+            // this.prevEl.style.zIndex = 0;
+            // this.prevEl = this.el;
+
+            // console.log('prevEl ?', this.prevEl)
         }
 
-        this.el.style.clip = `rect(0px, ${this.num * this.speed}px, 610px, 0px)`
+        this.el.style.clip = `rect(0px, ${progress * window.innerWidth}px, 610px, 0px)`
+        this.el.style.zIndex = 1
 
-        console.log(11)
+        // console.log(11)
     }
 
     

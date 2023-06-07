@@ -866,7 +866,7 @@
             carImage[i].style.clip = `rect(0px, ${w_width}px, 610px, 0px)`
         }
 
-        // console.log(carImage)
+
 
         warp.addEventListener('click', e => {
             // e.stopPropagation()
@@ -887,25 +887,11 @@
 
 
             carImage[num].style.clip = `rect(0px, ${0}px, 610px, 0px)`
-            let car_wrap = document.querySelector('.car_wrap')
-            // console.log(typeof num, console.log(num))
-            console.log(car_wrap)
-
-            
-            
             const aab = new Ani(carImage[num], {
                 limit: w_width,
+                els: carImage,
             })
 
-
-            // new Animete(car_wrap, {
-            //     prop: 'opacity',
-            //     value: 0,
-            //     duration: 500,
-            //     // callback() {
-            //     //     isActive = false
-            //     // }
-	        // });
         })
 
     })
