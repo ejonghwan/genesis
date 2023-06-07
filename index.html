@@ -756,6 +756,8 @@
 <script type="module">
     import { Tab, Ui, Accordion, Popup, Animete } from './src/js/app.js';
 
+
+    // tab
     const tab = new Tab('.tab.type1', {
         startTab: 0,
         data: {
@@ -763,13 +765,13 @@
             mode: 'cors',
         } 
         
-    })
+    })      
 
     tab.rander().then(function(data){
         let tab_all = document.querySelector('.tab_all .swiper-wrapper')
         let d;
-        console.log(data)
-        console.log(tab_all)
+        // console.log(data)
+        // console.log(tab_all)
 
 
         for(let i = 0; i < data.length; i++) {
@@ -781,10 +783,19 @@
                             <div>${ data[i].outerColor.map(item => `
                                 <p>${item.material}</p>
                                 <div class="color_wrap">
-                                    ${item.value.map(value => `
-                                        <a role="button" href="javascript:;" class="color">
-                                            <img src="./src/assets/images/car/${data[i].carName}/${value.color}" alt="" />
-                                        </a>
+                                    ${item.value.map((value, idx) => `
+                                        <div>
+                                            <a role="button" href="javascript:;" class="color" data-color="${data[i].carName}_${idx}">
+                                                <img src="./src/assets/images/car/${data[i].carName}/${value.color}" alt="" />
+                                            </a>
+                                        </div>
+                                    ` ).join(' ')}
+                                </div>
+                                <div class="color_name_wrap">
+                                    ${item.value.map((value, idx) => `
+                                        <span class="color_name" data-colorName="${data[i].carName}_${idx}">
+                                            ${value.colorName}
+                                        </span>
                                     ` ).join(' ')}
                                 </div>
                             `).join(' ')}
@@ -792,20 +803,14 @@
 
                             <div>${ data[i].outerColor.map(item => `
                                 <div class="car_wrap">
-                                    ${item.value.map(value => `
-                                        <div class="car">
-                                            <img src="./src/assets/images/car/${data[i].carName}/${value.car}" alt="" />
-                                            <span class="color_name">
-                                            ${data[i].carName}/${value.colorName}
-                                            </span>
+                                    ${item.value.map((value, idx) => `
+                                        <div class="car" style="background-image: url(./src/assets/images/car/${data[i].carName}/${value.car})" data-car="${data[i].carName}_${idx}">
                                         </div>
-                                       
                                     ` ).join(' ')}
                                 </div>
                             `).join(' ')}
                             </div>
 
-                            
                         </li>    
                     </ul>
                 </div>
@@ -815,7 +820,7 @@
         tab_all.innerHTML += d 
         
     }).then(function() {
-        var swiper = new Swiper(".tab_all", {
+        const tab_all = new Swiper(".tab_all", {
             pagination: {
                 el: ".swiper-pagination",
                 dynamicBullets: true,
@@ -832,7 +837,33 @@
                 },
             },
         });
+
+
+        const ui = new Ui();
+        const warp = document.querySelector('.tab_wrap')
+        const colors = document.querySelectorAll('.swiper-slide.swiper-slide-visible.swiper-slide-active .color_wrap .color')
+        const carImage = document.querySelectorAll('.swiper-slide.swiper-slide-visible.swiper-slide-active .color_wrap .car')
+        const carName = document.querySelectorAll('.swiper-slide.swiper-slide-visible.swiper-slide-active .color_wrap .color_name')
+
+        console.log(ui)
+       
+        // console.log(colors)
+        warp.addEventListener('click', e => {
+            // console.log(e.target.dataset)
+            let target = ui.evtAssign('.color', e.target)
+            let dataset = target.dataset.color;
+
+            
+
+            let selet_colorName = document.querySelectorAll(`[data-colorName='${dataset}']`)
+            let selet_car = document.querySelectorAll(`[data-car='${dataset}']`)
+
+            console.log(selet_colorName, selet_car)
+        })
+
+
     });
+    // tab
 
    
 
@@ -851,6 +882,14 @@
         nextFocus: ".pupup_type1_body",
         prevFocus: ".popup_btn",
     })
+
+
+
+
+const key = 'AIzaSyChzicx_fRjO6YQhLL-C8tDxCq0E46sxtk'
+const list = 'PLQytOX-GQNjpnWvXUwth7PTdoEA2kZX16'
+const num = 10;
+const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${list}&key=${key}&maxResults=${num}`
 
 </script>
 
