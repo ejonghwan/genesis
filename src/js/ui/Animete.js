@@ -24,7 +24,7 @@ class Animete {
 	}
 
 	run(time) {
-		console.log('run')
+		// console.log('run')
 		let timelast = time - this.startTime;
 		let progress = timelast / this.option.duration || 500;
 		progress < 0 && (progress = 0);

@@ -773,7 +773,9 @@
 
     tab.rander().then(function(data) {
         let tab_all = document.querySelector('.tab_all .swiper-wrapper')
+        let tab_all_conts = document.querySelector('.tab_all_conts')
         let d = '';
+        let g = '';
 
         for(let i = 0; i < data.length; i++) {
             d += `<div class="swiper-slide">
@@ -786,7 +788,7 @@
                                     ${item.value.map((value, idx) => `
                                         <div>
                                             <a role="button" href="javascript:;" class="color" data-color="${data[i].carName}_${item.type}_${idx}">
-                                                <img src="./src/assets/images/car/${data[i].carName}/${value.color}" alt="" loading="lazy" />
+                                                <img src="./src/assets/images/car/${data[i].carName}/${value.color}" alt="${value.colorName}" loading="lazy" />
                                             </a>
                                         </div>
                                     ` ).join(' ')}
@@ -804,7 +806,8 @@
                             <div>${ data[i].outerColor.map(item => `
                                 <div class="car_wrap">
                                     ${item.value.map((value, idx) => `
-                                        <div class="car" style="background-image: url(./src/assets/images/car/${data[i].carName}/${value.car}); background-attachment: fixed;" data-car="${data[i].carName}_${item.type}_${idx}">
+                                        <div class="car" data-car="${data[i].carName}_${item.type}_${idx}">
+                                            <img class="car_img" src="./src/assets/images/car/${data[i].carName}/${value.car}" alt="${data[i].carName} ${value.colorName} 색 차량 이미지" />
                                         </div>
                                     ` ).join(' ')}
                                 </div>
@@ -816,6 +819,8 @@
                 </div>
             `;
         }
+
+
         tab_all.innerHTML += d 
         
 
@@ -855,9 +860,11 @@
         ui.addClass(carImage[0], 'on')
 
         warp.addEventListener('click', e => {
-            e.stopPropagation()
-            e.preventDefault()
+            // e.stopPropagation()
+            // e.preventDefault()
             let target = ui.evtAssign('.color', e.target)
+            if(!target) return;
+
             let dataset = target.dataset.color;
             let selet_color = document.querySelector(`[data-color='${dataset}']`)
             let selet_colorName = document.querySelector(`[data-colorName='${dataset}']`)
@@ -867,17 +874,17 @@
             ui.toggleClass(carName, selet_colorName, 'on')
             ui.toggleClass(carImage, selet_car, 'on')
 
-            let num = Number(dataset.substr(dataset.length - 1))
-            let car_wrap = document.querySelector('.car_wrap')
+            // let num = Number(dataset.substr(dataset.length - 1))
+            // let car_wrap = document.querySelector('.car_wrap')
             // console.log(typeof num, console.log(num))
-            new Animete(car_wrap, {
-                prop: 'margin-left',
-                value: -100 * num + '%',
-                duration: 500,
-                // callback() {
-                //     isActive = false
-                // }
-	        });
+            // new Animete(car_wrap, {
+            //     prop: 'margin-left',
+            //     value: -100 * num + '%',
+            //     duration: 500,
+            //     // callback() {
+            //     //     isActive = false
+            //     // }
+	        // });
         })
 
     })

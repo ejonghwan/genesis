@@ -130,22 +130,17 @@
     .car_wrap {
         display: flex;
         position: relative;
-        width: 1000%;
+        width: 100%;
         overflow: hidden;
+        // height: 700px;
 
         .car {
-            // display: none;
-            display: block;
-            width: 10%;
+            display: none;
+            width: 100%;
             height: 100%;
-            // flex: 1 1 auto;
-            // position: absolute;
-            // top: 0;
-            // left: 0;
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
+            flex: 1 1 auto;
+            
+          
             // z-index: -1;
             // opacity: 0;
         }
@@ -166,4 +161,5 @@
     }
     
 }
+
 
