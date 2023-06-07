@@ -943,7 +943,7 @@ figure::before {
   }
 }
 .sub_visual {
-  height: 800px;
+  height: 100%;
   background-color: #080911;
   position: relative;
   padding-top: 60px;
@@ -1026,6 +1026,10 @@ figure::before {
   left: 0;
 }
 
+.main_car_info {
+  height: 700px;
+  background-color: #080911;
+}
 .main_car_info .color_wrap {
   display: flex;
 }
@@ -1034,17 +1038,15 @@ figure::before {
   width: 50px;
   height: 50px;
 }
-
-.main_car_info {
-  height: 500px;
-  background-color: #080911;
+.main_car_info .color_wrap .color.on {
+  border: 1px solid red;
 }
 .main_car_info .car_wrap {
   display: flex;
   position: relative;
 }
 .main_car_info .car_wrap .car {
-  display: block;
+  display: none;
   width: 100%;
   height: 500px;
   flex: 1 1 auto;
@@ -1053,6 +1055,15 @@ figure::before {
   left: 0;
   background-position: center;
   background-size: cover;
+}
+.main_car_info .car_wrap .car.on {
+  display: block;
+}
+.main_car_info .color_name_wrap .color_name {
+  display: none;
+}
+.main_car_info .color_name_wrap .color_name.on {
+  display: inline-block;
 }
 
 .evt_banner {

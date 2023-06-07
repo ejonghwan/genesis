@@ -770,9 +770,6 @@
     tab.rander().then(function(data){
         let tab_all = document.querySelector('.tab_all .swiper-wrapper')
         let d;
-        // console.log(data)
-        // console.log(tab_all)
-
 
         for(let i = 0; i < data.length; i++) {
             d += `
@@ -842,23 +839,26 @@
         const ui = new Ui();
         const warp = document.querySelector('.tab_wrap')
         const colors = document.querySelectorAll('.swiper-slide.swiper-slide-visible.swiper-slide-active .color_wrap .color')
-        const carImage = document.querySelectorAll('.swiper-slide.swiper-slide-visible.swiper-slide-active .color_wrap .car')
-        const carName = document.querySelectorAll('.swiper-slide.swiper-slide-visible.swiper-slide-active .color_wrap .color_name')
-
-        console.log(ui)
+        const carImage = document.querySelectorAll('.swiper-slide.swiper-slide-visible.swiper-slide-active .car_wrap .car')
+        const carName = document.querySelectorAll('.swiper-slide.swiper-slide-visible.swiper-slide-active .color_name_wrap .color_name')
        
-        // console.log(colors)
+        console.log(colors)
+
         warp.addEventListener('click', e => {
             // console.log(e.target.dataset)
             let target = ui.evtAssign('.color', e.target)
             let dataset = target.dataset.color;
-
+            let selet_color = document.querySelector(`[data-color='${dataset}']`)
+            let selet_colorName = document.querySelector(`[data-colorName='${dataset}']`)
+            let selet_car = document.querySelector(`[data-car='${dataset}']`)
             
 
-            let selet_colorName = document.querySelectorAll(`[data-colorName='${dataset}']`)
-            let selet_car = document.querySelectorAll(`[data-car='${dataset}']`)
+            ui.toggleClass(colors, selet_color, 'on')
+            ui.toggleClass(carName, selet_colorName, 'on')
+            ui.toggleClass(carImage, selet_car, 'on')
 
-            console.log(selet_colorName, selet_car)
+
+            // console.log(selet_colorName, selet_car)
         })
 
 
