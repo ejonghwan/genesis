@@ -57,7 +57,7 @@ class Tab extends Ui {
         
     }
 
-    async rander() {
+    async render() {
         const data = await request(this.data);
         return data;
     }

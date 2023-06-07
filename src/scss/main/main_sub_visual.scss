@@ -131,24 +131,32 @@
         display: flex;
         position: relative;
         width: 100%;
-        overflow: hidden;
         // height: 700px;
 
         .car {
-            display: none;
-            width: 100%;
-            height: 100%;
-            flex: 1 1 auto;
-            
-          
-            // z-index: -1;
-            // opacity: 0;
+            // display: none;
+
+            .car_img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: auto;
+                width: 100%;
+    
+                // clip: rect(0px, 800px, 610px, 0px);
+                z-index: 0;
+            }
         }
         .car.on {
             display: block;
-            // z-index: 1;
-            // opacity: 1;
+
+            .car_img {
+                // clip: rect(0px, 300px, 610px, 0px);
+                z-index: 1;
+            }
         }
+
+        
     }
 
     .color_name_wrap {

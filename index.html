@@ -758,7 +758,7 @@
 
 
 <script type="module">
-    import { Tab, Ui, Accordion, Popup, Animete } from './src/js/app.js';
+    import { Tab, Ui, Accordion, Popup, Animete, Ani } from './src/js/app.js';
 
 
     // tab
@@ -771,7 +771,9 @@
         
     })      
 
-    tab.rander().then(function(data) {
+    tab.render().then(function(data) {
+
+        // render setting
         let tab_all = document.querySelector('.tab_all .swiper-wrapper')
         let tab_all_conts = document.querySelector('.tab_all_conts')
         let d = '';
@@ -824,7 +826,7 @@
         tab_all.innerHTML += d 
         
 
-
+        // tab contents function
         const tab_inner_swiper = new Swiper(".tab_all", {
             navigation: {
                 nextEl: ".swiper-button-next",
@@ -851,13 +853,20 @@
         const ui = new Ui();
         const warp = document.querySelector('.tab_wrap')
         const colors = document.querySelectorAll('.swiper-slide.swiper-slide-visible.swiper-slide-active .color_wrap .color')
-        const carImage = document.querySelectorAll('.swiper-slide.swiper-slide-visible.swiper-slide-active .car_wrap .car')
+        const carImageWrap = document.querySelectorAll('.swiper-slide.swiper-slide-visible.swiper-slide-active .car_wrap .car')
+        const carImage = document.querySelectorAll('.swiper-slide.swiper-slide-visible.swiper-slide-active .car_wrap .car .car_img');
         const carName = document.querySelectorAll('.swiper-slide.swiper-slide-visible.swiper-slide-active .color_name_wrap .color_name')
-       
+        let w_width = window.innerWidth;
+
 
         ui.addClass(colors[0], 'on')
         ui.addClass(carName[0], 'on')
-        ui.addClass(carImage[0], 'on')
+        ui.addClass(carImageWrap[0], 'on')
+        for(let i = 0; i < carImage.length; i++) {
+            carImage[i].style.clip = `rect(0px, ${w_width}px, 610px, 0px)`
+        }
+
+        // console.log(carImage)
 
         warp.addEventListener('click', e => {
             // e.stopPropagation()
@@ -872,14 +881,26 @@
             
             ui.toggleClass(colors, selet_color, 'on')
             ui.toggleClass(carName, selet_colorName, 'on')
-            ui.toggleClass(carImage, selet_car, 'on')
+            ui.toggleClass(carImageWrap, selet_car, 'on')
 
-            // let num = Number(dataset.substr(dataset.length - 1))
-            // let car_wrap = document.querySelector('.car_wrap')
+            let num = Number(dataset.substr(dataset.length - 1))
+
+
+            carImage[num].style.clip = `rect(0px, ${0}px, 610px, 0px)`
+            let car_wrap = document.querySelector('.car_wrap')
             // console.log(typeof num, console.log(num))
+            console.log(car_wrap)
+
+            
+            
+            const aab = new Ani(carImage[num], {
+                limit: w_width,
+            })
+
+
             // new Animete(car_wrap, {
-            //     prop: 'margin-left',
-            //     value: -100 * num + '%',
+            //     prop: 'opacity',
+            //     value: 0,
             //     duration: 500,
             //     // callback() {
             //     //     isActive = false
@@ -891,6 +912,9 @@
     // tab
 
    
+    
+
+
 
     const aco = new Accordion('.footer_sec.all_menu', {
         startTab: false,
