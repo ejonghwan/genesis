@@ -1044,17 +1044,17 @@ figure::before {
 .main_car_info .car_wrap {
   display: flex;
   position: relative;
+  width: 1000%;
+  overflow: hidden;
 }
 .main_car_info .car_wrap .car {
-  display: none;
-  width: 100%;
-  height: 500px;
-  flex: 1 1 auto;
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: block;
+  width: 10%;
+  height: 100%;
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 .main_car_info .car_wrap .car.on {
   display: block;

@@ -804,7 +804,7 @@
                             <div>${ data[i].outerColor.map(item => `
                                 <div class="car_wrap">
                                     ${item.value.map((value, idx) => `
-                                        <div class="car" style="background-image: url(./src/assets/images/car/${data[i].carName}/${value.car})" data-car="${data[i].carName}_${item.type}_${idx}">
+                                        <div class="car" style="background-image: url(./src/assets/images/car/${data[i].carName}/${value.car}); background-attachment: fixed;" data-car="${data[i].carName}_${item.type}_${idx}">
                                         </div>
                                     ` ).join(' ')}
                                 </div>
@@ -849,7 +849,14 @@
         const carImage = document.querySelectorAll('.swiper-slide.swiper-slide-visible.swiper-slide-active .car_wrap .car')
         const carName = document.querySelectorAll('.swiper-slide.swiper-slide-visible.swiper-slide-active .color_name_wrap .color_name')
        
+
+        ui.addClass(colors[0], 'on')
+        ui.addClass(carName[0], 'on')
+        ui.addClass(carImage[0], 'on')
+
         warp.addEventListener('click', e => {
+            e.stopPropagation()
+            e.preventDefault()
             let target = ui.evtAssign('.color', e.target)
             let dataset = target.dataset.color;
             let selet_color = document.querySelector(`[data-color='${dataset}']`)
@@ -859,6 +866,18 @@
             ui.toggleClass(colors, selet_color, 'on')
             ui.toggleClass(carName, selet_colorName, 'on')
             ui.toggleClass(carImage, selet_car, 'on')
+
+            let num = Number(dataset.substr(dataset.length - 1))
+            let car_wrap = document.querySelector('.car_wrap')
+            // console.log(typeof num, console.log(num))
+            new Animete(car_wrap, {
+                prop: 'margin-left',
+                value: -100 * num + '%',
+                duration: 500,
+                // callback() {
+                //     isActive = false
+                // }
+	        });
         })
 
     })
