@@ -967,6 +967,7 @@
             carImageWrap = document.querySelectorAll(` ${tabType} .swiper-slide-active .car_wrap .car`)
             carImage = document.querySelectorAll(` ${tabType} .swiper-slide-active .car_wrap .car .car_img`);
             carName = document.querySelectorAll(` ${tabType} .swiper-slide-active .color_name_wrap .color_name`)
+            prev_el = carImage[0];
             console.log('chan', colors, tabType)
 
         }
@@ -990,11 +991,7 @@
             // click 
             return function(e) {
 
-                if(ui.evtAssign(`.tab_header`, e.target)) {
-                    console.log('asdasdasdasdasd')
-                }
 
-               
                 let target = ui.evtAssign(`${tabType} .color`, e.target)
                 if(!target) return;
                 if(target.classList.contains('on')) return;
