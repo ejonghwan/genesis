@@ -58,7 +58,7 @@ class Tab extends Ui {
         this.toggleClass(this.tabBodys, this.tabBodys[idx], 'active')
         this.toggleAttr(this.tabHeaders, this.tabHeaders[idx], 'aria-selected', 'false', 'true')
         
-        setTimeout(() => this.callback())
+        setTimeout(() => this.callback(idx))
         
     }
 

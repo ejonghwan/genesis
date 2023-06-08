@@ -793,137 +793,87 @@
             mode: 'cors',
         },
         current: function(idx) {
-            console.log(idx)
+            // console.log(idx)
         },
         callback: function() {
-            console.log('tab callback')
+            // console.log('tab callback')
             new Event('resize')
+            swi.update();
+            // swi.slideTo(0);
+            
         }
         
     })      
 
-    tab.render().then(function(data) {
-
+    tab.render().then(data => {
         // render setting
-        // all
-        let tab_all = document.querySelector('.tab_all .swiper-wrapper')
-        let d = '';
-        for(let i = 0; i < data.length; i++) {
-            d += `<div class="swiper-slide">
-                    <strong>${data[i].carName}</strong> 
-                    <ul class="main_car_info">
-                        <li>
-                            <div>${ data[i].outerColor.map(item => `
-                                <p>${item.material}</p>
-                                <div class="color_wrap">
-                                    ${item.value.map((value, idx) => `
-                                        <div>
-                                            <a role="button" href="javascript:;" class="color" data-color="${data[i].carName}_${item.type}_${idx}">
-                                                <img src="./src/assets/images/car/${data[i].carName}/${value.color}" alt="${value.colorName}" loading="lazy" />
-                                            </a>
-                                        </div>
-                                    ` ).join(' ')}
-                                </div>
-                                <div class="color_name_wrap">
-                                    ${item.value.map((value, idx) => `
-                                        <span class="color_name" data-colorName="${data[i].carName}_${item.type}_${idx}">
-                                            ${value.colorName}
-                                        </span>
-                                    ` ).join(' ')}
-                                </div>
-                            `).join(' ')}
-                            </div>
-
-                            <div>${ data[i].outerColor.map(item => `
-                                <div class="car_wrap">
-                                    ${item.value.map((value, idx) => `
-                                        <div class="car" data-car="${data[i].carName}_${item.type}_${idx}">
-                                            <img class="car_img" src="./src/assets/images/car/${data[i].carName}/${value.car}" alt="${data[i].carName} ${value.colorName} 색 차량 이미지" />
-                                        </div>
-                                    ` ).join(' ')}
-                                </div>
-                            `).join(' ')}
-                            </div>
-
-                        </li>    
-                    </ul>
-                </div>
-            `;
-        }
-        tab_all.innerHTML += d 
-
-        
-        // sedan
-        let tab_sedan = document.querySelector('.tab_sedan .swiper-wrapper')
-        console.log(tab_sedan)
-        let dd = '';
-        for(let i = 0; i < data.length; i++) {
-            dd += `<div class="swiper-slide">
-                    <strong>${data[i].carName}</strong> 
-                    <ul class="main_car_info">
-                        <li>
-                            <div>${ data[i].outerColor.map(item => `
-                                <p>${item.material}</p>
-                                <div class="color_wrap">
-                                    ${item.value.map((value, idx) => `
-                                        <div>
-                                            <a role="button" href="javascript:;" class="color" data-color="${data[i].carName}_${item.type}_${idx}">
-                                                <img src="./src/assets/images/car/${data[i].carName}/${value.color}" alt="${value.colorName}" loading="lazy" />
-                                            </a>
-                                        </div>
-                                    ` ).join(' ')}
-                                </div>
-                                <div class="color_name_wrap">
-                                    ${item.value.map((value, idx) => `
-                                        <span class="color_name" data-colorName="${data[i].carName}_${item.type}_${idx}">
-                                            ${value.colorName}
-                                        </span>
-                                    ` ).join(' ')}
-                                </div>
-                            `).join(' ')}
-                            </div>
-
-                            <div>${ data[i].outerColor.map(item => `
-                                <div class="car_wrap">
-                                    ${item.value.map((value, idx) => `
-                                        <div class="car" data-car="${data[i].carName}_${item.type}_${idx}">
-                                            <img class="car_img" src="./src/assets/images/car/${data[i].carName}/${value.car}" alt="${data[i].carName} ${value.colorName} 색 차량 이미지" />
-                                        </div>
-                                    ` ).join(' ')}
-                                </div>
-                            `).join(' ')}
-                            </div>
-
-                        </li>    
-                    </ul>
-                </div>
-            `;
-        }
-        tab_sedan.innerHTML += dd
-        
-
+        createDOM('.tab_all .swiper-wrapper', data)
+        createDOM('.tab_sedan .swiper-wrapper', data)
+        createDOM('.tab_suv .swiper-wrapper', data)
 
         const all_warp = document.querySelector('.tab_wrap .tab_all')
         const sedan_wrap = document.querySelector('.tab_wrap .tab_sedan')
         const suv_wrap = document.querySelector('.tab_wrap .tab_suv')
     
-        const all = cartab_type({ tabType: '.tab_all', });
-        const sedan = cartab_type({ tabType: '.tab_sedan', });
-        const suv = cartab_type({ tabType: '.tab_suv', })
+        const all = handleTabClick({ tabType: '.tab_all', });
+        const sedan = handleTabClick({ tabType: '.tab_sedan', });
+        const suv = handleTabClick({ tabType: '.tab_suv', })
 
         all_warp.addEventListener('click', e =>  all(e) )
         sedan_wrap.addEventListener('click', e => sedan(e) )
         suv_wrap.addEventListener('click', e => suv(e))
-     
-
-
-
-
     })
-    // tab
-
    
-    function cartab_type({ tabType }) {
+
+    function createDOM(el, data) {
+        const target = document.querySelector(el)
+        let str = '';
+        for(let i = 0; i < data.length; i++) {
+            str += `<div class="swiper-slide">
+                    <strong>${data[i].carName}</strong> 
+                    <ul class="main_car_info">
+                        <li>
+                            <div>${ data[i].outerColor.map(item => `
+                                <p>${item.material}</p>
+                                <div class="color_wrap">
+                                    ${item.value.map((value, idx) => `
+                                        <div>
+                                            <a role="button" href="javascript:;" class="color" data-color="${data[i].carName}_${item.type}_${idx}">
+                                                <img src="./src/assets/images/car/${data[i].carName}/${value.color}" alt="${value.colorName}" loading="lazy" />
+                                            </a>
+                                        </div>
+                                    ` ).join(' ')}
+                                </div>
+                                <div class="color_name_wrap">
+                                    ${item.value.map((value, idx) => `
+                                        <span class="color_name" data-colorName="${data[i].carName}_${item.type}_${idx}">
+                                            ${value.colorName}
+                                        </span>
+                                    ` ).join(' ')}
+                                </div>
+                            `).join(' ')}
+                            </div>
+
+                            <div>${ data[i].outerColor.map(item => `
+                                <div class="car_wrap">
+                                    ${item.value.map((value, idx) => `
+                                        <div class="car" data-car="${data[i].carName}_${item.type}_${idx}">
+                                            <img class="car_img" src="./src/assets/images/car/${data[i].carName}/${value.car}" alt="${data[i].carName} ${value.colorName} 색 차량 이미지" />
+                                        </div>
+                                    ` ).join(' ')}
+                                </div>
+                            `).join(' ')}
+                            </div>
+
+                        </li>    
+                    </ul>
+                </div>
+            `;
+        }
+        target.innerHTML += str
+    }
+   
+    function handleTabClick({ tabType }) {
         // swiper
         swi = new Swiper(tabType, {
             navigation: {
@@ -936,6 +886,7 @@
                 el: `${tabType} .swiper-pagination`,
                 dynamicBullets: true,
             },
+            // 아 스와이퍼 이거떔에 버그 ...
             // grabCursor: true,
             // effect: "creative",
             // creativeEffect: {
@@ -949,28 +900,22 @@
             // },
             on: {
                 init: function() {
-                    // console.log('init')
-                    // setTimeout(() => slideChange(tabType), 0)
+                    console.log('init')
                 },
                 slideChange: function() {
                     setTimeout(() => slideChange(tabType), 0)
+                    // console.log('ch')
                 },
                 resize: function() {
-                    setTimeout(() => slideChange(tabType), 0)
-                }
+                    setTimeout(() => slideChange(tabType), 500)
+
+                    console.log('resize', window.innerWidth)
+                },
+              
+
             }
         });
 
-
-        function slideChange(tabType) {
-            colors = document.querySelectorAll(` ${tabType} .swiper-slide-active .color_wrap .color`)
-            carImageWrap = document.querySelectorAll(` ${tabType} .swiper-slide-active .car_wrap .car`)
-            carImage = document.querySelectorAll(` ${tabType} .swiper-slide-active .car_wrap .car .car_img`);
-            carName = document.querySelectorAll(` ${tabType} .swiper-slide-active .color_name_wrap .color_name`)
-            prev_el = carImage[0];
-            console.log('chan', colors, tabType)
-
-        }
 
         // init
         const ui = new Ui();
@@ -981,17 +926,14 @@
         const w_width = window.innerWidth;
         let prev_el = carImage[0];
 
-        console.log('init carimg ? ', carImage)
-
         ui.addClass(colors[0], 'on')
         ui.addClass(carName[0], 'on')
         ui.addClass(carImageWrap[0], 'on')
         for(let i = 0; i < carImage.length; i++) { carImage[i].style.clip = `rect(0px, ${w_width}px, 610px, 0px)` }
+        
 
             // click 
             return function(e) {
-
-
                 let target = ui.evtAssign(`${tabType} .color`, e.target)
                 if(!target) return;
                 if(target.classList.contains('on')) return;
@@ -1001,9 +943,6 @@
                 let selet_colorName = document.querySelector(`${tabType} [data-colorName='${dataset}']`)
                 let selet_car = document.querySelector(`${tabType} [data-car='${dataset}']`)
                 
-
-                // console.log('dataset?', carImage)
-
                 ui.toggleClass(colors, selet_color, 'on')
                 ui.toggleClass(carName, selet_colorName, 'on')
                 ui.toggleClass(carImageWrap, selet_car, 'on')
@@ -1012,6 +951,7 @@
                 // if(prev_el) { prev_el.style.zIndex = 1; }
                 carImage[num].style.clip = `rect(0px, ${0}px, 610px, 0px)`
 
+                // console.log(carImage)
                 const ani = new Ani(carImage[num], {
                     limit: w_width,
                     els: carImage,
@@ -1023,8 +963,21 @@
                     }
                 })
             }
-    }
 
+        function slideChange(tabType) {
+            // console.log('slideChange')
+            colors = document.querySelectorAll(` ${tabType} .swiper-slide-active .color_wrap .color`)
+            carImageWrap = document.querySelectorAll(` ${tabType} .swiper-slide-active .car_wrap .car`)
+            carImage = document.querySelectorAll(` ${tabType} .swiper-slide-active .car_wrap .car .car_img`);
+            carName = document.querySelectorAll(` ${tabType} .swiper-slide-active .color_name_wrap .color_name`)
+            prev_el = carImage[0];
+            // console.log('???????????????????????', colors[0])
+            ui.addClass(colors[0], 'on')
+            ui.addClass(carName[0], 'on')
+            ui.addClass(carImageWrap[0], 'on')
+        }
+    }
+     // tab
 
     
 
