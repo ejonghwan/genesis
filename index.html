@@ -777,7 +777,6 @@
         let tab_all = document.querySelector('.tab_all .swiper-wrapper')
         let tab_all_conts = document.querySelector('.tab_all_conts')
         let d = '';
-        let g = '';
 
         for(let i = 0; i < data.length; i++) {
             d += `<div class="swiper-slide">
@@ -821,7 +820,6 @@
                 </div>
             `;
         }
-
 
         tab_all.innerHTML += d 
         
@@ -867,7 +865,7 @@
         }
 
 
-
+        let prev_el = carImage[0];
         warp.addEventListener('click', e => {
             // e.stopPropagation()
             // e.preventDefault()
@@ -879,18 +877,28 @@
             let selet_colorName = document.querySelector(`[data-colorName='${dataset}']`)
             let selet_car = document.querySelector(`[data-car='${dataset}']`)
             
+
             ui.toggleClass(colors, selet_color, 'on')
             ui.toggleClass(carName, selet_colorName, 'on')
             ui.toggleClass(carImageWrap, selet_car, 'on')
 
+            
             let num = Number(dataset.substr(dataset.length - 1))
-
-
+            if(prev_el) { 
+                prev_el.style.zIndex = 1; 
+            }
             carImage[num].style.clip = `rect(0px, ${0}px, 610px, 0px)`
-            const aab = new Ani(carImage[num], {
+            const ani = new Ani(carImage[num], {
                 limit: w_width,
                 els: carImage,
+                prev_el: prev_el,
                 duration: 300,
+                callback: () => {
+                    prev_el = carImage[num]
+                    console.log('callback!!', prev_el)
+
+
+                }
             })
 
         })

@@ -3,7 +3,7 @@ import Ui from './Ui.js'
 
 
 class Ani extends Ui {
-    constructor(el, { limit, els, duration }) {
+    constructor(el, { limit, els, prev_el, duration, callback }) {
         super();
 
         this.el = el;
@@ -12,18 +12,22 @@ class Ani extends Ui {
         this.duration = duration;
         this.startTime = performance.now();
         this.els = els;
-        // this.prevEl = null;
-        this.init();
-        this.animate();
-        
+        this.prev_el = prev_el;
+        this.callback = callback;
 
+        console.log('constr???', prev_el)
+
+        this.init();
+        requestAnimationFrame(this.animate.bind(this))
+        
     }
 
     init() {
         for(let i = 0; i < this.els.length; i++) {
             this.els[i].style.zIndex = 0;
         }
-        this.el.style.zIndex = 1;
+        this.prev_el.style.zIndex = 1;
+        this.el.style.zIndex = 2;
     }
 
 
@@ -33,24 +37,16 @@ class Ani extends Ui {
 
 
     animate(time) {
-        let ani = requestAnimationFrame(this.animate.bind(this))
-
         let timelast = time - this.startTime;
-        // console.log(timelast)
 		let progress = timelast / this.duration || 500;
+
         progress < 0 && (progress = 0);
 		progress > 1 && (progress = 1);
+        progress < 1 ? requestAnimationFrame(this.animate.bind(this)) : this.callback && setTimeout(this.callback, 0);
 
-        // console.log('t?', progress * window.innerWidth)
-        
+        console.log('next?', progress)
 
-        this.num++
-        if(this.limit < this.num) {
-            cancelAnimationFrame(ani)
-            // this.prevEl.style.zIndex = 0;
-            // this.prevEl = this.el;
-        }
-        this.el.style.clip = `rect(0px, ${progress * window.innerWidth}px, 610px, 0px)`
+        this.el.style.clip = `rect(0px, ${progress * this.limit}px, 610px, 0px)`
     }
 
     

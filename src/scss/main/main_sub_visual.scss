@@ -134,25 +134,22 @@
         // height: 700px;
 
         .car {
-            // display: none;
-
             .car_img {
                 position: absolute;
                 top: 0;
                 left: 0;
                 height: auto;
                 width: 100%;
-    
                 // clip: rect(0px, 800px, 610px, 0px);
+                // display: none; 이건 나중에 스크립트로 최적화
                 z-index: 0;
             }
         }
         .car.on {
-            display: block;
-
             .car_img {
                 // clip: rect(0px, 300px, 610px, 0px);
-                z-index: 1;
+                display: block;
+                z-index: 2;
             }
         }
 

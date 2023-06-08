@@ -1054,11 +1054,9 @@ figure::before {
   width: 100%;
   z-index: 0;
 }
-.main_car_info .car_wrap .car.on {
-  display: block;
-}
 .main_car_info .car_wrap .car.on .car_img {
-  z-index: 1;
+  display: block;
+  z-index: 2;
 }
 .main_car_info .color_name_wrap .color_name {
   display: none;
