@@ -1052,6 +1052,7 @@ figure::before {
   left: 0;
   height: auto;
   width: 100%;
+  z-index: 0;
 }
 .main_car_info .car_wrap .car.on {
   display: block;
