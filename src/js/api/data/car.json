@@ -438,7 +438,7 @@
 
 {
     "type": "SEDAN",
-    "carName": "G80 ELECTRIFIED",
+    "carName": "G80_ELECTRIFIED",
     "engine": [
         { 
             "engineType": "가솔린 2.5T",

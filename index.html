@@ -783,6 +783,7 @@
 
     import { Tab, Ui, Accordion, Popup, Animete, Ani } from './src/js/app.js';
 
+    let swi = null;
 
     // tab
     const tab = new Tab('.tab.type1', {
@@ -790,14 +791,20 @@
         data: {
             url: "./src/js/api/data/car.json", 
             mode: 'cors',
-        } 
+        },
+        current: function(idx) {
+            console.log(idx)
+        },
+        callback: function() {
+            console.log('tab callback')
+            new Event('resize')
+        }
         
     })      
 
     tab.render().then(function(data) {
 
         // render setting
-
         // all
         let tab_all = document.querySelector('.tab_all .swiper-wrapper')
         let d = '';
@@ -845,10 +852,10 @@
         }
         tab_all.innerHTML += d 
 
-
         
         // sedan
         let tab_sedan = document.querySelector('.tab_sedan .swiper-wrapper')
+        console.log(tab_sedan)
         let dd = '';
         for(let i = 0; i < data.length; i++) {
             dd += `<div class="swiper-slide">
@@ -892,100 +899,137 @@
                 </div>
             `;
         }
-
         tab_sedan.innerHTML += dd
         
+
 
         const all_warp = document.querySelector('.tab_wrap .tab_all')
         const sedan_wrap = document.querySelector('.tab_wrap .tab_sedan')
         const suv_wrap = document.querySelector('.tab_wrap .tab_suv')
     
         const all = cartab_type({ tabType: '.tab_all', });
-        const se = cartab_type({ tabType: '.tab_sedan', });
+        const sedan = cartab_type({ tabType: '.tab_sedan', });
         const suv = cartab_type({ tabType: '.tab_suv', })
 
         all_warp.addEventListener('click', e =>  all(e) )
-        sedan_wrap.addEventListener('click', e => se(e) )
+        sedan_wrap.addEventListener('click', e => sedan(e) )
         suv_wrap.addEventListener('click', e => suv(e))
-       
+     
+
+
+
+
     })
     // tab
 
    
     function cartab_type({ tabType }) {
-        // e.stopPropagation()
-        // e.preventDefault()
-
-        new Swiper(tabType, {
+        // swiper
+        swi = new Swiper(tabType, {
             navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
+                nextEl: `${tabType} .swiper-button-next`,
+                prevEl: `${tabType} .swiper-button-prev`,
             },
+            observer: true,
+            observeParents: true, 
             pagination: {
-                el: ".swiper-pagination",
+                el: `${tabType} .swiper-pagination`,
                 dynamicBullets: true,
             },
-            grabCursor: true,
-            effect: "creative",
-            creativeEffect: {
-                prev: {
-                shadow: true,
-                translate: [0, 0, -400],
+            // grabCursor: true,
+            // effect: "creative",
+            // creativeEffect: {
+            //     prev: {
+            //     shadow: true,
+            //     translate: [0, 0, -400],
+            //     },
+            //     next: {
+            //     translate: ["100%", 0, 0],
+            //     },
+            // },
+            on: {
+                init: function() {
+                    // console.log('init')
+                    // setTimeout(() => slideChange(tabType), 0)
                 },
-                next: {
-                translate: ["100%", 0, 0],
+                slideChange: function() {
+                    setTimeout(() => slideChange(tabType), 0)
                 },
-            },
+                resize: function() {
+                    setTimeout(() => slideChange(tabType), 0)
+                }
+            }
         });
 
+
+        function slideChange(tabType) {
+            colors = document.querySelectorAll(` ${tabType} .swiper-slide-active .color_wrap .color`)
+            carImageWrap = document.querySelectorAll(` ${tabType} .swiper-slide-active .car_wrap .car`)
+            carImage = document.querySelectorAll(` ${tabType} .swiper-slide-active .car_wrap .car .car_img`);
+            carName = document.querySelectorAll(` ${tabType} .swiper-slide-active .color_name_wrap .color_name`)
+            console.log('chan', colors, tabType)
+
+        }
+
+        // init
         const ui = new Ui();
-        const colors = document.querySelectorAll(` ${tabType} .swiper-slide.swiper-slide-visible.swiper-slide-active .color_wrap .color`)
-        const carImageWrap = document.querySelectorAll(` ${tabType} .swiper-slide.swiper-slide-visible.swiper-slide-active .car_wrap .car`)
-        const carImage = document.querySelectorAll(` ${tabType} .swiper-slide.swiper-slide-visible.swiper-slide-active .car_wrap .car .car_img`);
-        const carName = document.querySelectorAll(` ${tabType} .swiper-slide.swiper-slide-visible.swiper-slide-active .color_name_wrap .color_name`)
+        let colors = document.querySelectorAll(` ${tabType} .swiper-slide-active .color_wrap .color`)
+        let carImageWrap = document.querySelectorAll(` ${tabType} .swiper-slide-active .car_wrap .car`)
+        let carImage = document.querySelectorAll(` ${tabType} .swiper-slide-active .car_wrap .car .car_img`);
+        let carName = document.querySelectorAll(` ${tabType} .swiper-slide-active .color_name_wrap .color_name`)
         const w_width = window.innerWidth;
         let prev_el = carImage[0];
+
+        console.log('init carimg ? ', carImage)
 
         ui.addClass(colors[0], 'on')
         ui.addClass(carName[0], 'on')
         ui.addClass(carImageWrap[0], 'on')
         for(let i = 0; i < carImage.length; i++) { carImage[i].style.clip = `rect(0px, ${w_width}px, 610px, 0px)` }
 
-        console.log(carImage)
+            // click 
             return function(e) {
 
-            console.log(333, tabType)
-            let target = ui.evtAssign(`${tabType} .color`, e.target)
-            if(!target) return;
-            if(target.classList.contains('on')) return;
-
-            let dataset = target.dataset.color;
-            let selet_color = document.querySelector(`[data-color='${dataset}']`)
-            let selet_colorName = document.querySelector(`[data-colorName='${dataset}']`)
-            let selet_car = document.querySelector(`[data-car='${dataset}']`)
-            
-
-            ui.toggleClass(colors, selet_color, 'on')
-            ui.toggleClass(carName, selet_colorName, 'on')
-            ui.toggleClass(carImageWrap, selet_car, 'on')
-
-            let num = Number(dataset.substr(dataset.length - 1))
-            if(prev_el) { prev_el.style.zIndex = 1; }
-            carImage[num].style.clip = `rect(0px, ${0}px, 610px, 0px)`
-
-            const ani = new Ani(carImage[num], {
-                limit: w_width,
-                els: carImage,
-                prev_el: prev_el,
-                duration: 300,
-                callback: () => {
-                    prev_el = carImage[num]
-                    // console.log('callback!!', prev_el)
+                if(ui.evtAssign(`.tab_header`, e.target)) {
+                    console.log('asdasdasdasdasd')
                 }
-            })
-        }
+
+               
+                let target = ui.evtAssign(`${tabType} .color`, e.target)
+                if(!target) return;
+                if(target.classList.contains('on')) return;
+
+                let dataset = target.dataset.color;
+                let selet_color = document.querySelector(`${tabType} [data-color='${dataset}']`)
+                let selet_colorName = document.querySelector(`${tabType} [data-colorName='${dataset}']`)
+                let selet_car = document.querySelector(`${tabType} [data-car='${dataset}']`)
+                
+
+                // console.log('dataset?', carImage)
+
+                ui.toggleClass(colors, selet_color, 'on')
+                ui.toggleClass(carName, selet_colorName, 'on')
+                ui.toggleClass(carImageWrap, selet_car, 'on')
+
+                let num = Number(dataset.substr(dataset.length - 1))
+                // if(prev_el) { prev_el.style.zIndex = 1; }
+                carImage[num].style.clip = `rect(0px, ${0}px, 610px, 0px)`
+
+                const ani = new Ani(carImage[num], {
+                    limit: w_width,
+                    els: carImage,
+                    prev_el: prev_el,
+                    duration: 300,
+                    callback: () => {
+                        prev_el = carImage[num]
+                        // console.log('callback!!', prev_el)
+                    }
+                })
+            }
     }
 
+
+    
 
 
 

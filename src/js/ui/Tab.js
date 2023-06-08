@@ -2,7 +2,7 @@ import Ui from './Ui.js'
 import request from '../api/request.js'
 
 class Tab extends Ui {
-    constructor(el, { startTab, data }) {
+    constructor(el, { startTab, data, current, callback }) {
         super()
         this.selectName = el
         this.startTab = startTab;
@@ -11,6 +11,8 @@ class Tab extends Ui {
         this.tabHeaders = document.querySelectorAll(`${el} > .tab_wrap > .tab_header > .tab_header_item`)
         this.tabBodys = document.querySelectorAll(`${el} > .tab_wrap > .tab_body > li`)
         this.data = data;
+        this.callback = callback;
+        this.current = current;
 
         console.log('this.data:', this.data)
 
@@ -49,11 +51,14 @@ class Tab extends Ui {
         e.stopPropagation()
         let addEl = this.evtAssign('.tab_header_item', e.target) //타겟보다 아래요소 클릭됐을 때
         if(!addEl) return; //위임 중 다른거 클릭됐을 때
- 
+        
         let toggle = this.toggleClass(this.tabHeaders, addEl, 'active')
         let idx = toggle.dataset.tab;
+        this.current(idx)
         this.toggleClass(this.tabBodys, this.tabBodys[idx], 'active')
         this.toggleAttr(this.tabHeaders, this.tabHeaders[idx], 'aria-selected', 'false', 'true')
+        
+        setTimeout(() => this.callback())
         
     }
 
