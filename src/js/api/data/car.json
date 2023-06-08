@@ -214,23 +214,23 @@
             "value": [
                 { 
                     "colorName": "우유니 화이트 [UYH]",
-                    "color": "01_g80-23my-bto-exterior-uyuni-white-colorchip-160x160-kr",
-                    "car": "01_g80-23my-bto-exterior-uyuni-white-desktop-1920x960-kr"
+                    "color": "01_g80-23my-bto-exterior-uyuni-white-colorchip-160x160-kr.png",
+                    "car": "01_g80-23my-bto-exterior-uyuni-white-desktop-1920x960-kr.png"
                 },
                 { 
                     "colorName": "세빌 실버 [SSS]",
-                    "color": "02_g80-23my-bto-exterior-savile-silver-colorchip-160x160-kr",
-                    "car": "02_g80-23my-bto-exterior-savile-silver-desktop-1920x960-kr"
+                    "color": "02_g80-23my-bto-exterior-savile-silver-colorchip-160x160-kr.png",
+                    "car": "02_g80-23my-bto-exterior-savile-silver-desktop-1920x960-kr.png"
                  },
                 { 
                     "colorName": "마칼루 그레이 [NCM]",
-                    "color": "03_g80-23my-bto-exterior-makalu-gray-colorchip-160x160-kr",
-                    "car": "03_g80-23my-bto-exterior-makalu-gray-desktop-pc-1920x960-kr"
+                    "color": "03_g80-23my-bto-exterior-makalu-gray-colorchip-160x160-kr.png",
+                    "car": "03_g80-23my-bto-exterior-makalu-gray-desktop-pc-1920x960-kr.png"
                  },
                 { 
                     "colorName": "비크 블랙 [PH3]",
-                    "color": "04_g80-23my-bto-exterior-vik-black-colorchip-160x160-kr",
-                    "car": "04_g80-23my-bto-exterior-vik-black-desktop-pc-1920x960-kr" 
+                    "color": "04_g80-23my-bto-exterior-vik-black-colorchip-160x160-kr.png",
+                    "car": "04_g80-23my-bto-exterior-vik-black-desktop-pc-1920x960-kr.png" 
                 },
 
                 { 
