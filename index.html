@@ -269,8 +269,24 @@
                                    
                                     <!-- //tab1 -->
                                 </li>
-                                <li class="tab_body_item">tab content2</li>
-                                <li class="tab_body_item">tab content3</li>
+                                <li class="tab_body_item">
+                                    <div class="swiper tab_sedan">
+                                        <div class="swiper-wrapper">
+                                        </div>
+                                        <div class="swiper-button-next"></div>
+                                         <div class="swiper-button-prev"></div>
+                                        <div class="swiper-pagination"></div>
+                                    </div>
+                                </li>
+                                <li class="tab_body_item">
+                                    <div class="swiper tab_suv">
+                                        <div class="swiper-wrapper">
+                                        </div>
+                                        <div class="swiper-button-next"></div>
+                                         <div class="swiper-button-prev"></div>
+                                        <div class="swiper-pagination"></div>
+                                    </div>
+                                </li>
                             </ul>
                             <!-- tab_body -->
                         </div>
@@ -774,8 +790,10 @@
     tab.render().then(function(data) {
 
         // render setting
+
+        // all
         let tab_all = document.querySelector('.tab_all .swiper-wrapper')
-        let tab_all_conts = document.querySelector('.tab_all_conts')
+        // let tab_all_conts = document.querySelector('.tab_all_conts')
         let d = '';
 
         for(let i = 0; i < data.length; i++) {
@@ -825,7 +843,7 @@
         
 
         // tab contents function
-        const tab_inner_swiper = new Swiper(".tab_all", {
+        new Swiper(".tab_all", {
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
@@ -846,6 +864,82 @@
                 },
             },
         });
+
+
+        // sedan
+        let tab_sedan = document.querySelector('.tab_sedan .swiper-wrapper')
+        // let tab_sedan_conts = document.querySelector('.tab_sedan_conts')
+        let dd = '';
+
+        for(let i = 0; i < data.length; i++) {
+            dd += `<div class="swiper-slide">
+                    <strong>${data[i].carName}</strong> 
+                    <ul class="main_car_info">
+                        <li>
+                            <div>${ data[i].outerColor.map(item => `
+                                <p>${item.material}</p>
+                                <div class="color_wrap">
+                                    ${item.value.map((value, idx) => `
+                                        <div>
+                                            <a role="button" href="javascript:;" class="color" data-color="${data[i].carName}_${item.type}_${idx}">
+                                                <img src="./src/assets/images/car/${data[i].carName}/${value.color}" alt="${value.colorName}" loading="lazy" />
+                                            </a>
+                                        </div>
+                                    ` ).join(' ')}
+                                </div>
+                                <div class="color_name_wrap">
+                                    ${item.value.map((value, idx) => `
+                                        <span class="color_name" data-colorName="${data[i].carName}_${item.type}_${idx}">
+                                            ${value.colorName}
+                                        </span>
+                                    ` ).join(' ')}
+                                </div>
+                            `).join(' ')}
+                            </div>
+
+                            <div>${ data[i].outerColor.map(item => `
+                                <div class="car_wrap">
+                                    ${item.value.map((value, idx) => `
+                                        <div class="car" data-car="${data[i].carName}_${item.type}_${idx}">
+                                            <img class="car_img" src="./src/assets/images/car/${data[i].carName}/${value.car}" alt="${data[i].carName} ${value.colorName} 색 차량 이미지" />
+                                        </div>
+                                    ` ).join(' ')}
+                                </div>
+                            `).join(' ')}
+                            </div>
+
+                        </li>    
+                    </ul>
+                </div>
+            `;
+        }
+
+        tab_sedan.innerHTML += dd
+        
+
+        // tab contents function
+        new Swiper(".tab_sedan", {
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                dynamicBullets: true,
+            },
+            grabCursor: true,
+            effect: "creative",
+            creativeEffect: {
+                prev: {
+                shadow: true,
+                translate: [0, 0, -400],
+                },
+                next: {
+                translate: ["100%", 0, 0],
+                },
+            },
+        });
+
 
 
         const ui = new Ui();
@@ -871,6 +965,7 @@
             // e.preventDefault()
             let target = ui.evtAssign('.color', e.target)
             if(!target) return;
+            if(target.classList.contains('on')) return;
 
             let dataset = target.dataset.color;
             let selet_color = document.querySelector(`[data-color='${dataset}']`)
@@ -882,11 +977,8 @@
             ui.toggleClass(carName, selet_colorName, 'on')
             ui.toggleClass(carImageWrap, selet_car, 'on')
 
-            
             let num = Number(dataset.substr(dataset.length - 1))
-            if(prev_el) { 
-                prev_el.style.zIndex = 1; 
-            }
+            if(prev_el) { prev_el.style.zIndex = 1; }
             carImage[num].style.clip = `rect(0px, ${0}px, 610px, 0px)`
             const ani = new Ani(carImage[num], {
                 limit: w_width,
@@ -895,14 +987,11 @@
                 duration: 300,
                 callback: () => {
                     prev_el = carImage[num]
-                    console.log('callback!!', prev_el)
-
-
+                    // console.log('callback!!', prev_el)
                 }
             })
-
+            
         })
-
     })
     // tab
 
