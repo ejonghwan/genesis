@@ -794,12 +794,16 @@
         },
         current: function(idx) {
             // console.log(idx)
+            
         },
         callback: function() {
             // console.log('tab callback')
-            new Event('resize')
-            swi.update();
+            // let evt = new Event('resize')
+            // window.dispatchEvent(evt);
+            // swi.update();
             // swi.slideTo(0);
+            console.log(swi.el.click())
+
             
         }
         
@@ -901,15 +905,19 @@
             on: {
                 init: function() {
                     console.log('init')
+                    
                 },
                 slideChange: function() {
                     setTimeout(() => slideChange(tabType), 0)
                     // console.log('ch')
                 },
                 resize: function() {
-                    setTimeout(() => slideChange(tabType), 500)
+                    setTimeout(() => {
+                        slideChange(tabType); 
+                        console.log('swiper resize', window.innerWidth)
+                    }, 0)
 
-                    console.log('resize', window.innerWidth)
+                    
                 },
               
 

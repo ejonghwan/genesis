@@ -15,7 +15,7 @@ class Ani extends Ui {
         this.prev_el = prev_el;
         this.callback = callback;
 
-        console.log('constr???', prev_el)
+        // console.log('constr???', prev_el)
 
         this.init();
         requestAnimationFrame(this.animate.bind(this))
