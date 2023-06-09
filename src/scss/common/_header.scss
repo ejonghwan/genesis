@@ -197,6 +197,15 @@ button.header_all_menu {
     header {
 
     }
+
+    button.header_all_menu {
+        position: relative;
+        right: 0px;
+    }
+
+    .header_ico {
+        position: static;
+    }
 }
 
 
