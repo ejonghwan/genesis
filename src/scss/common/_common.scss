@@ -53,6 +53,38 @@ body {
 }
 
 
+.arrow_btn {
+    position: relative;
+    padding-right: 15px;
+    &::before {
+        content: "";
+        display: block;
+        width: 6px;
+        height: 1px;
+        position: absolute;
+        top: -4px;
+        bottom: 0;
+        margin: auto;
+        right: 0px;
+        background-color: #fff;
+        transform: rotate(45deg);
+    }   
+    &::after {
+        content: "";
+        display: block;
+        width: 6px;
+        height: 1px;
+        position: absolute;
+        top: 4px;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        background-color: #fff;
+        transform: rotate(-45deg);
+    }
+}
+
+
 #skip_conts {
     position: relative;
 
@@ -189,6 +221,7 @@ h3 {font-size: 16px; color: #444;}
 }
 
 
+
 // mid line 
 .btw_line {
     display: flex;
@@ -266,7 +299,7 @@ h3 {font-size: 16px; color: #444;}
 .popup.on {
     display: block !important;
     position: fixed;
-    top: 80px;
+    top: 70px;
     left: 0;
     width: 100%;
     height: 100%;
@@ -335,6 +368,14 @@ body.popop_active {
 }
 
 
+
+
+
+// swiper 공통
+.swiper-button-next.swiper-button-disabled, 
+.swiper-button-prev.swiper-button-disabled {
+    opacity: .5;
+}
 
 
 

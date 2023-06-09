@@ -1,6 +1,6 @@
-$pc: 1100px;
-$tablet: 980px;
-$mobile: 640px;
+$pc: 1200px;
+$tablet: 1100px;
+$mobile: 760px;
 
 @mixin pc {
     @media screen and (max-width: $pc) {
