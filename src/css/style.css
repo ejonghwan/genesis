@@ -1056,7 +1056,7 @@ figure::before {
 }
 .main_car_info .car_wrap .car.on .car_img {
   display: block;
-  z-index: 2;
+  z-index: 2 !important;
 }
 .main_car_info .color_name_wrap .color_name {
   display: none;

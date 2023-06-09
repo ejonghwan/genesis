@@ -5,7 +5,7 @@ import Popup from './ui/Popup.js'
 import Common from './ui/Common.js'
 import Accessibility from './ui/Accessibility.js'
 import Animete from './ui/Animete.js'
-import Ani from './ui/Ani.js'
+import ClipAni from './ui/ClipAni.js'
 
 
 
@@ -21,5 +21,5 @@ export {
     Popup,
     Accessibility,
     Animete,
-    Ani,
+    ClipAni,
 }

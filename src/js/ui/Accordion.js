@@ -3,7 +3,6 @@ import Ui from './Ui.js'
 class Accordion extends Ui {
     constructor(el, { startTab, oneTab }) {
         super();
-
         this.selectName = el;
         this.startTab = startTab;
         this.el = document.querySelector(el);
@@ -11,7 +10,6 @@ class Accordion extends Ui {
         this.bodys = this.el.querySelectorAll('.item > .acco_body')
 
         this.init();
-
         this.el.addEventListener('click', this.action.bind(this))
     }
 

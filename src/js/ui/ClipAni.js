@@ -2,7 +2,7 @@ import Ui from './Ui.js'
 
 
 
-class Ani extends Ui {
+class ClipAni extends Ui {
     constructor(el, { limit, els, prev_el, duration, callback }) {
         super();
 
@@ -53,6 +53,6 @@ class Ani extends Ui {
 } 
 
 
-export default Ani;
+export default ClipAni;
 
 

@@ -781,8 +781,11 @@
 <script type="module">
 
 
-    import { Tab, Ui, Accordion, Popup, Animete, Ani } from './src/js/app.js';
-
+    import { Tab, Ui, Accordion, Popup, Animete, ClipAni } from './src/js/app.js';
+    const all_warp = document.querySelector('.tab_wrap .tab_all')
+    const sedan_wrap = document.querySelector('.tab_wrap .tab_sedan')
+    const suv_wrap = document.querySelector('.tab_wrap .tab_suv')
+    const ui = new Ui();
     let swi = null;
 
     // tab
@@ -794,19 +797,23 @@
         },
         current: function(idx) {
             // console.log(idx)
-            
         },
-        callback: function() {
-            // console.log('tab callback')
-            // let evt = new Event('resize')
-            // window.dispatchEvent(evt);
-            // swi.update();
-            // swi.slideTo(0);
-            console.log(swi.el.click())
+        callback: function(idx) {
+            // console.log(callback)
+            // handleTabClick({ tabType: '.tab_all', })
+            // handleTabClick({ tabType: '.tab_sedan', })
+            // handleTabClick({ tabType: '.tab_suv', })
 
-            
+        console.log('cb idx??', idx)
+
+        let all = handleTabClick({ tabType: '.tab_all', })
+        let sedan = handleTabClick({ tabType: '.tab_sedan', })
+        let suv = handleTabClick({ tabType: '.tab_suv', })
+
+        all_warp.addEventListener('click', e =>  all(e) )
+        sedan_wrap.addEventListener('click', e => sedan(e) )
+        suv_wrap.addEventListener('click', e => suv(e))
         }
-        
     })      
 
     tab.render().then(data => {
@@ -815,17 +822,18 @@
         createDOM('.tab_sedan .swiper-wrapper', data)
         createDOM('.tab_suv .swiper-wrapper', data)
 
-        const all_warp = document.querySelector('.tab_wrap .tab_all')
-        const sedan_wrap = document.querySelector('.tab_wrap .tab_sedan')
-        const suv_wrap = document.querySelector('.tab_wrap .tab_suv')
     
-        const all = handleTabClick({ tabType: '.tab_all', });
-        const sedan = handleTabClick({ tabType: '.tab_sedan', });
-        const suv = handleTabClick({ tabType: '.tab_suv', })
+        let all = handleTabClick({ tabType: '.tab_all', })
+        let sedan = handleTabClick({ tabType: '.tab_sedan', })
+        let suv = handleTabClick({ tabType: '.tab_suv', })
 
         all_warp.addEventListener('click', e =>  all(e) )
         sedan_wrap.addEventListener('click', e => sedan(e) )
         suv_wrap.addEventListener('click', e => suv(e))
+    
+        // swi.removeAllSlides();
+		// swi.appendSlide(data);
+		// swi.update();
     })
    
 
@@ -880,12 +888,12 @@
     function handleTabClick({ tabType }) {
         // swiper
         swi = new Swiper(tabType, {
+            observer: true,
+            observeParents: true, 
             navigation: {
                 nextEl: `${tabType} .swiper-button-next`,
                 prevEl: `${tabType} .swiper-button-prev`,
             },
-            observer: true,
-            observeParents: true, 
             pagination: {
                 el: `${tabType} .swiper-pagination`,
                 dynamicBullets: true,
@@ -912,15 +920,10 @@
                     // console.log('ch')
                 },
                 resize: function() {
-                    setTimeout(() => {
-                        slideChange(tabType); 
-                        console.log('swiper resize', window.innerWidth)
-                    }, 0)
+                    setTimeout(() => slideChange(tabType), 0)
 
-                    
+                    console.log('swiper resize', window.innerWidth)
                 },
-              
-
             }
         });
 
@@ -960,7 +963,7 @@
                 carImage[num].style.clip = `rect(0px, ${0}px, 610px, 0px)`
 
                 // console.log(carImage)
-                const ani = new Ani(carImage[num], {
+                const ani = new ClipAni(carImage[num], {
                     limit: w_width,
                     els: carImage,
                     prev_el: prev_el,
@@ -980,15 +983,27 @@
             carName = document.querySelectorAll(` ${tabType} .swiper-slide-active .color_name_wrap .color_name`)
             prev_el = carImage[0];
             // console.log('???????????????????????', colors[0])
-            ui.addClass(colors[0], 'on')
-            ui.addClass(carName[0], 'on')
-            ui.addClass(carImageWrap[0], 'on')
+            ui.toggleClass(colors, colors[0], 'on')
+            ui.toggleClass(carName, carName[0], 'on')
+            ui.toggleClass(carImageWrap, carImageWrap[0], 'on')
+
+            // console.log('color?????', colors[0])
+            // let evt = new Event('click')
+            // colors[0].dispatchEvent(evt)
+            // carImageWrap[0].style.zIndex = 3;
         }
     }
      // tab
 
     
+// throttle test
+window.addEventListener('scroll', e => ui.throttle (scrollTest() ))
+function scrollTest() { console.log('123') }
 
+// debounce test
+window.addEventListener('click', ui.debounce(() => {
+    console.log('debounce')
+}, 3000))
 
 
     const aco = new Accordion('.footer_sec.all_menu', {

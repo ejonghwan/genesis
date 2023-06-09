@@ -75,6 +75,29 @@ class Ui {
         return type instanceof checkType;
     }
 
+    throttle(cb) {
+        var rAfTimeout = null;
+
+        return function () {
+          if (rAfTimeout) window.cancelAnimationFrame(rAfTimeout);
+          rAfTimeout = window.requestAnimationFrame(() => cb() )
+        }
+      }
+
+    debounce(cb, wait) {
+        var timeout;
+        var hoho = false;
+        return function(args) {
+
+            if(!hoho) {
+                cb(args);
+                hoho = true; 
+            }
+            clearTimeout(timeout); //클리어하고
+            timeout = setTimeout(() => { hoho = false; }, wait); //다시 설정하고  
+        }
+    }
+
 }
 
 export default Ui;
