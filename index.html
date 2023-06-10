@@ -235,39 +235,6 @@
                     <div class="swiper-pagination"></div>
                 </div>
 
-
-                <script>
-                    // 임시
-                    var swiper = new Swiper(".mySwiper", {
-                      spaceBetween: 30,
-                      effect: "fade",
-                      loop: true,
-                      navigation: {
-                        nextEl: ".swiper-button-next",
-                        prevEl: ".swiper-button-prev",
-                      },
-                      pagination: {
-                        el: ".swiper-pagination",
-                        type: "progressbar",
-                        clickable: true,
-                      },
-
-                 
-                      scrollbar: {
-                            el: ".swiper-scrollbar",
-                            hide: true,
-                        },
-
-                        on: {
-                            slideChange: function() {
-                            console.log(13213)
-                        }
-                        }
-                    });
-
-                    
-                </script>
-
                 <div class="main_visual_slide type2">
                     <ul class="g_inner">
                        
@@ -837,7 +804,6 @@
 
 
 
-
 <script type="module">
 
 
@@ -901,31 +867,10 @@
         let str = '';
         for(let i = 0; i < data.length; i++) {
             str += `<div class="swiper-slide">
-                    <strong>${data[i].carName}</strong> 
+                    <strong class="main_car_title">${data[i].carName}</strong> 
                     <ul class="main_car_info">
                         <li>
-                            <div>${ data[i].outerColor.map(item => `
-                                <p>${item.material}</p>
-                                <div class="color_wrap">
-                                    ${item.value.map((value, idx) => `
-                                        <div>
-                                            <a role="button" href="javascript:;" class="color" data-color="${data[i].carName}_${item.type}_${idx}">
-                                                <img src="./src/assets/images/car/${data[i].carName}/${value.color}" alt="${value.colorName}" loading="lazy" />
-                                            </a>
-                                        </div>
-                                    ` ).join(' ')}
-                                </div>
-                                <div class="color_name_wrap">
-                                    ${item.value.map((value, idx) => `
-                                        <span class="color_name" data-colorName="${data[i].carName}_${item.type}_${idx}">
-                                            ${value.colorName}
-                                        </span>
-                                    ` ).join(' ')}
-                                </div>
-                            `).join(' ')}
-                            </div>
-
-                            <div>${ data[i].outerColor.map(item => `
+                            <div class="car_outer">${ data[i].outerColor.map(item => `
                                 <div class="car_wrap">
                                     ${item.value.map((value, idx) => `
                                         <div class="car" data-car="${data[i].carName}_${item.type}_${idx}">
@@ -936,6 +881,29 @@
                             `).join(' ')}
                             </div>
 
+                            <div class="color_outer">${ data[i].outerColor.map(item => `
+                               
+                                    <p>${item.material}</p>
+                                    <div class="color_wrap">
+                                        ${item.value.map((value, idx) => `
+                                            <div>
+                                                <a role="button" href="javascript:;" class="color" data-color="${data[i].carName}_${item.type}_${idx}">
+                                                    <img src="./src/assets/images/car/${data[i].carName}/${value.color}" alt="${value.colorName}" loading="lazy" />
+                                                </a>
+                                            </div>
+                                        ` ).join(' ')}
+                                    </div>
+                                    <div class="color_name_wrap">
+                                        ${item.value.map((value, idx) => `
+                                            <span class="color_name" data-colorName="${data[i].carName}_${item.type}_${idx}">
+                                                ${value.colorName}
+                                            </span>
+                                        ` ).join(' ')}
+                                    </div>
+                                `).join(' ')}
+                                </div>
+                            
+                            
                         </li>    
                     </ul>
                 </div>
@@ -949,13 +917,16 @@
         swi = new Swiper(tabType, {
             observer: true,
             observeParents: true, 
+            effect: "fade",
             navigation: {
                 nextEl: `${tabType} .swiper-button-next`,
                 prevEl: `${tabType} .swiper-button-prev`,
             },
+          
             pagination: {
                 el: `${tabType} .swiper-pagination`,
-                dynamicBullets: true,
+                type: "progressbar",
+                clickable: true,
             },
             // 아 스와이퍼 이거떔에 버그 ...
             // grabCursor: true,
@@ -1066,6 +1037,36 @@ window.addEventListener('click', ui.debounce(() => {
 
 
 
+
+    // 메인 비주얼
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        effect: "fade",
+        loop: true,
+        navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+        el: ".swiper-pagination",
+        type: "progressbar",
+        clickable: true,
+        },
+
+    
+        scrollbar: {
+            el: ".swiper-scrollbar",
+            hide: true,
+        },
+
+        on: {
+            slideChange: function() {
+            console.log(13213)
+        }
+        }
+    });
+
+    
 
 
     const aco = new Accordion('.footer_sec.all_menu', {

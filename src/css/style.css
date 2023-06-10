@@ -150,7 +150,7 @@ h3 {
 }
 
 .g_inner {
-  width: 980px;
+  width: 1080px;
   margin: 0 auto 60px;
 }
 
@@ -677,6 +677,9 @@ button.header_all_menu.on span.line:before {
   .header_nav {
     display: none;
   }
+  #header .g_inner {
+    backdrop-filter: blur(30px);
+  }
   .g_inner.accordion_mo.type1.pd_none .item {
     margin-bottom: 0px;
   }
@@ -690,6 +693,7 @@ button.header_all_menu.on span.line:before {
 #footer .copyright {
   padding-top: 60px;
   position: relative;
+  font-size: 1.2rem;
 }
 #footer .copyright::before {
   content: "";
@@ -914,7 +918,6 @@ button.header_all_menu.on span.line:before {
   color: #fff;
   position: absolute;
   right: 0;
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
   padding-left: 50px;
 }
 .main_visual_title .pos_txt {
@@ -1157,19 +1160,79 @@ figure::before {
   position: relative;
   padding-top: 60px;
 }
-.sub_visual::before {
+.sub_visual::after {
   display: block;
   /* background: blue; */
   width: 100%;
-  height: 50px;
+  height: 100%;
   backdrop-filter: blur(10px);
   position: absolute;
-  top: -24px;
+  top: 0px;
+}
+.sub_visual .swiper,
+.sub_visual .swiper-container {
+  overflow: inherit;
+}
+.sub_visual .swiper-pagination {
+  top: 100px;
+  background-color: #898989;
+  position: absolute;
+  width: 280px;
+  margin: auto;
+  /* transform: rotate(90deg); */
+  height: 1px;
+  opacity: 0.5;
+  left: auto;
+  right: 0;
+}
+.sub_visual .swiper-button-prev {
+  color: #fff;
+  right: 331px;
+  left: auto;
+  top: 100px;
+}
+.sub_visual .swiper-button-next {
+  right: 290px;
+  color: #fff;
+  top: 100px;
+}
+.sub_visual .swiper-button-next:after,
+.sub_visual .swiper-button-prev:after {
+  font-size: 20px;
+}
+.sub_visual .swiper-pagination .swiper-pagination-progressbar-fill {
+  background-color: #fff;
+  height: 1px;
+}
+.sub_visual .tab_body_item .main_car_info::before {
+  content: "";
+  height: 25px;
+  width: 2000px;
+  background-color: #afafaf;
+  display: block;
+  position: absolute;
+  left: -1300px;
+  top: 50px;
+  bottom: 0;
+  margin: auto;
+  opacity: 0.1;
+}
+.sub_visual .tab_body_item .main_car_info::after {
+  content: "";
+  height: 25px;
+  width: 2000px;
+  background-color: #afafaf;
+  display: block;
+  position: absolute;
+  left: -1300px;
+  top: -45px;
+  bottom: 0;
+  margin: auto;
+  opacity: 0.1;
 }
 .sub_visual h2 {
   color: #fff;
 }
-
 .sub_visual_color ul {
   display: flex;
 }
@@ -1177,24 +1240,6 @@ figure::before {
   width: 30px;
   height: 30px;
   border: 1px solid #535353;
-}
-.sub_visual_color ul li:nth-child(1) {
-  background-color: #fff;
-}
-.sub_visual_color ul li:nth-child(2) {
-  background-color: #535353;
-}
-.sub_visual_color ul li:nth-child(3) {
-  background-color: #192e35;
-}
-.sub_visual_color ul li:nth-child(4) {
-  background-color: #2a1414;
-}
-.sub_visual_color ul li:nth-child(5) {
-  background-color: #000000;
-}
-.sub_visual_color ul li:nth-child(6) {
-  background-color: #723838;
 }
 
 .sub_visual_slide.type1 {
@@ -1234,20 +1279,66 @@ figure::before {
   left: 0;
 }
 
+.main_car_title {
+  position: absolute;
+  top: 55px;
+  left: 0px;
+  font-size: 8rem;
+  opacity: 0.3;
+}
+
 .main_car_info {
   height: 700px;
   background-color: #080911;
 }
+.main_car_info .color_outer {
+  position: absolute;
+  bottom: 75px;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 10px;
+  margin-left: -30px;
+}
+.main_car_info .color_outer > p:nth-of-type(2) {
+  margin-left: 50px;
+}
+.main_car_info .color_outer > p {
+  margin-right: 10px;
+  color: #e6e6e6;
+  font-size: 1.2rem;
+  font-weight: 200;
+  display: flex;
+  align-items: center;
+}
 .main_car_info .color_wrap {
   display: flex;
+}
+.main_car_info .color_wrap:first-child {
+  margin-right: 50px;
 }
 .main_car_info .color_wrap .color {
   display: block;
   width: 50px;
   height: 50px;
+  border-radius: 50%;
+  transition: transform 0.2s;
+  margin-right: 5px;
+  position: relative;
+}
+.main_car_info .color_wrap .color img {
+  border-radius: 50%;
 }
 .main_car_info .color_wrap .color.on {
-  border: 2px solid red;
+  transform: translateY(-10px);
+}
+.main_car_info .color_name_wrap {
+  position: absolute;
+  font-size: 2rem;
+  top: -550px;
+  right: 0;
 }
 .main_car_info .car_wrap {
   display: flex;
@@ -1259,7 +1350,10 @@ figure::before {
   top: 0;
   left: 0;
   height: auto;
-  width: 100%;
+  width: 700px;
+  top: 240px;
+  right: 0;
+  margin: auto;
   z-index: 0;
 }
 .main_car_info .car_wrap .car.on .car_img {

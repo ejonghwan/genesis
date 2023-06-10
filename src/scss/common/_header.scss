@@ -214,6 +214,11 @@ button.header_all_menu {
         display: none;
     }
 
+    #header {
+        .g_inner {
+            backdrop-filter: blur(30px);
+        }
+    }
     
     .g_inner.accordion_mo.type1.pd_none {
         .item {

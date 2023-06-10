@@ -7,6 +7,7 @@
     .copyright {
         padding-top: 60px;
         position: relative;
+        font-size: 1.2rem;
 
         &::before {
             content: '';
@@ -229,6 +230,7 @@
     }
 
     #footer {
+        
         .copyright::before {
             width: 80px;
         }
