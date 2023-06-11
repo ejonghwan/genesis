@@ -1676,11 +1676,11 @@ figure::before {
 }
 .g_content ul {
   display: flex;
-  gap: 3px;
+  gap: 4px;
 }
 .g_content ul li {
   flex: 0 0 auto;
-  width: calc(33.33333% - 3px);
+  width: calc(33.33333% - 4px);
 }
 
 .g_content_img {
