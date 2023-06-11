@@ -192,6 +192,38 @@ h3 {
   object-fit: cover;
 }
 
+.g_list.type2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+}
+.g_list.type2 .cont1.type1 {
+  height: 100%;
+}
+.g_list.type2 .grid_item {
+  height: 185px;
+}
+.g_list.type2 .grid_item:nth-child(1) {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  height: 350px;
+}
+.g_list.type2 .grid_item:nth-child(3) {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 3;
+  height: 350px;
+}
+.g_list.type2 .grid_item:nth-child(5) {
+  grid-row-start: 4;
+  grid-row-end: 2;
+  grid-column-start: 2;
+  height: 350px;
+}
+.g_list.type2 img {
+  object-fit: cover;
+}
+
 .g_slide li {
   display: none;
 }
@@ -357,6 +389,56 @@ body.popop_active {
   opacity: 0.5;
 }
 
+.swiper.type3 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  min-height: 200px;
+}
+.swiper.type3 .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper.type3 .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.swiper.type3 .autoplay-progress {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--swiper-theme-color);
+}
+.swiper.type3 .autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: var(--swiper-theme-color);
+  fill: none;
+  stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+}
+
 @media screen and (max-width: 1100px) {
   .g_inner {
     width: 100%;
@@ -473,6 +555,30 @@ body.popop_active {
   .accordion_mo .acco_body {
     display: none;
     margin-bottom: 30px;
+  }
+  .g_list.type2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .g_list.type2 .grid_item {
+    height: 200px;
+  }
+  .g_list.type2 .grid_item:nth-child(1) {
+    grid-row-start: initial;
+    grid-row-end: initial;
+    height: 200px;
+  }
+  .g_list.type2 .grid_item:nth-child(3) {
+    grid-row-start: initial;
+    grid-row-end: initial;
+    grid-column-start: initial;
+    height: 200px;
+  }
+  .g_list.type2 .grid_item:nth-child(5) {
+    grid-row-start: initial;
+    grid-row-end: initial;
+    grid-column-start: initial;
+    height: 200px;
   }
 }
 @font-face {
@@ -714,7 +820,7 @@ button.header_all_menu.on span.line:before {
 
 .footer_sec_share {
   background-color: #161b22;
-  color: #fff;
+  color: #909090;
   padding: 20px 0;
 }
 .footer_sec_share .g_inner {
@@ -731,6 +837,9 @@ button.header_all_menu.on span.line:before {
 }
 .footer_sec_share ul li + li {
   margin-left: 20px;
+}
+.footer_sec_share ul a {
+  font-size: 1.7rem;
 }
 .footer_sec_share ul .txt {
   font-size: 1.3rem;
@@ -804,9 +913,9 @@ button.header_all_menu.on span.line:before {
 }
 .footer_sec.mid.sitemap .sns a {
   line-height: 0;
-  font-size: 2.5rem;
-  color: #fff;
-  margin-left: 10px;
+  font-size: 2rem;
+  color: #b1b1b1;
+  margin-left: 20px;
 }
 
 .footer_sec.btm {
@@ -1162,6 +1271,7 @@ figure::before {
   background-color: #080911;
   position: relative;
   padding-top: 60px;
+  overflow: hidden;
 }
 .sub_visual .sub_visual_title p {
   color: #898989;
@@ -1214,32 +1324,30 @@ figure::before {
 .sub_visual .tab_body_item .swiper-slide .main_car_info::before {
   content: "";
   height: 25px;
-  width: 2000px;
+  width: 5000px;
   background-color: #afafaf;
   display: block;
   position: absolute;
-  left: -1300px;
+  left: -2500px;
   top: 50px;
   bottom: 0;
   margin: auto;
-  opacity: 0.1;
+  opacity: 0.05;
   transform: translateX(-2500px);
-  transition: transform 1s;
 }
 .sub_visual .tab_body_item .swiper-slide .main_car_info::after {
   content: "";
   height: 25px;
-  width: 2000px;
+  width: 5000px;
   background-color: #afafaf;
   display: block;
   position: absolute;
-  left: -1300px;
+  left: -2500px;
   top: -45px;
   bottom: 0;
   margin: auto;
-  opacity: 0.1;
+  opacity: 0.05;
   transform: translateX(-2500px);
-  transition: transform 1s;
 }
 .sub_visual .tab_body_item .swiper-slide.swiper-slide-visible.swiper-slide-active .main_car_info::before {
   transform: translateX(0px);
@@ -1460,7 +1568,7 @@ figure::before {
 }
 .evt_banner {
   padding: 100px 0;
-  background: black url("../../src/assets/images/main/dummy.jpg") no-repeat center/cover;
+  background: black url("../../src/assets/images/main/genesis-ev-service-package-01-pr-center.jpg") no-repeat center/cover;
   background-attachment: fixed;
   margin-bottom: 60px;
 }
@@ -1486,10 +1594,17 @@ figure::before {
   flex: 0 0 auto;
   width: 50%;
   color: #fff;
-  padding: 20px;
+  padding: 30px;
+  background: url("../../src/assets/images/main/genesis-motorshow-guangzhou-ectrified-gv70-1920x960.jpg") no-repeat center/cover;
 }
 .load_wrap .left strong {
-  font-size: 2rem;
+  font-size: 1.7rem;
+  max-width: 300px;
+}
+.load_wrap .left p {
+  font-size: 1.4rem;
+  margin-top: 5px;
+  max-width: 300px;
 }
 .load_wrap .right {
   background-color: rgb(61, 95, 124);
@@ -1497,9 +1612,60 @@ figure::before {
   width: 50%;
   color: #fff;
   padding: 20px;
+  background: url("../../src/assets/images/main/genesis-kr-main-genesis-events-17-desktop-1920x960-ko-2.jpg") no-repeat center/cover;
 }
 .load_wrap .right strong {
-  font-size: 2rem;
+  font-size: 1.7rem;
+  max-width: 300px;
+}
+.load_wrap .right p {
+  font-size: 1.4rem;
+  margin-top: 5px;
+  max-width: 300px;
+}
+
+.award {
+  height: 350px !important;
+  position: relative;
+}
+.award .swiper-slide .item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("../../src/assets/images/main/genesis-kr-gallery-g80-sport-IT2A-01-desktop-1220xflexible.jpg") no-repeat center/cover;
+}
+.award .swiper-slide .item::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.5;
+}
+.award .swiper-slide .item .tit {
+  position: absolute;
+  top: 67px;
+  left: 60px;
+  margin: auto;
+  z-index: 5;
+  text-align: left;
+}
+.award .swiper-slide:nth-child(2) .item {
+  background: url("../../src/assets/images/main/genesis-kr-main-car-award-23-convertible-desktop-1920x960.png") no-repeat center/cover;
+}
+.award .swiper-slide:nth-child(3) .item {
+  background: url("../../src/assets/images/main/genesis-kr-main-reddot-car-award-23-desktop-1920x960.jpg") no-repeat center/cover;
+}
+.award .swiper-slide:nth-child(4) .item {
+  background: url("../../src/assets/images/main/genesis-kr-main-motortrend-award-23-desktop-1920x960.jpg") no-repeat center/cover;
+}
+.award .swiper-slide:nth-child(5) .item {
+  background: url("../../src/assets/images/main/genesis-kr-highlights-g90-gallery-desktop-1920x960-ko.jpg") no-repeat center/cover;
 }
 
 @media screen and (max-width: 760px) {
@@ -1510,15 +1676,15 @@ figure::before {
 }
 .g_content ul {
   display: flex;
-  gap: 10px;
+  gap: 3px;
 }
 .g_content ul li {
   flex: 0 0 auto;
-  width: calc(33.33333% - 10px);
+  width: calc(33.33333% - 3px);
 }
 
 .g_content_img {
-  height: 100px;
+  height: 150px;
   margin-bottom: 20px;
 }
 .g_content_img img {

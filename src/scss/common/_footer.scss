@@ -28,7 +28,7 @@
 
 .footer_sec_share {
     background-color: #161b22;
-    color: #fff;
+    color: #909090;
     padding: 20px 0;
 
     .g_inner {
@@ -45,6 +45,10 @@
         }
         li + li {
             margin-left: 20px;
+        }
+
+        a {
+            font-size: 1.7rem;
         }
 
         .txt {
@@ -138,9 +142,9 @@
 
     .sns a {
         line-height: 0;
-        font-size: 2.5rem;
-        color: #fff;
-        margin-left: 10px;
+        font-size: 2rem;
+        color: #b1b1b1;
+        margin-left: 20px;
     }
 }
 

@@ -1,18 +1,18 @@
 .g_content {
     ul {
         display: flex;
-        gap: 10px;
+        gap: 3px;
 
         li {
             flex: 0 0 auto;
-            width: calc(33.33333% - 10px);
+            width: calc(33.33333% - 3px);
         }
     }
 }
 
 
 .g_content_img {
-    height: 100px;
+    height: 150px;
     margin-bottom: 20px;
     img {
         object-fit: cover;
