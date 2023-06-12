@@ -96,7 +96,10 @@
 
 
 @include mobile {
-
+    .load_wrap {
+        height: 800px;
+        padding-top: 40px;
+    }
     .load_wrap .left, 
     .load_wrap .right {
         width: 100%;

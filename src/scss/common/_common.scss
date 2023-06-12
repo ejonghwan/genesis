@@ -515,6 +515,12 @@ body.popop_active {
 
 @include mobile {
 
+    .mo_full {
+        width: 100vw !important;
+        margin-left: -20px;
+
+    }
+
     .g_list.type1{
         margin: 0;
         width: 100%;

@@ -6,7 +6,12 @@
         li {
             flex: 0 0 auto;
             width: calc(33.33333% - 4px);
+            
+            .g_content_txt {
+                padding-right: 10px;
+            }
         }
+        
     }
 }
 
@@ -41,6 +46,11 @@
             flex-wrap: wrap;
             li {
                 width: 100%;
+                
+            }
+
+            li + li {
+                margin-top: 20px;
             }
         }
     }
