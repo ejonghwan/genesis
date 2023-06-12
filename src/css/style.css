@@ -684,7 +684,7 @@ body.popop_active {
   display: flex;
   color: #fff;
 }
-.header_nav li {
+.header_nav > li {
   margin-left: 20px;
 }
 
@@ -695,10 +695,10 @@ body.popop_active {
   position: absolute;
   right: 130px;
 }
-.header_ico li {
+.header_ico > li {
   margin-left: 20px;
 }
-.header_ico li a {
+.header_ico > li a {
   display: inline-block;
   font-size: 1.7rem;
   margin-top: 3px;
