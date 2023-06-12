@@ -360,6 +360,17 @@ h3 {font-size: 16px; color: #444;}
 
 // popup 
 
+.dimd {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    height: 100%;
+    z-index: 99;
+    opacity: .9;
+}
+
 .popup {
 
     
