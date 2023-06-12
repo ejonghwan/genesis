@@ -75,48 +75,6 @@
                     <span class="blind">전체 메뉴 열기</span>
                 </button>
             </nav>
-
-            <!-- 네비누르면 나오는 메뉴 -->
-            <div class="header_nav_menu" style="display:none">
-                <ul>
-                    <!-- 모델 -->
-                    <li>
-                            <!-- left -->
-                            <div>
-                                <strong>모델</strong>
-                                <ul>
-                                    <li>All</li>
-                                    <li>SEDAN</li>
-                                    <li>SUV</li>
-                                </ul>
-                            </div>
-
-                            <!-- right -->
-                            <div>
-                                <ul>
-                                    <li>G90</li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                </ul>
-                            </div>
-                    </li>
-                    <!-- //모델 -->
-                    <!-- 구매 -->
-                    <li></li>
-                    <!-- //구매 -->
-                    <!-- 체험 -->
-                    <li></li>
-                    <!-- //체험 -->
-                        <!-- 멤버스 -->
-                    <li></li>
-                    <!-- //멤버스 -->
-                    <!-- 제네시스 -->
-                    <li></li>
-                    <!-- //제네시스 -->
-                </ul>
-            </div>
-            <!-- //네비누르면 나오는 메뉴 -->
         </div>
     </header>
     <!-- //header -->
@@ -461,8 +419,8 @@
                 clickable: true
               },
               navigation: {
-                nextEl: ".hoho .swiper-button-next",
-                prevEl: ".hoho .swiper-button-prev"
+                nextEl: ".swiper.type3 .swiper-button-next",
+                prevEl: ".swiper.type3 .swiper-button-prev"
               },
               on: {
                 autoplayTimeLeft(s, time, progress) {
@@ -908,6 +866,64 @@
         <!-- //팝업 바디 -->
     </section>
     <!-- //전체메뉴 팝업 -->
+
+    <!-- nav popup style="display:none"-->
+    <section id="pupup_type1" class="popup all_menu" style="display:none;">
+        <div class="header_nav_menu">
+            <div class="swiper header_nav">
+                <ul class="swiper-wrapper">
+                  <li class="swiper-slide">
+                    asdasdasd
+                  </li>
+                  <li class="swiper-slide">Slide 2</li>
+                  <li class="swiper-slide">Slide 3</li>
+                  <div class="swiper-slide">Slide 4</div>
+                  <div class="swiper-slide">Slide 4</div>
+                </ul>
+              </div>
+            <ul>
+                <!-- 모델 -->
+                <li>
+                        <!-- left -->
+                        <div>
+                            <strong>모델</strong>
+                            <ul>
+                                <li>All</li>
+                                <li>SEDAN</li>
+                                <li>SUV</li>
+                            </ul>
+                        </div>
+
+                        <!-- right -->
+                        <div>
+                            <ul>
+                                <li>G90</li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                </li>
+                <!-- //모델 -->
+                <!-- 구매 -->
+                <li></li>
+                <!-- //구매 -->
+                <!-- 체험 -->
+                <li></li>
+                <!-- //체험 -->
+                    <!-- 멤버스 -->
+                <li></li>
+                <!-- //멤버스 -->
+                <!-- 제네시스 -->
+                <li></li>
+                <!-- //제네시스 -->
+            </ul>
+        </div>
+        <script>
+            var ssss = new Swiper(".swiper.header_nav", {});
+          </script>
+    </section>
+    <!-- //nav popup -->
 
 </div>
 

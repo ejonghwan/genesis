@@ -298,6 +298,25 @@ h3 {font-size: 16px; color: #444;}
 
 
 // tab
+.tab {
+    width: 100%;
+    
+    .tab_header {}
+    .tab_header_item {
+        &.active {
+           
+        }
+    }
+
+    .tab_body_item {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+}
+
 .tab.type1 {
     width: 100%;
     

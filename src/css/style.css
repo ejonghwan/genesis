@@ -293,6 +293,16 @@ h3 {
   margin: auto;
 }
 
+.tab {
+  width: 100%;
+}
+.tab .tab_body_item {
+  display: none;
+}
+.tab .tab_body_item.active {
+  display: block;
+}
+
 .tab.type1 {
   width: 100%;
 }
@@ -688,9 +698,14 @@ body.popop_active {
 .header_ico li {
   margin-left: 20px;
 }
+.header_ico li a {
+  display: inline-block;
+  font-size: 1.7rem;
+  margin-top: 3px;
+}
 
 body.allmenu #header {
-  background-color: rgba(13, 17, 23, 0.8);
+  background-color: #0d1117;
   backdrop-filter: blur(10px);
 }
 
@@ -1215,6 +1230,9 @@ figure::before {
     right: auto;
     width: 100%;
   }
+  .main_visual_title h2 {
+    font-size: 7rem;
+  }
   .main_visual_title .pos_txt {
     text-align: left;
     padding: 0;
@@ -1227,6 +1245,9 @@ figure::before {
   }
   .main_visual_title .pos_txt .pos_txt_sub {
     margin-left: 0;
+    font-weight: 400;
+    margin-top: 10px;
+    font-size: 1.5rem;
   }
   .main_visual_title .pos_btn {
     bottom: auto;
@@ -1234,11 +1255,13 @@ figure::before {
     top: 350px;
     display: block;
     font-size: 1.2rem;
-    top: 250px;
+    top: 300px;
   }
   .main_visual_title .pos_btn a {
     display: inline-block;
     margin-bottom: 2px;
+    font-size: 1.5rem;
+    font-weight: 400;
   }
   .main_visual_title::before {
     content: none;
@@ -1539,7 +1562,7 @@ figure::before {
     margin-bottom: 5px;
   }
   .main_car_info .color_name_wrap {
-    top: -368px;
+    top: -355px;
   }
   .main_car_info .car_wrap .car .car_img {
     max-width: 500px;

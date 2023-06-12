@@ -63,13 +63,18 @@
     right: 130px;
     li {
         margin-left: 20px;
+        a {
+            display: inline-block;
+            font-size: 1.7rem;
+            margin-top: 3px;
+        }
     }
 }
 
 
 body.allmenu #header{
-    // background-color: #0d1117;
-    background-color: #0d1117cc;
+    background-color: #0d1117;
+    // background-color: #0d1117cc;
     backdrop-filter: blur(10px);
    
 }
