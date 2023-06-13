@@ -19,7 +19,7 @@ class Popup extends Ui {
         this.acc = new Accessibility(this.accList);
 
         // this.init();
-        window.addEventListener('resize', this.resize.bind(this))
+        window.addEventListener('resize', this.init.bind(this))
         this.openBtn.addEventListener('click', this.popOpen.bind(this))
         this.dimd.addEventListener('click', this.popClose.bind(this))
         for(let i = 0; i < this.closeBtn.length; i++) {
@@ -36,12 +36,14 @@ class Popup extends Ui {
     }
 
 
-    popOpen() {
-        this.popToggle();
 
+
+
+    popOpen() {
+
+        this.popToggle();
         if(!this.toggle && !this.openBtn.classList.contains('on')) {
             // 열기
-            console.log('open pop')
             this.addClass(this.openBtn, 'on')
             this.addClass(this.body, 'popop_active')
             this.addClass(this.dimd, 'on')
@@ -56,8 +58,6 @@ class Popup extends Ui {
 
     popClose() {
         if(!this.toggle && this.openBtn.classList.contains('on')) {
-
-            console.log('close pop')
              // 닫기
              this.removeClass(this.openBtn, 'on')
              this.removeClass(this.body, 'popop_active')
@@ -74,7 +74,6 @@ class Popup extends Ui {
     popToggle() {
          // 임시 테스트
          if(this.toggle && !this.openBtn.classList.contains('on')) {
-            console.log('toggle')
             // 열기
             this.addClass(this.openBtn, 'on')
             this.addClass(this.body, 'popop_active')
@@ -89,12 +88,10 @@ class Popup extends Ui {
             if(this.openBtn.closest('header')) this.addClass(this.body, 'allmenu')
         } else {
              // 닫기
-             console.log('??else')
              this.removeClass(this.openBtn, 'on')
              this.removeClass(this.body, 'popop_active')
              this.removeClass(this.dimd, 'on')
              this.removeClass(this.popupEl, 'on')
-             
              this.acc.enable()
              this.acc.focus(this.prevFocus) //ms 300
              
