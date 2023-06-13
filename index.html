@@ -868,7 +868,7 @@
     <!-- //전체메뉴 팝업 -->
 
     <!-- nav popup style="display:none"-->
-    <section id="pupup_type1" class="popup nav_menu auto_height">
+    <section id="pupup_type1" class="popup nav_menu auto_height" style="display:none;">
         <!-- <div class="pupup_type1_header g_inner">
             <h2 class="all_menu_title">전체메뉴</h2>
         </div> -->
@@ -1484,7 +1484,7 @@
           </script>
     </section>
     <!-- //nav popup -->
-    <!-- <div class="dimd"></div> -->
+    <div class="dimd"></div>
 </div>
 
 
@@ -1717,12 +1717,12 @@
 
     
 // throttle test
-window.addEventListener('scroll', e => ui.throttle (scrollTest() ))
-function scrollTest() { console.log('123') }
+// window.addEventListener('scroll', e => ui.throttle (scrollTest() ))
+// function scrollTest() { console.log('123') }
 
 // debounce test
 window.addEventListener('click', ui.debounce(() => {
-    console.log('debounce')
+    // console.log('debounce')
 }, 3000))
 
 
@@ -1771,17 +1771,24 @@ window.addEventListener('click', ui.debounce(() => {
 
     
 
-    const allMenuPopup = new Popup('.popup.all_menu', '.popup_btn', {
+    const allMenuPopup = new Popup('.popup.all_menu', {
+        openBtn: '.popup_btn',
+        closeBtn: '.popup_btn',
         accList: ['#container', 'footer', '#skip_conts'],
         nextFocus: ".pupup_type1_body",
         prevFocus: ".popup_btn",
+        dimd: '.dimd',
+        toggle: true,
     })
 
 
-    const navMenuPopup = new Popup('.popup.nav_menu', '.header_nav', {
+    const navMenuPopup = new Popup('.popup.nav_menu', {
+        openBtn: '.header_nav',
+        closeBtn: '.header_nav',
         accList: ['#container', 'footer', '#skip_conts'],
         nextFocus: ".pupup_type1_body",
         prevFocus: ".popup_btn",
+        dimd: '.dimd'
     })
 
 

@@ -86,7 +86,7 @@ body {
 
 .arrow_btn {
   position: relative;
-  padding-right: 15px;
+  padding-right: 10px;
 }
 .arrow_btn::before {
   content: "";
@@ -342,6 +342,11 @@ h3 {
   height: 100%;
   z-index: 99;
   opacity: 0.9;
+  display: none;
+}
+
+.dimd.on {
+  display: block;
 }
 
 .popup.on {
