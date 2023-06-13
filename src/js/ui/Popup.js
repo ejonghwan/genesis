@@ -7,7 +7,7 @@ class Popup extends Ui {
         super();
         this.popupEl = document.querySelector(el)
         this.openBtn = document.querySelector(openBtn)
-        this.closeBtn = document.querySelector(closeBtn)
+        this.closeBtn = document.querySelectorAll(closeBtn)
         this.dimd = document.querySelector(dimd)
         this.body = document.querySelector('body')
         this.toggle = toggle || false // 버튼 하나로 열닫할때 true / false
@@ -19,12 +19,20 @@ class Popup extends Ui {
         this.acc = new Accessibility(this.accList);
 
         // this.init();
+        window.addEventListener('resize', this.resize.bind(this))
         this.openBtn.addEventListener('click', this.popOpen.bind(this))
-        this.closeBtn.addEventListener('click', this.popClose.bind(this))
+        this.dimd.addEventListener('click', this.popClose.bind(this))
+        for(let i = 0; i < this.closeBtn.length; i++) {
+            this.closeBtn[i].addEventListener('click', this.popClose.bind(this))
+        }
     }
 
     init() {
         console.log('popup class')
+    }
+
+    resize() {
+        this.popClose();
     }
 
 
@@ -41,17 +49,7 @@ class Popup extends Ui {
             this.acc.disable();
             this.acc.focus(this.nextFocus) //ms 300
             
-            
-            if(this.openBtn.classList.contains('header_all_menu')) {
-                this.body.classList.add('allmenu')
-            }
-        }
-
-        // body
-        if(!this.popupEl.classList.contains('on')) {
-            this.popupEl.classList.add('on')
-        } else {
-            this.popupEl.classList.remove('on')
+            if(this.openBtn.closest('header')) this.addClass(this.body, 'allmenu')
         }
     }
 
@@ -68,16 +66,7 @@ class Popup extends Ui {
              this.acc.enable()
              this.acc.focus(this.prevFocus) //ms 300
              
-             if(this.openBtn.classList.contains('header_all_menu')) {
-                 this.body.classList.remove('allmenu')
-             }
-        }
-
-        // body
-        if(!this.popupEl.classList.contains('on')) {
-            this.popupEl.classList.add('on')
-        } else {
-            this.popupEl.classList.remove('on')
+             if(this.openBtn.closest('header')) this.removeClass(this.body, 'allmenu')
         }
     }
 
@@ -97,9 +86,7 @@ class Popup extends Ui {
             this.acc.focus(this.nextFocus) //ms 300
             
             
-            if(this.openBtn.classList.contains('header_all_menu')) {
-                this.body.classList.add('allmenu')
-            }
+            if(this.openBtn.closest('header')) this.addClass(this.body, 'allmenu')
         } else {
              // 닫기
              console.log('??else')
@@ -111,9 +98,7 @@ class Popup extends Ui {
              this.acc.enable()
              this.acc.focus(this.prevFocus) //ms 300
              
-             if(this.openBtn.classList.contains('header_all_menu')) {
-                 this.body.classList.remove('allmenu')
-             }
+             if(this.openBtn.closest('header')) this.removeClass(this.body, 'allmenu')
         }
 
 

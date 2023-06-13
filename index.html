@@ -1469,19 +1469,6 @@
                 
             </div>
         </div>
-        <script>
-            var ssss = new Swiper(".swiper.header_nav", {
-                autoHeight : true,
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true
-                },
-                navigation: {
-                    nextEl: ".swiper.header_nav .swiper-button-next",
-                    prevEl: ".swiper.header_nav .swiper-button-prev"
-                },
-            });
-          </script>
     </section>
     <!-- //nav popup -->
     <div class="dimd"></div>
@@ -1494,7 +1481,7 @@
 
 
 
-<script type="module">
+<script type="module" defer>
 
 
     import { Tab, Ui, Accordion, Popup, Animete, ClipAni } from './src/js/app.js';
@@ -1716,20 +1703,22 @@
      // tab
 
     
-// throttle test
-// window.addEventListener('scroll', e => ui.throttle (scrollTest() ))
-// function scrollTest() { console.log('123') }
+    // throttle test
+    window.addEventListener('scroll', e => ui.throttle (scrollTest() ))
+    function scrollTest() { 
+        // console.log('123') 
+    }
 
-// debounce test
-window.addEventListener('click', ui.debounce(() => {
-    // console.log('debounce')
-}, 3000))
+    // debounce test
+    window.addEventListener('click', ui.debounce(() => {
+        // console.log('debounce')
+    }, 3000))
 
 
 
 
     // 메인 비주얼
-    var swiper = new Swiper(".mySwiper", {
+    const main_visual = new Swiper(".mySwiper", {
         spaceBetween: 30,
         effect: "fade",
         loop: true,
@@ -1758,19 +1747,14 @@ window.addEventListener('click', ui.debounce(() => {
 
     
 
-
+    // 푸터 아코디언
     const aco = new Accordion('.footer_sec.all_menu', {
         startTab: false,
         oneTab: true,
     })
 
-    const popupMenu = new Accordion('.footer_sec.all_menu.pop', {
-        startTab: false,
-        oneTab: true,
-    })
-
-    
-
+ 
+    // 햄버거 메뉴 
     const allMenuPopup = new Popup('.popup.all_menu', {
         openBtn: '.popup_btn',
         closeBtn: '.popup_btn',
@@ -1781,19 +1765,24 @@ window.addEventListener('click', ui.debounce(() => {
         toggle: true,
     })
 
+    // 햄버거 메뉴 안 아코디언
+    const popupMenu = new Accordion('.footer_sec.all_menu.pop', {
+        startTab: false,
+        oneTab: true,
+    })
 
+    // 네비메뉴
     const navMenuPopup = new Popup('.popup.nav_menu', {
         openBtn: '.header_nav',
-        closeBtn: '.header_nav',
+        closeBtn: '.popup.nav_menu .pop_close',
         accList: ['#container', 'footer', '#skip_conts'],
         nextFocus: ".pupup_type1_body",
         prevFocus: ".popup_btn",
         dimd: '.dimd'
     })
 
-
-
-     const nav_tab = new Tab('.tab.type2', {
+    // 네비 안 탭
+    const nav_tab = new Tab('.tab.type2', {
         startTab: 0,
         data: {
             url: "./src/js/api/data/car.json", 
@@ -1820,6 +1809,34 @@ window.addEventListener('click', ui.debounce(() => {
         }
     })    
 
+    const nav_swiper = new Swiper(".swiper.header_nav", {
+        autoHeight : true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true
+        },
+        navigation: {
+            nextEl: ".swiper.header_nav .swiper-button-next",
+            prevEl: ".swiper.header_nav .swiper-button-prev"
+        },
+        on: {
+            init() {
+                // console.log('nav swiper init?')
+            }
+        }
+    });
+
+
+
+    const menus = document.querySelectorAll('.header_nav > li');
+
+    for(let i = 0; i < menus.length; i++) {
+        menus[i].addEventListener('click', e => {
+            nav_swiper.slideTo(i)
+        })
+    }
+
+   
 
 
 // const key = 'AIzaSyChzicx_fRjO6YQhLL-C8tDxCq0E46sxtk'

@@ -341,7 +341,7 @@ h3 {
   background-color: black;
   height: 100%;
   z-index: 99;
-  opacity: 0.9;
+  opacity: 0.6;
   display: none;
 }
 
@@ -940,6 +940,7 @@ button.header_all_menu.on span.line:before {
   flex: 0 0 auto;
   width: 200px;
   margin-right: 50px;
+  padding-left: 10px;
   border-right: 1px solid rgba(255, 255, 255, 0.0588235294);
 }
 .header_nav_menu .swiper-slide .left > strong {
