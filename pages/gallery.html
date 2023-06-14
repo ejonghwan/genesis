@@ -25,7 +25,7 @@
    
 </head>
 
-<body>
+<body class="sub_page">
     
 
 <!-- skip nav -->
@@ -1039,24 +1039,6 @@
 
 <script>
 
-    // 나중에 정리
-    // const wrap = document.querySelector('.gallery .wrap');
-// const loading = document.querySelector('.gallery .loading');
-// const input = document.querySelector('.gallery #search');
-// const btnSearch = document.querySelector('.gallery .btnSearch');
-// const btnInterest = document.querySelector('.gallery .btnInterest');
-// const btnMine = document.querySelector('.gallery .btnMine');
-// const api_key = '034beefa27c4791e6e792d0e7e8d6873';
-// const num = 50;
-
-// const myId = '191030940@N02';
-// const baseURL = `https://www.flickr.com/services/rest/?format=json&nojsoncallback=1&api_key=${api_key}&per_page=${num}&method=`;
-// const method_interest = 'flickr.interestingness.getList';
-// const method_user = 'flickr.people.getPhotos';
-// const method_search = 'flickr.photos.search';
-// const url_interest = `${baseURL}${method_interest}`;
-// const url_mine = `${baseURL}${method_user}&user_id=${myId}`;
-
 
 const wrap = document.querySelector('.gallery .wrap');
 const loading = document.querySelector('.gallery .loading');
@@ -1205,8 +1187,6 @@ function removePop() {
 
 
 <script type="module" defer>
-
-
 
     import { Tab, Ui, Accordion, Popup, Animete, ClipAni } from '../src/js/app.js';
     const all_warp = document.querySelector('.tab_wrap .tab_all')

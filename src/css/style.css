@@ -1930,7 +1930,7 @@ button.header_all_menu.on span.line:before {
     margin-top: 20px;
   }
 }
-.sub_visual {
+.sub_page .sub_visual {
   height: 500px;
   background-color: black;
 }
