@@ -2219,7 +2219,7 @@ button.header_all_menu.on span.line:before {
 .gallery .searchBox .btnSearch > i {
   position: absolute;
   top: 13px;
-  left: -22px;
+  left: -28px;
 }
 .gallery .wrap {
   opacity: 0;
