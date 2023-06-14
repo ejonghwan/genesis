@@ -1113,13 +1113,13 @@ function createList(arr) {
 		tags += `
         <li class='item'>
           <div>           
-						<img class='thumb' src='https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg' alt='https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_b.jpg' />          
-            <p>${item.title === '' ? 'Have a good day!!' : item.title}</p>
+            <img class='thumb' src='https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg' alt='https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_b.jpg' />          
+<p>${item.title === '' ? 'Have a good day!!' : item.title}</p>
 
-						<article class='profile'>	
-							<img src='http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg' />				
-							<span class='userid'>${item.owner}</span>
-						</article>
+            <article class='profile'>	
+                <img src='http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg' />				
+                <button type="button" class='userid'>#${item.owner}</button>
+            </article>
           </div>
         </li>
       `;

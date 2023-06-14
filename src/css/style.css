@@ -2100,35 +2100,41 @@ button.header_all_menu.on span.line:before {
 .gallery .wrap li {
   width: 25%;
   float: left;
-  padding: 10px;
 }
 .gallery .wrap li > div {
   width: 100%;
   background: #fff;
-  padding: 10px;
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.05);
+  padding: 5px;
+  padding-bottom: 20px;
 }
 .gallery .wrap li > div .thumb {
   width: 100%;
+  border-radius: 8px;
 }
 .gallery .wrap li > div p {
-  font: 18px/1.2 "Architects daughter";
+  font-size: 1.4rem;
   color: #777;
   margin-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
+  padding: 0 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .gallery .wrap li > div .profile {
   width: 100%;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
 }
 .gallery .wrap li > div .profile img {
-  width: 36px;
+  width: 30px;
+  border-radius: 50%;
 }
-.gallery .wrap li > div .profile span {
-  display: inline-block;
-  font: 12px/1 "arial";
-  color: orange;
-  margin-left: 5px;
-  transform: translateY(-10px);
+.gallery .wrap li > div .profile button {
+  margin-left: 15px;
+  font-size: 1.3rem;
+  font-weight: 400;
 }
 
 @media screen and (max-width: 1100px) {
