@@ -24,11 +24,12 @@ $mobile: 760px;
 
 
 //common
-@import "common/_reset";
+@import "common/reset";
 @import "common/common";
 @import "common/fonts";
-@import "common/_header";
-@import "common/_footer";
+@import "common/header";
+@import "common/footer";
+@import "common/loading";
 
 //main
 @import "main/main_visual";
@@ -36,3 +37,8 @@ $mobile: 760px;
 @import "main/main_evt_banner";
 @import "main/main_load_banner";
 @import "main/main_content";
+
+// sub
+@import "sub/sub_visual";
+@import "sub/pages/youtube";
+@import "sub/pages/gallery";

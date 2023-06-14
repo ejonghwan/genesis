@@ -218,6 +218,11 @@ button.header_all_menu {
 
 
         & > .left {
+            .tit {
+                font-size: 2.2rem;
+                margin-bottom: 30px;
+                > strong {font-weight: 300;}
+            }
            .tab_header_item {
               padding-top: 10px;
               padding-bottom: 10px;
