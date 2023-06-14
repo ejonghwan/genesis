@@ -1176,7 +1176,7 @@ function isoLayout() {
 function createPop(url) {
 	document.body.style.overflow = 'hidden';
 	const aside = document.createElement('aside');
-	aside.className = 'pop';
+	aside.className = 'yout_pop';
 	const tags = `
 		<div class='con'>
 			<img src='${url}' />
@@ -1187,12 +1187,12 @@ function createPop(url) {
 	aside.innerHTML = tags;
 	document.body.append(aside);
 
-	setTimeout(() => document.querySelector('.pop').classList.add('on'), 0);
+	setTimeout(() => document.querySelector('.yout_pop').classList.add('on'), 0);
 }
 
 function removePop() {
 	document.body.style.overflow = 'auto';
-	const pop = document.querySelector('.pop');
+	const pop = document.querySelector('.yout_pop');
 	pop.classList.remove('on');
 	setTimeout(() => {
 		pop.remove();
