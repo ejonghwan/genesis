@@ -75,8 +75,6 @@
     </header>
     <!-- //header -->
 
- 
-
     <!-- main -->
     <main id="container">
         <article class="g_inner full">
@@ -97,8 +95,6 @@
         
     </main>
     <!-- //main -->
-
-
 
     <!-- footer -->
     <footer id="footer">
@@ -1056,16 +1052,19 @@
 
                 tags += `
                 <article>
-                <h2>${tit.length > 50 ? tit.substr(0, 50) + '...' : tit}</h2>
-                <div class='txt'>
-                    <p>${desc.length > 200 ? desc.substr(0, 200) + '...' : desc}</p>
-                    <span>${date.split('T')[0].split('-').join('.')}</span>
-                </div>  
-                <div class='pic'>
-                    <img class='thumb' src=${item.snippet.thumbnails.standard.url} alt=${
-                    item.snippet.resourceId.videoId
-                } />
-                </div>          
+                    <div class='img_box'>
+                        <img class='thumb' src=${item.snippet.thumbnails.standard.url} alt=${
+                        item.snippet.resourceId.videoId
+                    } />
+                </div> 
+                <div class="txt_box">
+                    <h2>${tit.length > 50 ? tit.substr(0, 50) + '...' : tit}</h2>
+                    <div class='txt'>
+                        <p>${desc.length > 200 ? desc.substr(0, 200) + '...' : desc}</p>
+                        <span>${date.split('T')[0].split('-').join('.')}</span>
+                    </div>      
+                </div>
+                       
                 </article>
             `;
             });
@@ -1111,20 +1110,8 @@
     const suv_wrap = document.querySelector('.tab_wrap .tab_suv')
     const ui = new Ui();
     let swi = null;
+
     
-    // throttle test
-    window.addEventListener('scroll', e => ui.throttle (scrollTest() ))
-    function scrollTest() { 
-        // console.log('123') 
-    }
-
-    // debounce test
-    window.addEventListener('click', ui.debounce(() => {
-        // console.log('debounce')
-    }, 3000))
-
-
-
     // 푸터 아코디언
     const aco = new Accordion('.footer_sec.all_menu', {
         startTab: false,

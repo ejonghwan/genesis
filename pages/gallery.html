@@ -1122,14 +1122,18 @@ function createList(arr) {
 	arr.forEach((item) => {
 		tags += `
         <li class='item'>
-          <div>           
-            <img class='thumb' src='https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg' alt='https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_b.jpg' />          
-<p>${item.title === '' ? 'Have a good day!!' : item.title}</p>
+          <div>   
+            <div class="img_box">        
+                 <img class='thumb' src='https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg' alt='https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_b.jpg' />          
+            </div>
+            <div class="txt_box">
+                <article class='profile'>	
+                    <img src='http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg' />				
+                    <button type="button" class='userid'>${item.owner}</button>
+                </article>
+                <p>${item.title === '' ? 'Have a good day!!' : item.title}</p>
+            </div>
 
-            <article class='profile'>	
-                <img src='http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg' />				
-                <button type="button" class='userid'>${item.owner}</button>
-            </article>
           </div>
         </li>
       `;
@@ -1204,18 +1208,6 @@ function removePop() {
     const suv_wrap = document.querySelector('.tab_wrap .tab_suv')
     const ui = new Ui();
     let swi = null;
-    
-    // throttle test
-    window.addEventListener('scroll', e => ui.throttle (scrollTest() ))
-    function scrollTest() { 
-        // console.log('123') 
-    }
-
-    // debounce test
-    window.addEventListener('click', ui.debounce(() => {
-        // console.log('debounce')
-    }, 3000))
-
 
 
     // 푸터 아코디언

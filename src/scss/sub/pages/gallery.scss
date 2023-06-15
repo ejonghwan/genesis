@@ -160,6 +160,13 @@
 			float: left;
 			// padding: 10px;
 
+			.txt_box {
+				backdrop-filter: blur(20px);
+				padding: 0 10px;
+				margin-top: -20px;
+				position: relative;
+			}
+
 			> div {
 				width: 100%;
 				background: #fff;
@@ -181,16 +188,25 @@
 					color: #777;
 					margin-top: 5px;
 					margin-bottom: 8px;
-					padding: 0 10px;
+					padding: 0 5px;
 					overflow: hidden;
 					white-space : nowrap;
 					text-overflow: ellipsis;
+					margin-top: 40px;
+
 				}
 				.profile {
 					width: 100%;
 					padding: 0 10px;
 					display: flex;
 					align-items: center;
+					// margin-top: -21px;
+					background: #fff;
+					border-radius: 20px;
+					padding: 5px;
+					position: absolute;
+					top: -45px;
+					width: 65%;
 
 					img {
 						width: 30px;
