@@ -28,7 +28,7 @@ class Popup extends Ui {
     }
 
     init() {
-        console.log('popup class')
+        // console.log('popup class')
     }
 
     resize() {
@@ -72,7 +72,7 @@ class Popup extends Ui {
 
 
     popToggle() {
-         // 임시 테스트
+         // 열닫 버튼이 한개일때  this.toggle 옵션 true
          if(this.toggle && !this.openBtn.classList.contains('on')) {
             // 열기
             this.addClass(this.openBtn, 'on')

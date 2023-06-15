@@ -1,6 +1,6 @@
 class Ui {
     constructor() {
-        
+        this.eventBlocker = null;
     }
 
    
@@ -76,7 +76,7 @@ class Ui {
     }
 
     throttle(cb) {
-        var rAfTimeout = null;
+        let rAfTimeout = null;
 
         return function () {
           if (rAfTimeout) window.cancelAnimationFrame(rAfTimeout);
@@ -84,17 +84,37 @@ class Ui {
         }
       }
 
-    debounce(cb, wait) {
-        var timeout;
-        var hoho = false;
-        return function(args) {
+    setThrottle(cb) {
+        // setTimeout return 값이 카운트가 담기면 true. 
+        // true일때만 작동하는 throttle 함수
+        if(this.eventBlocker) return;
+        this.eventBlocker = setTimeout(() => {
+            cb();
+            this.eventBlocker = null;
+        }, 200)
+    }
 
+    startCallDebounce(cb, wait) {
+        let timeout = null;
+        let hoho = false;
+
+        return function(args) {
             if(!hoho) {
                 cb(args);
                 hoho = true; 
             }
             clearTimeout(timeout); //클리어하고
             timeout = setTimeout(() => { hoho = false; }, wait); //다시 설정하고  
+        }
+    }
+
+    lastCallDebounce(cb, delay) {
+        let timeout
+        return (args) => {
+          clearTimeout(timeout)
+          timeout = setTimeout(() => {
+            cb(args)
+          }, delay)
         }
     }
 

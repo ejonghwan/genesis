@@ -1493,11 +1493,8 @@
         },
         callback: function(idx) {
             // console.log(callback)
-            // handleTabClick({ tabType: '.tab_all', })
-            // handleTabClick({ tabType: '.tab_sedan', })
-            // handleTabClick({ tabType: '.tab_suv', })
 
-        console.log('cb idx??', idx)
+        // console.log('cb idx??', idx)
 
         let all = handleTabClick({ tabType: '.tab_all', })
         let sedan = handleTabClick({ tabType: '.tab_sedan', })
@@ -1619,7 +1616,7 @@
                 resize: function() {
                     setTimeout(() => slideChange(tabType), 0)
 
-                    console.log('swiper resize', window.innerWidth)
+                    // console.log('swiper resize', window.innerWidth)
                 },
             }
         });
@@ -1700,10 +1697,15 @@
     }
 
     // debounce test
-    window.addEventListener('click', ui.debounce(() => {
-        // console.log('debounce')
+    window.addEventListener('resize', ui.startCallDebounce(() => {
+        console.log('start debounce')
     }, 3000))
 
+
+     // debounce test
+     window.addEventListener('resize', ui.lastCallDebounce(() => {
+        console.log('last debounce')
+    }, 500))
 
 
 

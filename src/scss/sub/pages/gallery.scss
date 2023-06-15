@@ -103,6 +103,7 @@
 			border-right: none;
 			font-size: 1.8rem;
 			transition: border-bottom 1s;
+			border-radius: 0;
 			&:focus {
 				outline: none;
 				border-bottom: 2px solid rgb(255, 0, 0);
