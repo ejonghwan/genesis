@@ -30,6 +30,7 @@ $mobile: 760px;
 @import "common/header";
 @import "common/footer";
 @import "common/loading";
+@import "common/popup";
 
 //main
 @import "main/main_visual";
@@ -40,5 +41,7 @@ $mobile: 760px;
 
 // sub
 @import "sub/sub_visual";
+@import "sub/pages/sub";
 @import "sub/pages/youtube";
 @import "sub/pages/gallery";
+@import "sub/pages/members";

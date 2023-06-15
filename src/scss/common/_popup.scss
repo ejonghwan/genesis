@@ -1,0 +1,51 @@
+
+// popup 
+
+.dimd {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    height: 100%;
+    z-index: 99;
+    opacity: .6;
+    display: none;
+}
+
+.dimd.on {
+   display: block;
+}
+
+
+.popup.on.all_menu {
+    z-index: 101;
+}
+
+.popup {
+    .footer_sec {
+        background-color: transparent;
+    }
+    
+}
+
+
+.popup.on {
+    display: block !important;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #090b0e;
+    z-index: 100;
+}
+
+.popup.auto_height {
+    height: auto;
+    .pupup_type1_body {
+        height: auto;
+        max-height: calc(100vh - 80px);
+    }
+}
+

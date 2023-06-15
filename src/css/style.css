@@ -336,41 +336,6 @@ h3 {
   display: block;
 }
 
-.dimd {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: black;
-  height: 100%;
-  z-index: 99;
-  opacity: 0.6;
-  display: none;
-}
-
-.dimd.on {
-  display: block;
-}
-
-.popup.on {
-  display: block !important;
-  position: fixed;
-  top: 70px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #0d1117;
-  z-index: 100;
-}
-
-.popup.auto_height {
-  height: auto;
-}
-.popup.auto_height .pupup_type1_body {
-  height: auto;
-  max-height: calc(100vh - 80px);
-}
-
 .all_menu_title {
   font-size: 1.5rem;
   color: #fff;
@@ -732,7 +697,7 @@ body.popop_active {
 }
 
 body.allmenu #header {
-  background-color: #0d1117;
+  background-color: #07090c;
   backdrop-filter: blur(10px);
 }
 
@@ -1235,27 +1200,27 @@ button.header_all_menu.on span.line:before {
 }
 .loading_text span:nth-child(2) {
   filter: blur(0px);
-  animation: blur-text 1.5s 0.2s infinite linear alternate;
+  animation: blur-text 1.5s 0.1s infinite linear alternate;
 }
 .loading_text span:nth-child(3) {
   filter: blur(0px);
-  animation: blur-text 1.5s 0.4s infinite linear alternate;
+  animation: blur-text 1.5s 0.2s infinite linear alternate;
 }
 .loading_text span:nth-child(4) {
   filter: blur(0px);
-  animation: blur-text 1.5s 0.6s infinite linear alternate;
+  animation: blur-text 1.5s 0.3s infinite linear alternate;
 }
 .loading_text span:nth-child(5) {
   filter: blur(0px);
-  animation: blur-text 1.5s 0.8s infinite linear alternate;
+  animation: blur-text 1.5s 0.4s infinite linear alternate;
 }
 .loading_text span:nth-child(6) {
   filter: blur(0px);
-  animation: blur-text 1.5s 1s infinite linear alternate;
+  animation: blur-text 1.5s 0.5s infinite linear alternate;
 }
 .loading_text span:nth-child(7) {
   filter: blur(0px);
-  animation: blur-text 1.5s 1.2s infinite linear alternate;
+  animation: blur-text 1.5s 0.6s infinite linear alternate;
 }
 
 @keyframes blur-text {
@@ -1266,6 +1231,49 @@ button.header_all_menu.on span.line:before {
     filter: blur(4px);
   }
 }
+.dimd {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  height: 100%;
+  z-index: 99;
+  opacity: 0.6;
+  display: none;
+}
+
+.dimd.on {
+  display: block;
+}
+
+.popup.on.all_menu {
+  z-index: 101;
+}
+
+.popup .footer_sec {
+  background-color: transparent;
+}
+
+.popup.on {
+  display: block !important;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #090b0e;
+  z-index: 100;
+}
+
+.popup.auto_height {
+  height: auto;
+}
+.popup.auto_height .pupup_type1_body {
+  height: auto;
+  max-height: calc(100vh - 80px);
+}
+
 .main_visual {
   height: 100vh;
   background-color: #02020d;
@@ -1563,6 +1571,18 @@ button.header_all_menu.on span.line:before {
 .sub_visual .sub_visual_title p {
   color: #898989;
   margin-bottom: 40px;
+}
+.sub_visual figure::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  opacity: 0.95;
+  background: rgb(0, 0, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  pointer-events: none;
 }
 .sub_visual::after {
   display: block;
@@ -2012,6 +2032,26 @@ button.header_all_menu.on span.line:before {
   background-color: black;
 }
 
+.sub_page .sub_visual h2 {
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  margin: auto;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.1rem;
+  font-weight: 300;
+  letter-spacing: 0.9rem;
+}
+
+.you_wrap .sub_txt {
+  margin-bottom: 10px;
+}
 .you_wrap .you_head_tit {
   font-size: 2rem;
   font-weight: 400;
@@ -2056,7 +2096,7 @@ button.header_all_menu.on span.line:before {
 }
 .youtube .inner .wrap article {
   flex: 0 1 auto;
-  width: calc(50% - 6px);
+  width: calc(33.3333333% - 6px);
   margin: 3px;
 }
 .youtube .inner .wrap article h2 {
@@ -2123,6 +2163,27 @@ button.header_all_menu.on span.line:before {
   top: 30px;
   right: 50px;
   cursor: pointer;
+}
+
+.sub_page .g_inner.gall {
+  background-color: #000;
+  position: relative;
+}
+.sub_page .g_inner.gall::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: #000;
+  z-index: 10;
+  opacity: 0.7;
+}
+.sub_page .g_inner.gall .sub_visual {
+  background: url("../../src/assets/images/main/gal2.jpg") no-repeat top/100%;
+  background-attachment: fixed;
 }
 
 .gallery {
@@ -2197,8 +2258,8 @@ button.header_all_menu.on span.line:before {
   /* padding: 50px 10px 20px; */
   display: flex;
   justify-content: center;
-  margin-bottom: 60px;
-  margin-top: 50px;
+  margin-bottom: 70px;
+  margin-top: 30px;
 }
 .gallery .searchBox input {
   width: 300px;
@@ -2284,8 +2345,9 @@ button.header_all_menu.on span.line:before {
   border-radius: 20px;
   padding: 5px;
   position: absolute;
-  top: -45px;
-  width: 65%;
+  top: -42px;
+  width: 100%;
+  border-top-right-radius: 0px;
 }
 .gallery .wrap li > div .profile img {
   width: 30px;
@@ -2342,6 +2404,61 @@ button.header_all_menu.on span.line:before {
   top: 30px;
   right: 50px;
   cursor: pointer;
+}
+
+.members form table {
+  width: 100%;
+  border: none;
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
+}
+.members form table th,
+.members form table td {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  padding: 16px 25px;
+}
+.members form table th {
+  width: 20%;
+}
+.members form table th input[type=submit],
+.members form table th input[type=reset] {
+  width: 30%;
+  height: 40px;
+  border: 1px solid #333;
+  margin: 10px;
+  font: bold 14px/40px "arial";
+  color: #555;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.members form table th input[type=submit]:hover,
+.members form table th input[type=reset]:hover {
+  background: #333;
+  color: #fff;
+}
+.members form table td {
+  border-left: 1px solid #aaa;
+}
+.members form table td input[type=text],
+.members form table td input[type=password],
+.members form table td input[type=email],
+.members form table td select,
+.members form table td textarea {
+  width: 60%;
+  background: rgba(0, 0, 0, 0.03);
+  padding: 10px;
+  border: 1px solid #aaa;
+  resize: none;
+}
+.members form table td input[type=checkbox],
+.members form table td input[type=radio] {
+  margin-right: 30px;
+}
+.members form table td p {
+  color: hotpink;
+  margin-top: 5px;
+  font: 11px/1 "맑은 고딕";
 }
 
 /*# sourceMappingURL=style.css.map */

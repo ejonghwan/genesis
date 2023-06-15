@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>제네시스</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="description" content="채워넣기">
+    <script src="https://kit.fontawesome.com/62fc7514da.js" crossorigin="anonymous"></script>
+
+    <!-- iso -->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <!-- iso -->
+
+    <!-- swiper 임시 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    
+    <!-- swiper 임시 -->
+
+    <link rel="canonical" href="메인 유알엘 넣기">
+    <link rel="stylesheet" href="../src/css/style.css">
+   
+</head>
+
+<body class="sub_page">
+    
+
+<!-- skip nav -->
+<div id="skip_conts"><a href="#container" role="button">본문 바로가기</a></div>
+<!-- //skip nav -->
+
+<div class="wrap">
+    <!-- header -->
+    <!-- 스크롤 올릴땐 없애고 내릴떄 내려오게. 픽스 -->
+    <header id="header">
+        <div class="g_inner">
+            <nav class="header_wrap">
+                <h1>
+                    <a href="javascript:;" role="button">
+                        <span class="blind">제네시스 로고</span>
+                    </a>
+                </h1>
+                <ul class="header_nav">
+                    <li><a href="javascript:;" role="button" onclick="">모델</a></li>
+                    <li><a href="javascript:;" role="button">구매</a></li>
+                    <li><a href="javascript:;" role="button">체험</a></li>
+                    <li><a href="javascript:;" role="button">멤버스</a></li>
+                    <li><a href="javascript:;" role="button">제네시스</a></li>
+                </ul>
+                <ul class="header_ico">
+                    <!-- <li>
+                        <a href="javascript:;" role="button">
+                            <i class="fa-solid fa-headset"></i>
+                            <span class="blind">고객센터</span>
+                        </a>
+                    </li> -->
+                    <li>
+                        <a href="javascript:;" role="button">
+                            <i class="fa-solid fa-fingerprint"></i>
+                            <span class="blind">마이 페이지</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" role="button">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <span class="blind">검색 레이어 열기</span>
+                    </a>
+                    </li>
+                </ul>
+                <button class="popup_btn header_all_menu" type="button" >
+                    <span class="line"></span>
+                    <span class="blind">전체 메뉴 열기</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <!-- //header -->
+
+ 
+
+    <!-- main -->
+    <main id="container">
+        <article class="g_inner full gall">
+            <section class="sub_visual">
+                <h2 class="sub_visual_title">GENESIS MEMBERS</h2>
+            </section>
+        </article>
+        <article class="g_inner">
+            <!-- 수정 해야됨 -->
+            <section class="content members">
+                <figure class="subVisual"></figure>
+                <div class="inner">
+                  <form action="result.html" method="get" id="member">
+                   
+                      <table border="1">
+                        <tbody>
+                          <!-- user id -->
+                          <tr>
+                            <th scope="row">
+                              <label for="userid">User ID</label>
+                            </th>
+                            <td>
+                              <input type="text" name="userid" id="userid" placeholder="아이디를 입력하세요.">
+                            </td>
+                          </tr>
+            
+                          <!-- password -->
+                          <tr>
+                            <th scope="row">
+                              <label for="pwd1">Password</label>
+                            </th>
+                            <td>
+                              <input type="password" name="pwd1" id="pwd1" placeholder="비밀번호를 입력하세요.">
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">
+                              <label for="pwd2">Re Password</label>
+                            </th>
+                            <td>
+                              <input type="password" name="pwd2" id="pwd2" placeholder="비밀번호를 재 입력하세요.">
+                            </td>
+                          </tr>
+            
+                          <!-- email -->
+                          <tr>
+                            <th><label for="email">E-mail</label></th>
+                            <td>
+                              <input type="email" name="email" id="email" placeholder="이메일 주소를 입력하세요."></input>
+                            </td>
+                          </tr>
+            
+                          <!-- education -->
+                          <tr>
+                            <th scrope="row">
+                              <label for="edu">Education</label>
+                            </th>
+                            <td>
+                              <select name="edu" id="edu">
+                                <option value="">최종학력을 선택해주세요</option>
+                                <option value="elementary school">초등학교 졸업</option>
+                                <option value="middle school">중학교 졸업</option>
+                                <option value="high school">고등학교 졸업</option>
+                                <option value="college">대학교 졸업</option>
+                              </select>
+                            </td>
+                          </tr>
+            
+                          <!-- gender -->
+                          <tr>
+                            <th scope="row">
+                              Gender
+                            </th>
+                            <td>
+                              <label for="male">Male</label>
+                              <input type="radio" name="gender" id="male" value="male">
+            
+                              <label for="female">Female</label>
+                              <input type="radio" name="gender" id="female" value="female">
+                            </td>
+                          </tr>
+            
+                          <!-- interests -->
+                          <tr>
+                            <th scope="row">
+                              Interests
+                            </th>
+                            <td>
+                              <label for="sports">Sports</label>
+                              <input type="checkbox" name="hobby" id="sports" value="sports">
+            
+                              <label for="music">Music</label>
+                              <input type="checkbox" name="hobby" id="music" value="music">
+            
+                              <label for="game">Game</label>
+                              <input type="checkbox" name="hobby" id="game" value="game">
+            
+                              <label for="reading">Reading</label>
+                              <input type="checkbox" name="hobby" id="reading" value="reading">
+                            </td>
+                          </tr>
+            
+                          <!-- comments -->
+                          <tr>
+                            <th><label for="'comments">Comments</label></th>
+                            <td>
+                              <textarea name="comments" id="comments" cols="30" rows="4" placeholder="남기는 글을 입력하세요."></textarea>
+                            </td>
+                          </tr>
+            
+                          <!-- button set -->
+                          <tr>
+                            <th colspan="2">
+                              <input type="reset" value="Cancel">
+                              <input type="submit" value="Submit">
+                            </th>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </fieldset>
+                  </form>
+                </div>
+              </section>
+             <!-- 수정 해야됨 -->
+        </article>
+
+        
+    </main>
+    <!-- //main -->
+
+
+
+    <!-- footer -->
+    <footer id="footer">
+       
+        <!-- 쉐어 -->
+        <section class="footer_sec_share">
+            <div class="g_inner">
+                <ul>
+                    <li class="txt">Share</li>
+                    <li><a href="javascript:;" role="button">
+                        <i class="fa-brands fa-square-facebook"></i>
+                        <span class="blind">페이스북</span>
+                    </a></li>
+                    <li><a href="javascript:;" role="button">
+                        <i class="fa-brands fa-twitter"></i>
+                        <span class="blind">트위터</span>
+                    </a></li>
+                    <li><a href="javascript:;" role="button">
+                        <i class="fa-solid fa-link"></i>
+                        <span class="blind">링크복사</span>
+                    </a></li>
+                </ul>
+                <button type="button">Top</button>
+            </div>
+        </section>
+        <!-- //쉐어 -->
+        <!-- 공지사항 -->
+        <section class="footer_sec_notice">
+            <div class="g_inner">
+                <ul class="g_slide">
+                    <li class="active"><a href="javascript:;" role="button">[공지사항] G90 '사용자 인증 시스템 및 편의 기능' 무선 소프트웨어 업데이트</a></li>
+                    <li><a href="javascript:;" role="button">[공지사항] G90 '사용자 인증 시스템 및 편의 기능' 무선 소프트웨어 업데이트</a></li>
+                    <li><a href="javascript:;" role="button">[공지사항] G90 '사용자 인증 시스템 및 편의 기능' 무선 소프트웨어 업데이트</a></li>
+                    <li><a href="javascript:;" role="button">[공지사항] G90 '사용자 인증 시스템 및 편의 기능' 무선 소프트웨어 업데이트</a></li>
+                </ul>
+                <div>
+                    <div>arrow_btn</div>
+                </div>
+            </div>
+        </section>
+        <!-- //공지사항 -->
+        <section class="footer_sec all_menu">
+            <div class="g_inner accordion_mo type1">
+                <!-- 모델 -->
+                <div class="item">
+                    <button type="button" class="acco_head"><strong class="tit">모델</strong></button>
+                    <ul class="acco_body">
+                        <li><a href="javascript:;" role="button">G90 LONG WHEEL BASE</a></li>
+                        <li><a href="javascript:;" role="button">G90</a></li>
+                        <li><a href="javascript:;" role="button">G80</a></li>
+                        <li><a href="javascript:;" role="button">ELECTRIFIED G80</a></li>
+                        <li><a href="javascript:;" role="button">G70</a></li>
+                        <li><a href="javascript:;" role="button">G70 SHOOTING BRAKE</a></li>
+                        <li><a href="javascript:;" role="button">GV80</a></li>
+                        <li><a href="javascript:;" role="button">GV70</a></li>
+                        <li><a href="javascript:;" role="button">ELECTRIFIED GV70</a></li>
+                        <li><a href="javascript:;" role="button">GV60</a></li>
+                    </ul>
+                </div>
+                <!-- //모델 -->
+                <!-- 구매 -->
+                <div class="item">
+                    <button type="button" class="acco_head"><strong class="tit">구매</strong></button>
+                    <ul class="acco_body">
+                        <li><a href="javascript:;" role="button">견적내기</a></li>
+                        <li><a href="javascript:;" role="button">구매 프로그램</a></li>
+                        <li><a href="javascript:;" role="button">전기차 구매가이드</a></li>
+                        <li><a href="javascript:;" role="button">구매 상담 신청</a></li>
+                        <li><a href="javascript:;" role="button">제네시스 스펙트럼</a></li>
+                        <li><a href="javascript:;" role="button">사양 조회하기</a></li>
+                    </ul>
+                </div>
+                <!-- //구매 -->
+                <!-- 체험 -->
+                <div class="item">
+                    <button type="button" class="acco_head"><strong class="tit">체험</strong></button>
+                    <ul class="acco_body">
+                        <li><a href="javascript:;" role="button">스페이스</a></li>
+                        <li><a href="javascript:;" role="button">시승 신청</a></li>
+                        <li><a href="javascript:;" role="button">전시장 찾기</a></li>
+                        <li><a href="javascript:;" role="button">제네시스 드라이빙 익스피리언스</a></li>
+                    </ul>
+                </div>
+                <!-- //체험 -->
+                <!-- 멤버스 -->
+                <div class="item">
+                    <button type="button" class="acco_head"><strong class="tit">멤버스</strong></button>
+                    <ul class="acco_body">
+                        <li><a href="javascript:;" role="button">제네시스 멤버십</a></li>
+                        <li><a href="javascript:;" role="button">MY GENESIS 앱</a></li>
+                        <li><a href="javascript:;" role="button">테크놀로지</a></li>
+                        <li><a href="javascript:;" role="button">차량관리 서비스</a></li>
+                    </ul>
+                </div>
+                <!-- //멤버스 -->
+                <!-- 제네시스 -->
+                <!-- <div class="item">
+                    <button type="button" class="acco_head"><strong class="tit">제네시스</strong></button>
+                    <ul class="acco_body">
+                        <li><a href="javascript:;" role="button">브랜드</a></li>
+                        <li><a href="javascript:;" role="button">콘셉트카</a></li>
+                        <li><a href="javascript:;" role="button">모터쇼</a></li>
+                        <li><a href="javascript:;" role="button">로드트립</a></li>
+                    </ul>
+                </div> -->
+                <!-- //제네시스 -->
+                <!-- 고객센터 -->
+                <!-- <div class="item">
+                    <button type="button" class="acco_head"><strong class="tit">고객센터</strong></button>
+                    <ul class="acco_body">
+                        <li><a href="javascript:;" role="button">고객센터 안내</a></li>
+                        <li><a href="javascript:;" role="button">공지사항</a></li>
+                        <li><a href="javascript:;" role="button">이벤트</a></li>
+                        <li><a href="javascript:;" role="button">자주 묻는 질문</a></li>
+                        <li><a href="javascript:;" role="button">다운로드 센터</a></li>
+                        <li><a href="javascript:;" role="button">PR 센터</a></li>
+                        <li><a href="javascript:;" role="button">마이 페이지</a></li>
+                    </ul>
+                </div> -->
+                <!-- //고객센터 -->
+                <!-- 마이페이지 -->
+                <!-- <div class="item con_none">
+                    <button type="button" class="acco_head"><strong class="tit">마이페이지</strong></button>
+                </div> -->
+                <!-- //마이페이지 -->
+            </div>
+        </section>
+        <section class="footer_sec mid sitemap">
+            <div class="g_inner">
+                <ul class="item btw_line">
+                    <li><a href="javascript:;" role="button">사이트맵</a></li>
+                    <li><a href="javascript:;" role="button">이용약관</a></li>
+                    <li><a href="javascript:;" role="button">개인정보 처리방침</a></li>
+                    <li><a href="javascript:;" role="button">저작권 안내</a></li>
+                    <li><a href="javascript:;" role="button">보증안내</a></li>
+                    <li><a href="javascript:;" role="button">자동차 교환 및 환불 중재 규정 안내</a></li>
+                    <li><a href="javascript:;" role="button">하자 재발 통보 안내</a></li>
+                </ul>
+                <ul class="item sns">
+                    <li><a href="javascript:;" role="button">
+                        <i class="fa-brands fa-square-facebook"></i>
+                        <span class="blind">페이스북</span>
+                    </a></li>
+                    <li><a href="javascript:;" role="button">
+                        <i class="fa-brands fa-instagram"></i>
+                        <span class="blind">인스타그램</span>
+                    </a></li>
+                    <li><a href="javascript:;" role="button">
+                        <i class="fa-brands fa-youtube"></i>
+                        <span class="blind">유튜브</span>
+                    </a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="footer_sec mid line_black_long">
+            <div class="g_inner">
+                <ul class="item btw_line">
+                    <li><a href="javascript:;" role="button">제네시스 월드와이드</a></li>
+                    <li><a href="javascript:;" role="button">프라이버시 센터</a></li>
+                    <li><a href="javascript:;" role="button">제네시스 부티크</a></li>
+                    <li><a href="javascript:;" role="button">네비게이션 업데이트</a></li>
+                    <li><a href="javascript:;" role="button">제네시스 드라이빙 아카데미</a></li>
+                    <li><a href="javascript:;" role="button">윤리경영 사이버 감사실</a></li>
+                    <li><a href="javascript:;" role="button">인재 채용</a></li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="footer_sec btm line_black_long">
+            <p class="copyright">
+                © Copyright 2023 Hyundai Motor Company.<br />All Rights Reserved.
+            </p>
+        </section>
+    </footer>
+    <!-- //footer -->
+</div>
+
+
+<!-- 팝업 -->
+<div id="__flying_partition__">
+      <!-- 전체메뉴 팝업 -->
+      <section id="pupup_type1" class="popup all_menu" style="display:none;">
+        <!-- 팝업헤더 -->
+        <div class="pupup_type1_header g_inner">
+            <h2 class="all_menu_title">전체메뉴</h2>
+        </div>
+        <!-- //팝업 헤더 -->
+        <!-- 팝업 바디 -->
+        <div class="pupup_type1_body" tabindex="0">
+            <article class="footer_sec all_menu pop">
+                <div class="g_inner accordion_mo type1 pd_none">
+                    <!-- 모델 -->
+                    <div class="item">
+                        <button type="button" class="acco_head">
+                            <strong class="tit">모델</strong>
+                            <span class="blind">자세히보기</span>
+                        </button>
+                        <ul class="acco_body">
+                            <li><a href="javascript:;" role="button">G90 LONG WHEEL BASE</a></li>
+                            <li><a href="javascript:;" role="button">G90</a></li>
+                            <li><a href="javascript:;" role="button">G80</a></li>
+                            <li><a href="javascript:;" role="button">ELECTRIFIED G80</a></li>
+                            <li><a href="javascript:;" role="button">G70</a></li>
+                            <li><a href="javascript:;" role="button">G70 SHOOTING BRAKE</a></li>
+                            <li><a href="javascript:;" role="button">GV80</a></li>
+                            <li><a href="javascript:;" role="button">GV70</a></li>
+                            <li><a href="javascript:;" role="button">ELECTRIFIED GV70</a></li>
+                            <li><a href="javascript:;" role="button">GV60</a></li>
+                        </ul>
+                    </div>
+                    <!-- //모델 -->
+                    <!-- 구매 -->
+                    <div class="item">
+                        <button type="button" class="acco_head">
+                            <strong class="tit">구매</strong>
+                            <span class="blind">자세히보기</span>
+                        </button>
+                        <ul class="acco_body">
+                            <li><a href="javascript:;" role="button">견적내기</a></li>
+                            <li><a href="javascript:;" role="button">구매 프로그램</a></li>
+                            <li><a href="javascript:;" role="button">전기차 구매가이드</a></li>
+                            <li><a href="javascript:;" role="button">구매 상담 신청</a></li>
+                            <li><a href="javascript:;" role="button">제네시스 스펙트럼</a></li>
+                            <li><a href="javascript:;" role="button">사양 조회하기</a></li>
+                        </ul>
+                    </div>
+                    <!-- //구매 -->
+                    <!-- 체험 -->
+                    <div class="item">
+                        <button type="button" class="acco_head">
+                            <strong class="tit">체험</strong>
+                            <span class="blind">자세히보기</span>
+                        </button>
+                        <ul class="acco_body">
+                            <li><a href="javascript:;" role="button">스페이스</a></li>
+                            <li><a href="javascript:;" role="button">시승 신청</a></li>
+                            <li><a href="javascript:;" role="button">전시장 찾기</a></li>
+                            <li><a href="javascript:;" role="button">제네시스 드라이빙 익스피리언스</a></li>
+                        </ul>
+                    </div>
+                    <!-- //체험 -->
+                    <!-- 멤버스 -->
+                    <div class="item">
+                        <button type="button" class="acco_head">
+                            <strong class="tit">멤버스</strong>
+                            <span class="blind">자세히보기</span>
+                        </button>
+                        <ul class="acco_body">
+                            <li><a href="javascript:;" role="button">제네시스 멤버십</a></li>
+                            <li><a href="javascript:;" role="button">MY GENESIS 앱</a></li>
+                            <li><a href="javascript:;" role="button">테크놀로지</a></li>
+                            <li><a href="javascript:;" role="button">차량관리 서비스</a></li>
+                        </ul>
+                    </div>
+                    <!-- //멤버스 -->
+                    <!-- 제네시스 -->
+                    <div class="item">
+                        <button type="button" class="acco_head">
+                            <strong class="tit">제네시스</strong>
+                            <span class="blind">자세히보기</span>
+                        </button>
+                        <ul class="acco_body">
+                            <li><a href="javascript:;" role="button">브랜드</a></li>
+                            <li><a href="javascript:;" role="button">콘셉트카</a></li>
+                            <li><a href="javascript:;" role="button">모터쇼</a></li>
+                            <li><a href="javascript:;" role="button">로드트립</a></li>
+                        </ul>
+                    </div>
+                    <!-- //제네시스 -->
+                    <!-- 고객센터 -->
+                    <div class="item">
+                        <button type="button" class="acco_head">
+                            <strong class="tit">고객센터</strong>
+                            <span class="blind">자세히보기</span>
+                        </button>
+                        <ul class="acco_body">
+                            <li><a href="javascript:;" role="button">고객센터 안내</a></li>
+                            <li><a href="javascript:;" role="button">공지사항</a></li>
+                            <li><a href="javascript:;" role="button">이벤트</a></li>
+                            <li><a href="javascript:;" role="button">자주 묻는 질문</a></li>
+                            <li><a href="javascript:;" role="button">다운로드 센터</a></li>
+                            <li><a href="javascript:;" role="button">PR 센터</a></li>
+                            <li><a href="javascript:;" role="button">마이 페이지</a></li>
+                        </ul>
+                    </div>
+                    <!-- //고객센터 -->
+                    <!-- 마이페이지 -->
+                    <div class="item con_none">
+                        <button type="button" class="aco_btn">
+                            <strong class="tit">마이페이지</strong>
+                            <ul class="acco_body">
+                                <li><span class="blind">하위메뉴 없음</span></li>
+                            </ul>
+                        </button>
+                    </div>
+                    <!-- //마이페이지 -->
+                </div>
+            </article>
+            <article class="g_inner">
+                <ul>
+                    <li><a href="javascript:;" role="button">가격표 다운로드</a></li>
+                    <li><a href="javascript:;" role="button">네비게이션 업데이트</a></li>
+                    <li><a href="javascript:;" role="button">제네시스 부티크</a></li>
+                    <li><a href="javascript:;" role="button">제네시스 월드와이드</a></li>
+                </ul>
+            </article>
+        </div>
+        <!-- //팝업 바디 -->
+    </section>
+    <!-- //전체메뉴 팝업 -->
+
+    <!-- nav popup style="display:none"-->
+    <section id="pupup_type1" class="popup nav_menu auto_height" style="display:none;">
+        <!-- <div class="pupup_type1_header g_inner">
+            <h2 class="all_menu_title">전체메뉴</h2>
+        </div> -->
+        <div class="pupup_type1_body" tabindex="0">
+            <div class="header_nav_menu">
+                <div class="swiper header_nav">
+                    <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                            <!-- tab -->
+                            <article class="tab type2">
+                                <strong id="tab_type1_tit" class="blind">제네시스 SEDAN, SUV 탭</strong>
+                                <div class="tab_wrap">
+                                    <!-- tab_header -->
+                                    <div class="tab_header left" aria-labelledby="tab_type1_tit">
+                                        <div class="left">
+                                            <strong>모델</strong>
+                                            <!-- <p>제네시스를 선택한 순간 <br />당신의 일상은 특별해집니다.</p> -->
+                                        </div>
+                                        <div class="tab_header_item"><button type="button">ALL</button></div>
+                                        <div class="tab_header_item"><button type="button">SEDAN</button></div>
+                                        <div class="tab_header_item"><button type="button">SUV</button></div>
+                                    </div>
+                                    <!-- tab_header -->
+                                    <!-- tab_body -->
+                                    <ul class="tab_body right">
+                                        <!-- tab1 -->
+                                        <li class="tab_body_item">
+                                            <ul class="car_list_all">
+                                                <li>
+                                                    <div class="txt">
+                                                        <strong>G90</strong>
+                                                        <p>LONG WHEEL BASE</p>
+                                                    </div>
+                                                    <div class="img_wrap">
+                                                        <img src="../src/assets/images/car/carthum/genesis-kr-admin-model-list-thumbnail-g90.png" alt="" />
+                                                    </div>
+                                                    <div class="btn_wrap">
+                                                        <a href="javascript:;" role="button" class="arrow_btn">자세히 보기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">견적 내기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">시승 신청</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="txt">
+                                                        <strong>G90</strong>
+                                                    </div>
+                                                    <div class="img_wrap">
+                                                        <img src="../src/assets/images/car/carthum/genesis-kr-admin-model-list-thumbnail-g90.png" alt="" />
+                                                    </div>
+                                                    <div class="btn_wrap">
+                                                        <a href="javascript:;" role="button" class="arrow_btn">자세히 보기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">견적 내기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">시승 신청</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="txt">
+                                                        <strong>G80</strong>
+                                                    </div>
+                                                    <div class="img_wrap">
+                                                        <img src="../src/assets/images/car/carthum/g80.png" alt="" />
+                                                    </div>
+                                                    <div class="btn_wrap">
+                                                        <a href="javascript:;" role="button" class="arrow_btn">자세히 보기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">견적 내기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">시승 신청</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="txt">
+                                                        <strong>G80</strong>
+                                                        <p>ElECTRIFIED</p>
+                                                        <span class="ev">EV</span>
+                                                    </div>
+                                                    <div class="img_wrap">
+                                                        <img src="../src/assets/images/car/carthum/g80E.png" alt="" />
+                                                    </div>
+                                                    <div class="btn_wrap">
+                                                        <a href="javascript:;" role="button" class="arrow_btn">자세히 보기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">견적 내기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">시승 신청</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="txt">
+                                                        <strong>G70</strong>
+                                                        <span class="new">NEW</span>
+                                                    </div>
+                                                    <div class="img_wrap">
+                                                        <img src="../src/assets/images/car/carthum/g70_23my_gnb_thumbnail.png" alt="" />
+                                                    </div>
+                                                    <div class="btn_wrap">
+                                                        <a href="javascript:;" role="button" class="arrow_btn">자세히 보기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">견적 내기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">시승 신청</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="txt">
+                                                        <strong>G70</strong>
+                                                        <p>SHOOTING BRAKE</p>
+                                                        <span class="new">NEW</span>
+                                                    </div>
+                                                    <div class="img_wrap">
+                                                        <img src="../src/assets/images/car/carthum/g70-sb-23my.png" alt="" />
+                                                    </div>
+                                                    <div class="btn_wrap">
+                                                        <a href="javascript:;" role="button" class="arrow_btn">자세히 보기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">견적 내기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">시승 신청</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="txt">
+                                                        <strong>GV80</strong>
+                                                    </div>
+                                                    <div class="img_wrap">
+                                                        <img src="../src/assets/images/car/carthum/g80.png" alt="" />
+                                                    </div>
+                                                    <div class="btn_wrap">
+                                                        <a href="javascript:;" role="button" class="arrow_btn">자세히 보기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">견적 내기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">시승 신청</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="txt">
+                                                        <strong>GV70</strong>
+                                                    </div>
+                                                    <div class="img_wrap">
+                                                        <img src="../src/assets/images/car/carthum/gv70.png" alt="" />
+                                                    </div>
+                                                    <div class="btn_wrap">
+                                                        <a href="javascript:;" role="button" class="arrow_btn">자세히 보기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">견적 내기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">시승 신청</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="txt">
+                                                        <strong>GV70</strong>
+                                                        <p>ELECTRIFIED</p>
+                                                        <span class="ev">EV</span>
+                                                    </div>
+                                                    <div class="img_wrap">
+                                                        <img src="../src/assets/images/car/carthum/genesis-kr-admin-model-list-thumbnail-electrified-gv70-desktop-630x240-ko.png" alt="" />
+                                                    </div>
+                                                    <div class="btn_wrap">
+                                                        <a href="javascript:;" role="button" class="arrow_btn">자세히 보기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">견적 내기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">시승 신청</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="txt">
+                                                        <strong>GV60</strong>
+                                                        <span class="ev">EV</span>
+                                                    </div>
+                                                    <div class="img_wrap">
+                                                        <img src="../src/assets/images/car/carthum/gv60.png" alt="" />
+                                                    </div>
+                                                    <div class="btn_wrap">
+                                                        <a href="javascript:;" role="button" class="arrow_btn">자세히 보기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">견적 내기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">시승 신청</a>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <!-- //tab1 -->
+                                        <!-- tab2 -->
+                                        <li class="tab_body_item">
+                                            <ul class="car_list_all">
+                                                <li>
+                                                    <div class="txt">
+                                                        <strong>G90</strong>
+                                                        <p>LONG WHEEL BASE</p>
+                                                    </div>
+                                                    <div class="img_wrap">
+                                                        <img src="../src/assets/images/car/carthum/genesis-kr-admin-model-list-thumbnail-g90.png" alt="" />
+                                                    </div>
+                                                    <div class="btn_wrap">
+                                                        <a href="javascript:;" role="button" class="arrow_btn">자세히 보기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">견적 내기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">시승 신청</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="txt">
+                                                        <strong>G90</strong>
+                                                    </div>
+                                                    <div class="img_wrap">
+                                                        <img src="../src/assets/images/car/carthum/genesis-kr-admin-model-list-thumbnail-g90.png" alt="" />
+                                                    </div>
+                                                    <div class="btn_wrap">
+                                                        <a href="javascript:;" role="button" class="arrow_btn">자세히 보기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">견적 내기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">시승 신청</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="txt">
+                                                        <strong>G80</strong>
+                                                    </div>
+                                                    <div class="img_wrap">
+                                                        <img src="../src/assets/images/car/carthum/g80.png" alt="" />
+                                                    </div>
+                                                    <div class="btn_wrap">
+                                                        <a href="javascript:;" role="button" class="arrow_btn">자세히 보기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">견적 내기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">시승 신청</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="txt">
+                                                        <strong>G80</strong>
+                                                        <p>ElECTRIFIED</p>
+                                                        <span class="ev">EV</span>
+                                                    </div>
+                                                    <div class="img_wrap">
+                                                        <img src="../src/assets/images/car/carthum/g80E.png" alt="" />
+                                                    </div>
+                                                    <div class="btn_wrap">
+                                                        <a href="javascript:;" role="button" class="arrow_btn">자세히 보기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">견적 내기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">시승 신청</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="txt">
+                                                        <strong>G70</strong>
+                                                        <span class="new">NEW</span>
+                                                    </div>
+                                                    <div class="img_wrap">
+                                                        <img src="../src/assets/images/car/carthum/g70_23my_gnb_thumbnail.png" alt="" />
+                                                    </div>
+                                                    <div class="btn_wrap">
+                                                        <a href="javascript:;" role="button" class="arrow_btn">자세히 보기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">견적 내기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">시승 신청</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="txt">
+                                                        <strong>G70</strong>
+                                                        <p>SHOOTING BRAKE</p>
+                                                        <span class="new">NEW</span>
+                                                    </div>
+                                                    <div class="img_wrap">
+                                                        <img src="../src/assets/images/car/carthum/g70-sb-23my.png" alt="" />
+                                                    </div>
+                                                    <div class="btn_wrap">
+                                                        <a href="javascript:;" role="button" class="arrow_btn">자세히 보기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">견적 내기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">시승 신청</a>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <!-- //tab2 -->
+                                        <!-- tab3 -->
+                                        <li class="tab_body_item">
+                                            <ul class="car_list_all">
+                                                <li>
+                                                    <div class="txt">
+                                                        <strong>GV80</strong>
+                                                    </div>
+                                                    <div class="img_wrap">
+                                                        <img src="../src/assets/images/car/carthum/g80.png" alt="" />
+                                                    </div>
+                                                    <div class="btn_wrap">
+                                                        <a href="javascript:;" role="button" class="arrow_btn">자세히 보기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">견적 내기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">시승 신청</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="txt">
+                                                        <strong>GV70</strong>
+                                                    </div>
+                                                    <div class="img_wrap">
+                                                        <img src="../src/assets/images/car/carthum/gv70.png" alt="" />
+                                                    </div>
+                                                    <div class="btn_wrap">
+                                                        <a href="javascript:;" role="button" class="arrow_btn">자세히 보기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">견적 내기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">시승 신청</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="txt">
+                                                        <strong>GV70</strong>
+                                                        <p>ELECTRIFIED</p>
+                                                        <span class="ev">EV</span>
+                                                    </div>
+                                                    <div class="img_wrap">
+                                                        <img src="../src/assets/images/car/carthum/genesis-kr-admin-model-list-thumbnail-electrified-gv70-desktop-630x240-ko.png" alt="" />
+                                                    </div>
+                                                    <div class="btn_wrap">
+                                                        <a href="javascript:;" role="button" class="arrow_btn">자세히 보기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">견적 내기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">시승 신청</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="txt">
+                                                        <strong>GV60</strong>
+                                                        <span class="ev">EV</span>
+                                                    </div>
+                                                    <div class="img_wrap">
+                                                        <img src="../src/assets/images/car/carthum/gv60.png" alt="" />
+                                                    </div>
+                                                    <div class="btn_wrap">
+                                                        <a href="javascript:;" role="button" class="arrow_btn">자세히 보기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">견적 내기</a>
+                                                        <a href="javascript:;" role="button" class="arrow_btn">시승 신청</a>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        
+                                        </li>
+                                        <!-- //tab3 -->
+                                    </ul>
+                                    <!-- tab_body -->
+                                    <div class="bottom">
+                                        <a href="javascript:;" class="arrow_btn" role="button">시승 신청</a>
+                                        <a href="javascript:;" class="arrow_btn" role="button">전시장 찾기</a>
+                                        <a href="javascript:;" class="arrow_btn" role="button">멤버십 소개</a>
+                                        <button type="button" class="pop_close">닫기</button>
+                                    </div>
+                                </div>
+                            </article>
+                            <!-- //tab -->
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="left">
+                            <strong>구매</strong>
+                            <p>당신만의 제네시스를<br />찾아가는 여정을 <br />지원합니다.</p>
+                        </div>
+                        <div class="footer_sec all_menu pop right">
+                            <div class="item_wrap">
+                                <div class="item">
+                                    <strong class="tit">
+                                        <a href="javascript:;" role="button">견적내기</a>
+                                    </strong>
+                                </div>
+                                <div class="item">
+                                    <strong class="tit">
+                                        <a href="javascript:;" role="button">구매 프로그램</a>
+                                    </strong>
+                                    <ul>
+                                        <li><a href="javascript:;" role="button">G-FINANCE 소개</a></li>
+                                        <li><a href="javascript:;" role="button">구매 프로모션</a></li>
+                                    </ul>
+                                </div>
+                                <div class="item">
+                                    <strong class="tit">
+                                        <a href="javascript:;" role="button">전기차 구매가이드</a>
+                                    </strong>
+                                </div>
+                                <div class="item">
+                                    <strong class="tit">
+                                        <a href="javascript:;" role="button">구매 상담 신청</a>
+                                    </strong>
+                                </div>
+                                <div class="item">
+                                    <strong class="tit">
+                                        <a href="javascript:;" role="button">제네시스 스펙트럼</a>
+                                    </strong>
+                                </div>
+                                <div class="item">
+                                    <strong class="tit">
+                                        <a href="javascript:;" role="button">사양 조회하기</a>
+                                    </strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <a href="javascript:;" class="arrow_btn" role="button">시승 신청</a>
+                            <a href="javascript:;" class="arrow_btn" role="button">전시장 찾기</a>
+                            <a href="javascript:;" class="arrow_btn" role="button">멤버십 소개</a>
+                            <button type="button" class="pop_close">닫기</button>
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="left">
+                            <strong>체험</strong>
+                            <p>제네시스가 담아 낸 브랜드의 <br />이상과 가치를 미리 경험할 수 <br />있습니다.</p>
+                        </div>
+                        <div class="footer_sec all_menu pop right">
+                            <div class="item_wrap">
+                                <div class="item">
+                                    <strong class="tit">
+                                        <a href="javascript:;" role="button">스페이스</a>
+                                    </strong>
+                                    <ul>
+                                        <li><a href="javascript:;" role="button">스페이스 소개</a></li>
+                                        <li><a href="javascript:;" role="button">제네시스 하우스 뉴욕</a></li>
+                                        <li><a href="javascript:;" role="button">스튜디오 하남</a></li>
+                                        <li><a href="javascript:;" role="button">스튜디오 안성</a></li>
+                                        <li><a href="javascript:;" role="button">강남</a></li>
+                                        <li><a href="javascript:;" role="button">수지</a></li>
+                                    </ul>
+                                </div>
+                                <div class="item">
+                                    <strong class="tit">
+                                        <a href="javascript:;" role="button">시승 신청</a>
+                                    </strong>
+                                </div>
+                                <div class="item">
+                                    <strong class="tit">
+                                        <a href="javascript:;" role="button">전시장 찾기</a>
+                                    </strong>
+                                </div>
+                                <div class="item">
+                                    <strong class="tit">
+                                        <a href="javascript:;" role="button">제네시스 드라이빙 <br />익스피리언스</a>
+                                    </strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <a href="javascript:;" class="arrow_btn" role="button">시승 신청</a>
+                            <a href="javascript:;" class="arrow_btn" role="button">전시장 찾기</a>
+                            <a href="javascript:;" class="arrow_btn" role="button">멤버십 소개</a>
+                            <button type="button" class="pop_close">닫기</button>
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="left">
+                            <strong>멤버스</strong>
+                            <p>제네시스를 선택한 순간 <br />당신의 일상은 특별해집니다.</p>
+                        </div>
+                        <div class="footer_sec all_menu pop right">
+                            <div class="item_wrap">
+                                <div class="item">
+                                    <strong class="tit">
+                                        <a href="javascript:;" role="button">제네시스 멤버십</a>
+                                    </strong>
+                                    <ul>
+                                        <li><a href="javascript:;" role="button">멤버십 소개</a></li>
+                                        <li><a href="javascript:;" role="button">모빌리티 케어</a></li>
+                                        <li><a href="javascript:;" role="button">프리빌리지</a></li>
+                                        <li><a href="javascript:;" role="button">모먼츠</a></li>
+                                    </ul>
+                                </div>
+                                <div class="item">
+                                    <strong class="tit">
+                                        <a href="javascript:;" role="button">MY GENESIS 앱</a>
+                                    </strong>
+                                    <ul>
+                                        <li><a href="javascript:;" role="button">서비스 소개</a></li>
+                                        <li><a href="javascript:;" role="button">시작하기</a></li>
+                                        <li><a href="javascript:;" role="button">차량 관리 서비스</a></li>
+                                        <li><a href="javascript:;" role="button">제네시스 커넥티드 서비스</a></li>
+                                        <li><a href="javascript:;" role="button">디지털 키</a></li>
+                                        <li><a href="javascript:;" role="button">디지털 키 2</a></li>
+                                        <li><a href="javascript:;" role="button">카페이</a></li>
+                                        <li><a href="javascript:;" role="button">빌트인 캠</a></li>
+                                        <li><a href="javascript:;" role="button">고객센터 및 A/S 안내</a></li>
+                                    </ul>
+                                </div>
+                                <div class="item">
+                                    <strong class="tit">
+                                        <a href="javascript:;" role="button">전시장 찾기</a>
+                                    </strong>
+                                <ul>
+                                    <li><a href="javascript:;" role="button">테크놀로지 소개</a></li>
+                                    <li><a href="javascript:;" role="button">무선 소프트웨어 업데이트</a></li>
+                                    <li><a href="javascript:;" role="button">카투홈/홈투카</a></li>
+                                </ul>
+                                </div>
+                                <div class="item">
+                                    <strong class="tit">
+                                        <a href="javascript:;" role="button">제네시스 드라이빙 <br />익스피리언스</a>
+                                    </strong>
+                                <ul>
+                                    <li><a href="javascript:;" role="button">서비스 네트워크 찾기</a></li>
+                                    <li><a href="javascript:;" role="button">충전 안내</a></li>
+                                    <li><a href="javascript:;" role="button">호환성 안내</a></li>
+                                    <li><a href="javascript:;" role="button">바디케어 서비스</a></li>
+                                    <li><a href="javascript:;" role="button">워런티 플러스</a></li>
+                                    <li><a href="javascript:;" role="button">자동차 교환&middot;환불 중재 규정 안내</a></li>
+                                    <li><a href="javascript:;" role="button">하자 재발 통보 안내</a></li>
+                                </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <a href="javascript:;" class="arrow_btn" role="button">고객센터</a>
+                            <a href="javascript:;" class="linkico" role="button">제네시스 부티크</a>
+                            <a href="javascript:;" class="linkico" role="button">내비게이션 업데이트</a>
+                            <button type="button" class="pop_close">닫기</button>
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="left">
+                            <strong>제네시스</strong>
+                            <p>높은 품격과 안목을 가진 <br />사람들을 위한 최상의 <br />자동차와 서비스를 만들어 <br />내고자 합니다.</p>
+                        </div>
+                        <div class="footer_sec all_menu pop right">
+                            <div class="item_wrap">
+                                <div class="item">
+                                    <strong class="tit">
+                                        <a href="javascript:;" role="button">브랜드</a>
+                                    </strong>
+                                    <ul>
+                                        <li><a href="javascript:;" role="button">브랜드 소개</a></li>
+                                        <li><a href="javascript:;" role="button">비전</a></li>
+                                    </ul>
+                                </div>
+                                <div class="item">
+                                    <strong class="tit">
+                                        <a href="javascript:;" role="button">콘셉트카</a>
+                                    </strong>
+                                    <ul>
+                                        <li><a href="javascript:;" role="button">콘셉트카 소개</a></li>
+                                        <li><a href="javascript:;" role="button">Genesis GV80 Coupe Concept</a></li>
+                                        <li><a href="javascript:;" role="button">Genesis X Convertible Concept</a></li>
+                                        <li><a href="javascript:;" role="button">Genesis X Speedium Coupe Conept</a></li>
+                                        <li><a href="javascript:;" role="button">Genesis X Concept</a></li>
+                                        <li><a href="javascript:;" role="button">Mint Concept</a></li>
+                                        <li><a href="javascript:;" role="button">Essentia Concept</a></li>
+                                        <li><a href="javascript:;" role="button">GV80 Concept</a></li>
+                                        <li><a href="javascript:;" role="button">New York Concept</a></li>
+                                    </ul>
+                                </div>
+                                <div class="item">
+                                    <strong class="tit">
+                                        <a href="javascript:;" role="button">제네시스X골프</a>
+                                    </strong>
+                                <ul>
+                                        <li><a href="javascript:;" role="button">제네시스X골프 소개</a></li>
+                                        <li><a href="javascript:;" role="button">제네시스 포인트</a></li>
+                                        <li><a href="javascript:;" role="button">제네시스 챔피언십</a></li>
+                                        <li><a href="javascript:;" role="button">제네시스 글로벌</a></li>
+                                        <li><a href="javascript:;" role="button">공지사항</a></li>
+                                        <li><a href="javascript:;" role="button">갤러리</a></li>
+                                </ul>
+                                </div>
+                                <div class="item">
+                                    <strong class="tit">
+                                        <a href="javascript:;" role="button">모터쇼</a>
+                                    </strong>
+                                    <ul>
+                                        <li><a href="javascript:;" role="button">모터쇼 소개</a></li>
+                                        <li><a href="javascript:;" role="button">서울 모빌리티쇼 2023</a></li>
+                                        <li><a href="javascript:;" role="button">서울 모빌리티쇼 2021</a></li>
+                                        <li><a href="javascript:;" role="button">광저우 모터쇼</a></li>
+                                        <li><a href="javascript:;" role="button">상하이 오토쇼</a></li>
+                                        <li><a href="javascript:;" role="button">디지털 모터쇼</a></li>
+                                        <li><a href="javascript:;" role="button">뉴욕 국제 오토쇼</a></li>
+                                        <li><a href="javascript:;" role="button">서울 모터쇼 2019</a></li>
+                                        <li><a href="javascript:;" role="button">부산 국제 모터쇼 2018</a></li>
+                                    </ul>
+                                </div>
+                                <div class="item">
+                                    <strong class="tit">
+                                        <a href="javascript:;" role="button">로드트립</a>
+                                    </strong>
+                                    <ul>
+                                        <li><a href="javascript:;" role="button">로드트립 소개</a></li>
+                                        <li><a href="javascript:;" role="button">해남 강진</a></li>
+                                        <li><a href="javascript:;" role="button">충주</a></li>
+                                        <li><a href="javascript:;" role="button">울릉도</a></li>
+                                        <li><a href="javascript:;" role="button">부산</a></li>
+                                        <li><a href="javascript:;" role="button">여주</a></li>
+                                        <li><a href="javascript:;" role="button">백두대간</a></li>
+                                        <li><a href="javascript:;" role="button">순천</a></li>
+                                        <li><a href="javascript:;" role="button">제주 2021</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <a href="javascript:;" class="arrow_btn" role="button">PR 센터</a>
+                            <a href="javascript:;" class="arrow_btn" role="button">제네시스 스튜디오</a>
+                            <button type="button" class="pop_close">닫기</button>
+                        </div>
+                    </li>
+
+
+
+
+
+
+
+
+
+
+
+
+                    </ul>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <!-- <div class="swiper-pagination"></div> -->
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!-- //nav popup -->
+    <div class="dimd"></div>
+</div>
+
+
+
+<script>
+
+const form = document.querySelector('#member');
+const btnSubmit = form.querySelector('input[type=submit]');
+
+btnSubmit.addEventListener('click', (e) => {
+	if (!isTxt('userid', 5)) e.preventDefault();
+	if (!isTxt('comments', 10)) e.preventDefault();
+	if (!isPwd('pwd1', 'pwd2', 4)) e.preventDefault();
+	if (!isEmail('email', 6)) e.preventDefault();
+	if (!isCheck('gender')) e.preventDefault();
+	if (!isCheck('hobby')) e.preventDefault();
+	if (!isSelect('edu')) e.preventDefault();
+});
+
+//텍스트항목 입력받아 인증
+function isTxt(name, len) {
+	const input = form.querySelector(`[name=${name}]`);
+	const text = input.value.trim();
+
+	if (text.length < len) {
+		resetErr(input);
+		const errMsg = document.createElement('p');
+		errMsg.innerText = `텍스트를 ${len}글자 이상 입력하세요`;
+		input.closest('td').append(errMsg);
+		return false;
+	} else {
+		resetErr(input);
+		return true;
+	}
+}
+
+//비밀번호 입력받아 인증
+function isPwd(pwd1, pwd2, len) {
+	const pwdEl1 = form.querySelector(`[name=${pwd1}]`);
+	const num = /[0-9]/;
+	const eng = /[a-zA-Z]/;
+	const spc = /[!@#$%^&*()_+]/;
+	const pwd1_val = form.querySelector(`[name=${pwd1}]`).value;
+	const pwd2_val = form.querySelector(`[name=${pwd2}]`).value;
+
+	//num.test(pwd1_val) : pwd1_val에서 정규표현식으로 분류한 값이 포함되어있으면 true반환, 그렇지 않으면 false반환
+
+	if (pwd1_val !== pwd2_val || pwd1_val.length < len || !num.test(pwd1_val) || !eng.test(pwd1_val) || !spc.test(pwd1_val)) {
+		resetErr(pwdEl1);
+		const errMsg = document.createElement('p');
+		errMsg.innerText = `비밀번호는 ${len}글자 이상 특수문자, 영문, 숫자를 모두 포함하세요.`;
+		pwdEl1.closest('td').append(errMsg);
+		return false;
+	} else {
+		resetErr(pwdEl1);
+		return true;
+	}
+}
+
+//이메일 형식 입력받아 인증
+function isEmail(name, len) {
+	const email = form.querySelector(`[name=${name}]`);
+	const email_val = email.value;
+
+	//순서1 - 이메일주소에 @있는지 판단
+	if (/@/.test(email_val)) {
+		const [forwardTxt, backwardTxt] = email_val.split('@');
+
+		//순서3 - @가 있다는 전제하에 @앞뒤로 문자값이 있는지 확인해서 없으면 에러 반환
+		if (!forwardTxt || !backwardTxt) {
+			resetErr(email);
+			const errMsg = document.createElement('p');
+			errMsg.innerText = `@앞쪽이나 뒤쪽에 문자값이 없습니다.`;
+			email.closest('td').append(errMsg);
+			return false;
+
+			//순서4 - 뒤쪽문자에 .이 없으면 에러반환
+		} else {
+			//정규표현식 안쪽에 예약어로 인지되는 문자앞에 역슬러쉬를 붙여서 예약어에서 제외시켜서 문자로 연산
+			if (!/\./.test(backwardTxt)) {
+				resetErr(email);
+				const errMsg = document.createElement('p');
+				errMsg.innerText = `@뒤쪽의 서비스명이 올바른지 확인하세요`;
+				email.closest('td').append(errMsg);
+				return false;
+			} else {
+				resetErr(email);
+				return true;
+			}
+		}
+		//순서2 - @없으면 에러문구 출력하고 false반환
+	} else {
+		resetErr(email);
+		const errMsg = document.createElement('p');
+		errMsg.innerText = `@를 포함하세요.`;
+		email.closest('td').append(errMsg);
+		return false;
+	}
+}
+
+//체크요소 형식 입력받아 인증
+function isCheck(name) {
+	const inputs = document.querySelectorAll(`[name=${name}]`);
+	let isChecked = false;
+	for (const input of inputs) input.checked && (isChecked = true);
+
+	if (!isChecked) {
+		resetErr(inputs);
+		const errMsg = document.createElement('p');
+		errMsg.innerText = `항목을 하나이상 선택하세요.`;
+		inputs[0].closest('td').append(errMsg);
+		return false;
+	} else {
+		resetErr(inputs);
+		return true;
+	}
+}
+
+//select요소 입력받아 인증
+function isSelect(name) {
+	const input = form.querySelector(`[name=${name}]`);
+	const selected_index = input.options.selectedIndex;
+	const value = input.options[selected_index].value;
+
+	if (value === '') {
+		resetErr(input);
+		const errMsg = document.createElement('p');
+		errMsg.innerText = `항목을 하나이상 선택하세요.`;
+		input.closest('td').append(errMsg);
+		return false;
+	} else {
+		resetErr(input);
+		return true;
+	}
+}
+
+//에러메세지 제거 함수
+function resetErr(inputs) {
+	let el = null;
+	inputs.length ? (el = inputs[0]) : (el = inputs);
+	const errMsg = el.closest('td').querySelector('p');
+	if (errMsg) el.closest('td').querySelector('p').remove();
+}
+
+</script>
+
+
+
+
+<script type="module" defer>
+
+    import { Tab, Ui, Accordion, Popup, Animete, ClipAni, Loading } from '../src/js/app.js';
+    const all_warp = document.querySelector('.tab_wrap .tab_all')
+    const sedan_wrap = document.querySelector('.tab_wrap .tab_sedan')
+    const suv_wrap = document.querySelector('.tab_wrap .tab_suv')
+    const ui = new Ui();
+    let swi = null;
+
+
+    // 푸터 아코디언
+    const aco = new Accordion('.footer_sec.all_menu', {
+        startTab: false,
+        oneTab: true,
+    })
+
+    // 햄버거 메뉴 
+    const allMenuPopup = new Popup('.popup.all_menu', {
+        openBtn: '.popup_btn',
+        closeBtn: '.popup_btn',
+        accList: ['#container', 'footer', '#skip_conts'],
+        nextFocus: ".pupup_type1_body",
+        prevFocus: ".popup_btn",
+        dimd: '.dimd',
+        toggle: true,
+    })
+
+    // 햄버거 메뉴 안 아코디언
+    const popupMenu = new Accordion('.footer_sec.all_menu.pop', {
+        startTab: false,
+        oneTab: true,
+    })
+
+    // 네비메뉴
+    const navMenuPopup = new Popup('.popup.nav_menu', {
+        openBtn: '.header_nav',
+        closeBtn: '.popup.nav_menu .pop_close',
+        accList: ['#container', 'footer', '#skip_conts'],
+        nextFocus: ".pupup_type1_body",
+        prevFocus: ".popup_btn",
+        dimd: '.dimd'
+    })
+
+    // 네비 안 탭
+    const nav_tab = new Tab('.tab.type2', {
+        startTab: 0,
+        data: {
+            url: "./src/js/api/data/car.json", 
+            mode: 'cors',
+        },
+        current: function(idx) {
+            // console.log(idx)
+        },
+        callback: function(idx) {
+            // console.log(callback)
+            // handleTabClick({ tabType: '.tab_all', })
+            // handleTabClick({ tabType: '.tab_sedan', })
+            // handleTabClick({ tabType: '.tab_suv', })
+
+        console.log('cb idx??', idx)
+
+        let all = handleTabClick({ tabType: '.tab_all', })
+        let sedan = handleTabClick({ tabType: '.tab_sedan', })
+        let suv = handleTabClick({ tabType: '.tab_suv', })
+
+        all_warp.addEventListener('click', e =>  all(e) )
+        sedan_wrap.addEventListener('click', e => sedan(e) )
+        suv_wrap.addEventListener('click', e => suv(e))
+        }
+    })    
+
+    const nav_swiper = new Swiper(".swiper.header_nav", {
+        autoHeight : true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true
+        },
+        navigation: {
+            nextEl: ".swiper.header_nav .swiper-button-next",
+            prevEl: ".swiper.header_nav .swiper-button-prev"
+        },
+        on: {
+            init() {
+                // console.log('nav swiper init?')
+            }
+        }
+    });
+
+
+
+    const menus = document.querySelectorAll('.header_nav > li');
+
+    for(let i = 0; i < menus.length; i++) {
+        menus[i].addEventListener('click', e => {
+            nav_swiper.slideTo(i)
+        })
+    }
+
+
+    const loading_word = new Loading('.loading')
+   
+
+
+// const key = 'AIzaSyChzicx_fRjO6YQhLL-C8tDxCq0E46sxtk'
+// const list = 'PLQytOX-GQNjpnWvXUwth7PTdoEA2kZX16'
+// const num = 10;
+// const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${list}&key=${key}&maxResults=${num}`
+
+</script>
+
+
+
+</body>
+</html>
