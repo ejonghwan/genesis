@@ -2,6 +2,47 @@
 
 
 
+.you_wrap {
+	.you_head_tit {
+		font-size: 2rem;
+		font-weight: 400;
+		display: inline-block;
+		padding-left: 100px;
+		position: relative;
+		display: flex;
+		align-items: center;
+		height: 100px;
+
+		&::before {
+			content: '';
+			display: block;
+			width: 70px;
+			height: 70px;
+			border-radius: 50%;
+			background-color: #000;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			left: 0;
+		}
+
+		&::after {
+			content: '';
+			background: url("../../src/assets/images/main/footer-logo.png") no-repeat center/87%;
+			display: block;
+			width: 70px;
+			height: 70px;
+			border-radius: 50%;
+			position: absolute;
+			top: 4px;
+			bottom: 0;
+			margin: auto;
+			left: 0;
+		}
+	}
+}
+
 .youtube {
 	.inner {
 		.wrap {
@@ -10,7 +51,7 @@
 			margin: -3px;
 			article {
 				flex: 0 1 auto;
-				width: calc(33.3333333% - 6px);
+				width: calc(50% - 6px);
 				margin: 3px;
 
 				

@@ -7,6 +7,7 @@ import Accessibility from './ui/Accessibility.js'
 import Animete from './ui/Animete.js'
 import ClipAni from './ui/ClipAni.js'
 import Loading from './ui/Loading.js'
+import Test from './ui/Test.js'
 
 
 
@@ -24,4 +25,5 @@ export {
     Animete,
     ClipAni,
     Loading,
+    Test,
 }
