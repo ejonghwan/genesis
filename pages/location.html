@@ -95,11 +95,16 @@
         </article>
         <article class="g_inner">
             <!-- 수정 해야됨 -->
-            <div id="map"></div>
-            <ul class="branch">
-                <li>본점</li>
-                <li>분점</li>
-            </ul>
+            <div class="center_wrap">
+                <ul class="region">
+                    <li>본점</li>
+                    <li>분점</li>
+                    <li>분점</li>
+                </ul>
+                <div class="map">
+                    <div id="map"></div>
+                </div>
+            </div>
              <!-- 수정 해야됨 -->
         </article>
 
@@ -1028,191 +1033,116 @@
 
 
 
-<script>
+<script type="module" defer>
 
-// const mapContainer = document.querySelector('#map');
-// const [btnBranch1, btnBranch2] = document.querySelectorAll('.branch li');
-// const position = new kakao.maps.LatLng(37.51270999164393, 127.06069417692242); //지도 위치 인스턴스
-// const position2 = new kakao.maps.LatLng(37.57534, 126.977128);
-// const mapOption = { center: position, level: 3 }; //지도 생성 옵션
-// const map = new kakao.maps.Map(mapContainer, mapOption); //지도 인스턴스 생성
-
-// //마커이미지 등록에 필요한 변수들
-// const imageSrc = '../src/assets/images/main/footer-logo.png';
-// const imageSize = new kakao.maps.Size(232, 99);
-// const imageOption = { offset: new kakao.maps.Point(116, 99) };
-// //위의 정보로 최종 마커이미지 인스턴스 생성
-// const markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
-
-// //해당 이미지 인스턴스를 마커생성하는 구문에 추가
-// const marker = new kakao.maps.Marker({ position: position, image: markerImage }); //마커 인스턴스 생성
-
-// marker.setMap(map);
-
-// btnBranch1.addEventListener('click', () => map.panTo(position));
-// btnBranch2.addEventListener('click', () => map.panTo(position2));
-
-
-
-// //마커이미지 등록에 필요한 변수들
-// const imageSrc2 = '../src/assets/images/main/footer-logo.png';
-// const imageSize2 = new kakao.maps.Size(232, 99);
-// const imageOption2 = { offset: new kakao.maps.Point(116, 99) };
-// //위의 정보로 최종 마커이미지 인스턴스 생성
-// const markerImage2 = new kakao.maps.MarkerImage(imageSrc2, imageSize2, imageOption2);
-
-// //해당 이미지 인스턴스를 마커생성하는 구문에 추가
-// const marker2 = new kakao.maps.Marker({ position: position2, image: markerImage2 }); //마커 인스턴스 생성
-// marker2.setMap(map);
-
-
+import request from '../src/js/api/request.js';
 
 
 const mapContainer = document.querySelector('#map');
-const btns = document.querySelectorAll('.branch li');
+const region = document.querySelector('.region');
 
-const markerInfo = [
-	{
-		title: '코엑스',
-		position: new kakao.maps.LatLng(37.51270999164393, 127.06069417692242),
-		imgSrc: 'img/marker1.png',
-		imgSize: new kakao.maps.Size(232, 99),
-		imgPos: { offset: new kakao.maps.Point(116, 99) },
-		button: btns[0],
-	},
-	{
-		title: '광화문',
-		position: new kakao.maps.LatLng(37.57534, 126.977128),
-		imgSrc: 'img/marker2.png',
-		imgSize: new kakao.maps.Size(232, 99),
-		imgPos: { offset: new kakao.maps.Point(116, 99) },
-		button: btns[1],
-	},
-	{
-		title: '카카오본사',
-		position: new kakao.maps.LatLng(33.450701, 126.570667),
-		imgSrc: 'img/marker3.png',
-		imgSize: new kakao.maps.Size(232, 99),
-		imgPos: { offset: new kakao.maps.Point(116, 99) },
-		button: btns[2],
-	},
-];
+const mapData = async () => {
+    const res = await request({ url: '../src/js/api/data/map.json' })
+    // console.log(res)
+    createDOM(region, res)
+    return res
+}
 
-//markerInfo의 첫번째 데이터로 기본 지도 인스턴스 생성
-const map = new kakao.maps.Map(mapContainer, { center: markerInfo[0].position, level: 3 });
+const createDOM = (el, data) => {
+    console.log(el, data)   
+    let t = '';
 
-//markerInfo배열 데이터를 통해 기존 맵인스턴스에 반복을 돌며 마커 생성하고 바인딩
-markerInfo.forEach((info) => {
-	const marker = new kakao.maps.Marker({ position: info.position, image: new kakao.maps.MarkerImage(info.imgSrc, info.imgSize, info.imgPos) });
-	marker.setMap(map);
-	info.button.addEventListener('click', () => map.panTo(info.position));
-});
+    t += `
+        <div>
+            ${data.map(d => `
+                <strong>${d.region}</strong>
+                <div>${d.items.map(item => `
+                    <strong>${item.name}</strong>
+                    <div>${item.info.map(info => `
+                        <div>${info.type}</div>
+                        <button type="button" class="map_move"
+                            data-lat="${info.letlong.lat}"
+                            data-long="${info.letlong.long}"
+                        >${info.point}</button>
+                        <div>${info.address}</div>
+                        <div>${info.tel}</div>
+                    `).join('')}</div>
+                `).join('')}</div>
+            `).join('')}
+        </div>
+    `
+    el.innerHTML = t;
+}
+mapData().then(d => {
+    // console.log('dd?', d)
+    const map_move = document.querySelectorAll('.map_move')
+    // console.log(map_move)
+    
+
+    const region_info = []
+    d.map(i => i.items.map(info => info.info.map(item => region_info.push(item))))
+    console.log('?????????', region_info[0])
+
+    
+    //markerInfo의 첫번째 데이터로 기본 지도 인스턴스 생성
+    // const map = new kakao.maps.Map(mapContainer, { center: new kakao.maps.LatLng(region_info[0].letlong.lat, region_info[0].letlong.long), level: 3 });
+    const map = new kakao.maps.Map(mapContainer, { center: new kakao.maps.LatLng(37.51270999164393, 127.06069417692242), level: 3 });
+
+
+    // 반복
+    region_info.forEach((info, idx) => {
+        const marker = new kakao.maps.Marker({ 
+            position: new kakao.maps.LatLng(info.letlong.lat, info.letlong.long), 
+            image: new kakao.maps.MarkerImage('../src/assets/images/common/marker.png', new kakao.maps.Size(40, 60), 
+            { offset: new kakao.maps.Point(40, 60) }) 
+        });
+        marker.setMap(map);
+
+    
+        // 정리 해야됨
+        // 인포윈도우를 생성합니다
+        const infowindow = new kakao.maps.InfoWindow({
+            position : new kakao.maps.LatLng(info.letlong.lat, info.letlong.long), 
+            content : '<div style="padding:5px;">Hello World! <br><a href="https://map.kakao.com/link/map/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">길찾기</a></div>'
+        });
+        
+        // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+        infowindow.open(map, marker); 
+
+
+        // console.log(info.letlong.lat, info.letlong.long)
+        // console.log(infowindow)
+
+        map_move[idx].addEventListener('click', e => map.panTo( new kakao.maps.LatLng(info.letlong.lat, info.letlong.long) ));
+
+
+    })
+
+    // 첨에 지도 안나오는 이슈. 마커위 인포 띄우면 안나옴..강제 클릭으로 해결
+    map_move[0].click();
+
+})
+
+
+
+
+
+
+
+
+
 </script>
 
 
 
 
+
+
+
+
+
+<script type="module" src="../src/js/app.js"></script>
 <script type="module" defer>
-
-    import { Tab, Ui, Accordion, Popup, Animete, ClipAni, Loading } from '../src/js/app.js';
-    const all_warp = document.querySelector('.tab_wrap .tab_all')
-    const sedan_wrap = document.querySelector('.tab_wrap .tab_sedan')
-    const suv_wrap = document.querySelector('.tab_wrap .tab_suv')
-    const ui = new Ui();
-    let swi = null;
-
-
-    // 푸터 아코디언
-    const aco = new Accordion('.footer_sec.all_menu', {
-        startTab: false,
-        oneTab: true,
-    })
-
-    // 햄버거 메뉴 
-    const allMenuPopup = new Popup('.popup.all_menu', {
-        openBtn: '.popup_btn',
-        closeBtn: '.popup_btn',
-        accList: ['#container', 'footer', '#skip_conts'],
-        nextFocus: ".pupup_type1_body",
-        prevFocus: ".popup_btn",
-        dimd: '.dimd',
-        toggle: true,
-    })
-
-    // 햄버거 메뉴 안 아코디언
-    const popupMenu = new Accordion('.footer_sec.all_menu.pop', {
-        startTab: false,
-        oneTab: true,
-    })
-
-    // 네비메뉴
-    const navMenuPopup = new Popup('.popup.nav_menu', {
-        openBtn: '.header_nav',
-        closeBtn: '.popup.nav_menu .pop_close',
-        accList: ['#container', 'footer', '#skip_conts'],
-        nextFocus: ".pupup_type1_body",
-        prevFocus: ".popup_btn",
-        dimd: '.dimd'
-    })
-
-    // 네비 안 탭
-    const nav_tab = new Tab('.tab.type2', {
-        startTab: 0,
-        data: {
-            url: "./src/js/api/data/car.json", 
-            mode: 'cors',
-        },
-        current: function(idx) {
-            // console.log(idx)
-        },
-        callback: function(idx) {
-            // console.log(callback)
-            // handleTabClick({ tabType: '.tab_all', })
-            // handleTabClick({ tabType: '.tab_sedan', })
-            // handleTabClick({ tabType: '.tab_suv', })
-
-        console.log('cb idx??', idx)
-
-        let all = handleTabClick({ tabType: '.tab_all', })
-        let sedan = handleTabClick({ tabType: '.tab_sedan', })
-        let suv = handleTabClick({ tabType: '.tab_suv', })
-
-        all_warp.addEventListener('click', e =>  all(e) )
-        sedan_wrap.addEventListener('click', e => sedan(e) )
-        suv_wrap.addEventListener('click', e => suv(e))
-        }
-    })    
-
-    const nav_swiper = new Swiper(".swiper.header_nav", {
-        autoHeight : true,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true
-        },
-        navigation: {
-            nextEl: ".swiper.header_nav .swiper-button-next",
-            prevEl: ".swiper.header_nav .swiper-button-prev"
-        },
-        on: {
-            init() {
-                // console.log('nav swiper init?')
-            }
-        }
-    });
-
-
-
-    const menus = document.querySelectorAll('.header_nav > li');
-
-    for(let i = 0; i < menus.length; i++) {
-        menus[i].addEventListener('click', e => {
-            nav_swiper.slideTo(i)
-        })
-    }
-
-
-    const loading_word = new Loading('.loading')
-   
 
 
 // const key = 'AIzaSyChzicx_fRjO6YQhLL-C8tDxCq0E46sxtk'

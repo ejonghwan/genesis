@@ -1,4 +1,8 @@
 .sub_page  {
+
+    #header {
+        backdrop-filter: blur(20px);
+    }
     .sub_visual {
 
         // &::after {
@@ -49,6 +53,23 @@
             left: 0;
             z-index: 5;
             pointer-events: none;
+        }
+    }
+}
+
+
+
+
+@include mobile {
+    .sub_page {
+        
+
+        .sub_visual {
+            height: 400px;
+            h2 {
+                font-size: 2rem;
+                letter-spacing: 0.9rem;
+            }
         }
     }
 }

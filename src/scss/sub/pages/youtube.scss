@@ -157,6 +157,20 @@
 
 
 
+@include mobile {
+	.youtube {
+		.inner {
+			.wrap {
+				article {
+					width: calc(100% - 6px);
+				}
+			}
+		}
+	}
+}
+
+
+
 
 
 
