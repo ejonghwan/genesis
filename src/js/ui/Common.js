@@ -58,12 +58,7 @@ class Common {
             // 네비 안 탭
            new Tab('.tab.type2', {
                 startTab: 0,
-                data: {
-                    url: "./src/js/api/data/car.json", 
-                    mode: 'cors',
-                },
-                current: function(idx) {
-                    // console.log(idx)
+                current: function(idx) {// console.log(idx)
                 },
                 callback: function(idx) {
               

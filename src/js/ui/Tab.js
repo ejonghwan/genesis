@@ -2,7 +2,7 @@ import Ui from './Ui.js'
 import request from '../api/request.js'
 
 class Tab extends Ui {
-    constructor(el, { startTab, data, current, callback }) {
+    constructor(el, { startTab = 0, data = false, current = false, callback = false }) {
         super()
         this.selectName = el
         this.startTab = startTab;
@@ -12,11 +12,12 @@ class Tab extends Ui {
         this.tabBodys = document.querySelectorAll(`${el} > .tab_wrap > .tab_body > li`)
         this.data = data;
         this.callback = callback;
-        this.current = current;
+        this.current = current ;
 
-        console.log('this.data:', this.data)
+        // console.log('this.data:', this.data)
 
         this.init();
+        console.log('??????????????????',this.el)
         this.el.addEventListener('click', this.action.bind(this), false)
 
     }

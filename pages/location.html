@@ -107,8 +107,6 @@
             </div>
              <!-- 수정 해야됨 -->
         </article>
-
-        
     </main>
     <!-- //main -->
 
@@ -1033,13 +1031,18 @@
 
 
 
+
+
 <script type="module" defer>
 
 import request from '../src/js/api/request.js';
+import { Tab } from '../src/js/app.js';
 
 
 const mapContainer = document.querySelector('#map');
 const region = document.querySelector('.region');
+
+
 
 const mapData = async () => {
     const res = await request({ url: '../src/js/api/data/map.json' })
@@ -1053,26 +1056,61 @@ const createDOM = (el, data) => {
     let t = '';
 
     t += `
-        <div>
-            ${data.map(d => `
-                <strong>${d.region}</strong>
-                <div>${d.items.map(item => `
-                    <strong>${item.name}</strong>
-                    <div>${item.info.map(info => `
-                        <div>${info.type}</div>
-                        <button type="button" class="map_move"
-                            data-lat="${info.letlong.lat}"
-                            data-long="${info.letlong.long}"
-                        >${info.point}</button>
-                        <div>${info.address}</div>
-                        <div>${info.tel}</div>
-                    `).join('')}</div>
-                `).join('')}</div>
-            `).join('')}
+        <div id="map_tab" class="info_wrap tab">
+            <div class="tab_wrap">
+                <ul class="tab_header">
+                    ${data.map(d => `
+                        <li class="tab_header_item">
+                            <button type="button">
+                                <strong class="info_tit">${d.region}</strong>
+                            </button>
+                        </li>
+                    `).join('')}
+                </ul>
+                <ul class="tab_body">
+                ${data.map(d => `
+                    <li class="tab_body_item">
+                        <div>${d.items.map(item => `
+                                <strong class="info_gu">${item.name}</strong>
+                                <div>${item.info.map(info => `
+                                    <div class="info_type">${info.type}</div>
+                                    <button type="button" class="map_move arrow_btn black"
+                                        data-lat="${info.letlong.lat}"
+                                        data-long="${info.letlong.long}"
+                                    >${info.point}</button>
+                                    <div class="info_add">${info.address}</div>
+                                    <div class="info_tel">${info.tel}</div>
+                                    <ul class="cars">
+                                        ${info.car.map(car => `
+                                            <li>${car}</li>
+                                        `).join('')}
+                                    </ul>
+                                `).join('')}</div>
+                            `).join('')}</div>
+                        </li>
+                `).join('')}
+                        
+                </ul>
+            </div>
         </div>
     `
     el.innerHTML = t;
+
+    const tab = new Tab('#map_tab', {
+        startTab: 0,
+       
+        current: function(idx) {
+            // console.log(idx)
+        },
+        callback: function(idx) {
+        }
+    })      
+
+
 }
+
+
+
 mapData().then(d => {
     // console.log('dd?', d)
     const map_move = document.querySelectorAll('.map_move')
@@ -1081,12 +1119,10 @@ mapData().then(d => {
 
     const region_info = []
     d.map(i => i.items.map(info => info.info.map(item => region_info.push(item))))
-    console.log('?????????', region_info[0])
-
+    // console.log('?????????', region_info[0])
     
     //markerInfo의 첫번째 데이터로 기본 지도 인스턴스 생성
-    // const map = new kakao.maps.Map(mapContainer, { center: new kakao.maps.LatLng(region_info[0].letlong.lat, region_info[0].letlong.long), level: 3 });
-    const map = new kakao.maps.Map(mapContainer, { center: new kakao.maps.LatLng(37.51270999164393, 127.06069417692242), level: 3 });
+    const map = new kakao.maps.Map(mapContainer, { center: new kakao.maps.LatLng(region_info[0].letlong.lat, region_info[0].letlong.long), level: 3 });
 
 
     // 반복
@@ -1103,7 +1139,19 @@ mapData().then(d => {
         // 인포윈도우를 생성합니다
         const infowindow = new kakao.maps.InfoWindow({
             position : new kakao.maps.LatLng(info.letlong.lat, info.letlong.long), 
-            content : '<div style="padding:5px;">Hello World! <br><a href="https://map.kakao.com/link/map/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">길찾기</a></div>'
+            content : ` 
+                <div class="map_inner_info" style="min-height: 140px; padding: 10px 10px;  border-radius: 10px;">
+                    <div class="info_type">${info.type}</div>
+                    <span class="map_move">${info.point}</span>
+                    <div class="info_add">${info.address}</div>
+                    <div class="info_tel">${info.tel}</div>
+                    <ul class="cars">
+                        ${info.car.map(car => `
+                            <li>${car}</li>
+                        `).join('')}
+                    </ul>
+                </div>
+            `
         });
         
         // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다

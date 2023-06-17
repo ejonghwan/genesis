@@ -118,6 +118,13 @@ body {
   transform: rotate(-45deg);
 }
 
+.arrow_btn.black::before {
+  background-color: #555;
+}
+.arrow_btn.black::after {
+  background-color: #555;
+}
+
 #skip_conts {
   position: relative;
 }
@@ -1272,6 +1279,24 @@ button.header_all_menu.on span.line:before {
 .popup.auto_height .pupup_type1_body {
   height: auto;
   max-height: calc(100vh - 80px);
+}
+
+.tab .tab_header {
+  display: flex;
+  width: 100%;
+}
+.tab .tab_header .tab_header_item {
+  padding: 5px 10px;
+  font-weight: 400;
+  border-bottom: 1px solid #999;
+  flex: 1 1 auto;
+  text-align: center;
+}
+.tab .tab_header .tab_header_item.active {
+  border-bottom: 2px solid red;
+}
+.tab .tab_body {
+  padding: 20px 0;
 }
 
 .main_visual {
@@ -2496,9 +2521,72 @@ button.header_all_menu.on span.line:before {
 .sub_page .center_wrap .region {
   width: 500px;
   flex: 0 0 auto;
+  padding-right: 20px;
 }
 .sub_page .center_wrap .map {
   flex: 1 0 auto;
+}
+.sub_page .center_wrap .info_tit {
+  font-weight: 500;
+}
+.sub_page .center_wrap .info_gu {
+  font-weight: 500;
+  margin-top: 20px;
+  display: block;
+  margin-bottom: 5px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+.sub_page .center_wrap .info_gu:first-child {
+  margin-top: 0;
+  border-top: none;
+}
+.sub_page .center_wrap .info_type {
+  padding: 0 5px;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #444;
+  display: inline-block;
+  border-radius: 4px;
+  margin-right: 5px;
+  margin-top: 30px;
+}
+.sub_page .center_wrap .info_type:nth-of-type(1) {
+  margin-top: 0;
+}
+.sub_page .center_wrap .info_add {
+  font-size: 1.3rem;
+  margin-top: 3px;
+  margin-bottom: 1px;
+}
+.sub_page .center_wrap .info_tel {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+.sub_page .center_wrap .map_move {
+  color: rgb(17, 79, 150);
+  font-weight: 500;
+}
+.sub_page .center_wrap .cars {
+  display: flex;
+  margin: -2px;
+}
+.sub_page .center_wrap .cars > li {
+  padding: 2px 10px;
+  background-color: #f2f2f2;
+  margin: 2px;
+  font-size: 1.2rem;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+.sub_page .center_wrap .map_inner_info {
+  height: auto;
+}
+.sub_page .center_wrap .map_inner_info .info_add {
+  font-size: 1.2rem;
+}
+.sub_page .center_wrap .map_inner_info .info_tel {
+  font-size: 1.2rem;
 }
 
 #map {

@@ -84,6 +84,15 @@ body {
     }
 }
 
+.arrow_btn.black {
+    &::before {
+        background-color: #555;
+    }
+    &::after {
+        background-color: #555;
+    }
+}
+
 
 #skip_conts {
     position: relative;
