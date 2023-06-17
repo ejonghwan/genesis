@@ -1056,7 +1056,7 @@ const createDOM = (el, data) => {
     let t = '';
 
     t += `
-        <div id="map_tab" class="info_wrap tab">
+        <div id="map_tab" class="info_wrap tab_type3">
             <div class="tab_wrap">
                 <ul class="tab_header">
                     ${data.map(d => `
@@ -1129,8 +1129,8 @@ mapData().then(d => {
     region_info.forEach((info, idx) => {
         const marker = new kakao.maps.Marker({ 
             position: new kakao.maps.LatLng(info.letlong.lat, info.letlong.long), 
-            image: new kakao.maps.MarkerImage('../src/assets/images/common/marker.png', new kakao.maps.Size(40, 60), 
-            { offset: new kakao.maps.Point(40, 60) }) 
+            image: new kakao.maps.MarkerImage('../src/assets/images/common/marker.svg', new kakao.maps.Size(40, 60), 
+            { offset: new kakao.maps.Point(20, 60) }) 
         });
         marker.setMap(map);
 
@@ -1156,10 +1156,6 @@ mapData().then(d => {
         
         // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
         infowindow.open(map, marker); 
-
-
-        // console.log(info.letlong.lat, info.letlong.long)
-        // console.log(infowindow)
 
         map_move[idx].addEventListener('click', e => map.panTo( new kakao.maps.LatLng(info.letlong.lat, info.letlong.long) ));
 

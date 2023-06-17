@@ -5,16 +5,14 @@
         .region {
             width: 500px;
             flex: 0 0 auto;
-            padding-right: 20px;
-
+            padding-right: 60px;
+            
     
         }
 
         .map {
             flex: 1 0 auto;
         }
-
-      
 
         .info_tit {
             font-weight: 500;
@@ -90,4 +88,18 @@
 }
 
 
+
+
+
+@include mobile {
+    .sub_page {
+        .center_wrap {
+            display: block;
+            .region {
+                width: 100%;
+                padding-right: 0;
+            }
+        }
+    }
+}
 
