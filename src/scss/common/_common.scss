@@ -24,6 +24,13 @@ html {
 //     border-radius: 2px;
 // }
 
+.ani {
+    transform: translateY(100px); opacity: 0; transition: 1s; 
+    &.show {
+        transform: translateY(0px); opacity: 1;
+    }
+}
+
 
 
 body {
