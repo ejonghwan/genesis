@@ -132,19 +132,44 @@
             </div>
              <!-- 수정 해야됨 -->
         </article>
-        <article class="contact">
-            <form id="contact-form">
-                <input type="hidden" name="contact_number"><!-- 고유키값 넘김 -->
+        <article class="g_inner contact">
+            
+                <form id="contact-form">
+                    <div class="form_type">
+                        <input type="hidden" name="contact_number"><!-- 고유키값 넘김 -->
 
-                <!-- 사용자 정보 넘김-->
-                <label>Name</label>
-                <input type="text" name="user_name">
-                <label>Email</label>
-                <input type="email" name="user_email">
-                <label>Message</label>
-                <textarea name="message"></textarea>
-                <input type="submit" value="Send">
-            </form>
+                        <!-- 사용자 정보 넘김-->
+                        <div class="form_ele">
+                            <div class="ele_tit">
+                                <label for="user_info_name">이름</label>
+                            </div>
+                            <div class="input_wrap">
+                                <input type="text" name="user_name" id="user_info_name">
+                            </div>
+                        </div>
+                        <div class="form_ele">
+                            <div class="ele_tit">
+                                <label>이메일</label>
+                            </div>
+                            <div class="input_wrap">
+                                <input type="email" name="user_email">
+                            </div>
+                        </div>
+                        <div class="form_ele">
+                            <div class="ele_tit">
+                                <label>문의사항</label>
+                            </div>
+                            <div class="input_wrap">
+                                <textarea name="message"></textarea>
+                            </div>
+                        </div>
+                        <div class="btn_wrap align_c">
+                            <button type="submit" class="btn blue">문의사항 보내기</button>
+                        </div>
+                    </div>
+                </form>
+
+          
         </article>
     </main>
     <!-- //main -->
@@ -1120,7 +1145,7 @@ const createDOM = (el, data) => {
                                         data-long="${info.letlong.long}"
                                     >${info.point}</button>
                                     <div class="info_add">${info.address}</div>
-                                    <div class="info_tel">${info.tel}</div>
+                                    <div class="info_tel"><a href="tel:${info.tel}" title="매장 전화걸기">${info.tel}</a></div>
                                     <ul class="cars">
                                         ${info.car.map(car => `
                                             <li>${car}</li>
@@ -1192,7 +1217,7 @@ mapData().then(d => {
                     <div class="info_type">${info.type}</div>
                     <span class="map_move">${info.point}</span>
                     <div class="info_add">${info.address}</div>
-                    <div class="info_tel">${info.tel}</div>
+                    <div class="info_tel"><a href="tel:${info.tel}" title="매장 전화걸기">${info.tel}</a></div>
                     <ul class="cars">
                         ${info.car.map(car => `
                             <li>${car}</li>

@@ -2,6 +2,25 @@ $pc: 1200px;
 $tablet: 1100px;
 $mobile: 760px;
 
+$blue: #4868e1;
+$black: #222;
+$white: #fff;
+$gray: #ddd;
+$dark_gray: #666;
+$light_gray: #efefef;
+$point: rgb(217, 24, 24);
+$btn_radius: 56px;
+
+
+// font
+$tit_1: #222;
+$tit_2: #444;
+$con_1: #555;
+$con_2: #666;
+$disabled: #999;
+
+
+
 @mixin pc {
     @media screen and (max-width: $pc) {
         @content;
@@ -33,6 +52,7 @@ $mobile: 760px;
 @import "common/popup";
 @import "common/tab";
 @import "common/button";
+@import "common/input";
 
 //main
 @import "main/main_visual";
