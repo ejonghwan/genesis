@@ -84,10 +84,14 @@ body {
 }
 
 
-
-h1 {font-size: 20px; color: #222;}
-h2 {font-size: 24px; color: #333; margin-bottom: 10px;}
-h3 {font-size: 16px; color: #444;}
+.g_title {
+    margin-bottom: 20px;
+}
+h1 {font-size: 20px; color: $tit_1;}
+h2 {font-size: 24px; color: $tit_1;}
+h3 {font-size: 20px; color: $tit_2;}
+h4 {font-size: 18px; color: $tit_2;}
+h5 {font-size: 16px; color: $tit_2;}
 
 .g_inner {
     width: 1080px;
