@@ -124,8 +124,11 @@
                 <ul class="region"></ul>
                 <div class="map">
                     <div id="map"></div>
+                    <div class="btn_traffic_wrap"> 
+                        <button class="btn_traffic btn_small" type="button">교통량 보기</button>
+                    </div>
                 </div>
-                <button class="btn_traffic" type="button">교통량 보기</button>
+               
             </div>
              <!-- 수정 해야됨 -->
         </article>
@@ -1090,7 +1093,7 @@ const mapData = async () => {
 }
 
 const createDOM = (el, data) => {
-    console.log(el, data)   
+    // console.log(el, data)   
     let t = '';
 
     t += `
@@ -1196,7 +1199,8 @@ mapData().then(d => {
                         `).join('')}
                     </ul>
                 </div>
-            `
+            `,
+            removable : true,
         });
         
         // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
@@ -1222,7 +1226,13 @@ mapData().then(d => {
     // 트래픽 보기
     btn_traffic.addEventListener('click', e => {
         isTraffic = !isTraffic 
-        isTraffic ? map.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC) : map.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC)
+        if(isTraffic) {
+            map.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+            btn_traffic.innerText = '교통량 끄기'
+        } else {
+            map.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+            btn_traffic.innerText = '교통량 보기'
+        }
     })
 
 
@@ -1232,7 +1242,7 @@ mapData().then(d => {
 })
 
 
-// window.addEventListener('scroll', ui.setThrottle()(() => 'asdasd', 300))
+window.addEventListener( 'scroll', ui.setThrottle(() => console.log('inner ??'), 'b') )
 
 
 </script>

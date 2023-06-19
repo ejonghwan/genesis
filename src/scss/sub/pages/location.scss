@@ -12,6 +12,18 @@
 
         .map {
             flex: 1 0 auto;
+            position: relative;
+
+            .btn_traffic_wrap {
+                position: absolute;
+                margin-top: 20px;
+                right: 0;
+            }
+
+            img[alt="close"] {
+                width: 15px;
+                height: 15px;
+            } 
         }
 
         .info_tit {
