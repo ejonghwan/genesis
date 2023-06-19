@@ -12,6 +12,7 @@
     <!-- swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./guide.css">
 
     <!-- highlight -->
     <link rel="stylesheet"
@@ -21,23 +22,6 @@
 </head>
 
 <body>
-    <style>
-        header {width: 100%; background-color: #080b0e; padding: 20px 0px; margin-bottom: 50px; color: #fff;}
-        footer {width: 100%; background-color: #080b0e; padding: 50px 0px; margin-top: 50px; color: #fff;}
-        .spo {margin-bottom: 30px;;}
-        .spo > strong {display: block; margin-bottom: 10px;;}
-        .spo .font1 {font-weight: 300;}
-        .spo .font2 {font-weight: 400;}
-        .spo .font3 {font-weight: 500;}
-        .spo .font4 {font-weight: 600;}
-        .spo .font5 {font-weight: 700;}
-
-        .gene {margin-bottom: 20px;;}
-        .gene > strong {display: block; margin-bottom: 10px;;}
-        .gene .font11 {font-weight: 300;}
-        .gene .font12 {font-weight: 400;}
-        .gene .font13 {font-weight: 500;}
-    </style>
 
     <!-- header -->
     <header>
@@ -105,15 +89,71 @@
 </pre>
 </div>
             </div>
+            <!-- //fonts -->
+
+                <!-- color -->
+                <div class="g_inner">
+                    <h2>Color</h2> 
+                    <div class="font1">
+                        <strong class="">메인컬러</strong>
+                        <p class="">호호</p>
+                        <ul class="main_color">
+                            <li>$blue: #4868e1;</li>
+                            <li>$black: #222;</li>
+                            <li>$white: #fff;</li>
+                            <li>$gray: #ddd;</li>
+                            <li>$dark_gray: #666;</li>
+                            <li>$light_gray: #efefef;</li>
+                            <li>$point: rgb(217, 24, 24);</li>
+                        </ul>
+                    </div>
+                    <div class="font1">
+                        <strong class="">텍스트 제목 컬러</strong>
+                        <p class="">제목</p>
+                        <ul class="tit_color">
+                            <li>$tit_1: #222;</li>
+                            <li>$tit_2: #444;</li>
+                        </ul>
+                    </div>
+                    <div class="font1">
+                        <strong class="">텍스트 컨텐츠 컬러</strong>
+                        <p class="">제목</p>
+                        <ul class="con_color">
+                            <li>$con_1: #555;</li>
+                            <li>$con_2: #666;</li>
+                            <li>$disabled: #999;</li>
+                        </ul>
+                    </div>
+                </div>
+    
+
 
              <!-- Title -->
              <div class="g_inner">
                 <h2>Title</h2> 
-                <div class="font1">
-                    <!-- <strong class="">font-weight 200</strong> -->
-                    <p class="">font-weight 300 - Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div class="title">
+                    <strong class="">h1</strong>
+                    <h1 class="">로고에만 사용</h1>
+                </div>
+                <div class="title">
+                    <strong class="">h2</strong>
+                    <h2>페이지 가장 큰 제목</h2>
+                </div>
+                <div class="title">
+                    <strong class="">h3</strong>
+                    <h3 class="">h2 다음 컨텐츠 section, article에 사용</h3>
+                </div>
+                <div class="title">
+                    <strong class="">h4</strong>
+                    <h4 class="">h3 안쪽 컨텐츠에 사용</h4>
+                </div>
+                <div class="title">
+                    <strong class="">h5</strong>
+                    <h5 class="">h4안쪽 컨텐츠에 사용</h5>
                 </div>
             </div>
+
+            
 
             <!-- Content -->
             <div class="g_inner">
@@ -136,22 +176,51 @@
             <!-- Bullet  -->
             <div class="g_inner">
                 <h2>Bullet</h2> 
+                <p>불릿은 레벨1 레벨2 레벨3 순으로 사용</p>
                 <div class="font1">
-                    <!-- <strong class="">font-weight 200</strong> -->
-                    <p class="">font-weight 200 | Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <strong class="">Bullet type 1</strong>
+                    <p class="">레벨 1</p>
+                    <ul class="c_bull1">
+                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus porro eos nostrum eaque maiores animi optio laborum, ut repudiandae. Quaerat, error quod! Quasi perspiciatis consectetur, nihil cumque distinctio libero accusantium?</li>
+                        <li>Lorem, ipsum dolor.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, aspernatur.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit.</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, cum?</li>
+                    </ul>
+                </div>
+                <div class="font1">
+                    <strong class="">Bullet type 2</strong>
+                    <p class="">레벨 2</p>
+                    <ul class="c_bull2">
+                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus porro eos nostrum eaque maiores animi optio laborum, ut repudiandae. Quaerat, error quod! Quasi perspiciatis consectetur, nihil cumque distinctio libero accusantium?</li>
+                        <li>Lorem, ipsum dolor.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, aspernatur.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit.</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, cum?</li>
+                    </ul>
+                </div>
+                <div class="font1">
+                    <strong class="">Bullet type 3</strong>
+                    <p class="">레벨 3</p>
+                    <div class="c_bull3">※ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus porro eos nostrum eaque maiores animi optio laborum, ut repudiandae. Quaerat, error quod! Quasi perspiciatis consectetur, nihil cumque distinctio libero accusantium?</div>
+                    <div class="c_bull3_type1">※ Lorem, ipsum dolor.</div>
+                    <div class="c_bull3_type1">※ Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, aspernatur.</div>
+                </div>
+                <div class="font1">
+                    <strong class="">Bullet type 4</strong>
+                    <p class="">레벨 3 리스트형태</p>
+                    <ul class="c_bull3_type2">
+                        <li>※ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus porro eos nostrum eaque maiores animi optio laborum, ut repudiandae. Quaerat, error quod! Quasi perspiciatis consectetur, nihil cumque distinctio libero accusantium?</li>
+                        <li>※ Lorem, ipsum dolor.</li>
+                        <li>※ Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, aspernatur.</li>
+                        <li>※ Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit.</li>
+                        <li>※ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, cum?</li>
+                    </ul>
                 </div>
             </div>
 
 
-            <!-- color -->
-            <div class="g_inner">
-                <h2>Color</h2> 
-                <div class="font1">
-                    <!-- <strong class="">font-weight 200</strong> -->
-                    <p class="">font-weight 200 | Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-            </div>
-
+        
              <!-- tab -->
              <div class="g_inner">
                 <h2>Tab</h2> 

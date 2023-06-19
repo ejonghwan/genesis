@@ -1,0 +1,42 @@
+header {width: 100%; background-color: #080b0e; padding: 20px 0px; margin-bottom: 50px; color: #fff;}
+footer {width: 100%; background-color: #080b0e; padding: 50px 0px; margin-top: 50px; color: #fff;}
+.spo {margin-bottom: 30px;;}
+.spo > strong {display: block; margin-bottom: 10px;;}
+.spo .font1 {font-weight: 300;}
+.spo .font2 {font-weight: 400;}
+.spo .font3 {font-weight: 500;}
+.spo .font4 {font-weight: 600;}
+.spo .font5 {font-weight: 700;}
+
+.gene {margin-bottom: 20px;;}
+.gene > strong {display: block; margin-bottom: 10px;;}
+.gene .font11 {font-weight: 300;}
+.gene .font12 {font-weight: 400;}
+.gene .font13 {font-weight: 500;}
+
+
+
+.main_color {display: flex; flex-wrap: wrap; gap:10px;}
+.main_color > li {flex: 0 0 auto; background-color: #4868e1; padding: 10px; border-radius: 6px; color: #fff;}
+.main_color > li:nth-child(2) {background-color: #222;}
+.main_color > li:nth-child(3) {background-color: #fff; border: 1px solid #efefef; color: #444;}
+.main_color > li:nth-child(4) {background-color: #ddd;color: #444; }
+.main_color > li:nth-child(5) {background-color: #666; }
+.main_color > li:nth-child(6) {background-color: #efefef; color: #444;}
+.main_color > li:nth-child(7) {background-color: rgb(217, 24, 24);}
+
+
+.tit_color {display: flex; flex-wrap: wrap; gap:10px;}
+.tit_color > li {flex: 0 0 auto; background-color: #222; padding: 10px 20px; border-radius: 6px; color: #fff;}
+.tit_color > li:nth-child(2) {background-color: #444;}
+
+
+.con_color {display: flex; flex-wrap: wrap; gap:10px;}
+.con_color > li {flex: 0 0 auto; background-color: #555; padding: 10px 20px; border-radius: 6px; color: #fff;}
+.con_color > li:nth-child(2) {background-color: #666;}
+.con_color > li:nth-child(3) {background-color: #999;}
+
+
+
+
+    

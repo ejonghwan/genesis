@@ -5650,6 +5650,63 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
   cursor: pointer;
 }
 
+.c_bull1 {
+  margin-top: 5px;
+}
+.c_bull1 > li {
+  display: block;
+  position: relative;
+  padding-left: 12px;
+}
+.c_bull1 > li::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: #666;
+}
+
+.c_bull2 {
+  margin-top: 5px;
+}
+.c_bull2 > li {
+  display: block;
+  position: relative;
+  padding-left: 12px;
+}
+.c_bull2 > li::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 5px;
+  height: 1px;
+  border-radius: 50%;
+  background-color: #666;
+}
+
+.c_bull3_type1 {
+  display: block;
+  position: relative;
+  padding-left: 19px;
+  text-indent: -19px;
+}
+
+.c_bull3_type2 {
+  margin-top: 5px;
+}
+.c_bull3_type2 > li {
+  display: block;
+  position: relative;
+  padding-left: 19px;
+  text-indent: -19px;
+}
+
 .main_visual {
   height: 100vh;
   background-color: #02020d;
