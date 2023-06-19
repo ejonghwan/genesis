@@ -1146,19 +1146,17 @@ const createDOM = (el, data) => {
 
 }
 
-const handleResize = (map, moveLatLon, idx) => {
+const handleResize = (map, moveLatLon) => {
     map.setCenter(moveLatLon);
 }
 
 
 mapData().then(d => {
-    // console.log('dd?', d)
     const map_move = document.querySelectorAll('.map_move')
     let map_idx = 0;
 
     const region_info = []
     d.map(i => i.items.map(info => info.info.map(item => region_info.push(item))))
-    // console.log('?????????', region_info[0])
     
     //markerInfo의 첫번째 데이터로 기본 지도 인스턴스 생성
     const map = new kakao.maps.Map(mapContainer, { center: new kakao.maps.LatLng(region_info[0].letlong.lat, region_info[0].letlong.long), level: 3 });
@@ -1167,11 +1165,12 @@ mapData().then(d => {
     const zoomControl = new kakao.maps.ZoomControl();
     map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
-    map.setZoomable(false) //휠 줌 기능막기
-
+    // 맵 타입 위성 붙이기
     const mapTypeControl = new kakao.maps.MapTypeControl();
     map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
 
+    //휠 줌 기능막기
+    map.setZoomable(false) 
 
     // 반복
     region_info.forEach((info, idx) => {
@@ -1182,9 +1181,7 @@ mapData().then(d => {
         });
         marker.setMap(map);
 
-        
-        // 정리 해야됨
-        // 인포윈도우를 생성합니다
+        // 인포윈도우를 생성
         const infowindow = new kakao.maps.InfoWindow({
             position : new kakao.maps.LatLng(info.letlong.lat, info.letlong.long), 
             content : ` 
@@ -1209,15 +1206,18 @@ mapData().then(d => {
         map_move[idx].addEventListener('click', e => {
             map.panTo( new kakao.maps.LatLng(region_info[idx].letlong.lat, region_info[idx].letlong.long) );
             map_idx = idx;
-            console.log(idx)
+            // console.log(idx)
         });
        
     })
 
     
 
-
-    window.addEventListener('resize', handleResize(map, new kakao.maps.LatLng(region_info[map_idx].letlong.lat, region_info[map_idx].letlong.long), map_idx) )
+    // 리사이즈시 센터로
+    window.addEventListener('resize', ui.lastCallDebounce(
+            () => handleResize(map, new kakao.maps.LatLng(region_info[map_idx].letlong.lat, region_info[map_idx].letlong.long)), 
+            300 
+        ))
 
     // 트래픽 보기
     btn_traffic.addEventListener('click', e => {
@@ -1232,7 +1232,7 @@ mapData().then(d => {
 })
 
 
-// window.addEventListener('scroll', ui.setThrottle( () => console.log('inner'), 500 ))
+// window.addEventListener('scroll', ui.setThrottle()(() => 'asdasd', 300))
 
 
 </script>

@@ -84,20 +84,20 @@ class Ui {
         }
       }
 
-    setThrottle() {
+    setThrottle(cb, wait) {
         // setTimeout return 값이 카운트가 담기면 true. 
         // true일때만 작동하는 throttle 함수
+        // 이거 손봐야됨
         
-        return function(e, cb, wait) {
             let eventBlocker = true
             if(!eventBlocker) return;
             eventBlocker = setTimeout(() => {
-                console.log(e, cb, wait)
-                // cb();
+                console.log(cb, wait)
+                cb();
                 console.log(123123)
                 eventBlocker = null;
             }, wait)
-        }
+        
     }
 
     startCallDebounce(cb, wait) {
