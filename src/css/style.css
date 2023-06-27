@@ -5755,7 +5755,7 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
   height: 30vh;
   position: absolute;
   top: 60%;
-  left: 40%;
+  left: 55%;
   z-index: 3;
   transition: 0.5s cubic-bezier(0.69, 0.04, 0.41, 0.98);
 }
@@ -5769,6 +5769,7 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
   left: 0;
   backdrop-filter: blur(4px);
   z-index: 5;
+  opacity: 0.8;
 }
 .main_visual .list li .inner {
   width: 100%;
@@ -5811,12 +5812,18 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
   transform: translateY(10px);
 }
 .main_visual .list li .inner .pos_txt {
+  width: 1px;
+  height: 1px;
   position: absolute;
+  top: 200px;
+  left: 100px;
 }
 .main_visual .list li .inner .pos_txt .pos_txt_sub {
   opacity: 0;
   transform: translateY(-10px);
   transition: opacity 1s 0.3s, transform 1s 0.3s;
+  width: 300px;
+  height: auto;
 }
 .main_visual .list li .inner .pos_btn {
   position: absolute;
@@ -5828,9 +5835,11 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
   opacity: 0;
   transform: translateY(10px);
   transition: opacity 1s 0.3s, transform 1s 0.3s;
+  left: 100px;
 }
 .main_visual .list li .inner .pos_btn a:first-child {
   display: block;
+  margin-right: 40px;
 }
 .main_visual .list li:nth-of-type(1) {
   left: 0px;
@@ -5869,10 +5878,6 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
 .main_visual .list li:nth-of-type(2) .inner .thum {
   display: none;
 }
-.main_visual .list li:nth-of-type(2) .inner .pos_txt {
-  width: 300px;
-  height: auto;
-}
 .main_visual .list li:nth-of-type(2) .inner .pos_txt .pos_txt_sub {
   opacity: 1;
   transform: translateY(0);
@@ -5894,42 +5899,42 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
   margin-bottom: 20px;
 }
 .main_visual .list li:nth-of-type(3) {
-  left: calc(40% + 0vw);
+  left: calc(55% + 0vw);
   transition-delay: 0s;
   border: 5px solid transparent;
   border-radius: 20px;
   overflow: hidden;
 }
 .main_visual .list li:nth-of-type(4) {
-  left: calc(40% + 15vw);
+  left: calc(55% + 15vw);
   transition-delay: 0.1s;
   border: 5px solid transparent;
   border-radius: 20px;
   overflow: hidden;
 }
 .main_visual .list li:nth-of-type(5) {
-  left: calc(40% + 30vw);
+  left: calc(55% + 30vw);
   transition-delay: 0.2s;
   border: 5px solid transparent;
   border-radius: 20px;
   overflow: hidden;
 }
 .main_visual .list li:nth-of-type(6) {
-  left: calc(40% + 45vw);
+  left: calc(55% + 45vw);
   transition-delay: 0.3s;
   border: 5px solid transparent;
   border-radius: 20px;
   overflow: hidden;
 }
 .main_visual .list li:nth-of-type(7) {
-  left: calc(40% + 60vw);
+  left: calc(55% + 60vw);
   transition-delay: 0.4s;
   border: 5px solid transparent;
   border-radius: 20px;
   overflow: hidden;
 }
 .main_visual .list li:nth-of-type(8) {
-  left: calc(40% + 75vw);
+  left: calc(55% + 75vw);
   transition-delay: 0.5s;
   border: 5px solid transparent;
   border-radius: 20px;
@@ -5938,7 +5943,7 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
 .main_visual .navi {
   position: absolute;
   top: calc(40% + 30vh + 20px);
-  left: 40%;
+  left: 55%;
   z-index: 3;
   padding-left: 20px;
 }

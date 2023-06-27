@@ -1,8 +1,13 @@
 
-$initPos: 40%;
+$initPos: 55%;
 $topPos: 60%;
 $wid: 15vw;
 $height: 30vh;
+
+// $initPos: 80%;
+// $topPos: 20%;
+// $wid: 15vw;
+// $height: 25vh;
 
 
 .main_visual {
@@ -48,6 +53,7 @@ $height: 30vh;
                 // background-color: red;
                 backdrop-filter: blur(4px);
                 z-index: 5;
+                opacity: .8;
             }
 
 			.inner {
@@ -105,13 +111,19 @@ $height: 30vh;
 				}
 
                 .pos_txt {
-                    // width: 1px;
-                    // height: 1px;
+                    width: 1px;
+                    height: 1px;
                     position: absolute;
+                    top: 200px;
+                    left: 100px;
+
+
                     .pos_txt_sub {
                         opacity: 0;
                         transform: translateY(-10px);
                         transition: opacity 1s .3s, transform 1s .3s ;
+                        width: 300px;
+                        height: auto;
                     }
                 }
                 .pos_btn {
@@ -126,8 +138,11 @@ $height: 30vh;
                     transform: translateY(10px);
                     transition: opacity 1s .3s, transform 1s .3s ;
 
+                    left: 100px;
+
                     a:first-child {
                         display: block;
+                        margin-right: 40px;
                     }
                 }
                
@@ -185,8 +200,7 @@ $height: 30vh;
                     display: none;
                 }
                 .pos_txt {
-                   width: 300px;
-                   height: auto;
+                   
                     .pos_txt_sub {
                         opacity: 1;
                         transform: translateY(0);
@@ -196,6 +210,7 @@ $height: 30vh;
                 .pos_btn {
                     opacity: 1;
                     transform: translateY(0);
+                    
                 }
 
 
@@ -217,6 +232,7 @@ $height: 30vh;
 
 		@for $i from 0 through 5 {
 			li:nth-of-type(#{$i + 3}) {
+				// top: calc($topPos + $wid * $i);
 				left: calc($initPos + $wid * $i);
 				transition-delay: 0.1s * $i;
                 border: 5px solid transparent;
