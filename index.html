@@ -38,31 +38,17 @@
         <div class="g_inner">
             <nav class="header_wrap">
                 <h1>
-                    <a href="javascript:;" role="button">
+                    <a href="./index.html" role="button">
                         <span class="blind">제네시스 로고</span>
                     </a>
                 </h1>
                 <ul class="header_nav">
-                    <li><a href="javascript:;" role="button" onclick="">모델</a></li>
-                    <li><a href="javascript:;" role="button">구매</a></li>
-                    <li><a href="javascript:;" role="button">체험</a></li>
-                    <li><a href="javascript:;" role="button">멤버스</a></li>
-                    <li><a href="javascript:;" role="button">제네시스</a></li>
+                    <li><a href="./pages/gallery.html" role="button">Gallery</a></li>
+                    <li><a href="./pages/location.html" role="button">Contact</a></li>
+                    <li><a href="./pages/members.html" role="button">Members</a></li>
+                    <li><a href="./pages/youtube.html" role="button">Youtube</a></li>
                 </ul>
-                <ul class="header_ico">
-                    <li>
-                        <a href="javascript:;" role="button">
-                            <i class="fa-solid fa-fingerprint"></i>
-                            <span class="blind">마이 페이지</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" role="button">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <span class="blind">검색 레이어 열기</span>
-                    </a>
-                    </li>
-                </ul>
+               
                 <button class="popup_btn header_all_menu" type="button" >
                     <span class="line"></span>
                     <span class="blind">전체 메뉴 열기</span>
@@ -1676,7 +1662,6 @@
             carImage = document.querySelectorAll(` ${tabType} .swiper-slide-active .car_wrap .car .car_img`);
             carName = document.querySelectorAll(` ${tabType} .swiper-slide-active .color_name_wrap .color_name`)
             prev_el = carImage[0];
-            // console.log('???????????????????????', colors[0])
             ui.toggleClass(colors, colors[0], 'on')
             ui.toggleClass(carName, carName[0], 'on')
             ui.toggleClass(carImageWrap, carImageWrap[0], 'on')
@@ -1732,18 +1717,10 @@
 
         on: {
             slideChange: function() {
-            console.log(13213)
         }
         }
     });
 
-   
-
-
-// const key = 'AIzaSyChzicx_fRjO6YQhLL-C8tDxCq0E46sxtk'
-// const list = 'PLQytOX-GQNjpnWvXUwth7PTdoEA2kZX16'
-// const num = 10;
-// const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${list}&key=${key}&maxResults=${num}`
 
 </script>
 

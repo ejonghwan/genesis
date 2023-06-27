@@ -15,7 +15,7 @@ class Common {
     init() {
         this.deviceCheck();
         this.footer();
-        this.globalHeader();
+        // this.globalHeader();
     }
 
     footer() {
