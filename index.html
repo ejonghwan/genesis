@@ -189,6 +189,174 @@
             </section>
             <!-- main video -->
 
+            <!-- new main v -->
+
+<script>
+    // let sw = false;
+    // window.addEventListener('click', e => {
+      
+    //     const v = document.querySelector('#test')
+    //     if(sw) {
+    //        v.play();
+    //     } else {
+    //       v.pause();
+    //       sw = true;
+    //     }
+    // })
+
+
+
+const wrap = document.querySelector('.list')
+const items = wrap.querySelectorAll('li')
+const prev = document.querySelector('.prev')
+const next = document.querySelector('.next')
+
+console.log(items, prev, next)
+
+
+
+window.addEventListener('load', e => {
+    // document.querySelectorAll('li')[1].querySelector('video').play()
+})
+
+prev.addEventListener('click', e => {
+    wrap.prepend(wrap.lastElementChild)
+    prev.classList.add('on');
+    setTimeout(() => {
+        prev.classList.remove('on')
+    }, 600)
+
+
+
+
+    console.log(wrap.firstElementChild.querySelector('video'))
+    wrap.firstElementChild.classList.add('active')
+
+    setTimeout(() => {
+        for(let i = 0; i < items.length; i++) {
+            items[i].querySelector('video').pause();
+            items[i].querySelector('video').currentTime = 0;
+        }
+
+        console.dir(document.querySelectorAll('li')[1].querySelector('video'))
+
+        document.querySelectorAll('li')[1].querySelector('video').play()
+        console.log('set??', items[1].querySelector('video'))
+    }, 100)
+})
+
+
+next.addEventListener('click', e => {
+    wrap.append(wrap.firstElementChild)
+    next.classList.add('on');
+    setTimeout(() => {
+        next.classList.remove('on')
+    }, 600)
+
+
+
+    console.log(wrap.firstElementChild.querySelector('video'))
+    wrap.firstElementChild.classList.add('active')
+
+    setTimeout(() => {
+        for(let i = 0; i < items.length; i++) {
+            items[i].querySelector('video').pause();
+            items[i].querySelector('video').currentTime = 0;
+        }
+
+        console.dir(document.querySelectorAll('li')[1].querySelector('video'))
+
+        document.querySelectorAll('li')[1].querySelector('video').play()
+        console.log('set??', items[1].querySelector('video'))
+    }, 100)
+   
+    
+})
+  
+  
+  </script>
+
+        <div class="dho">
+        <ul class="list">
+            <li>
+                <div class="inner">
+                <h2>1.CALM VALLEY</h2>
+                <figure class="main_visual_slide_video">
+                    <!-- <video src="./g80.mp4" muted loop playsinline poster="./eocp.png"></video> -->
+                    <video src="./g80.mp4" muted loop playsinline ></video>
+                </figure>
+                </div>
+            </li>
+            <li>
+                <div class="inner">
+                <h2>2. WIDE PLAINS</h2>
+                <figure class="main_visual_slide_video">
+                    <video id="test" src="./gv60.mp4" muted loop playsinline ></video>
+                </figure>
+                </div>
+            </li>
+            <li>
+                <div class="inner">
+                <h2>3. CALM LAKE</h2>
+                <figure class="main_visual_slide_video">
+                    <video src="./gv70.mp4" muted loop playsinline ></video>
+                </figure>
+                </div>
+            </li>
+            <li>
+                <div class="inner">
+                <h2>4. ROADSIDE</h2>
+                <figure class="main_visual_slide_video">
+                    <video src="./g80.mp4" muted loop playsinline ></video>
+                </figure>
+                </div>
+            </li>
+            <li>
+                <div class="inner">
+                <h2>5. MOUNTAIN</h2>
+                <figure class="main_visual_slide_video">
+                    <video src="./gv60.mp4" muted loop playsinline ></video>
+                </figure>
+                </div>
+            </li>
+            <li>
+                <div class="inner">
+                <h2>6. LANDSCAPE</h2>
+                <figure class="main_visual_slide_video">
+                    <video src="./gv70.mp4" muted loop playsinline ></video>
+                </figure>
+                </div>
+            </li>
+            <li>
+                <div class="inner">
+                <h2>7. GRASSLAND</h2>
+                <figure class="main_visual_slide_video">
+                    <video src="./g80.mp4" muted loop playsinline ></video>
+                </figure>
+                </div>
+            </li>
+            <li>
+                <div class="inner">
+                <h2>8. SEA WAVES</h2>
+                <figure class="main_visual_slide_video">
+                    <video src="./gv60.mp4" muted loop playsinline ></video>
+                </figure>
+                </div>
+            </li>
+            </ul>
+        
+            <nav class="navi">
+            <p class="prev">
+                <span>prev</span>
+            </p>
+        
+            <p class="next">
+                <span>next</span>
+            </p>
+            </nav>
+        </div>
+            <!-- //new main v -->
+
             <!-- sub slide -->
             <!-- 자동차 슬라이드 참고 자료 유아이로. 배경컬러와 배경텍스트(모델명) 같이 변경 아래 제원도 -->
             <section class="sub_visual">

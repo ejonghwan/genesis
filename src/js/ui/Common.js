@@ -15,7 +15,7 @@ class Common {
     init() {
         this.deviceCheck();
         this.footer();
-        // this.globalHeader();
+        this.globalHeader();
     }
 
     footer() {
@@ -46,14 +46,14 @@ class Common {
             })
 
             // 네비메뉴
-            new Popup('.popup.nav_menu', {
-                openBtn: '.header_nav',
-                closeBtn: '.popup.nav_menu .pop_close',
-                accList: ['#container', 'footer', '#skip_conts'],
-                nextFocus: ".pupup_type1_body",
-                prevFocus: ".popup_btn",
-                dimd: '.dimd'
-            })
+            // new Popup('.popup.nav_menu', {
+            //     openBtn: '.header_nav',
+            //     closeBtn: '.popup.nav_menu .pop_close',
+            //     accList: ['#container', 'footer', '#skip_conts'],
+            //     nextFocus: ".pupup_type1_body",
+            //     prevFocus: ".popup_btn",
+            //     dimd: '.dimd'
+            // })
 
             // 네비 안 탭
            new Tab('.tab.type2', {

@@ -5,6 +5,327 @@
     position: relative;
 
 
+
+
+// adasdasd
+
+$initPos: 40%;
+$wid: 15vw;
+$height: 40vh;
+
+.dho {
+	width: 100%;
+	height: 100vh;
+	background: #111;
+	position: relative;
+	overflow: hidden;
+
+	.list {
+		li {
+			width: $wid;
+			height: $height;
+			position: absolute;
+			top: 40%;
+			left: $initPos;
+			z-index: 3;
+			padding: 20px;
+			transition: .5s cubic-bezier(.69,.04,.41,.98);
+
+			.inner {
+				width: 100%;
+				height: 100%;
+				background: #333;
+				padding: 20px;
+				border-radius: 15px;
+				box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+				overflow: hidden;
+				display: flex;
+				align-items: center;
+				transition: .5s;
+
+				h2 {
+					font: bold 20px/1 'teko';
+					color: #888;
+					letter-spacing: 1px;
+					transition: 0.2s 0.5s;
+
+					&::before {
+						content: '';
+						display: block;
+						width: 20px;
+						height: 3px;
+						background: #888;
+						margin-bottom: 10px;
+						transition: 0.5s;
+					}
+				}
+			}
+		}
+
+		//순서별 li의 위치 및 크기
+		//첫번째 패널 : 기존의 활성화되었다가 사라질 패널
+		li:nth-of-type(1) {
+			left: 0px;
+			top: 0px;
+			width: 100%;
+			height: 100%;
+			padding: 0;
+			opacity: 0;
+			z-index: 1;
+			transform: scale(2);
+		}
+
+		//두번째 패널 : 리스트에서 활성화되는 패널
+		li:nth-of-type(2) {
+			left: 0px;
+			top: 0px;
+			width: 100%;
+			height: 100%;
+			padding: 0;
+			z-index: 2;
+			transform: scale(1);
+
+			.inner {
+				background: #222;
+				box-shadow: none;
+				border-radius: 0px;
+				padding: 5vw;
+
+				h2 {
+					color: #fff;
+					font-size: 8vw;
+
+					&::before {
+						background: #fff;
+						height: 6px;
+						width: 6vw;
+						margin-bottom: 20px;
+					}
+				}
+			}
+		}
+
+
+		@for $i from 0 through 5 {
+			li:nth-of-type(#{$i + 3}) {
+				left: calc($initPos + $wid * $i);
+				transition-delay: 0.1s * $i;
+			}
+		}
+
+		
+	}
+
+	.navi {
+		position: absolute;
+		top: calc(40% + $height + 20px);
+		left: $initPos;
+		z-index: 3;
+		padding-left: 20px;
+
+		.prev, 
+		.next {
+			display: inline-block;
+			width: 70px;
+			height: 70px;
+			border-radius: 50%;
+			border: 1px solid #bbb;
+			margin-right: 20px;
+			position: relative;
+
+
+			&::before,
+			&::after {
+				content: '';
+				display: block;
+				width: 17px;
+				height: 2px;
+				background-color: #fff;
+				position: absolute;
+				top: 50%;
+			}
+			&::before {
+				transform: rotate(45deg) translate(0px);
+			}
+			&::after {
+				transform: rotate(-45deg) translateX(0px);
+			}
+
+			&.on {
+				animation: wrap 0.3s 1;
+			}
+		}
+
+		// 좌우 방향에 따른 스타일링
+		.prev {
+			&::before, 
+			&::after {
+				left: 25px;
+				transform-origin: left center;
+			}
+			span {
+				left: 25px;
+			}
+			&.on {
+				span {
+					animation: prevArrow 0.5s 1;
+				}
+			}
+		}
+		.next {
+			&::before, 
+			&::after {
+				left: 25px;
+				transform-origin: right center;
+			}
+			span {
+				right: 25px;
+			}
+			&.on {
+				span {
+					animation: nextArrow 0.5s 1;
+				}
+			}
+		}
+
+		span {
+			width: 20px;
+			height: 2px;
+			background-color: #fff;
+			position: absolute;
+			top: 50%;
+			opacity: 1;
+		}
+
+	
+	}
+}
+
+
+@keyframes wrap {
+	0% {
+		transform: scale(1);
+		border: 1px solid rgba(255, 255, 255, 1);
+	}
+
+	50% {
+		transform: scale(1.5);
+		border: 1px solid rgba(255, 255, 255, 0);
+	}
+
+	100% {
+		transform: scale(1);
+		border: 1px solid rgba(255, 255, 255, 1);
+	}
+
+}
+
+@keyframes prevArrow {
+	0% {
+		left: 25px;
+		width: 20px;
+		opacity: 1;
+	}
+
+	70% {
+		left: -130px;
+		width: 100px;
+		opacity: 0;
+	}
+	80% {
+		left: 100px;
+		width: 120px;
+		opacity: 0;
+	}
+
+	100% {
+		left: 25px;
+		width: 20px;
+		opacity: 1;
+	}
+
+}
+
+
+@keyframes nextArrow {
+	0% {
+		right: 25px;
+		width: 20px;
+		opacity: 1;
+	}
+
+	70% {
+		right: -130px;
+		width: 100px;
+		opacity: 0;
+	}
+	80% {
+		right: 100px;
+		width: 120px;
+		opacity: 0;
+	}
+
+	100% {
+		right: 25px;
+		width: 20px;
+		opacity: 1;
+	}
+
+}
+
+
+@media screen and (max-width: 979px) {
+// 변수만 바꾸는게 아니라 변수값이 들어가는 엘리먼트도 같이 넣어줘야됨
+$initPos: 40%;
+$wid: 15vw;
+$height: 40vh;
+
+main {
+	.list {
+		li {
+			width: $wid;
+			height: $height;
+			left: $initPos;
+		}
+	}
+
+	@for $i from 0 through 5 {
+		li:nth-of-type(#{$i + 3}) {
+			left: calc($initPos + $wid * $i);
+			transition-delay: 0.1s * $i;
+		}
+	}
+	}
+	.navi {
+		left: $initPos;
+	}
+}
+
+@media screen and (max-width: 539px) {
+	$initPos: 20px;
+	$wid: 50vw;
+
+	main {
+		.list {
+			li {
+				width: $wid;
+				left: $initPos;
+				top: 60%;
+				height: 160px;
+			}
+			//목록 순서별 위치 설정
+			@for $i from 0 through 5 {
+				li:nth-of-type(#{$i + 3}) {
+					left: calc($initPos + $wid * $i);
+					transition-delay: 0.1s * $i;
+				}
+			}
+		}
+	}
+}
+// asdasd
+
+
     video {
         width: 100%;
         height: 100%
@@ -130,9 +451,6 @@
     }
 }
 
-.main_visual_slide.type1 {
-    
-}
 
 .main_visual_slide_video {
     // position: relative;
@@ -387,3 +705,8 @@
         }
     }
 }
+
+
+
+
+
