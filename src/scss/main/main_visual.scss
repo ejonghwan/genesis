@@ -1,6 +1,6 @@
 
 $initPos: 55%;
-$topPos: 60%;
+$topPos: 62%;
 $wid: 15vw;
 $height: 30vh;
 
@@ -53,7 +53,8 @@ $height: 30vh;
                 // background-color: red;
                 backdrop-filter: blur(4px);
                 z-index: 5;
-                opacity: .8;
+                // opacity: .8;
+                background: #0000005c;
             }
 
 			.inner {
@@ -87,7 +88,15 @@ $height: 30vh;
                         top: 50%;
                         left: 50%;
                         transform: translate(-50%, -50%);
-                        font-size: 5rem;
+                        font-size: 4rem;
+
+                        & > span {
+                            font-size: 1.4rem;
+                            width: 100px;
+                            display: block;
+                            opacity: .7;
+                            margin-top: 30px;
+                        }
                     }
                 }
 
@@ -114,7 +123,7 @@ $height: 30vh;
                     width: 1px;
                     height: 1px;
                     position: absolute;
-                    top: 200px;
+                    top: 170px;
                     left: 100px;
 
 
@@ -123,6 +132,7 @@ $height: 30vh;
                         transform: translateY(-10px);
                         transition: opacity 1s .3s, transform 1s .3s ;
                         width: 300px;
+                        margin-top: 20px;
                         height: auto;
                     }
                 }
@@ -246,11 +256,11 @@ $height: 30vh;
 	}
 
 	.navi {
-		position: absolute;
-		top: calc(40% + $height + 20px);
-		left: $initPos;
-		z-index: 3;
-		padding-left: 20px;
+        position: absolute;
+        top: calc(40% + 42vh + 17px);
+        left: 40%;
+        z-index: 3;
+        padding-left: 20px;
 
 		.prev, 
 		.next {
@@ -489,8 +499,10 @@ main {
     display: block;
     // margin-top: 85vh;
     position: absolute;
-    bottom: 80px;
-    left: 100px;
+    // bottom: 80px;
+    // left: 100px;
+    right: 60px;
+    top: 170px;
     z-index: 10;
     ul {
         display: flex;
