@@ -1,66 +1,142 @@
-.main_visual {
-    height: 100vh;
-    background-color: #02020d;
-    padding: 50px;
-    position: relative;
-
-
-
-
-// adasdasd
 
 $initPos: 40%;
+$topPos: 60%;
 $wid: 15vw;
-$height: 40vh;
+$height: 30vh;
 
-.dho {
+
+.main_visual {
 	width: 100%;
 	height: 100vh;
 	background: #111;
 	position: relative;
 	overflow: hidden;
+    // color: red;
+
+    figure::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: rgb(12, 13, 26);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        pointer-events: none;
+    }
 
 	.list {
 		li {
 			width: $wid;
 			height: $height;
 			position: absolute;
-			top: 40%;
+			top: $topPos;
 			left: $initPos;
 			z-index: 3;
-			padding: 20px;
+			// padding: 20px;
 			transition: .5s cubic-bezier(.69,.04,.41,.98);
+        
+            &::before {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                // background-color: red;
+                backdrop-filter: blur(4px);
+                z-index: 5;
+            }
 
 			.inner {
 				width: 100%;
 				height: 100%;
 				background: #333;
 				padding: 20px;
-				border-radius: 15px;
+				// border-radius: 15px;
 				box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 				overflow: hidden;
 				display: flex;
 				align-items: center;
 				transition: .5s;
 
+                .main_visual_txt {
+                    z-index: 10;
+                    height: 100%;
+                    width: 100%;
+                    color: #fff;
+                    position: absolute;
+                    left: 0;
+
+                    p, strong {
+                        font-size: 1.3rem;
+                        font-weight: 200; 
+                    }
+
+                    .thum {
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        font-size: 5rem;
+                    }
+                }
+
 				h2 {
 					font: bold 20px/1 'teko';
 					color: #888;
 					letter-spacing: 1px;
-					transition: 0.2s 0.5s;
-
-					&::before {
-						content: '';
-						display: block;
-						width: 20px;
-						height: 3px;
-						background: #888;
-						margin-bottom: 10px;
-						transition: 0.5s;
-					}
+					transition: .5s 0.5s;
+                    opacity: 0;
+                    font-size: 8rem;
+                    transform: translateY(10px);
+					// &::before {
+					// 	content: '';
+					// 	display: block;
+					// 	width: 20px;
+					// 	height: 3px;
+					// 	background: #888;
+					// 	margin-bottom: 10px;
+					// 	transition: 0.5s;
+					// }
 				}
+
+                .pos_txt {
+                    // width: 1px;
+                    // height: 1px;
+                    position: absolute;
+                    .pos_txt_sub {
+                        opacity: 0;
+                        transform: translateY(-10px);
+                        transition: opacity 1s .3s, transform 1s .3s ;
+                    }
+                }
+                .pos_btn {
+                    position: absolute; 
+                    bottom: 80px; 
+                    font-weight: 200; 
+                    font-size: 1.3rem; 
+                    display: flex; 
+                    justify-content: space-between; 
+                    
+                    opacity: 0;
+                    transform: translateY(10px);
+                    transition: opacity 1s .3s, transform 1s .3s ;
+
+                    a:first-child {
+                        display: block;
+                    }
+                }
+               
+               
 			}
 		}
+
+
+
 
 		//순서별 li의 위치 및 크기
 		//첫번째 패널 : 기존의 활성화되었다가 사라질 패널
@@ -73,6 +149,16 @@ $height: 40vh;
 			opacity: 0;
 			z-index: 1;
 			transform: scale(2);
+
+            &::before {
+                content: none;
+            }
+
+            .inner {
+                .thum {
+                    display: none;
+                }
+            }
 		}
 
 		//두번째 패널 : 리스트에서 활성화되는 패널
@@ -85,16 +171,39 @@ $height: 40vh;
 			z-index: 2;
 			transform: scale(1);
 
+            &::before {
+                content: none;
+            }
+
 			.inner {
 				background: #222;
 				box-shadow: none;
 				border-radius: 0px;
 				padding: 5vw;
 
+                .thum {
+                    display: none;
+                }
+                .pos_txt {
+                   width: 300px;
+                   height: auto;
+                    .pos_txt_sub {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                .pos_btn {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+
+
 				h2 {
 					color: #fff;
-					font-size: 8vw;
-
+                    opacity: 1;
+                    font-size: 8rem;
+                    transform: translateY(0px);
 					&::before {
 						background: #fff;
 						height: 6px;
@@ -110,6 +219,10 @@ $height: 40vh;
 			li:nth-of-type(#{$i + 3}) {
 				left: calc($initPos + $wid * $i);
 				transition-delay: 0.1s * $i;
+                border: 5px solid transparent;
+                // box-shadow: 10px 5px 5px rgb(0, 0, 0);;
+                border-radius: 20px;
+                overflow: hidden;
 			}
 		}
 
@@ -199,6 +312,13 @@ $height: 40vh;
 
 	
 	}
+
+
+    
+    
+
+    
+
 }
 
 
@@ -274,6 +394,7 @@ $height: 40vh;
 }
 
 
+
 @media screen and (max-width: 979px) {
 // 변수만 바꾸는게 아니라 변수값이 들어가는 엘리먼트도 같이 넣어줘야됨
 $initPos: 40%;
@@ -326,130 +447,8 @@ main {
 // asdasd
 
 
-    video {
-        width: 100%;
-        height: 100%
-    }
 
 
-    figure::before {
-        content: '';
-        width: 100%;
-        height: 100%;
-        opacity: 0.3;
-        background: rgb(12, 13, 26);
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 5;
-        pointer-events: none;
-    }
-
-
-
-    .swiper-pagination {
-        bottom: 0;
-        background-color: #000;
-        position: absolute;
-        /* left: 0; */
-        /* top: 0; */
-        /* bottom: 0; */
-        width: 400px;
-        margin: auto;
-        /* transform: rotate(90deg); */
-        height: 1px;
-        opacity: 0.5;
-        left: 180px;
-
-        .swiper-pagination-progressbar-fill {
-            background-color: #fff;
-            height: 1px;
-        }
-    }
-
-   
-    .swiper-button-prev {
-       color: #fff;
-       left: 90px;
-    }
-    .swiper-button-next {
-        left: 130px;
-        color: #fff;
-    }
-    .swiper-button-next:after, 
-    .swiper-button-prev:after {
-        font-size: 20px;
-    }
-    
-}
-
-
-
-.main_visual_title {
-    z-index: 10;
-    text-align: left;
-    height: 100%;
-    width: 25vw;
-    color: #fff;
-    position: absolute;
-    // left: 0;
-    right: 0;
-    // border-left: 1px solid rgba(255, 255, 255, .1);
-    padding-left: 50px;
-    
- 
-    
-    .pos_txt {
-        text-align: right;
-        position: absolute; padding-right: 60px;
-        .pos_txt_sub {margin-bottom: 100px; margin-left: 8px;}
-        .pos_txt_outer {margin-bottom: 30px; margin-left: 8px;}
-        .pos_txt_inner {margin-bottom: 0px; margin-left: 8px;}
-
-        strong {display: inline-block; margin-bottom: 5px;}
-    }
-    .pos_btn {
-        position: absolute; bottom: 80px; right: 60px; font-weight: 200; font-size: 1.3rem; display: flex; justify-content: space-between; 
-        
-        a:first-child {
-            display: block;
-            margin-right: 50px;
-        }
-    }
-
-    h2 {
-        font-size: 8rem;
-        color: #fff;
-        margin-bottom: 0;
-        line-height: 1;
-        margin-top: 180px;
-    }
-    p, strong {
-        font-size: 1.3rem;
-        font-weight: 200; 
-    }
-
-    &::before {
-        content: "";
-        width: 100%;
-        height: 100%;
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 0px;
-        bottom: 0;
-        margin: auto;
-        backdrop-filter: blur(10px);
-        transition: background-color .8s,  backdrop-filter .8s;
-    }
-
-    &:hover {
-        &::before {
-            background-color: rgba(9, 14, 29, 0.233);
-            backdrop-filter: blur(30px);
-        }
-    }
-}
 
 
 .main_visual_slide_video {
@@ -457,6 +456,7 @@ main {
     // width: 100%;
     // height: 500px;
 
+  
     video {
         position: absolute;
         top: 0;
@@ -469,96 +469,37 @@ main {
     }
 }
 
-
-// .main_visual_slide.type2 {
-//     display: block;
-//     position: absolute;
-//     bottom: 0px;
-//     right: 0;
-//     left: 0;
-//     margin: auto;
-//     width: 100%;
-//     z-index: 10;
-    
-//     ul {
-//         display: flex;
-//         height: 100%;
-//         gap: 5px;
-//         justify-content: center;
-//         backdrop-filter: blur(10px);
-        
-//         li {
-//             flex: 0 0 auto;
-//             width: 150px;
-//             // height: 100%;
-//             // box-shadow: 1px 1px 13px 0px rgba(0, 0, 0, 0.4);
-//             color: #fff;
-//             padding: 30px 10px;
-//             text-align: center;
-
-//             strong {
-//                 font-size: 1.3rem;
-//                 font-weight: 300;
-//                 opacity: .8;
-//             }
-//             p {
-//                 font-size: 3rem;
-//                 margin-top: 20px;
-//             }
-//             p.last {
-//                 font-size: 1.2rem;
-//             }
-//         }
-
-//         // @for $i from 
-        
-//     }
-// }
-
 .main_visual_slide.type2 {
-        display: block;
-        // margin-top: 85vh;
-        position: absolute;
-        bottom: 80px;
-        left: 100px;
-        z-index: 10;
-        ul {
-            display: flex;
-            margin-bottom: 0px;
-            width: 100%;
-            li {
-                color: #fff;
-                strong {
-                    font-size: 1.3rem;
-                    font-weight: 300;
-                    opacity: .8;
-                    display: inline-block;
-                    margin-right: 5px;
-                }
-                p {
-                  
-                    display: inline-block;
-                }
-                p.last {
-                    font-size: 1.2rem;
-                }
-            }
-
-            li + li {margin-left: 40px;}
-        }
-    }
-
-
-
-
-// swiper 임시
-.main_visual_slide.type1 {
+    display: block;
+    // margin-top: 85vh;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
+    bottom: 80px;
+    left: 100px;
+    z-index: 10;
+    ul {
+        display: flex;
+        margin-bottom: 0px;
+        width: 100%;
+        li {
+            color: #fff;
+            strong {
+                font-size: 1.3rem;
+                font-weight: 300;
+                opacity: .8;
+                display: inline-block;
+                margin-right: 5px;
+            }
+            p {
+                
+                display: inline-block;
+            }
+            p.last {
+                font-size: 1.2rem;
+            }
+        }
+
+        li + li {margin-left: 40px;}
+    }
 }
 
 
@@ -597,29 +538,7 @@ main {
         }
     }
 
-    .main_visual {
-        .swiper-pagination {
-            width: 300px;
-        }
-    }
-    .main_visual .swiper-button-prev {
-        left: 10px;
-    }
-    .main_visual .swiper-button-next {
-        left: 40px;
-    }
-    .main_visual .swiper-pagination {
-        left: 90px;
-    }
-
-    .main_visual_slide.type2 {
-        left: 20px;
-        ul {
-            li {
-               
-            }
-        }
-    }
+   
 }
 
 
@@ -670,30 +589,6 @@ main {
         }
     }
 
-
-    .main_visual .swiper-button-prev {
-        left: 10px;
-        bottom: 128px;
-        top: auto;
-    }
-    .main_visual .swiper-button-next {
-        left: 40px;
-        bottom: 128px;
-        top: auto;
-    }
-    .main_visual .swiper-pagination {
-        left: 90px;
-        width: 60vw;
-        bottom: 150px;
-        top: auto;
-    }
-    
-    .main_visual .swiper-button-next:after, 
-    .main_visual .swiper-button-prev:after {
-        font-size: 15px;
-    }
-
-   
     .main_visual_slide.type2 {
         bottom: 20px;
         ul {
