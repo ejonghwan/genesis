@@ -1,8 +1,8 @@
 
-$initPos: 55%;
-$topPos: 62%;
+$initPos: 60%;
+$topPos: 30%;
 $wid: 15vw;
-$height: 30vh;
+$height: 35vh;
 
 // $initPos: 80%;
 // $topPos: 20%;
@@ -50,12 +50,25 @@ $height: 30vh;
                 position: absolute;
                 top: 0;
                 left: 0;
-                // background-color: red;
                 backdrop-filter: blur(2px);
                 z-index: 5;
                 // opacity: .8;
-                background: #0000005c;
+                background: #00000033;
             }
+
+			&::after {
+				content: "";
+				display: block;
+				width: 91%;
+				height: 101%;
+				position: absolute;
+				top: 20px;
+				left: 12px;
+				background-color: black;
+				opacity: 1;
+				z-index: -1;
+				filter: blur(20px);
+			}
 
 			.inner {
 				width: 100%;
@@ -83,10 +96,10 @@ $height: 30vh;
                     }
 
                     .thum {
-                        display: block;
+                        // display: block;
                         position: absolute;
-                        top: 50%;
-                        left: 50%;
+                        top: 73%;
+                        left: 70px;
                         transform: translate(-50%, -50%);
                         font-size: 4rem;
 
@@ -95,7 +108,7 @@ $height: 30vh;
                             width: 100px;
                             display: block;
                             opacity: .7;
-                            margin-top: 30px;
+                            margin-top: 10px;
                         }
                     }
                 }
@@ -120,12 +133,12 @@ $height: 30vh;
 				}
 
                 .pos_txt {
-					display: none;
+					// display: none;
                     width: 1px;
                     height: 1px;
                     position: absolute;
-                    top: 170px;
-                    left: 100px;
+                    top: 330px;
+                    left: 80px;
 
 
                     .pos_txt_sub {
@@ -147,8 +160,8 @@ $height: 30vh;
                     justify-content: space-between; 
                     opacity: 0;
                     transform: translateY(10px);
-                    transition: opacity 1s .3s, transform 1s .3s ;
-                    left: 100px;
+                    transition: opacity 1s .5s, transform 1s .5s ;
+                    left: 80px;
 
                     a:first-child {
                         display: block;
@@ -246,10 +259,11 @@ $height: 30vh;
 				// top: calc($topPos + $wid * $i);
 				left: calc($initPos + $wid * $i);
 				transition-delay: 0.1s * $i;
-                border: 5px solid transparent;
+                border: 10px solid transparent;
                 // box-shadow: 10px 5px 5px rgb(0, 0, 0);;
-                border-radius: 20px;
-                overflow: hidden;
+                border-radius: 12px;
+                // overflow: hidden;
+				// opacity: .9;
 			}
 		}
 
@@ -258,18 +272,20 @@ $height: 30vh;
 
 	.navi {
         position: absolute;
-        top: calc(40% + 42vh + 17px);
-        left: 40%;
+        top: calc($height - 100px);
+        left: 60%;
         z-index: 3;
-        padding-left: 20px;
+        padding-left: 5px;
 
 		.prev, 
 		.next {
 			display: inline-block;
-			width: 70px;
-			height: 70px;
+			width: 50px;
+			height: 50px;
 			border-radius: 50%;
-			border: 1px solid #bbb;
+			// border-radius: 18px;
+			// border: 1px solid #bbb;
+			background-color: rgb(0, 0, 0, .3);
 			margin-right: 20px;
 			position: relative;
 
@@ -278,7 +294,7 @@ $height: 30vh;
 			&::after {
 				content: '';
 				display: block;
-				width: 17px;
+				width: 12px;
 				height: 2px;
 				background-color: #fff;
 				position: absolute;
@@ -300,11 +316,11 @@ $height: 30vh;
 		.prev {
 			&::before, 
 			&::after {
-				left: 25px;
+				left: 20px;
 				transform-origin: left center;
 			}
 			span {
-				left: 25px;
+				left: 20px;
 			}
 			&.on {
 				span {
@@ -315,11 +331,11 @@ $height: 30vh;
 		.next {
 			&::before, 
 			&::after {
-				left: 25px;
+				left: 20px;
 				transform-origin: right center;
 			}
 			span {
-				right: 25px;
+				right: 20px;
 			}
 			&.on {
 				span {
@@ -328,14 +344,14 @@ $height: 30vh;
 			}
 		}
 
-		span {
-			width: 20px;
-			height: 2px;
-			background-color: #fff;
-			position: absolute;
-			top: 50%;
-			opacity: 1;
-		}
+		// span {
+		// 	width: 29px;
+		// 	height: 2px;
+		// 	background-color: #fff;
+		// 	position: absolute;
+		// 	top: 50%;
+		// 	opacity: 1;
+		// }
 
 	
 	}
@@ -351,18 +367,17 @@ $height: 30vh;
 
 @keyframes wrap {
 	0% {
+		opacity: 1;
 		transform: scale(1);
-		border: 1px solid rgba(255, 255, 255, 1);
 	}
 
-	50% {
+	50% {opacity: 0;
 		transform: scale(1.5);
-		border: 1px solid rgba(255, 255, 255, 0);
 	}
 
 	100% {
+		opacity: 1;
 		transform: scale(1);
-		border: 1px solid rgba(255, 255, 255, 1);
 	}
 
 }
@@ -422,58 +437,6 @@ $height: 30vh;
 
 
 
-@media screen and (max-width: 979px) {
-// 변수만 바꾸는게 아니라 변수값이 들어가는 엘리먼트도 같이 넣어줘야됨
-$initPos: 40%;
-$wid: 15vw;
-$height: 40vh;
-
-main {
-	.list {
-		li {
-			width: $wid;
-			height: $height;
-			left: $initPos;
-		}
-	}
-
-	@for $i from 0 through 5 {
-		li:nth-of-type(#{$i + 3}) {
-			left: calc($initPos + $wid * $i);
-			transition-delay: 0.1s * $i;
-			opacity: .8;
-		}
-	}
-	}
-	.navi {
-		left: $initPos;
-	}
-}
-
-@media screen and (max-width: 539px) {
-	$initPos: 20px;
-	$wid: 50vw;
-
-	main {
-		.list {
-			li {
-				width: $wid;
-				left: $initPos;
-				top: 60%;
-				height: 160px;
-			}
-			//목록 순서별 위치 설정
-			@for $i from 0 through 5 {
-				li:nth-of-type(#{$i + 3}) {
-					left: calc($initPos + $wid * $i);
-					transition-delay: 0.1s * $i;
-				}
-			}
-		}
-	}
-}
-// asdasd
-
 
 
 
@@ -501,10 +464,10 @@ main {
     display: block;
     // margin-top: 85vh;
     position: absolute;
-    // bottom: 80px;
+    bottom: 80px;
     // left: 100px;
     right: 60px;
-    top: 170px;
+    // top: 170px;
     z-index: 10;
     ul {
         display: flex;
@@ -539,6 +502,44 @@ main {
 @include tablet {
 
 
+	// 변수만 바꾸는게 아니라 변수값이 들어가는 엘리먼트도 같이 넣어줘야됨
+	$initPos: 65%;
+	$topPos: 30%;
+	$wid: 20vw;
+	$height: 35vh;
+
+
+	.main_visual {
+		.list {
+			li {
+				width: $wid;
+				height: $height;
+				top: $topPos;
+				left: $initPos;
+			}
+
+			@for $i from 0 through 5 {
+				li:nth-of-type(#{$i + 3}) {
+					left: calc($initPos + $wid * $i);
+					transition-delay: 0.1s * $i;
+					border: 10px solid transparent;
+					// box-shadow: 10px 5px 5px rgb(0, 0, 0);;
+					border-radius: 12px;
+					// overflow: hidden;
+					// opacity: .9;
+				}
+			}
+		}
+
+		.navi {
+			left: $initPos;
+		}
+
+		
+	}
+	
+
+
     .main_visual_title {
         padding-left: 20px;
         width: 32vw;
@@ -556,6 +557,7 @@ main {
     }
 
     .main_visual_slide.type2 {
+		display: none;
         ul {
             flex-wrap: wrap;
             padding: 0;
@@ -568,11 +570,46 @@ main {
         }
     }
 
+
+
+
    
 }
 
 
+
 @include mobile {
+
+	$initPos: 20%;
+	$topPos: 70%;
+	$wid: 30vw;
+	$height: 35vh;
+
+	.main_visual {
+		.list {
+			li {
+				width: $wid;
+				left: $initPos;
+				top: $topPos;
+				height: 160px;
+
+			}
+
+			//목록 순서별 위치 설정
+			@for $i from 0 through 5 {
+				li:nth-of-type(#{$i + 3}) {
+					left: calc($initPos + $wid * $i);
+					transition-delay: 0.1s * $i;
+				}
+			}
+			
+		}
+
+		.navi {
+			left: $initPos;
+		}
+	}
+		
 
 
     .main_visual_title {
