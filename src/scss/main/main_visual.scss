@@ -101,7 +101,7 @@ $height: 35vh;
                         top: 73%;
                         left: 70px;
                         transform: translate(-50%, -50%);
-                        font-size: 4rem;
+                        font-size: 3.2rem;
 
                         & > span {
                             font-size: 1.4rem;
@@ -137,7 +137,7 @@ $height: 35vh;
                     width: 1px;
                     height: 1px;
                     position: absolute;
-                    top: 330px;
+                    top: 30%;
                     left: 80px;
 
 
@@ -275,7 +275,7 @@ $height: 35vh;
         top: calc($height - 100px);
         left: 60%;
         z-index: 3;
-        padding-left: 5px;
+        padding-left: 10px;
 
 		.prev, 
 		.next {
