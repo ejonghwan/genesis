@@ -99,11 +99,14 @@ h5 {font-size: 16px; color: $tit_2;}
     margin: 0 auto 60px;
 }
 
+
 .g_inner.full {
     width: 100%;;
 }
 
-
+.gl_title {
+    margin-bottom: 15px;
+}
 
 // 텍스트 가림 1
 .blind {
@@ -292,6 +295,7 @@ h5 {font-size: 16px; color: $tit_2;}
 
 
 
+
 .all_menu_title {
     font-size: 1.5rem; color: #fff;
 }
@@ -447,19 +451,20 @@ body.popop_active {
             width: calc(50% - 10px);
         }
     }
-
-
-   
-
 }
 
 
 @include mobile {
 
     .mo_full {
-        width: 100vw !important;
-        margin-left: -20px;
+        // width: 100vw !important;
+        padding-left: 0;
+        padding-right: 0;
+        // margin-left: -20px;
+    }
 
+    .g_inner.mo_full {
+        .gl_title {margin-left: 20px}
     }
 
     .g_list.type1{

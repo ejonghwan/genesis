@@ -153,6 +153,10 @@ h5 {
   width: 100%;
 }
 
+.gl_title {
+  margin-bottom: 15px;
+}
+
 .blind {
   position: absolute;
   left: -999px;
@@ -413,8 +417,11 @@ body.popop_active {
 }
 @media screen and (max-width: 760px) {
   .mo_full {
-    width: 100vw !important;
-    margin-left: -20px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .g_inner.mo_full .gl_title {
+    margin-left: 20px;
   }
   .g_list.type1 {
     margin: 0;
@@ -5749,7 +5756,7 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
   content: "";
   width: 100%;
   height: 100%;
-  opacity: 0.3;
+  opacity: 0.4;
   background: rgb(12, 13, 26);
   position: absolute;
   top: 0;
@@ -5764,6 +5771,7 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
   top: 30%;
   left: 60%;
   z-index: 3;
+  border-radius: 12px;
   transition: 0.5s cubic-bezier(0.69, 0.04, 0.41, 0.98);
 }
 .main_visual .list li::before {
@@ -5774,9 +5782,10 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
   position: absolute;
   top: 0;
   left: 0;
-  backdrop-filter: blur(2px);
   z-index: 5;
-  background: rgba(0, 0, 0, 0.2);
+  opacity: 0.7;
+  background: linear-gradient(360deg, black, transparent);
+  border-radius: 12px;
 }
 .main_visual .list li::after {
   content: "";
@@ -5794,13 +5803,11 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
 .main_visual .list li .inner {
   width: 100%;
   height: 100%;
-  background: #333;
-  padding: 20px;
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
   overflow: hidden;
   display: flex;
   align-items: center;
   transition: 0.5s;
+  border-radius: 12px;
 }
 .main_visual .list li .inner .main_visual_txt {
   z-index: 10;
@@ -5822,11 +5829,12 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
   font-size: 3.2rem;
 }
 .main_visual .list li .inner .main_visual_txt .thum > span {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   width: 100px;
   display: block;
   opacity: 0.7;
   margin-top: 10px;
+  font-weight: 300;
 }
 .main_visual .list li .inner h2 {
   font: bold 20px/1 "teko";
@@ -5898,7 +5906,6 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
   content: none;
 }
 .main_visual .list li:nth-of-type(2) .inner {
-  background: #222;
   box-shadow: none;
   border-radius: 0px;
   padding: 5vw;
@@ -5935,11 +5942,17 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
   border: 10px solid transparent;
   border-radius: 12px;
 }
+.main_visual .list li:nth-of-type(3) .main_visual_slide_video::before {
+  content: none;
+}
 .main_visual .list li:nth-of-type(4) {
   left: calc(60% + 15vw);
   transition-delay: 0.1s;
   border: 10px solid transparent;
   border-radius: 12px;
+}
+.main_visual .list li:nth-of-type(4) .main_visual_slide_video::before {
+  content: none;
 }
 .main_visual .list li:nth-of-type(5) {
   left: calc(60% + 30vw);
@@ -5947,11 +5960,17 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
   border: 10px solid transparent;
   border-radius: 12px;
 }
+.main_visual .list li:nth-of-type(5) .main_visual_slide_video::before {
+  content: none;
+}
 .main_visual .list li:nth-of-type(6) {
   left: calc(60% + 45vw);
   transition-delay: 0.3s;
   border: 10px solid transparent;
   border-radius: 12px;
+}
+.main_visual .list li:nth-of-type(6) .main_visual_slide_video::before {
+  content: none;
 }
 .main_visual .list li:nth-of-type(7) {
   left: calc(60% + 60vw);
@@ -5959,11 +5978,17 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
   border: 10px solid transparent;
   border-radius: 12px;
 }
+.main_visual .list li:nth-of-type(7) .main_visual_slide_video::before {
+  content: none;
+}
 .main_visual .list li:nth-of-type(8) {
   left: calc(60% + 75vw);
   transition-delay: 0.5s;
   border: 10px solid transparent;
   border-radius: 12px;
+}
+.main_visual .list li:nth-of-type(8) .main_visual_slide_video::before {
+  content: none;
 }
 .main_visual .navi {
   position: absolute;
@@ -6085,6 +6110,7 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
   }
 }
 .main_visual_slide_video video {
+  border-radius: 12px;
   position: absolute;
   top: 0;
   left: 0;
@@ -6204,8 +6230,43 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
   .main_visual .list li {
     width: 30vw;
     left: 20%;
-    top: 70%;
+    top: 55%;
     height: 160px;
+  }
+  .main_visual .list li .inner .pos_txt {
+    padding: 0;
+    top: 100px;
+    left: 20px;
+  }
+  .main_visual .list li .inner .pos_txt h2 {
+    font-size: 5rem;
+  }
+  .main_visual .list li .inner .pos_txt .pos_txt_outer {
+    display: none;
+  }
+  .main_visual .list li .inner .pos_txt .pos_txt_inner {
+    display: none;
+  }
+  .main_visual .list li .inner .pos_txt .pos_txt_sub {
+    width: 160px;
+    margin-left: 0;
+    font-weight: 400;
+    margin-top: 10px;
+    font-size: 1.4rem;
+  }
+  .main_visual .list li .inner .pos_btn {
+    bottom: auto;
+    right: auto;
+    top: 330px;
+    left: 20px;
+    display: block;
+    font-size: 1.2rem;
+  }
+  .main_visual .list li .inner .pos_btn a {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-weight: 400;
   }
   .main_visual .list li:nth-of-type(3) {
     left: calc(20% + 0vw);
@@ -6242,49 +6303,6 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
     height: 100%;
     object-fit: contain;
     opacity: 1;
-  }
-  .main_visual_title {
-    border-left: none;
-    right: auto;
-    width: 100%;
-  }
-  .main_visual_title h2 {
-    font-size: 7rem;
-  }
-  .main_visual_title .list li .inner .pos_txt {
-    text-align: left;
-    padding: 0;
-    top: 13%;
-    left: 20px;
-  }
-  .main_visual_title .pos_txt .pos_txt_outer {
-    display: none;
-  }
-  .main_visual_title .pos_txt .pos_txt_inner {
-    display: none;
-  }
-  .main_visual_title .pos_txt .pos_txt_sub {
-    margin-left: 0;
-    font-weight: 400;
-    margin-top: 10px;
-    font-size: 1.5rem;
-  }
-  .main_visual_title .pos_btn {
-    bottom: auto;
-    right: auto;
-    top: 350px;
-    display: block;
-    font-size: 1.2rem;
-    top: 300px;
-  }
-  .main_visual_title .pos_btn a {
-    display: inline-block;
-    margin-bottom: 2px;
-    font-size: 1.5rem;
-    font-weight: 400;
-  }
-  .main_visual_title::before {
-    content: none;
   }
   .main_visual_slide.type2 {
     bottom: 20px;
@@ -6686,7 +6704,6 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
 @media screen and (max-width: 760px) {
   .load_wrap {
     height: 800px;
-    padding-top: 40px;
   }
   .load_wrap .left,
   .load_wrap .right {
