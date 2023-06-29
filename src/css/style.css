@@ -89,80 +89,82 @@ html {
   left: 0;
   content: "";
   display: block;
-  background-color: red;
+  background: linear-gradient(275deg, red, transparent);
+  opacity: 0.5;
   width: 100%;
   height: 100%;
+  z-index: -1;
 }
 .ani.ani_type2 ul li:nth-of-type(1)::after {
   transform: translateY(-200px);
   opacity: 0;
-  transition: 0.6s 0.2s;
+  transition: 0.8s 0.4s;
   transition-timing-function: cubic-bezier(0.1, 1.17, 0.99, 0.99);
 }
 .ani.ani_type2 ul li:nth-of-type(2)::after {
   transform: translateX(200px);
   opacity: 0;
-  transition: 0.6s 0.3s;
+  transition: 0.8s 0.5s;
   transition-timing-function: cubic-bezier(0.1, 1.17, 0.99, 0.99);
 }
 .ani.ani_type2 ul li:nth-of-type(3)::after {
   transform: translateY(-200px);
   opacity: 0;
-  transition: 0.6s 0.4s;
+  transition: 0.8s 0.6s;
   transition-timing-function: cubic-bezier(0.1, 1.17, 0.99, 0.99);
 }
 .ani.ani_type2 ul li:nth-of-type(4)::after {
   transform: translateX(-200px);
   opacity: 0;
-  transition: 0.6s 0.5s;
+  transition: 0.8s 0.7s;
   transition-timing-function: cubic-bezier(0.1, 1.17, 0.99, 0.99);
 }
 .ani.ani_type2 ul li:nth-of-type(5)::after {
   transform: translateY(200px);
   opacity: 0;
-  transition: 0.6s 0.6s;
+  transition: 0.8s 0.8s;
   transition-timing-function: cubic-bezier(0.1, 1.17, 0.99, 0.99);
 }
 .ani.ani_type2 ul li:nth-of-type(6)::after {
   transform: translateX(200px);
   opacity: 0;
-  transition: 0.6s 0.7s;
+  transition: 0.8s 0.9s;
   transition-timing-function: cubic-bezier(0.1, 1.17, 0.99, 0.99);
 }
 .ani.ani_type2 ul li:nth-of-type(1) .cont1 {
   transform: translateY(-100px);
   opacity: 0;
-  transition: 0.6s 0.5s;
+  transition: 0.8s 0.5s;
   transition-timing-function: cubic-bezier(0.1, 1.17, 0.99, 0.99);
 }
 .ani.ani_type2 ul li:nth-of-type(2) .cont1 {
   transform: translateX(100px);
   opacity: 0;
-  transition: 0.6s 0.6s;
+  transition: 0.8s 0.6s;
   transition-timing-function: cubic-bezier(0.1, 1.17, 0.99, 0.99);
 }
 .ani.ani_type2 ul li:nth-of-type(3) .cont1 {
   transform: translateY(-100px);
   opacity: 0;
-  transition: 0.6s 0.7s;
+  transition: 0.8s 0.7s;
   transition-timing-function: cubic-bezier(0.1, 1.17, 0.99, 0.99);
 }
 .ani.ani_type2 ul li:nth-of-type(4) .cont1 {
   transform: translateX(-100px);
   opacity: 0;
-  transition: 0.6s 0.8s;
+  transition: 0.8s 0.8s;
   transition-timing-function: cubic-bezier(0.1, 1.17, 0.99, 0.99);
 }
 .ani.ani_type2 ul li:nth-of-type(5) .cont1 {
   transform: translateY(100px);
   opacity: 0;
-  transition: 0.6s 0.9s;
+  transition: 0.8s 0.9s;
   transition-timing-function: cubic-bezier(0.1, 1.17, 0.99, 0.99);
 }
 .ani.ani_type2 ul li:nth-of-type(6) .cont1 {
   transform: translateX(100px);
   opacity: 0;
-  transition: 0.6s 1s;
+  transition: 0.8s 1s;
   transition-timing-function: cubic-bezier(0.1, 1.17, 0.99, 0.99);
 }
 .ani.ani_type2.show ul li:nth-of-type(1)::after {
@@ -6477,6 +6479,9 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
   padding-top: 60px;
   overflow: hidden;
 }
+.sub_visual > .g_inner {
+  margin: 0 auto;
+}
 .sub_visual .sub_visual_title h2 {
   margin-bottom: 10px;
 }
@@ -6510,31 +6515,28 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
   overflow: inherit;
 }
 .sub_visual .swiper-pagination {
-  top: 100px;
+  top: 185px;
   background-color: #898989;
   position: absolute;
-  width: 280px;
+  width: 110px;
   margin: auto;
   /* transform: rotate(90deg); */
   height: 1px;
   opacity: 0.5;
-  left: auto;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .sub_visual .swiper-button-prev {
   color: #fff;
-  right: 331px;
-  left: auto;
-  top: 100px;
+  left: 100px;
 }
 .sub_visual .swiper-button-next {
-  right: 290px;
   color: #fff;
-  top: 100px;
+  right: 100px;
 }
 .sub_visual .swiper-button-next:after,
 .sub_visual .swiper-button-prev:after {
-  font-size: 20px;
+  font-size: 25px;
 }
 .sub_visual .swiper-pagination .swiper-pagination-progressbar-fill {
   background-color: #fff;
@@ -6597,9 +6599,10 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
 
 .main_car_title {
   position: absolute;
-  top: 44px;
-  left: 0px;
-  font-size: 7rem;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 4.3rem;
   opacity: 1;
   color: #fff;
 }
@@ -6610,14 +6613,13 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
 }
 .main_car_info .color_outer {
   position: absolute;
-  bottom: 75px;
+  top: 554px;
   z-index: 1;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 0 10px;
-  margin-left: -30px;
 }
 .main_car_info .color_outer > p:nth-of-type(2) {
   margin-left: 50px;
@@ -6654,8 +6656,9 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
 .main_car_info .color_name_wrap {
   position: absolute;
   font-size: 2rem;
-  top: -428px;
-  left: 37px;
+  top: -426px;
+  left: 50%;
+  transform: translateX(-50%);
   color: #898989;
 }
 .main_car_info .car_wrap {
@@ -6686,76 +6689,56 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
 }
 
 @media screen and (max-width: 1100px) {
-  .sub_visual .tab_body_item .swiper-slide .main_car_info::after {
-    width: 1600px;
-    top: -75px;
+  .sub_visual .swiper-button-next {
+    right: 0px;
   }
-  .sub_visual .tab_body_item .swiper-slide .main_car_info::before {
-    width: 1600px;
-    top: 20px;
-  }
-  .main_car_info .color_outer {
-    justify-content: flex-start;
-    margin-left: 0;
-    bottom: 0px;
-  }
-  .main_car_info .color_outer > p {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  .main_car_info .color_outer > p:nth-of-type(2) {
-    margin-top: 30px;
-    margin-left: 0;
-  }
-  .main_car_info .car_wrap .car .car_img {
-    width: 550px;
-  }
-  .main_car_info .color_name_wrap {
-    top: -323px;
+  .sub_visual .swiper-button-prev {
     left: 0px;
   }
 }
 @media screen and (max-width: 760px) {
+  .sub_visual .swiper-button-next {
+    right: -15px;
+    top: 300px;
+  }
+  .sub_visual .swiper-button-prev {
+    left: -15px;
+    top: 300px;
+  }
   .main_car_info .color_wrap {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
   .main_car_info .color_wrap .color {
     width: 50px;
     height: 50px;
     margin-bottom: 5px;
   }
+  .main_car_info .color_outer {
+    width: 100%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 416px;
+  }
+  .main_car_info .color_outer > p {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  .main_car_info .color_outer > p:nth-of-type(2) {
+    margin-left: 0;
+    margin-top: 20px;
+  }
   .main_car_info .color_name_wrap {
-    top: -355px;
+    top: -290px;
+    text-align: center;
+    width: 100%;
   }
   .main_car_info .car_wrap .car .car_img {
-    max-width: 500px;
-    width: 100%;
-    top: 275px;
-  }
-  .sub_visual .tab_body_item .swiper-slide .main_car_info::after {
-    content: none;
-  }
-  .sub_visual .tab_body_item .swiper-slide .main_car_info::before {
-    content: none;
-  }
-  .sub_visual .swiper-button-next {
-    right: auto;
-    left: 35px;
-    top: 212px;
-  }
-  .sub_visual .swiper-button-prev {
-    right: auto;
-    left: 0px;
-    top: 212px;
-  }
-  .sub_visual .swiper-pagination {
-    width: 75%;
-    top: 212px;
-  }
-  .main_car_title {
-    top: 20px;
-    font-size: 5rem;
+    max-width: 450px;
+    width: 90%;
   }
 }
 .evt_banner {
@@ -6774,6 +6757,24 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
 .evt_banner .link {
   color: #fff;
   text-decoration: underline;
+}
+
+.exper .g_list.type2 img:hover {
+  transform: translate(10px, 10px) scale(5);
+  transition: 30s;
+}
+
+.gall .g_list.type2 img:hover {
+  transform: translate(10px, 10px) scale(5);
+  transition: 30s;
+}
+
+.con .g_content_img {
+  overflow: hidden;
+}
+.con .g_content_img img:hover {
+  transform: translate(10px, 10px) scale(5);
+  transition: 30s;
 }
 
 .load_wrap {
@@ -6890,13 +6891,14 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
 }
 
 .g_content_txt strong {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 500;
 }
 .g_content_txt p {
   margin-top: 5px;
   margin-bottom: 15px;
   font-size: 1.3rem;
+  min-height: 40px;
 }
 
 @media screen and (max-width: 760px) {
@@ -6908,6 +6910,9 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
   }
   .g_content ul li + li {
     margin-top: 20px;
+  }
+  .g_content_txt p {
+    min-height: auto;
   }
 }
 .sub_page .sub_visual {

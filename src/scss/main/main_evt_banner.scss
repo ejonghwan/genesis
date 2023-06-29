@@ -17,5 +17,34 @@
         color: #fff;
         text-decoration: underline;
     }
+
+   
 }
 
+
+
+.exper {
+    .g_list.type2 {
+       img:hover {
+        transform: translate(10px, 10px) scale(5);
+        transition: 30s;
+       }
+    }
+}
+.gall {
+    .g_list.type2 {
+       img:hover {
+        transform: translate(10px, 10px) scale(5);
+        transition: 30s;
+       }
+    }
+}
+.con {
+    .g_content_img {
+        overflow: hidden;
+        img:hover {
+            transform: translate(10px, 10px) scale(5);
+            transition: 30s;
+           }
+    }
+}

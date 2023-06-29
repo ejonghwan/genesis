@@ -26,13 +26,14 @@
 
 .g_content_txt {
     strong {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         font-weight: 500;
     }
     p {
         margin-top: 5px;
         margin-bottom: 15px;
         font-size: 1.3rem;
+        min-height: 40px;
     }
 
 }
@@ -53,5 +54,14 @@
                 margin-top: 20px;
             }
         }
+    }
+
+    .g_content_txt {
+        strong {
+        }
+        p {
+            min-height: auto;
+        }
+    
     }
 }
