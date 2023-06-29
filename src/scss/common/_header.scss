@@ -413,7 +413,18 @@ button.header_all_menu {
 }
 
 
+.sub_page {
+    .header_wrap {
+        padding-left: 0;
+    }
 
+    button.header_all_menu {
+        margin-left: 0px; 
+        position: relative;; 
+        right: auto; 
+        margin-left: auto;
+    }
+}
 
 
 
