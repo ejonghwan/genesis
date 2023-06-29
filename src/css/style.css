@@ -6228,10 +6228,10 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
 }
 @media screen and (max-width: 760px) {
   .main_visual .list li {
-    width: 30vw;
+    width: 32vw;
     left: 20%;
-    top: 55%;
-    height: 160px;
+    top: 60%;
+    height: 150px;
   }
   .main_visual .list li .inner .pos_txt {
     padding: 0;
@@ -6268,32 +6268,50 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
     font-size: 1.5rem;
     font-weight: 400;
   }
+  .main_visual .list li .inner .main_visual_txt .thum {
+    font-size: 2.6rem;
+    top: auto;
+    bottom: 10px;
+    left: 10px;
+    transform: none;
+  }
+  .main_visual .list li .inner .main_visual_txt .thum > span {
+    font-size: 1.3rem;
+    margin-top: 0;
+  }
   .main_visual .list li:nth-of-type(3) {
     left: calc(20% + 0vw);
     transition-delay: 0s;
+    border: 5px solid transparent;
   }
   .main_visual .list li:nth-of-type(4) {
-    left: calc(20% + 30vw);
+    left: calc(20% + 32vw);
     transition-delay: 0.1s;
+    border: 5px solid transparent;
   }
   .main_visual .list li:nth-of-type(5) {
-    left: calc(20% + 60vw);
+    left: calc(20% + 64vw);
     transition-delay: 0.2s;
+    border: 5px solid transparent;
   }
   .main_visual .list li:nth-of-type(6) {
-    left: calc(20% + 90vw);
+    left: calc(20% + 96vw);
     transition-delay: 0.3s;
+    border: 5px solid transparent;
   }
   .main_visual .list li:nth-of-type(7) {
-    left: calc(20% + 120vw);
+    left: calc(20% + 128vw);
     transition-delay: 0.4s;
+    border: 5px solid transparent;
   }
   .main_visual .list li:nth-of-type(8) {
-    left: calc(20% + 150vw);
+    left: calc(20% + 160vw);
     transition-delay: 0.5s;
+    border: 5px solid transparent;
   }
   .main_visual .navi {
     left: 20%;
+    top: 83%;
   }
   .main_visual_slide_video video {
     position: absolute;

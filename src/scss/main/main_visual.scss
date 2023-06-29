@@ -578,9 +578,9 @@ $height: 35vh;
 @include mobile {
 
 	$initPos: 20%;
-	$topPos: 55%;
-	$wid: 30vw;
-	$height: 35vh;
+	$topPos: 60%;
+	$wid: 32vw;
+	$height: 25vh;
 
 
 
@@ -592,7 +592,7 @@ $height: 35vh;
 				width: $wid;
 				left: $initPos;
 				top: $topPos;
-				height: 160px;
+				height: 150px;
 
 				.inner {
 					.pos_txt {
@@ -627,6 +627,20 @@ $height: 35vh;
 						}
 					}
 
+					.main_visual_txt {
+						.thum {
+							font-size: 2.6rem;
+							top: auto;
+							bottom: 10px;
+							left: 10px;
+							transform: none;
+							> span {
+								font-size: 1.3rem;
+								margin-top: 0;
+							}
+						}
+					}
+
 				} 
 
 			}
@@ -636,6 +650,7 @@ $height: 35vh;
 				li:nth-of-type(#{$i + 3}) {
 					left: calc($initPos + $wid * $i);
 					transition-delay: 0.1s * $i;
+					border: 5px solid transparent;
 				}
 			}
 			
@@ -643,6 +658,7 @@ $height: 35vh;
 
 		.navi {
 			left: $initPos;
+			top: 83%;
 		}
 	}
 
