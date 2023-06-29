@@ -446,8 +446,6 @@ $height: 35vh;
     // position: relative;
     // width: 100%;
     // height: 500px;
-
-  
     video {
         position: absolute;
         top: 0;
@@ -607,6 +605,24 @@ $height: 35vh;
 
 		.navi {
 			left: $initPos;
+		}
+	}
+
+
+
+	.main_visual_slide_video {
+		// position: relative;
+		// width: 100%;
+		// height: 500px;
+		video {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			// opacity: .3;
+			opacity: 1;
 		}
 	}
 		
