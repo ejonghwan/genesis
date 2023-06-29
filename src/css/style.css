@@ -920,8 +920,8 @@ button.header_all_menu.on span.line:before {
 
 @media screen and (max-width: 1100px) {
   button.header_all_menu {
-    position: relative;
-    right: 0px;
+    position: absolute;
+    right: 50px;
   }
   .header_ico {
     position: static;
@@ -934,11 +934,17 @@ button.header_all_menu.on span.line:before {
   #header .g_inner {
     backdrop-filter: blur(30px);
   }
+  #header .header_wrap {
+    padding-left: 20px;
+  }
   .g_inner.accordion_mo.type1.pd_none .item {
     margin-bottom: 0px;
   }
   .g_inner.accordion_mo.type1.pd_none .item:last-child {
     padding: 20px 0;
+  }
+  button.header_all_menu {
+    right: 20px;
   }
 }
 #footer .g_inner {
@@ -6245,9 +6251,11 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
   .main_visual_title h2 {
     font-size: 7rem;
   }
-  .main_visual_title .pos_txt {
+  .main_visual_title .list li .inner .pos_txt {
     text-align: left;
     padding: 0;
+    top: 13%;
+    left: 20px;
   }
   .main_visual_title .pos_txt .pos_txt_outer {
     display: none;

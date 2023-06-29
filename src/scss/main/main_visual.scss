@@ -634,10 +634,21 @@ $height: 35vh;
         width: 100%;
 
         h2 {font-size: 7rem;}
-
+		
+		.list {
+			li {
+				.inner {
+					.pos_txt {
+						text-align: left;
+						padding:0;
+						top: 13%;
+						left: 20px;
+					}
+				}
+			}
+		}
         .pos_txt {
-            text-align: left;
-            padding:0;
+           
 
             .pos_txt_outer {display: none;}
             .pos_txt_inner {display: none;}

@@ -328,9 +328,7 @@ button.header_all_menu {
             }
         }
 
-        & > .bottom {
-            
-        }
+        
     }
     // 첫번쨰는 탭
 
@@ -425,8 +423,8 @@ button.header_all_menu {
     }
 
     button.header_all_menu {
-        position: relative;
-        right: 0px;
+        position: absolute;
+        right: 50px;
     }
 
     .header_ico {
@@ -444,6 +442,9 @@ button.header_all_menu {
         .g_inner {
             backdrop-filter: blur(30px);
         }
+        .header_wrap {
+            padding-left: 20px;
+        }
     }
     
     .g_inner.accordion_mo.type1.pd_none {
@@ -454,5 +455,9 @@ button.header_all_menu {
             padding: 20px 0;
         }
     } 
+
+    button.header_all_menu {
+        right: 20px;
+    }
     
 }
