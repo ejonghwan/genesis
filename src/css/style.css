@@ -752,7 +752,7 @@ body.popop_active {
   top: 0px;
   left: 0;
   z-index: 100;
-  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(30px);
 }
 #header .g_inner {
   margin: 0 auto;
