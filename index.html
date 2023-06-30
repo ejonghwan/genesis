@@ -13,6 +13,7 @@
     <!-- swiper 임시 -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
     
     <!-- swiper 임시 -->
 
@@ -645,7 +646,7 @@
     <footer id="footer">
        
         <!-- 쉐어 -->
-        <section class="footer_sec_share">
+        <section class="footer_sec share">
             <div class="g_inner">
                 <ul>
                     <li class="txt">Share</li>
@@ -667,18 +668,52 @@
         </section>
         <!-- //쉐어 -->
         <!-- 공지사항 -->
-        <section class="footer_sec_notice">
+        <section class="footer_sec notice">
             <div class="g_inner">
-                <ul class="g_slide">
-                    <li class="active"><a href="javascript:;" role="button">[공지사항] G90 '사용자 인증 시스템 및 편의 기능' 무선 소프트웨어 업데이트</a></li>
-                    <li><a href="javascript:;" role="button">[공지사항] G90 '사용자 인증 시스템 및 편의 기능' 무선 소프트웨어 업데이트</a></li>
-                    <li><a href="javascript:;" role="button">[공지사항] G90 '사용자 인증 시스템 및 편의 기능' 무선 소프트웨어 업데이트</a></li>
-                    <li><a href="javascript:;" role="button">[공지사항] G90 '사용자 인증 시스템 및 편의 기능' 무선 소프트웨어 업데이트</a></li>
-                </ul>
-                <div>
-                    <div>arrow_btn</div>
+                <div class="swiper noti_Swiper">
+                    <ul class="swiper-wrapper">
+                      <li class="swiper-slide">
+                        <a href="javascript:;" role="button">[공지사항] G90 '사용자 인증 시스템 및 편의 기능' 무선 소프트웨어 업데이트</a>
+                      </li>
+                      <li class="swiper-slide">
+                        <a href="javascript:;" role="button">[공지사항] G90 '사용자 인증 시스템 및 편의 기능' 무선 소프트웨어 업데이트</a>
+                      </li>
+                      <li class="swiper-slide">
+                        <a href="javascript:;" role="button">[공지사항] G90 '사용자 인증 시스템 및 편의 기능' 무선 소프트웨어 업데이트</a>
+                     </li>
+                      <li class="swiper-slide">
+                        <a href="javascript:;" role="button">[공지사항] G90 '사용자 인증 시스템 및 편의 기능' 무선 소프트웨어 업데이트</a>
+                    </li>
+                    </ul>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
+            <style>
+                .noti_Swiper .swiper-slide {height: 100px !important;}
+                .footer_sec.notice {height: 100px;}
+            </style>
+            
+            <script>
+                var swiper = new Swiper(".noti_Swiper", {
+                    direction: 'vertical',
+                    slidesPerView: 1,
+                    speed: 2000,
+                    autoplay: {
+                        delay: 2000,
+                    },
+                    loop: true,
+                    navigation: {
+                        nextEl: ".noti_Swiper .swiper-button-next",
+                        prevEl: ".noti_Swiper .swiper-button-prev",
+                    },
+                  pagination: {
+                    el: ".noti_Swiper .swiper-pagination",
+                    clickable: true,
+                  },
+                });
+            </script>
         </section>
         <!-- //공지사항 -->
         <section class="footer_sec all_menu">
@@ -767,7 +802,7 @@
                 <!-- //마이페이지 -->
             </div>
         </section>
-        <section class="footer_sec mid sitemap">
+        <section class="footer_sec sitemap mid">
             <div class="g_inner">
                 <ul class="item btw_line">
                     <li><a href="javascript:;" role="button">사이트맵</a></li>
