@@ -5726,6 +5726,301 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
   padding: 50px;
   position: relative;
 }
+.main_visual .dho {
+  width: 100%;
+  height: 100vh;
+  background: #111;
+  position: relative;
+  overflow: hidden;
+}
+.main_visual .dho .list li {
+  width: 15vw;
+  height: 40vh;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  z-index: 3;
+  padding: 20px;
+  transition: 0.5s cubic-bezier(0.69, 0.04, 0.41, 0.98);
+}
+.main_visual .dho .list li .inner {
+  width: 100%;
+  height: 100%;
+  background: #333;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+}
+.main_visual .dho .list li .inner h2 {
+  font: bold 20px/1 "teko";
+  color: #888;
+  letter-spacing: 1px;
+  transition: 0.2s 0.5s;
+}
+.main_visual .dho .list li .inner h2::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 3px;
+  background: #888;
+  margin-bottom: 10px;
+  transition: 0.5s;
+}
+.main_visual .dho .list li:nth-of-type(1) {
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  opacity: 0;
+  z-index: 1;
+  transform: scale(2);
+}
+.main_visual .dho .list li:nth-of-type(2) {
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  z-index: 2;
+  transform: scale(1);
+}
+.main_visual .dho .list li:nth-of-type(2) .inner {
+  background: #222;
+  box-shadow: none;
+  border-radius: 0px;
+  padding: 5vw;
+}
+.main_visual .dho .list li:nth-of-type(2) .inner h2 {
+  color: #fff;
+  font-size: 8vw;
+}
+.main_visual .dho .list li:nth-of-type(2) .inner h2::before {
+  background: #fff;
+  height: 6px;
+  width: 6vw;
+  margin-bottom: 20px;
+}
+.main_visual .dho .list li:nth-of-type(3) {
+  left: calc(40% + 0vw);
+  transition-delay: 0s;
+}
+.main_visual .dho .list li:nth-of-type(4) {
+  left: calc(40% + 15vw);
+  transition-delay: 0.1s;
+}
+.main_visual .dho .list li:nth-of-type(5) {
+  left: calc(40% + 30vw);
+  transition-delay: 0.2s;
+}
+.main_visual .dho .list li:nth-of-type(6) {
+  left: calc(40% + 45vw);
+  transition-delay: 0.3s;
+}
+.main_visual .dho .list li:nth-of-type(7) {
+  left: calc(40% + 60vw);
+  transition-delay: 0.4s;
+}
+.main_visual .dho .list li:nth-of-type(8) {
+  left: calc(40% + 75vw);
+  transition-delay: 0.5s;
+}
+.main_visual .dho .navi {
+  position: absolute;
+  top: calc(40% + 40vh + 20px);
+  left: 40%;
+  z-index: 3;
+  padding-left: 20px;
+}
+.main_visual .dho .navi .prev,
+.main_visual .dho .navi .next {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 1px solid #bbb;
+  margin-right: 20px;
+  position: relative;
+}
+.main_visual .dho .navi .prev::before, .main_visual .dho .navi .prev::after,
+.main_visual .dho .navi .next::before,
+.main_visual .dho .navi .next::after {
+  content: "";
+  display: block;
+  width: 17px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+}
+.main_visual .dho .navi .prev::before,
+.main_visual .dho .navi .next::before {
+  transform: rotate(45deg) translate(0px);
+}
+.main_visual .dho .navi .prev::after,
+.main_visual .dho .navi .next::after {
+  transform: rotate(-45deg) translateX(0px);
+}
+.main_visual .dho .navi .prev.on,
+.main_visual .dho .navi .next.on {
+  animation: wrap 0.3s 1;
+}
+.main_visual .dho .navi .prev::before, .main_visual .dho .navi .prev::after {
+  left: 25px;
+  transform-origin: left center;
+}
+.main_visual .dho .navi .prev span {
+  left: 25px;
+}
+.main_visual .dho .navi .prev.on span {
+  animation: prevArrow 0.5s 1;
+}
+.main_visual .dho .navi .next::before, .main_visual .dho .navi .next::after {
+  left: 25px;
+  transform-origin: right center;
+}
+.main_visual .dho .navi .next span {
+  right: 25px;
+}
+.main_visual .dho .navi .next.on span {
+  animation: nextArrow 0.5s 1;
+}
+.main_visual .dho .navi span {
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  opacity: 1;
+}
+@keyframes wrap {
+  0% {
+    transform: scale(1);
+    border: 1px solid rgb(255, 255, 255);
+  }
+  50% {
+    transform: scale(1.5);
+    border: 1px solid rgba(255, 255, 255, 0);
+  }
+  100% {
+    transform: scale(1);
+    border: 1px solid rgb(255, 255, 255);
+  }
+}
+@keyframes prevArrow {
+  0% {
+    left: 25px;
+    width: 20px;
+    opacity: 1;
+  }
+  70% {
+    left: -130px;
+    width: 100px;
+    opacity: 0;
+  }
+  80% {
+    left: 100px;
+    width: 120px;
+    opacity: 0;
+  }
+  100% {
+    left: 25px;
+    width: 20px;
+    opacity: 1;
+  }
+}
+@keyframes nextArrow {
+  0% {
+    right: 25px;
+    width: 20px;
+    opacity: 1;
+  }
+  70% {
+    right: -130px;
+    width: 100px;
+    opacity: 0;
+  }
+  80% {
+    right: 100px;
+    width: 120px;
+    opacity: 0;
+  }
+  100% {
+    right: 25px;
+    width: 20px;
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 979px) {
+  .main_visual main .list li {
+    width: 15vw;
+    height: 40vh;
+    left: 40%;
+  }
+  .main_visual main li:nth-of-type(3) {
+    left: calc(40% + 0vw);
+    transition-delay: 0s;
+  }
+  .main_visual main li:nth-of-type(4) {
+    left: calc(40% + 15vw);
+    transition-delay: 0.1s;
+  }
+  .main_visual main li:nth-of-type(5) {
+    left: calc(40% + 30vw);
+    transition-delay: 0.2s;
+  }
+  .main_visual main li:nth-of-type(6) {
+    left: calc(40% + 45vw);
+    transition-delay: 0.3s;
+  }
+  .main_visual main li:nth-of-type(7) {
+    left: calc(40% + 60vw);
+    transition-delay: 0.4s;
+  }
+  .main_visual main li:nth-of-type(8) {
+    left: calc(40% + 75vw);
+    transition-delay: 0.5s;
+  }
+  .main_visual .navi {
+    left: 40%;
+  }
+}
+@media screen and (max-width: 539px) {
+  .main_visual main .list li {
+    width: 50vw;
+    left: 20px;
+    top: 60%;
+    height: 160px;
+  }
+  .main_visual main .list li:nth-of-type(3) {
+    left: calc(20px + 0vw);
+    transition-delay: 0s;
+  }
+  .main_visual main .list li:nth-of-type(4) {
+    left: calc(20px + 50vw);
+    transition-delay: 0.1s;
+  }
+  .main_visual main .list li:nth-of-type(5) {
+    left: calc(20px + 100vw);
+    transition-delay: 0.2s;
+  }
+  .main_visual main .list li:nth-of-type(6) {
+    left: calc(20px + 150vw);
+    transition-delay: 0.3s;
+  }
+  .main_visual main .list li:nth-of-type(7) {
+    left: calc(20px + 200vw);
+    transition-delay: 0.4s;
+  }
+  .main_visual main .list li:nth-of-type(8) {
+    left: calc(20px + 250vw);
+    transition-delay: 0.5s;
+  }
+}
 .main_visual video {
   width: 100%;
   height: 100%;
