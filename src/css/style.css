@@ -242,8 +242,8 @@ body {
   top: 0;
   left: 0;
   margin: auto;
-  width: 15px;
-  height: 15px;
+  width: 30px;
+  height: 100%;
   z-index: 5;
 }
 .swiper-state .stop {
@@ -354,6 +354,11 @@ h5 {
 
 .gl_title {
   margin-bottom: 15px;
+}
+
+.gl_subtxt {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
 }
 
 .blind {
@@ -621,6 +626,10 @@ body.popop_active {
   }
   .g_inner.mo_full .gl_title {
     margin-left: 20px;
+  }
+  .g_inner.mo_full .gl_subtxt {
+    padding-left: 20px;
+    padding-right: 20px;
   }
   .g_list.type1 {
     margin: 0;
@@ -1246,7 +1255,7 @@ button.header_all_menu.on span.line:before {
 }
 .footer_sec.notice .noti_Swiper .swiper-state {
   left: auto;
-  right: 50px;
+  right: 43px;
   top: 0;
   bottom: 0;
   margin: auto;
@@ -6027,7 +6036,6 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
   border-radius: 12px;
 }
 .main_visual .list li::after {
-  content: "";
   display: block;
   width: 91%;
   height: 101%;

@@ -180,8 +180,8 @@ body {
     top: 0;
     left: 0;
     margin: auto;
-    width: 15px;
-    height: 15px;
+    width: 30px;
+    height: 100%;
     z-index: 5;
     .stop {
         display: none;
@@ -282,6 +282,12 @@ h5 {font-size: 16px; color: $tit_2;}
 
 .gl_title {
     margin-bottom: 15px;
+}
+
+.gl_subtxt {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    
 }
 
 // 텍스트 가림 1
@@ -465,7 +471,7 @@ h5 {font-size: 16px; color: $tit_2;}
 
 
 // accordion 모바일만
-.accordion_mo {} 
+// .accordion_mo {} 
 
 
 
@@ -641,6 +647,7 @@ body.popop_active {
 
     .g_inner.mo_full {
         .gl_title {margin-left: 20px}
+        .gl_subtxt {padding-left: 20px; padding-right: 20px;}
     }
 
     .g_list.type1{
