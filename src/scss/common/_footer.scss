@@ -27,7 +27,7 @@
 
 
 .footer_sec.share {
-    background-color: #161b22;
+    background-color: #0d1117;
     color: #909090;
     padding: 20px 0;
 
@@ -63,8 +63,50 @@
 
 .footer_sec.notice {
     background-color: #080b0e;
-    padding: 20px 0;
+    // padding: 20px 0;
     color: #dedede;
+    
+    .noti_Swiper {
+        width: 100%;
+        max-height: 60px;
+        
+        .swiper-slide {
+            .noti {
+                padding: 20px 0;
+                display: block;   
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        .swiper-button-prev {
+            color: #fff;
+            left: auto;
+            right: 70px;
+        }
+    
+        .swiper-button-next {
+            color: #fff;
+            right: 20px;
+        }
+    
+        .swiper-button-next:after, 
+        .swiper-button-prev:after {
+            font-size: 12px;
+        }
+
+        .swiper-state {
+            left: auto;
+            right: 50px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    
+            
+    }
+
     .g_inner {
         display: flex;
         justify-content:space-between;

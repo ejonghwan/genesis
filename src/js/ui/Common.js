@@ -25,6 +25,45 @@ class Common {
             oneTab: true,
         })
 
+        // 푸터 공지
+
+        
+        
+        new Swiper(".noti_Swiper", {
+            centeredSlides: true,
+            direction: 'vertical',
+              autoplay: {
+                delay: 2000,
+                disableOnInteraction: false
+              },
+            loop: true,
+            navigation: {
+                nextEl: ".swiper.noti_Swiper .swiper-button-next",
+                prevEl: ".swiper.noti_Swiper .swiper-button-prev"
+            },
+
+            on: {
+                init: function() {
+                    const play = document.querySelector('.noti_Swiper .swiper-state .play')
+                    const stop = document.querySelector('.noti_Swiper .swiper-state .stop')
+                    play.addEventListener('click', e => {
+                        stop.classList.add('on')
+                        play.classList.remove('on')
+                        this.autoplay.start()
+                    })
+                    stop.addEventListener('click', e => {
+                        stop.classList.remove('on')
+                        play.classList.add('on')
+                       this.autoplay.stop()
+                    })
+                }
+            }
+         });
+
+         
+
+          
+
     }
     globalHeader() {
            

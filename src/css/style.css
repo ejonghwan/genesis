@@ -237,6 +237,65 @@ body {
   font-weight: 500 !important;
 }
 
+.swiper-state {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: auto;
+  width: 15px;
+  height: 15px;
+  z-index: 5;
+}
+.swiper-state .stop {
+  display: none;
+  width: 8px;
+  height: 12px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+.swiper-state .stop::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 2px;
+  background-color: #bfbfbf;
+}
+.swiper-state .stop::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 2px;
+  background-color: #bfbfbf;
+}
+.swiper-state .stop.on {
+  display: block;
+}
+.swiper-state .play {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 0px;
+  height: 0px;
+  border-left: 8px solid #bfbfbf;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+}
+.swiper-state .play.on {
+  display: block;
+}
+
 #skip_conts {
   position: relative;
 }
@@ -1127,7 +1186,7 @@ button.header_all_menu.on span.line:before {
 }
 
 .footer_sec.share {
-  background-color: #161b22;
+  background-color: #0d1117;
   color: #909090;
   padding: 20px 0;
 }
@@ -1159,8 +1218,38 @@ button.header_all_menu.on span.line:before {
 
 .footer_sec.notice {
   background-color: #080b0e;
-  padding: 20px 0;
   color: #dedede;
+}
+.footer_sec.notice .noti_Swiper {
+  width: 100%;
+  max-height: 60px;
+}
+.footer_sec.notice .noti_Swiper .swiper-slide .noti {
+  padding: 20px 0;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.footer_sec.notice .noti_Swiper .swiper-button-prev {
+  color: #fff;
+  left: auto;
+  right: 70px;
+}
+.footer_sec.notice .noti_Swiper .swiper-button-next {
+  color: #fff;
+  right: 20px;
+}
+.footer_sec.notice .noti_Swiper .swiper-button-next:after,
+.footer_sec.notice .noti_Swiper .swiper-button-prev:after {
+  font-size: 12px;
+}
+.footer_sec.notice .noti_Swiper .swiper-state {
+  left: auto;
+  right: 50px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
 }
 .footer_sec.notice .g_inner {
   display: flex;
