@@ -76,6 +76,22 @@ html {
   opacity: 1;
 }
 
+.point_c_blue {
+  color: #4868e1 !important;
+}
+
+.point_c_oran {
+  color: rgb(251, 95, 33) !important;
+}
+
+.pc_none {
+  display: none;
+}
+
+.mo_none {
+  display: block;
+}
+
 .ani.ani_type2 ul {
   overflow: hidden;
 }
@@ -319,27 +335,27 @@ body {
 }
 
 h1 {
-  font-size: 20px;
+  font-size: 2rem;
   color: #222;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 2.7rem;
   color: #222;
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 2rem;
   color: #444;
 }
 
 h4 {
-  font-size: 18px;
+  font-size: 1.8rem;
   color: #444;
 }
 
 h5 {
-  font-size: 16px;
+  font-size: 1.6rem;
   color: #444;
 }
 
@@ -354,6 +370,7 @@ h5 {
 
 .gl_title {
   margin-bottom: 15px;
+  font-family: "GenesisSansKR" !important;
 }
 
 .gl_subtxt {
@@ -476,7 +493,7 @@ h5 {
   flex-wrap: wrap;
 }
 .btw_line li {
-  padding: 2px 7px;
+  padding: 2px 15px;
   position: relative;
   display: flex;
   align-items: center;
@@ -502,7 +519,10 @@ h5 {
 
 .all_menu_title {
   font-size: 1.5rem;
-  color: #fff;
+  color: #a6a6a6;
+  font-weight: 400;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 .pupup_type1_body {
@@ -620,6 +640,12 @@ body.popop_active {
   }
 }
 @media screen and (max-width: 760px) {
+  .pc_none {
+    display: block;
+  }
+  .mo_none {
+    display: none;
+  }
   .mo_full {
     padding-left: 0;
     padding-right: 0;
@@ -643,6 +669,9 @@ body.popop_active {
   }
   .g_list.type1 > li + li {
     margin-left: 10px;
+  }
+  .btw_line li {
+    padding: 2px 7px;
   }
   .g_inner.left_full {
     padding-left: 0;
@@ -756,6 +785,10 @@ body.popop_active {
     grid-row-end: initial;
     grid-column-start: initial;
     height: 200px;
+  }
+  .all_menu_title {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 @font-face {
@@ -886,7 +919,7 @@ body.allmenu #header {
 
 .g_inner.pupup_type1_header {
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 .g_inner.accordion_mo.type1.pd_none {
@@ -1164,9 +1197,6 @@ button.header_all_menu.on span.line:before {
   }
   .g_inner.accordion_mo.type1.pd_none .item {
     margin-bottom: 0px;
-  }
-  .g_inner.accordion_mo.type1.pd_none .item:last-child {
-    padding: 20px 0;
   }
   button.header_all_menu {
     right: 20px;
@@ -1482,6 +1512,16 @@ button.header_all_menu.on span.line:before {
 
 .popup .footer_sec {
   background-color: transparent;
+}
+.popup .sub_menu {
+  padding: 20px;
+}
+.popup .sub_menu li > a {
+  color: #fff;
+  display: block;
+}
+.popup .sub_menu li + li {
+  margin-top: 15px;
 }
 
 .popup.on {
@@ -6849,7 +6889,7 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
   }
 }
 .evt_banner {
-  padding: 100px 0;
+  padding: 60px 0 100px;
   background: black url("../../src/assets/images/main/genesis-ev-service-package-01-pr-center.jpg") no-repeat center/cover;
   background-attachment: fixed;
   margin-bottom: 60px;
@@ -6863,7 +6903,8 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
 }
 .evt_banner .link {
   color: #fff;
-  text-decoration: underline;
+  display: inline-block;
+  margin-top: 20px;
 }
 
 .exper .g_list.type2 img:hover {
@@ -6884,44 +6925,58 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
   transition: 30s;
 }
 
+.g_inner.btm_0 {
+  margin-bottom: 0;
+}
+
 .load_wrap {
   display: flex;
   height: 500px;
   flex-wrap: wrap;
+  position: relative;
+}
+.load_wrap .link {
+  color: #fff;
+  display: inline-block;
+  margin-top: 20px;
 }
 .load_wrap .left {
   background-color: rgb(94, 140, 181);
   flex: 0 0 auto;
   width: 50%;
   color: #fff;
-  padding: 30px;
+  padding: 30px 30px 30px 50px;
   background: url("../../src/assets/images/main/genesis-motorshow-guangzhou-ectrified-gv70-1920x960.jpg") no-repeat center/cover;
 }
 .load_wrap .left strong {
-  font-size: 1.7rem;
+  font-size: 2.5rem;
   max-width: 300px;
+  margin-bottom: 10px;
 }
 .load_wrap .left p {
   font-size: 1.4rem;
   margin-top: 5px;
   max-width: 300px;
+  min-height: 110px;
 }
 .load_wrap .right {
   background-color: rgb(61, 95, 124);
   flex: 0 0 auto;
   width: 50%;
   color: #fff;
-  padding: 20px;
+  padding: 30px 30px 30px 50px;
   background: url("../../src/assets/images/main/genesis-kr-main-genesis-events-17-desktop-1920x960-ko-2.jpg") no-repeat center/cover;
 }
 .load_wrap .right strong {
-  font-size: 1.7rem;
+  font-size: 2.5rem;
   max-width: 300px;
+  margin-bottom: 10px;
 }
 .load_wrap .right p {
   font-size: 1.4rem;
   margin-top: 5px;
   max-width: 300px;
+  min-height: 110px;
 }
 
 .award {
@@ -6974,6 +7029,7 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
   }
   .load_wrap .left,
   .load_wrap .right {
+    padding: 20px;
     width: 100%;
   }
 }

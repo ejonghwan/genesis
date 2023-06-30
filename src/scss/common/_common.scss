@@ -33,6 +33,20 @@ html {
     }
 }
 
+.point_c_blue {
+    color: $blue !important;
+}
+.point_c_oran {
+    color: $point2 !important;
+}
+
+.pc_none {
+    display: none;
+}
+
+.mo_none {
+    display: block;
+}
 
 .ani.ani_type2 {
     
@@ -263,11 +277,11 @@ body {
 .g_title {
     margin-bottom: 20px;
 }
-h1 {font-size: 20px; color: $tit_1;}
-h2 {font-size: 24px; color: $tit_1;}
-h3 {font-size: 20px; color: $tit_2;}
-h4 {font-size: 18px; color: $tit_2;}
-h5 {font-size: 16px; color: $tit_2;}
+h1 {font-size: 2rem; color: $tit_1;}
+h2 {font-size: 2.7rem; color: $tit_1;}
+h3 {font-size: 2rem; color: $tit_2;}
+h4 {font-size: 1.8rem; color: $tit_2;}
+h5 {font-size: 1.6rem; color: $tit_2;}
 
 .g_inner {
     width: 1080px;
@@ -282,6 +296,7 @@ h5 {font-size: 16px; color: $tit_2;}
 
 .gl_title {
     margin-bottom: 15px;
+    font-family: "GenesisSansKR" !important;
 }
 
 .gl_subtxt {
@@ -439,7 +454,7 @@ h5 {font-size: 16px; color: $tit_2;}
     display: flex;
     flex-wrap: wrap;
     li {
-        padding: 2px 7px;
+        padding: 2px 15px;
         position: relative;
         display: flex;
        
@@ -479,7 +494,10 @@ h5 {font-size: 16px; color: $tit_2;}
 
 
 .all_menu_title {
-    font-size: 1.5rem; color: #fff;
+    font-size: 1.5rem; color: #a6a6a6;
+    font-weight: 400;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
  
@@ -637,7 +655,15 @@ body.popop_active {
 
 
 @include mobile {
+    .pc_none {
+        display: block;
+    }
+    
+    .mo_none {
+        display: none;
+    }
 
+    
     .mo_full {
         // width: 100vw !important;
         padding-left: 0;
@@ -662,6 +688,12 @@ body.popop_active {
         }
         & > li + li {
             margin-left: 10px;
+        }
+    }
+
+    .btw_line {
+        li {
+            padding: 2px 7px;
         }
     }
 
@@ -811,7 +843,10 @@ body.popop_active {
 
     }
 
-
+    .all_menu_title {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
     
 }
 

@@ -86,7 +86,7 @@ body.allmenu #header{
 
 .g_inner.pupup_type1_header {
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 .g_inner.accordion_mo.type1.pd_none {
     margin-bottom: 0px;
@@ -462,9 +462,9 @@ button.header_all_menu {
         .item {
             margin-bottom: 0px;
         }
-        .item:last-child {
-            padding: 20px 0;
-        }
+        // .item:last-child {
+        //     padding: 20px 0;
+        // }
     } 
 
     button.header_all_menu {

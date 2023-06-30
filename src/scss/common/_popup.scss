@@ -26,6 +26,20 @@
     .footer_sec {
         background-color: transparent;
     }
+
+    .sub_menu {
+        padding: 20px;
+
+        li {
+            > a {
+                color: #fff;
+                display: block;
+            }
+           & + li {
+            margin-top: 15px;
+           } 
+        }
+    }
     
 }
 
