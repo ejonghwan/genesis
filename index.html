@@ -13,6 +13,7 @@
     <!-- swiper 임시 -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
     
     <!-- swiper 임시 -->
 
@@ -33,9 +34,8 @@
 
 <div class="wrap">
     <!-- header -->
-    <!-- 스크롤 올릴땐 없애고 내릴떄 내려오게. 픽스 -->
     <header id="header">
-        <div class="g_inner">
+        <div class="g_inner full">
             <nav class="header_wrap">
                 <h1>
                     <a href="./index.html" role="button">
@@ -45,8 +45,8 @@
                 <ul class="header_nav">
                     <li><a href="./pages/gallery.html" role="button">Gallery</a></li>
                     <li><a href="./pages/location.html" role="button">Contact</a></li>
-                    <li><a href="./pages/members.html" role="button">Members</a></li>
                     <li><a href="./pages/youtube.html" role="button">Youtube</a></li>
+                    <li><a href="./pages/members.html" role="button">Members</a></li>
                 </ul>
                
                 <button class="popup_btn header_all_menu" type="button" >
@@ -63,110 +63,145 @@
     <!-- main -->
     <main id="container">
         <article class="g_inner full">
-
-            <!-- main video -->
-            <section class="main_visual">
-                <!-- 슬라이드 두개 연동해서 동영상 끝날 때쯤 (텍스트랑 슬라이드 2개) 같이 변경되게함.  -->
-                <div class="swiper mySwiper main_visual_slide type1 g_slide">
-                    <ul class="swiper-wrapper"> 
-                        <li class="swiper-slide active">
-                            <div class="g_inner main_visual_title">
-                                <div class="pos_txt">
-                                    <h2 class="g_sans">G80</h2>
-                                    <p class="pos_txt_sub">제네시스 고유의 부드럽고 안락한 감성과<br /> 스포츠 모델 특유의 짜릿한 드라이빙</p>
-
-                                    <div class="pos_txt_outer">
-                                        <strong>외부</strong>
-                                        <p>역동적인 우아함의 완벽한 균형을 이룬 대형 럭셔리 세단 G80는 고급스러운 감성과 편의사양을 계승하면서 스포티한 감성을 강화한 럭셔리 스포츠 세단으로 재탄생했습니다.</p>
-                                    </div>
-                                   <!-- <div class="pos_txt_inner">
-                                        <strong>내부</strong>
-                                        <p>전면의 쿼드램프에서부터 역동적인 우아함을 그대로 반영한 파라볼릭 라인의 슬릭한 측면부, 크레스트 그릴을 연상시키는 후면의 듀얼 머플러까지, G80는 후륜구동 세단이 갖출 수 있는 가장 세련된 비율과 당당한 모습을 구현했습니다.</p>
-                                   </div> -->
-                                </div>
-                                <div class="pos_btn">
-                                   <a href="javascript:;" role="button" class="arrow_btn">견적내기</a>
-                                   <a href="javascript:;" role="button" class="arrow_btn">더 알아보기</a>
-                                </div>
+            <!-- new main v -->
+            <div class="main_visual">
+            <ul class="list">
+            
+                <li>
+                    <div class="inner">
+                        <div class="main_visual_txt">
+                            <strong class="g_sans thum" aria-hidden="true">
+                                G90
+                                <br /><span>여백의 미<br />고급스러운 디테일</span>
+                            </strong>
+                            <div class="pos_txt">
+                                <h2 class="g_sans">G90</h2>
+                                <p class="pos_txt_sub">최고급 세단에 걸맞은 품격 있는 실내외 디자인은 물론, 첨단 주행 보조 기술과 이동 시간에 가치를 더하는 다양한 기술이 집약된 G90를 통해 고급차의 새로운 방향성을 제시합니다.</p>
                             </div>
-                            <figure class="main_visual_slide_video">
-                                <video src="./src/assets/images/main/g80.mp4" autoplay muted loop></video>
-                            </figure>
-                        </li>
-                        <li class="swiper-slide active">
-                            <div class="g_inner main_visual_title">
-                                <div class="pos_txt">
-                                    <h2 class="g_sans">G90</h2>
-                                    <p class="pos_txt_sub">제네시스 고유의 부드럽고 안락한 감성과<br /> 스포츠 모델 특유의 짜릿한 드라이빙</p>
-
-                                    <div class="pos_txt_outer">
-                                        <strong>외부</strong>
-                                        <p>역동적인 우아함의 완벽한 균형을 이룬 대형 럭셔리 세단 G80는 고급스러운 감성과 편의사양을 계승하면서 스포티한 감성을 강화한 럭셔리 스포츠 세단으로 재탄생했습니다.</p>
-                                    </div>
-                                
-                                </div>
-                                <div class="pos_btn">
-                                   <a href="javascript:;" role="button" class="arrow_btn">견적내기</a>
-                                   <a href="javascript:;" role="button" class="arrow_btn">더 알아보기</a>
-                                </div>
+                            <div class="pos_btn">
+                            <a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g90-long-wheel-base/bto/powertrains?code=BBBBBBB&packages=" role="button" class="arrow_btn" target="_blank" title="새창">견적내기</a>
+                            <a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g90/design.html" role="button" class="arrow_btn">더 알아보기</a>
                             </div>
-                            <figure class="main_visual_slide_video">
-                                <video src="./src/assets/images/main/testv.mp4" autoplay muted loop></video>
-                            </figure>
-                        </li>
-                        <li class="swiper-slide active">
-                            <div class="g_inner main_visual_title">
-                                <div class="pos_txt">
-                                    <h2 class="g_sans">GV70</h2>
-                                    <p class="pos_txt_sub">제네시스 고유의 부드럽고 안락한 감성과<br /> 스포츠 모델 특유의 짜릿한 드라이빙</p>
-
-                                    <div class="pos_txt_outer">
-                                        <strong>외부</strong>
-                                        <p>역동적인 우아함의 완벽한 균형을 이룬 대형 럭셔리 세단 G80는 고급스러운 감성과 편의사양을 계승하면서 스포티한 감성을 강화한 럭셔리 스포츠 세단으로 재탄생했습니다.</p>
-                                    </div>
-                                 
-                                </div>
-                                <div class="pos_btn">
-                                   <a href="javascript:;" role="button" class="arrow_btn">견적내기</a>
-                                   <a href="javascript:;" role="button" class="arrow_btn">더 알아보기</a>
-                                </div>
+                    </div>
+                        <figure class="main_visual_slide_video">
+                            <video id="test" src="./src/assets/images/main/testv.mp4" muted loop playsinline ></video>
+                        </figure>
+                    </div>
+                </li>
+                <li>
+                    <div class="inner">
+                        <div class="main_visual_txt">
+                            <strong class="g_sans thum" aria-hidden="true">G70
+                                <span>럭셔리 디자인<br />역동적인 우아함</span>
+                            </strong>
+                            <div class="pos_txt">
+                                <h2 class="g_sans">G70</h2>
+                                <p class="pos_txt_sub">2017년 젊고 세련된 디자인의 중형 럭셔리 세단으로 시작한 G70는, 2023년 차별화된 디자인 아이덴티티에 더욱 뛰어난 주행 및 제동 성능의 럭셔리 스포츠 세단으로 새롭게 탄생하였습니다.</p>
                             </div>
-                            <figure class="main_visual_slide_video">
-                                <video src="./src/assets/images/main/gv70.mp4" autoplay muted loop></video>
-                            </figure>
-                        </li>
-                        <li class="swiper-slide active">
-                            <div class="g_inner main_visual_title">
-                                <div class="pos_txt">
-                                    <h2 class="g_sans">GV60</h2>
-                                    <p class="pos_txt_sub">제네시스 고유의 부드럽고 안락한 감성과<br /> 스포츠 모델 특유의 짜릿한 드라이빙</p>
-
-                                    <div class="pos_txt_outer">
-                                        <strong>외부</strong>
-                                        <p>역동적인 우아함의 완벽한 균형을 이룬 대형 럭셔리 세단 G80는 고급스러운 감성과 편의사양을 계승하면서 스포티한 감성을 강화한 럭셔리 스포츠 세단으로 재탄생했습니다.</p>
-                                    </div>
-                                  
-                                </div>
-                                <div class="pos_btn">
-                                   <a href="javascript:;" role="button" class="arrow_btn">견적내기</a>
-                                   <a href="javascript:;" role="button" class="arrow_btn">더 알아보기</a>
-                                </div>
+                            <div class="pos_btn">
+                                <a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g70/bto/powertrains?code=BCBBBBB&packages=" role="button" class="arrow_btn">견적내기</a>
+                                <a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g70/design.html" role="button" class="arrow_btn" target="_blank" title="새창">더 알아보기</a>
                             </div>
-                            <figure class="main_visual_slide_video">
-                                <video src="./src/assets/images/main/gv60.mp4" autoplay muted loop></video>
-                            </figure>
-                        </li>
-                       
-                    </ul>
-                    <div class="swiper-scrollbar"></div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-pagination"></div>
-                </div>
+                    </div>
+                        <figure class="main_visual_slide_video">
+                            <video src="./src/assets/images/main/g70.mp4" muted loop playsinline ></video>
+                        </figure>
+                    </div>
+                </li>
+                <li>
+                    <div class="inner">
+                        <div class="main_visual_txt">
+                            <strong class="g_sans thum" aria-hidden="true">E.G80
+                                <span>전기차<br /> 그 이상의 시작</span>
+                            </strong>
+                            <div class="pos_txt">
+                                <h2 class="g_sans">E.G80</h2>
+                                <p class="pos_txt_sub">전기차 그 이상. Electrified G80는 뛰어난 동력 성능과 신기술을 갖춘 제네시스의 첫 번째 전기차 모델로, 고급 대형 전동화 세단의 새로운 기준을 제시합니다.</p>
+                            </div>
+                            <div class="pos_btn">
+                                <a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/electrified-g80/bto/powertrains?code=BBBBBB&packages=" role="button" class="arrow_btn" target="_blank" title="새창">견적내기</a>
+                                <a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/electrified-g80/design.html" role="button" class="arrow_btn" target="_blank" title="새창">더 알아보기</a>
+                            </div>
+                    </div>
+                        <figure class="main_visual_slide_video">
+                            <video src="./src/assets/images/main/g80e.mp4" muted loop playsinline ></video>
+                        </figure>
+                    </div>
+                </li>
+                <li>
+                    <div class="inner">
+                    <div class="main_visual_txt">
+                        <strong class="g_sans thum" aria-hidden="true">G80
+                            <span>완벽한 비율<br /> 역동적인 우아함</span>
+                        </strong>
+                            <div class="pos_txt">
+                                <h2 class="g_sans">G80</h2>
+                                <p class="pos_txt_sub">역동적인 우아함의 완벽한 균형을 이룬 대형 럭셔리 세단 G80는 고급스러운 감성과 편의사양을 계승하면서 스포티한 감성을 강화한 럭셔리 스포츠 세단으로 재탄생했습니다.</p>
+                            </div>
+                            <div class="pos_btn">
+                                <a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g80/bto/" role="button" class="arrow_btn" target="_blank" title="새창">견적내기</a>
+                                <a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g80/design.html" role="button" class="arrow_btn" target="_blank" title="새창">더 알아보기</a>
+                            </div>
+                    </div>
+                        <figure class="main_visual_slide_video">
+                            <!-- <video src="./g80.mp4" muted loop playsinline poster="./eocp.png"></video> -->
+                            <video src="./src/assets/images/main/g80.mp4" muted loop playsinline ></video>
+                        </figure>
+                    </div>
+                </li>
+                <li>
+                    <div class="inner">
+                        <div class="main_visual_txt">
+                            <strong class="g_sans thum" aria-hidden="true">GV70
+                                <span>심플한 조형<br /> 감성적인 볼륨</span>
+                            </strong>
+                            <div class="pos_txt">
+                                <h2 class="g_sans">GV70</h2>
+                                <p class="pos_txt_sub">역동적인 우아함을 극대화한 디자인, 다이내믹한 주행 경험, 여백의 미를 승화한 실내, 커넥티드 카의 신기술이 담긴 도심형 프리미엄 SUV GV70를 소개합니다.</p>
+                            </div>
+                            <div class="pos_btn">
+                            <a href="https://www.genesis.com/kr/ko/models/luxury-suv-genesis/gv70/bto/powertrains?code=BBBBBBB&packages=" role="button" class="arrow_btn" target="_blank" title="새창">견적내기</a>
+                            <a href="https://www.genesis.com/kr/ko/models/luxury-suv-genesis/gv70/design.html" role="button" class="arrow_btn" target="_blank" title="새창">더 알아보기</a>
+                            </div>
+                        </div>
+                        <figure class="main_visual_slide_video">
+                            <video src="./src/assets/images/main/gv70.mp4" muted loop playsinline ></video>
+                        </figure>
+                    </div>
+                </li>
+                <li>
+                    <div class="inner">
+                        <div class="main_visual_txt">
+                            <strong class="g_sans thum" aria-hidden="true">GV60
+                                <span>당신과의<br /> 교감을 위해</span>
+                            </strong>
+                            <div class="pos_txt">
+                                <h2 class="g_sans">GV60</h2>
+                                <p class="pos_txt_sub">GV60는 파워풀한 주행성능과 고객과 교감하는 다양한 핵심기능을 통해 럭셔리 전기차의 새로운 기준을 제시합니다.</p>
+                            </div>
+                            <div class="pos_btn">
+                            <a href="https://www.genesis.com/kr/ko/models/luxury-suv-genesis/gv60/bto/powertrains?code=BBBBB&packages=" role="button" class="arrow_btn" target="_blank" title="새창">견적내기</a>
+                            <a href="https://www.genesis.com/kr/ko/models/luxury-suv-genesis/gv60/highlights.html" role="button" class="arrow_btn" target="_blank" title="새창">더 알아보기</a>
+                            </div>
+                        </div>
+                        <figure class="main_visual_slide_video">
+                            <video src="./src/assets/images/main/gv60.mp4" muted loop playsinline ></video>
+                        </figure>
+                    </div>
+                </li>
+                </ul>
+                <nav class="navi">
+                    <p class="prev">
+                        <span><span class="blind">이전 슬라이드</span></span>
+                    </p>
+                    <p class="next">
+                        <span><span class="blind">다음 슬라이드</span></span>
+                    </p>
+                </nav>
+
 
                 <div class="main_visual_slide type2">
                     <ul class="g_inner">
-                       
                         <li>
                             <strong>배기량(cc)</strong>
                             <p>3,470</p>
@@ -184,186 +219,86 @@
                             <p class="last">가솔린 3.5 터보 48V 일렉트릭 슈퍼차저</p>
                         </li>
                     </ul>
-                    <div class="progress"></div>
                 </div>
-            </section>
-            <!-- main video -->
+            </div>
+            <script>
+                (function(){
+                    const wrap = document.querySelector('.main_visual .list')
+                    const items = wrap.querySelectorAll('.main_visual .list li')
+                    const prev = document.querySelector('.main_visual .prev')
+                    const next = document.querySelector('.main_visual .next')
+                    
 
-            <!-- new main v -->
-
-<script>
-    // let sw = false;
-    // window.addEventListener('click', e => {
-      
-    //     const v = document.querySelector('#test')
-    //     if(sw) {
-    //        v.play();
-    //     } else {
-    //       v.pause();
-    //       sw = true;
-    //     }
-    // })
-
-
-
-const wrap = document.querySelector('.list')
-const items = wrap.querySelectorAll('li')
-const prev = document.querySelector('.prev')
-const next = document.querySelector('.next')
-
-console.log(items, prev, next)
+                    console.log(items)
+                    
+                    window.addEventListener('load', e => {
+                        items[1].querySelector('video').play();
+                        items[1].classList.add('active')
+                        // console.log( document.querySelectorAll('li')[1].querySelector('video'))
+                    })
+                    
 
 
+                    prev.addEventListener('click', e => {
+                        wrap.prepend(wrap.lastElementChild)
 
-window.addEventListener('load', e => {
-    // document.querySelectorAll('li')[1].querySelector('video').play()
-})
+                        prev.classList.add('on');
+                        setTimeout(() => {
+                            prev.classList.remove('on')
+                        }, 600)
+                    
+                    
+                    
+                    
+                        setTimeout(() => {
+                            for(let i = 0; i < items.length; i++) {
+                                items[i].querySelector('video').pause();
+                                items[i].querySelector('video').currentTime = 0;
+                                items[i].classList.remove('active')
+                            }
 
-prev.addEventListener('click', e => {
-    wrap.prepend(wrap.lastElementChild)
-    prev.classList.add('on');
-    setTimeout(() => {
-        prev.classList.remove('on')
-    }, 600)
+                            wrap.querySelectorAll('.main_visual .list li')[1].classList.add('active')
+                            wrap.querySelectorAll('.main_visual .list li')[1].querySelector('video').play()
+                        }, 600)
+                    })
+                
+                    
+                    next.addEventListener('click', e => {
+                        wrap.append(wrap.firstElementChild)
+                        next.classList.add('on');
 
-
-
-
-    console.log(wrap.firstElementChild.querySelector('video'))
-    wrap.firstElementChild.classList.add('active')
-
-    setTimeout(() => {
-        for(let i = 0; i < items.length; i++) {
-            items[i].querySelector('video').pause();
-            items[i].querySelector('video').currentTime = 0;
-        }
-
-        console.dir(document.querySelectorAll('li')[1].querySelector('video'))
-
-        document.querySelectorAll('li')[1].querySelector('video').play()
-        console.log('set??', items[1].querySelector('video'))
-    }, 100)
-})
-
-
-next.addEventListener('click', e => {
-    wrap.append(wrap.firstElementChild)
-    next.classList.add('on');
-    setTimeout(() => {
-        next.classList.remove('on')
-    }, 600)
-
-
-
-    console.log(wrap.firstElementChild.querySelector('video'))
-    wrap.firstElementChild.classList.add('active')
-
-    setTimeout(() => {
-        for(let i = 0; i < items.length; i++) {
-            items[i].querySelector('video').pause();
-            items[i].querySelector('video').currentTime = 0;
-        }
-
-        console.dir(document.querySelectorAll('li')[1].querySelector('video'))
-
-        document.querySelectorAll('li')[1].querySelector('video').play()
-        console.log('set??', items[1].querySelector('video'))
-    }, 100)
-   
-    
-})
-  
-  
-  </script>
-
-        <div class="dho">
-        <ul class="list">
-            <li>
-                <div class="inner">
-                <h2>1.CALM VALLEY</h2>
-                <figure class="main_visual_slide_video">
-                    <!-- <video src="./g80.mp4" muted loop playsinline poster="./eocp.png"></video> -->
-                    <video src="./g80.mp4" muted loop playsinline ></video>
-                </figure>
-                </div>
-            </li>
-            <li>
-                <div class="inner">
-                <h2>2. WIDE PLAINS</h2>
-                <figure class="main_visual_slide_video">
-                    <video id="test" src="./gv60.mp4" muted loop playsinline ></video>
-                </figure>
-                </div>
-            </li>
-            <li>
-                <div class="inner">
-                <h2>3. CALM LAKE</h2>
-                <figure class="main_visual_slide_video">
-                    <video src="./gv70.mp4" muted loop playsinline ></video>
-                </figure>
-                </div>
-            </li>
-            <li>
-                <div class="inner">
-                <h2>4. ROADSIDE</h2>
-                <figure class="main_visual_slide_video">
-                    <video src="./g80.mp4" muted loop playsinline ></video>
-                </figure>
-                </div>
-            </li>
-            <li>
-                <div class="inner">
-                <h2>5. MOUNTAIN</h2>
-                <figure class="main_visual_slide_video">
-                    <video src="./gv60.mp4" muted loop playsinline ></video>
-                </figure>
-                </div>
-            </li>
-            <li>
-                <div class="inner">
-                <h2>6. LANDSCAPE</h2>
-                <figure class="main_visual_slide_video">
-                    <video src="./gv70.mp4" muted loop playsinline ></video>
-                </figure>
-                </div>
-            </li>
-            <li>
-                <div class="inner">
-                <h2>7. GRASSLAND</h2>
-                <figure class="main_visual_slide_video">
-                    <video src="./g80.mp4" muted loop playsinline ></video>
-                </figure>
-                </div>
-            </li>
-            <li>
-                <div class="inner">
-                <h2>8. SEA WAVES</h2>
-                <figure class="main_visual_slide_video">
-                    <video src="./gv60.mp4" muted loop playsinline ></video>
-                </figure>
-                </div>
-            </li>
-            </ul>
-        
-            <nav class="navi">
-            <p class="prev">
-                <span>prev</span>
-            </p>
-        
-            <p class="next">
-                <span>next</span>
-            </p>
-            </nav>
-        </div>
+                        setTimeout(() => {
+                            next.classList.remove('on')
+                        }, 600)
+                    
+                        
+                    
+                        setTimeout(() => {
+                            for(let i = 0; i < items.length; i++) {
+                                items[i].querySelector('video').pause();
+                                items[i].querySelector('video').currentTime = 0;
+                                items[i].classList.remove('active')
+                            }
+                            wrap.querySelectorAll('.main_visual .list li')[1].classList.add('active')
+                            wrap.querySelectorAll('.main_visual .list li')[1].querySelector('video').play()
+                        }, 600)
+                        
+                        
+                    })
+                    
+                })()
+            
+                
+                    
+                    
+            </script>
             <!-- //new main v -->
 
             <!-- sub slide -->
-            <!-- 자동차 슬라이드 참고 자료 유아이로. 배경컬러와 배경텍스트(모델명) 같이 변경 아래 제원도 -->
             <section class="sub_visual">
-                
                 <article class="g_inner">
                     <div class="sub_visual_title">
-                        <h2>Our Models</h2>
+                        <h2 class="gl_title">Our Models</h2>
                         <p>역동적이면서도 우아한 디자인과 최첨단 기술을 탑재한 제네시스 브랜드의 라인업을 살펴보세요.</p>
                     </div>
                 
@@ -426,9 +361,11 @@ next.addEventListener('click', e => {
         </article>
 
         <!-- 제네시스 경험 -->
-        <article class="g_inner ani">
-            <h2>Experience Genesis</h2>
-            <ul class="g_list type2 mo_full">
+        <article class="g_inner exper ani mo_full ani_type2">
+            <h2 class="gl_title">Genesis Design</h2>
+            <p class="gl_subtxt">크레스트 그릴과 날렵한 두 줄 램프로 제네시스 엠블럼을 형상화한 전면부, <br class="mo_none" />슬릭하게 이어지는 파라볼릭 라인의 측면부와 당당하고 안정감 있는 모습의 후면부가 어우러져 럭셔리 디자인을 재정의합니다.<br /><br />
+            제네시스 윙로고에서 영감을 받은 ‘크레스트 그릴’과 날개 형상을 닮은 두 줄의 ‘쿼드램프’가 적용되어 당당하고 대범한 G70 고유의 캐릭터를 표현합니다. <br class="mo_none"/>또한 크레스트 그릴 높이를 쿼드램프보다 낮게 구성하여 당장에라도 뛰쳐나갈 듯한 역동적 캐릭터를 표현하였습니다.</p>
+            <ul class="g_list type2">
                 <!-- data -->
                 <li class="grid_item">
                     <div class="cont1 type1">
@@ -477,83 +414,76 @@ next.addEventListener('click', e => {
         <!-- //제네시스 경험 -->
 
         <!-- 더 어워드  -->
-        <article class="g_inner ani">
-            <h2>THE AWARDS</h2>
+        <article class="g_inner ani ani_type1">
+            <h2 class="gl_title">THE AWARDS</h2>
             
-        <div class="swiper type3 award mo_full">
-            <div class="swiper-wrapper g_slide s_type3 ">
-              <div class="swiper-slide">
-                <div class="item mo_full">
-                    <strong class="tit">제네시스 X 컨버터블,<br />카 디자인 어워드 올해의 콘셉트카 선정</strong>
-                    <!-- <p class="txt">제네시스 브랜드 최초의 컨버터블 콘셉트인 엑스 컨버터블이 이탈리아의 자동차 및 산업디자인 전문지 ‘오토 앤드 디자인 (Auto&Design)’에서 주최하는 ‘카 디자인 어워드 2023’에서 ‘올해의 콘셉트카’로 선정되며 디자인 우수성을 인정받았습니다.</p> -->
+            
+            <div class="swiper type3 award">
+                <div class="swiper-wrapper g_slide s_type3 ">
+                <div class="swiper-slide">
+                    <div class="item">
+                        <strong class="tit">제네시스 X 컨버터블,<br />카 디자인 어워드 올해의 콘셉트카 선정</strong>
+                        <!-- <p class="txt">제네시스 브랜드 최초의 컨버터블 콘셉트인 엑스 컨버터블이 이탈리아의 자동차 및 산업디자인 전문지 ‘오토 앤드 디자인 (Auto&Design)’에서 주최하는 ‘카 디자인 어워드 2023’에서 ‘올해의 콘셉트카’로 선정되며 디자인 우수성을 인정받았습니다.</p> -->
+                    </div>
                 </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="item mo_full">
-                    <strong class="tit">G90, 레드닷 어워드 수송 디자인 분야 본상 수상</strong>
-                    <!-- <p class="txt">세계적인 디자인 상 '레드 닷 어워드'에서 제네시스의 브랜드 플래그십 모델인 G90가 '역동적인 우아함'이라는 제네시스의 디자인 정체성이 반영된 품격있는 외관으로 본상을 받았습니다.</p> -->
+                <div class="swiper-slide">
+                    <div class="item">
+                        <strong class="tit">G90, 레드닷 어워드 수송 디자인 분야 본상 수상</strong>
+                        <!-- <p class="txt">세계적인 디자인 상 '레드 닷 어워드'에서 제네시스의 브랜드 플래그십 모델인 G90가 '역동적인 우아함'이라는 제네시스의 디자인 정체성이 반영된 품격있는 외관으로 본상을 받았습니다.</p> -->
+                    </div>
                 </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="item">
-                    <strong class="tit">제네시스 G90, 모터트렌드  올해의 차® 선정
-                        (미국 사양 기준)</strong>
-                        <!-- <p class="txt">제네시스 G90가 세계적 권위의 자동차 전문지 모터트렌드에서 안전성, 효율성, 가치, 디자인, 엔지니어링, 주행성능 등 6가지 항목 평가에서 최고의 경쟁력을 과시하며 당당히 ‘2023년 올해의 차 (미국 사양 기준)’에 선정되었습니다.</p> -->
+                <div class="swiper-slide">
+                    <div class="item">
+                        <strong class="tit">제네시스 G90, 모터트렌드  올해의 차® 선정
+                            (미국 사양 기준)</strong>
+                            <!-- <p class="txt">제네시스 G90가 세계적 권위의 자동차 전문지 모터트렌드에서 안전성, 효율성, 가치, 디자인, 엔지니어링, 주행성능 등 6가지 항목 평가에서 최고의 경쟁력을 과시하며 당당히 ‘2023년 올해의 차 (미국 사양 기준)’에 선정되었습니다.</p> -->
+                    </div>
                 </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="item">
-                    <strong class="tit">제네시스, ‘2022 레드 닷 어워드’에서 4개 부문 수상</strong>
-                    <!-- <p class="txt">제네시스가 독일 노르트하인 베스트팔린 디자인센터가 주관하는 ‘2022 레드 닷 어워드 : 브랜드 & 커뮤니케이션 디자인’에서 최우수상 1개, 본상 3개, 총 4개 디자인상을 수상하였습니다. 제네시스의 전용 전시관 ‘제네시스 수지’가 리테일 디자인 부문에서 ‘레드 닷 어워드 : 최우수상’을 수상했으며, ‘제네시스 스튜디오 안성’과 ‘제네시스 하우스 뉴욕’은 본상 수상, ‘제네시스 GV60 인스토어 캠페인 : Light & Wonder’은 ‘공간 커뮤니케이션’ 부문에서 본상을 수상하였습니다.</p> -->
+                <div class="swiper-slide">
+                    <div class="item">
+                        <strong class="tit">제네시스, ‘2022 레드 닷 어워드’에서 4개 부문 수상</strong>
+                        <!-- <p class="txt">제네시스가 독일 노르트하인 베스트팔린 디자인센터가 주관하는 ‘2022 레드 닷 어워드 : 브랜드 & 커뮤니케이션 디자인’에서 최우수상 1개, 본상 3개, 총 4개 디자인상을 수상하였습니다. 제네시스의 전용 전시관 ‘제네시스 수지’가 리테일 디자인 부문에서 ‘레드 닷 어워드 : 최우수상’을 수상했으며, ‘제네시스 스튜디오 안성’과 ‘제네시스 하우스 뉴욕’은 본상 수상, ‘제네시스 GV60 인스토어 캠페인 : Light & Wonder’은 ‘공간 커뮤니케이션’ 부문에서 본상을 수상하였습니다.</p> -->
+                    </div>
                 </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="item">
-                    <strong class="tit">J.D. POWER 2022 신차품질조사 프리미엄 브랜드 1위 달성</strong>
-                    <!-- <p class="txt">2017년 처음으로 평가 대상으로 선정된 이후 6년 동안 꾸준히 프리미엄 브랜드 최상위권을 유지한 제네시스가 ‘2022년 신차품질조사’에서 1위를 달성했습니다. 동시에 G80가 최우수 품질상을 2년 연속 수상, G70와 GV70가 품질 우수 차종에 선정되었습니다. 제네시스는 앞으로도 최고의 차량을 위해 높은 품질 기술을 선보이겠습니다.</p> -->
+                <div class="swiper-slide">
+                    <div class="item">
+                        <strong class="tit">J.D. POWER 2022 신차품질조사 프리미엄 브랜드 1위 달성</strong>
+                        <!-- <p class="txt">2017년 처음으로 평가 대상으로 선정된 이후 6년 동안 꾸준히 프리미엄 브랜드 최상위권을 유지한 제네시스가 ‘2022년 신차품질조사’에서 1위를 달성했습니다. 동시에 G80가 최우수 품질상을 2년 연속 수상, G70와 GV70가 품질 우수 차종에 선정되었습니다. 제네시스는 앞으로도 최고의 차량을 위해 높은 품질 기술을 선보이겠습니다.</p> -->
+                    </div>
                 </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="item">
-                    <strong class="tit">2022 IIHS Top Safety Pick+</strong>
-                    <!-- <p class="txt">미국에서 판매하는 제네시스의 모든 차종이 안정성으로 최고 등급을 받았습니다.
-                        미국 고속도로 안전보험협회(IIHS)가 발표한 충돌 평가에서 제네시스 G70, G80, G90, GV70, GV80가 ‘TSP+ 등급’을 획득했습니다. 특히 더 뉴 G70(2021년 6월 생산 이후)와 GV70는 4년 연속 ‘TSP+ 등급’에 오르며 안전성을 다시 한번 입증했습니다.</p> -->
+                <div class="swiper-slide">
+                    <div class="item">
+                        <strong class="tit">2022 IIHS Top Safety Pick+</strong>
+                        <!-- <p class="txt">미국에서 판매하는 제네시스의 모든 차종이 안정성으로 최고 등급을 받았습니다.
+                            미국 고속도로 안전보험협회(IIHS)가 발표한 충돌 평가에서 제네시스 G70, G80, G90, GV70, GV80가 ‘TSP+ 등급’을 획득했습니다. 특히 더 뉴 G70(2021년 6월 생산 이후)와 GV70는 4년 연속 ‘TSP+ 등급’에 오르며 안전성을 다시 한번 입증했습니다.</p> -->
+                    </div>
                 </div>
-              </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+                <div class="autoplay-progress">
+                <svg viewBox="0 0 48 48">
+                    <circle cx="24" cy="24" r="20"></circle>
+                </svg>
+                <span></span>
+                </div>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-            <div class="autoplay-progress">
-              <svg viewBox="0 0 48 48">
-                <circle cx="24" cy="24" r="20"></circle>
-              </svg>
-              <span></span>
-            </div>
-          </div>
-        
-           
-            <!-- <ul class="s_type3_nav">
-                <li><button>2023 car design award</button></li>
-                <li><button>2023 red dot design award</button></li>
-                <li><button>2023 MOTORTREND CAR OF THE YEAR®</button></li>
-                <li><button>J.D. POWER 2022 U.S. INITIAL QUALITY STUDY</button></li>
-                <li><button>2022 IIHS Top Safety Pick+</button></li>
-            </ul> -->
         </article>
 
           <script>
             const progressCircle = document.querySelector(".swiper.type3 .autoplay-progress svg");
             const progressContent = document.querySelector(".swiper.type3  .autoplay-progress span");
-            var swiper = new Swiper(".swiper.type3", {
+            new Swiper(".swiper.type3", {
               spaceBetween: 30,
               centeredSlides: true,
+              direction: 'vertical',
             //   autoplay: {
             //     delay: 10000,
             //     disableOnInteraction: false
             //   },
               pagination: {
-                el: ".swiper-pagination",
+                el: ".swiper.type3 .swiper-pagination",
                 clickable: true
               },
               navigation: {
@@ -570,39 +500,24 @@ next.addEventListener('click', e => {
           </script>
         <!-- //더 어워드  -->
 
+
+
         
         <!-- 제네시스 이벤트 -->
-        <div class="evt_banner ani">
+        <div class="evt_banner">
             <article class="g_inner">
                 <h2 class="tit">Genesis Events</h2>
                 <p class="txt">제네시스에서 진행중인 다양한 이벤트를 소개합니다.</p>
-                <a href="javascript:;" role="button" class="link">자세히보기</a>
+                <a href="https://www.genesis.com/kr/ko/support/genesis-events.html" role="button" class="arrow_btn link" target="_blank" title="새창">자세히보기</a>
             </article>
         </div>
         <!-- //제네시스 이벤트 -->
-
-        
-         <!-- 스페이스/로드트립 -->
-         <!-- 양분할해서 한쪽 누르면 거기가 커지는 인터렉션.  -->
-         <article class="g_inner ani">
-            <h2>Genesis space & Road trip</h2>
-            <div class="load_wrap mo_full">
-                <div class="left">
-                    <strong>스페이스</strong>
-                    <p>제네시스의 디자인과 고유한 감각을 반영한 현대적 공간으로 여러분을 초대합니다. 제네시스에 관한 다양한 체험으로 당신만의 제네시스를 찾는 여정을 지원합니다.</p>
-                </div>
-                <div class="right">
-                    <strong>로드트립</strong>
-                    <p>제네시스와 내셔널지오그래픽 트래블러와 함께하는 서사적 여행, 제네시스 로드트립을 통해 자세한 정보를 확인하세요.</p>
-                </div>
-            </div>
-        </article>
-        <!-- //스페이스/로드트립 -->
   
          <!-- 제네시스 갤러리 -->
-         <article class="g_inner ani">
-            <h2>Genesis gallery</h2>
-            <ul class="g_list type2 mo_full">
+         <article class="g_inner gall ani mo_full ani_type2">
+            <h2 class="gl_title">inside</h2>
+            <p class="gl_subtxt">운전석 공간은 제네시스의 실내 디자인 철학 ‘여백의 미’를 바탕으로 신기술이 적용된 첨단 장치 같은 이미지와 <br class="mo_none"/>아날로그 감성이 담긴 고급스러운 디테일이 조화를 이룹니다.</p>
+            <ul class="g_list type2">
                 <!-- data -->
                 <li class="grid_item">
                     <div class="cont1 type1">
@@ -650,9 +565,31 @@ next.addEventListener('click', e => {
         </article>
         <!-- //제네시스 갤러리 -->
 
+        
+         <!-- 스페이스/로드트립 -->
+         <article class="g_inner full">
+            <div class="g_inner btm_0">
+                <h2 class="gl_title">Genesis space & Road trip</h2>
+            </div>
+            <div class="load_wrap">
+                <div class="left">
+                    <strong>스페이스</strong>
+                    <p>제네시스의 디자인과 고유한 감각을 반영한 현대적 공간으로 여러분을 초대합니다. 제네시스에 관한 다양한 체험으로 당신만의 제네시스를 찾는 여정을 지원합니다.</p>
+                    <a href="https://www.genesis.com/kr/ko/experience/space/space-overview.html" role="button" class="arrow_btn link" target="_blank" title="새창">자세히보기</a>
+                </div>
+                <div class="right">
+                    <strong>로드트립</strong>
+                    <p>제네시스와 내셔널지오그래픽 트래블러와 함께하는 서사적 여행, 제네시스 로드트립을 통해 자세한 정보를 확인하세요.</p>
+                    <a href="https://www.genesis.com/kr/ko/genesis/roadtrip/roadtrip-overview.html" role="button" class="arrow_btn link" target="_blank" title="새창">자세히보기</a>
+                </div>
+            </div>
+        </article>
+        <!-- //스페이스/로드트립 -->
+
+
         <!-- 연관 컨텐츠 -->
-         <article class="g_inner ani">
-            <h2>연관 컨텐츠</h2>
+         <article class="g_inner con ani ani_type1">
+            <h2 class="gl_title">연관 컨텐츠</h2>
             <div class="g_content">
                 <ul>
                     <li>
@@ -662,6 +599,7 @@ next.addEventListener('click', e => {
                        <div class="g_content_txt">
                             <strong>이벤트</strong>
                             <p>제네시스에서 진행중인 다양한 이벤트 정보를 전해 드립니다.</p>
+                            <a href="https://www.genesis.com/kr/ko/support/genesis-events.html" role="button" class="arrow_btn black" target="_blank" title="새창">더 알아보기</a>
                        </div>
                     </li>
                     <li>
@@ -671,7 +609,7 @@ next.addEventListener('click', e => {
                        <div class="g_content_txt">
                             <strong>디지털 서비스</strong>
                             <p>제네시스의 디지털 서비스는 첨단 신기술로 당신과 차가 함께 하는 일상에 편리함을 한층 더해줍니다. </p>
-                            <a href="javascript:;">더 알아보기</a>
+                            <a href="https://www.genesis.com/kr/ko/members/my-genesis-app/overview.html" role="button" class="arrow_btn black" target="_blank" title="새창">더 알아보기</a>
                        </div>
                     </li>
                     <li>
@@ -681,13 +619,13 @@ next.addEventListener('click', e => {
                        <div class="g_content_txt">
                             <strong>멤버스</strong>
                             <p>제네시스 오너분들께만 주어지는 특별한 혜택과 이상적인 경험을 선사합니다.</p>
-                            <a href="javascript:;">더 알아보기</a>
+                            <a href="https://www.genesis.com/kr/ko/members/genesis-membership/membership-overview/membership-information.html" role="button" class="arrow_btn black" target="_blank" title="새창">더 알아보기</a>
                        </div>
                     </li>
                 </ul>
             </div>
         </article>
-        <!-- //스페이스/로드트립 -->
+         <!-- //연관 컨텐츠 -->
         
     </main>
     <!-- //main -->
@@ -699,40 +637,64 @@ next.addEventListener('click', e => {
     <footer id="footer">
        
         <!-- 쉐어 -->
-        <section class="footer_sec_share">
+        <section class="footer_sec share">
             <div class="g_inner">
                 <ul>
                     <li class="txt">Share</li>
-                    <li><a href="javascript:;" role="button">
+                    <li><a href="http://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.genesis.com%2Fkr%2Fko%2Fmain.html" role="button" target="_blank" title="새창">
                         <i class="fa-brands fa-square-facebook"></i>
                         <span class="blind">페이스북</span>
                     </a></li>
-                    <li><a href="javascript:;" role="button">
+                    <li><a href="https://twitter.com/i/flow/login" role="button" target="_blank" title="새창">
                         <i class="fa-brands fa-twitter"></i>
                         <span class="blind">트위터</span>
                     </a></li>
-                    <li><a href="javascript:;" role="button">
+                    <li><a href="javascript:;" role="button" target="_blank" title="새창">
                         <i class="fa-solid fa-link"></i>
                         <span class="blind">링크복사</span>
                     </a></li>
                 </ul>
-                <button type="button">Top</button>
+                <!-- <button type="button">Top</button> -->
             </div>
         </section>
         <!-- //쉐어 -->
+     
         <!-- 공지사항 -->
-        <section class="footer_sec_notice">
+        <section class="footer_sec notice">
             <div class="g_inner">
-                <ul class="g_slide">
-                    <li class="active"><a href="javascript:;" role="button">[공지사항] G90 '사용자 인증 시스템 및 편의 기능' 무선 소프트웨어 업데이트</a></li>
-                    <li><a href="javascript:;" role="button">[공지사항] G90 '사용자 인증 시스템 및 편의 기능' 무선 소프트웨어 업데이트</a></li>
-                    <li><a href="javascript:;" role="button">[공지사항] G90 '사용자 인증 시스템 및 편의 기능' 무선 소프트웨어 업데이트</a></li>
-                    <li><a href="javascript:;" role="button">[공지사항] G90 '사용자 인증 시스템 및 편의 기능' 무선 소프트웨어 업데이트</a></li>
-                </ul>
-                <div>
-                    <div>arrow_btn</div>
+                <div class="swiper noti_Swiper">
+                    <ul class="swiper-wrapper">
+                      <li class="swiper-slide">
+                        <a href="https://www.genesis.com/kr/ko/support/notice.html" role="button" class="noti" target="_blank" title="새창">[공지사항] 보안 패치 작업에 따른 제네시스 커넥티드 서비스 이용불가 고객 대상 안내</a>
+                      </li>
+                      <li class="swiper-slide">
+                        <a href="https://www.genesis.com/kr/ko/support/notice/detail.html?seq=0000000411" role="button" class="noti" target="_blank" title="새창">[공지사항] 제네시스 커넥티드 서비스 시스템 개선 작업 안내</a>
+                      </li>
+                      <li class="swiper-slide">
+                        <a href="https://www.genesis.com/kr/ko/support/notice/detail.html?seq=0000000408" role="button" class="noti" target="_blank" title="새창">[공지사항] Genesis Connected Services 개인정보 처리방침 개정 공지</a>
+                     </li>
+                      <li class="swiper-slide">
+                        <a href="https://www.genesis.com/kr/ko/support/notice/detail.html?seq=0000000406" role="button" class="noti" target="_blank" title="새창">[공지사항] 제네시스 커넥티드 서비스 시스템 개선 작업 안내</a>
+                    </li>
+                      <li class="swiper-slide">
+                        <a href="https://www.genesis.com/kr/ko/support/notice/detail.html?seq=0000000394" role="button" class="noti" target="_blank" title="새창">[공지사항] 제GV60 페이스 커넥트 시스템 등록불량 개선 무상수리 고객통지문</a>
+                    </li>
+                      <li class="swiper-slide">
+                        <a href="https://www.genesis.com/kr/ko/support/notice/detail.html?seq=0000000405" role="button" class="noti" target="_blank" title="새창">[공지사항] 제네시스 멤버십 제휴서비스 종료 안내 입니다.</a>
+                    </li>
+                    </ul>
+                    <!-- <div class="swiper-pagination"></div> -->
+                    <div class="swiper-state">
+                        <button type="button" class="stop on" aria-label="슬라이드 자동 이동 정지"></button>
+                        <button type="button" class="play" aria-label="슬라이드 자동 이동 시작"></button>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
+                
             </div>
+          
+
         </section>
         <!-- //공지사항 -->
         <section class="footer_sec all_menu">
@@ -741,16 +703,16 @@ next.addEventListener('click', e => {
                 <div class="item">
                     <button type="button" class="acco_head"><strong class="tit">모델</strong></button>
                     <ul class="acco_body">
-                        <li><a href="javascript:;" role="button">G90 LONG WHEEL BASE</a></li>
-                        <li><a href="javascript:;" role="button">G90</a></li>
-                        <li><a href="javascript:;" role="button">G80</a></li>
-                        <li><a href="javascript:;" role="button">ELECTRIFIED G80</a></li>
-                        <li><a href="javascript:;" role="button">G70</a></li>
-                        <li><a href="javascript:;" role="button">G70 SHOOTING BRAKE</a></li>
-                        <li><a href="javascript:;" role="button">GV80</a></li>
-                        <li><a href="javascript:;" role="button">GV70</a></li>
-                        <li><a href="javascript:;" role="button">ELECTRIFIED GV70</a></li>
-                        <li><a href="javascript:;" role="button">GV60</a></li>
+                        <li><a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g90/highlights.html" role="button" target="_blank" title="새창">G90 LONG WHEEL BASE</a></li>
+                        <li><a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g90/highlights.html" role="button" target="_blank" title="새창">G90</a></li>
+                        <li><a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g80/highlights.html" role="button" target="_blank" title="새창">G80</a></li>
+                        <li><a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/electrified-g80/highlights.html" role="button" target="_blank" title="새창">ELECTRIFIED G80</a></li>
+                        <li><a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g70.html" role="button" target="_blank" title="새창">G70</a></li>
+                        <li><a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g70-shooting-brake/highlights.html" role="button" target="_blank" title="새창">G70 SHOOTING BRAKE</a></li>
+                        <li><a href="https://www.genesis.com/kr/ko/models/luxury-suv-genesis/gv80/highlights.html" role="button" target="_blank" title="새창">GV80</a></li>
+                        <li><a href="https://www.genesis.com/kr/ko/models/luxury-suv-genesis/gv70/highlights.html" role="button" target="_blank" title="새창">GV70</a></li>
+                        <li><a href="https://www.genesis.com/kr/ko/models/luxury-suv-genesis/electrified-gv70/highlights.html" role="button" target="_blank" title="새창">ELECTRIFIED GV70</a></li>
+                        <li><a href="https://www.genesis.com/kr/ko/models/luxury-suv-genesis/gv60/highlights.html" role="button" target="_blank" title="새창">GV60</a></li>
                     </ul>
                 </div>
                 <!-- //모델 -->
@@ -758,12 +720,12 @@ next.addEventListener('click', e => {
                 <div class="item">
                     <button type="button" class="acco_head"><strong class="tit">구매</strong></button>
                     <ul class="acco_body">
-                        <li><a href="javascript:;" role="button">견적내기</a></li>
-                        <li><a href="javascript:;" role="button">구매 프로그램</a></li>
-                        <li><a href="javascript:;" role="button">전기차 구매가이드</a></li>
-                        <li><a href="javascript:;" role="button">구매 상담 신청</a></li>
-                        <li><a href="javascript:;" role="button">제네시스 스펙트럼</a></li>
-                        <li><a href="javascript:;" role="button">사양 조회하기</a></li>
+                        <li><a href="https://www.genesis.com/kr/ko/shopping/quote.html" role="button" target="_blank" title="새창">견적내기</a></li>
+                        <li><a href="https://www.genesis.com/kr/ko/shopping/financial-program/program-overview.html" role="button" target="_blank" title="새창">구매 프로그램</a></li>
+                        <li><a href="https://www.genesis.com/kr/ko/shopping/electric-vehicle-purchase-guide.html" role="button" target="_blank" title="새창">전기차 구매가이드</a></li>
+                        <li><a href="https://www.genesis.com/kr/ko/shopping/genesis-purchase.html" role="button" target="_blank" title="새창">구매 상담 신청</a></li>
+                        <li><a href="https://www.genesis.com/kr/ko/shopping/genesis-spectrum.html" role="button" target="_blank" title="새창">제네시스 스펙트럼</a></li>
+                        <li><a href="https://www.genesis.com/kr/ko/shopping/genesis-car-specifications-check.html" role="button" target="_blank" title="새창">사양 조회하기</a></li>
                     </ul>
                 </div>
                 <!-- //구매 -->
@@ -771,10 +733,10 @@ next.addEventListener('click', e => {
                 <div class="item">
                     <button type="button" class="acco_head"><strong class="tit">체험</strong></button>
                     <ul class="acco_body">
-                        <li><a href="javascript:;" role="button">스페이스</a></li>
-                        <li><a href="javascript:;" role="button">시승 신청</a></li>
-                        <li><a href="javascript:;" role="button">전시장 찾기</a></li>
-                        <li><a href="javascript:;" role="button">제네시스 드라이빙 익스피리언스</a></li>
+                        <li><a href="https://www.genesis.com/kr/ko/experience/space/space-overview.html" role="button" target="_blank" title="새창">스페이스</a></li>
+                        <li><a href="https://www.genesis.com/kr/ko/experience/genesis.html" role="button" target="_blank" title="새창">시승 신청</a></li>
+                        <li><a href="https://www.genesis.com/kr/ko/experience/find-a-showroom.html" role="button" target="_blank" title="새창">전시장 찾기</a></li>
+                        <li><a href="https://www.genesis.com/kr/ko/experience/genesis-driving-experience.html" role="button" target="_blank" title="새창">제네시스 드라이빙 익스피리언스</a></li>
                     </ul>
                 </div>
                 <!-- //체험 -->
@@ -782,10 +744,10 @@ next.addEventListener('click', e => {
                 <div class="item">
                     <button type="button" class="acco_head"><strong class="tit">멤버스</strong></button>
                     <ul class="acco_body">
-                        <li><a href="javascript:;" role="button">제네시스 멤버십</a></li>
-                        <li><a href="javascript:;" role="button">MY GENESIS 앱</a></li>
-                        <li><a href="javascript:;" role="button">테크놀로지</a></li>
-                        <li><a href="javascript:;" role="button">차량관리 서비스</a></li>
+                        <li><a href="https://www.genesis.com/kr/ko/members/genesis-membership/membership-overview/membership-information.html" role="button" target="_blank" title="새창">제네시스 멤버십</a></li>
+                        <li><a href="https://www.genesis.com/kr/ko/members/my-genesis-app/overview.html" role="button" target="_blank" title="새창">MY GENESIS 앱</a></li>
+                        <li><a href="https://www.genesis.com/kr/ko/members/technology/overview.html" role="button" target="_blank" title="새창">테크놀로지</a></li>
+                        <li><a href="https://www.genesis.com/kr/ko/members/vehicle-management-service/genesis-service-network.html" role="button" target="_blank" title="새창">차량관리 서비스</a></li>
                     </ul>
                 </div>
                 <!-- //멤버스 -->
@@ -821,34 +783,34 @@ next.addEventListener('click', e => {
                 <!-- //마이페이지 -->
             </div>
         </section>
-        <section class="footer_sec mid sitemap">
+        <section class="footer_sec sitemap mid">
             <div class="g_inner">
                 <ul class="item btw_line">
-                    <li><a href="javascript:;" role="button">사이트맵</a></li>
-                    <li><a href="javascript:;" role="button">이용약관</a></li>
-                    <li><a href="javascript:;" role="button">개인정보 처리방침</a></li>
-                    <li><a href="javascript:;" role="button">저작권 안내</a></li>
-                    <li><a href="javascript:;" role="button">보증안내</a></li>
-                    <li><a href="javascript:;" role="button">자동차 교환 및 환불 중재 규정 안내</a></li>
-                    <li><a href="javascript:;" role="button">하자 재발 통보 안내</a></li>
+                    <li><a href="https://www.genesis.com/kr/ko/sitemap.html" role="button" target="_blank" title="새창">사이트맵</a></li>
+                    <li><a href="https://www.genesis.com/kr/ko/terms-of-use/terms-conditions/website.html" role="button" target="_blank" title="새창">이용약관</a></li>
+                    <li><a href="https://www.genesis.com/kr/ko/terms-of-use/privacy-policy/website-member.html" role="button" target="_blank" title="새창" class="point_c_oran">개인정보 처리방침</a></li>
+                    <li><a href="https://www.genesis.com/kr/ko/terms-of-use/copyright.html" role="button" target="_blank" title="새창">저작권 안내</a></li>
+                    <li><a href="https://www.genesis.com/kr/ko/terms-of-use/warranty/gv80.html" role="button" target="_blank" title="새창">보증안내</a></li>
+                    <li><a href="https://www.genesis.com/kr/ko/members/vehicle-management-service/lemonlaw-rules.html" role="button" target="_blank" title="새창">자동차 교환 및 환불 중재 규정 안내</a></li>
+                    <li><a href="https://www.genesis.com/kr/ko/members/vehicle-management-service/lemonlaw.html" role="button">하자 재발 통보 안내</a></li>
                 </ul>
                 <ul class="item sns">
-                    <li><a href="javascript:;" role="button">
+                    <li><a href="https://www.facebook.com/GenesisWorldwide" role="button" target="_blank" title="새창">
                         <i class="fa-brands fa-square-facebook"></i>
                         <span class="blind">페이스북</span>
                     </a></li>
-                    <li><a href="javascript:;" role="button">
+                    <li><a href="https://www.instagram.com/genesis_worldwide/" role="button" target="_blank" title="새창">
                         <i class="fa-brands fa-instagram"></i>
                         <span class="blind">인스타그램</span>
                     </a></li>
-                    <li><a href="javascript:;" role="button">
+                    <li><a href="https://www.youtube.com/genesisworldwide" role="button" target="_blank" title="새창">
                         <i class="fa-brands fa-youtube"></i>
                         <span class="blind">유튜브</span>
                     </a></li>
                 </ul>
             </div>
         </section>
-        <section class="footer_sec mid line_black_long">
+        <!-- <section class="footer_sec mid line_black_long">
             <div class="g_inner">
                 <ul class="item btw_line">
                     <li><a href="javascript:;" role="button">제네시스 월드와이드</a></li>
@@ -860,7 +822,7 @@ next.addEventListener('click', e => {
                     <li><a href="javascript:;" role="button">인재 채용</a></li>
                 </ul>
             </div>
-        </section>
+        </section> -->
         
         <section class="footer_sec btm line_black_long">
             <p class="copyright">
@@ -869,6 +831,11 @@ next.addEventListener('click', e => {
         </section>
     </footer>
     <!-- //footer -->
+
+
+
+    
+
 </div>
 
 
@@ -877,6 +844,17 @@ next.addEventListener('click', e => {
       <!-- 전체메뉴 팝업 -->
       <section id="pupup_type1" class="popup all_menu" style="display:none;">
         <!-- 팝업헤더 -->
+        <div class="pupup_type1_header g_inner pc_none">
+            <h2 class="all_menu_title">프로모션 메뉴</h2>
+        </div>
+
+        <ul class="sub_menu pc_none">
+            <li><a href="./pages/gallery.html" role="button" class="arrow_btn">Gallery</a></li>
+            <li><a href="./pages/location.html" role="button" class="arrow_btn">Contact</a></li>
+            <li><a href="./pages/youtube.html" role="button" class="arrow_btn">Youtube</a></li>
+            <li><a href="./pages/members.html" role="button" class="arrow_btn">Members</a></li>
+        </ul>
+
         <div class="pupup_type1_header g_inner">
             <h2 class="all_menu_title">전체메뉴</h2>
         </div>
@@ -892,16 +870,16 @@ next.addEventListener('click', e => {
                             <span class="blind">자세히보기</span>
                         </button>
                         <ul class="acco_body">
-                            <li><a href="javascript:;" role="button">G90 LONG WHEEL BASE</a></li>
-                            <li><a href="javascript:;" role="button">G90</a></li>
-                            <li><a href="javascript:;" role="button">G80</a></li>
-                            <li><a href="javascript:;" role="button">ELECTRIFIED G80</a></li>
-                            <li><a href="javascript:;" role="button">G70</a></li>
-                            <li><a href="javascript:;" role="button">G70 SHOOTING BRAKE</a></li>
-                            <li><a href="javascript:;" role="button">GV80</a></li>
-                            <li><a href="javascript:;" role="button">GV70</a></li>
-                            <li><a href="javascript:;" role="button">ELECTRIFIED GV70</a></li>
-                            <li><a href="javascript:;" role="button">GV60</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g90/highlights.html" role="button" target="_blank" title="새창">G90 LONG WHEEL BASE</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g90/highlights.html" role="button" target="_blank" title="새창">G90</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g80/highlights.html" role="button" target="_blank" title="새창">G80</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/electrified-g80/highlights.html" role="button" target="_blank" title="새창">ELECTRIFIED G80</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g70.html" role="button" target="_blank" title="새창">G70</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g70-shooting-brake/highlights.html" role="button" target="_blank" title="새창">G70 SHOOTING BRAKE</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/models/luxury-suv-genesis/gv80/highlights.html" role="button" target="_blank" title="새창">GV80</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/models/luxury-suv-genesis/gv70/highlights.html" role="button" target="_blank" title="새창">GV70</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/models/luxury-suv-genesis/electrified-gv70/highlights.html" role="button" target="_blank" title="새창">ELECTRIFIED GV70</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/models/luxury-suv-genesis/gv60/highlights.html" role="button" target="_blank" title="새창">GV60</a></li>
                         </ul>
                     </div>
                     <!-- //모델 -->
@@ -912,12 +890,12 @@ next.addEventListener('click', e => {
                             <span class="blind">자세히보기</span>
                         </button>
                         <ul class="acco_body">
-                            <li><a href="javascript:;" role="button">견적내기</a></li>
-                            <li><a href="javascript:;" role="button">구매 프로그램</a></li>
-                            <li><a href="javascript:;" role="button">전기차 구매가이드</a></li>
-                            <li><a href="javascript:;" role="button">구매 상담 신청</a></li>
-                            <li><a href="javascript:;" role="button">제네시스 스펙트럼</a></li>
-                            <li><a href="javascript:;" role="button">사양 조회하기</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/shopping/quote.html" role="button" target="_blank" title="새창">견적내기</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/shopping/financial-program/program-overview.html" role="button" target="_blank" title="새창">구매 프로그램</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/shopping/electric-vehicle-purchase-guide.html" role="button" target="_blank" title="새창">전기차 구매가이드</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/shopping/genesis-purchase.html" role="button" target="_blank" title="새창">구매 상담 신청</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/shopping/genesis-spectrum.html" role="button" target="_blank" title="새창">제네시스 스펙트럼</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/shopping/genesis-car-specifications-check.html" role="button" target="_blank" title="새창">사양 조회하기</a></li>
                         </ul>
                     </div>
                     <!-- //구매 -->
@@ -928,10 +906,10 @@ next.addEventListener('click', e => {
                             <span class="blind">자세히보기</span>
                         </button>
                         <ul class="acco_body">
-                            <li><a href="javascript:;" role="button">스페이스</a></li>
-                            <li><a href="javascript:;" role="button">시승 신청</a></li>
-                            <li><a href="javascript:;" role="button">전시장 찾기</a></li>
-                            <li><a href="javascript:;" role="button">제네시스 드라이빙 익스피리언스</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/experience/space/space-overview.html" role="button" target="_blank" title="새창">스페이스</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/experience/genesis.html" role="button" target="_blank" title="새창">시승 신청</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/experience/find-a-showroom.html" role="button" target="_blank" title="새창">전시장 찾기</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/experience/genesis-driving-experience.html" role="button" target="_blank" title="새창">제네시스 드라이빙 익스피리언스</a></li>
                         </ul>
                     </div>
                     <!-- //체험 -->
@@ -942,10 +920,10 @@ next.addEventListener('click', e => {
                             <span class="blind">자세히보기</span>
                         </button>
                         <ul class="acco_body">
-                            <li><a href="javascript:;" role="button">제네시스 멤버십</a></li>
-                            <li><a href="javascript:;" role="button">MY GENESIS 앱</a></li>
-                            <li><a href="javascript:;" role="button">테크놀로지</a></li>
-                            <li><a href="javascript:;" role="button">차량관리 서비스</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/members/genesis-membership/membership-overview/membership-information.html" role="button" target="_blank" title="새창">제네시스 멤버십</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/members/my-genesis-app/overview.html" role="button" target="_blank" title="새창">MY GENESIS 앱</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/members/technology/overview.html" role="button" target="_blank" title="새창">테크놀로지</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/members/vehicle-management-service/genesis-service-network.html" role="button" target="_blank" title="새창">차량관리 서비스</a></li>
                         </ul>
                     </div>
                     <!-- //멤버스 -->
@@ -956,10 +934,11 @@ next.addEventListener('click', e => {
                             <span class="blind">자세히보기</span>
                         </button>
                         <ul class="acco_body">
-                            <li><a href="javascript:;" role="button">브랜드</a></li>
-                            <li><a href="javascript:;" role="button">콘셉트카</a></li>
-                            <li><a href="javascript:;" role="button">모터쇼</a></li>
-                            <li><a href="javascript:;" role="button">로드트립</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/genesis/brand/brand-overview.html" role="button" target="_blank" title="새창">브랜드</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/genesis/concept-car/concept-car-overview.html" role="button" target="_blank" title="새창">콘셉트카</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/genesis/genesis-x-golf/overview.html" role="button" target="_blank" title="새창">제네시스X골프</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/genesis/motorshow/motorshow-overview.html" role="button" target="_blank" title="새창">모터쇼</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/genesis/roadtrip/roadtrip-overview.html" role="button" target="_blank" title="새창">로드트립</a></li>
                         </ul>
                     </div>
                     <!-- //제네시스 -->
@@ -970,36 +949,28 @@ next.addEventListener('click', e => {
                             <span class="blind">자세히보기</span>
                         </button>
                         <ul class="acco_body">
-                            <li><a href="javascript:;" role="button">고객센터 안내</a></li>
-                            <li><a href="javascript:;" role="button">공지사항</a></li>
-                            <li><a href="javascript:;" role="button">이벤트</a></li>
-                            <li><a href="javascript:;" role="button">자주 묻는 질문</a></li>
-                            <li><a href="javascript:;" role="button">다운로드 센터</a></li>
-                            <li><a href="javascript:;" role="button">PR 센터</a></li>
-                            <li><a href="javascript:;" role="button">마이 페이지</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/support/customer-support.html" role="button" target="_blank" title="새창">고객센터 안내</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/support/notice.html" role="button" target="_blank" title="새창">공지사항</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/support/genesis-events.html" role="button" target="_blank" title="새창">이벤트</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/support/faq.html" role="button" target="_blank" title="새창">자주 묻는 질문</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/support/download-center/genesis-models.html" role="button" target="_blank" title="새창">다운로드 센터</a></li>
+                            <li><a href="https://www.genesis.com/kr/ko/support/pr-center.html" role="button" target="_blank" title="새창">PR 센터</a></li>
                         </ul>
                     </div>
                     <!-- //고객센터 -->
                     <!-- 마이페이지 -->
-                    <div class="item con_none">
+                    <!-- <div class="item con_none">
                         <button type="button" class="aco_btn">
                             <strong class="tit">마이페이지</strong>
                             <ul class="acco_body">
                                 <li><span class="blind">하위메뉴 없음</span></li>
                             </ul>
                         </button>
-                    </div>
+                    </div> -->
                     <!-- //마이페이지 -->
                 </div>
             </article>
-            <article class="g_inner">
-                <ul>
-                    <li><a href="javascript:;" role="button">가격표 다운로드</a></li>
-                    <li><a href="javascript:;" role="button">네비게이션 업데이트</a></li>
-                    <li><a href="javascript:;" role="button">제네시스 부티크</a></li>
-                    <li><a href="javascript:;" role="button">제네시스 월드와이드</a></li>
-                </ul>
-            </article>
+           
         </div>
         <!-- //팝업 바디 -->
     </section>
@@ -1700,7 +1671,7 @@ next.addEventListener('click', e => {
                             </div>
 
                             <div class="color_outer">${ data[i].outerColor.map(item => `
-                               
+                                
                                     <p>${item.material}</p>
                                     <div class="color_wrap">
                                         ${item.value.map((value, idx) => `

@@ -4,8 +4,9 @@
     top: 0px;
     left: 0;;
     z-index: 100;
-    // backdrop-filter: blur(30px);
-    // background-color: rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(30px);
+    // background-color: rgba(0, 0, 0, 0.2);
+
 
 
     .g_inner {margin: 0 auto;}
@@ -15,7 +16,7 @@
         width: 70px;
         height: 20px;
         margin-top: 0px;
-        margin-right: 40px;
+        margin-right: 70px;
 
         a {
             display: block;
@@ -24,18 +25,20 @@
         }
     }
 
-    // &::before {
-    //     content: '';
-    //     display: block;
-    //     width: 100%;
-    //     height: 100%;
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     // background-color: #48489b;
-    //     // opacity: .1;
-    //     // backdrop-filter: blur(20px);
-    // }
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        // background-color: #000000;
+        // opacity: .1;
+        // backdrop-filter: blur(20px);
+        pointer-events: none;
+    }
+
 }
 
 
@@ -43,6 +46,7 @@
     display: flex;
     align-items: center;
     height: 70px;
+    padding-left: 80px;
 }
 
 .header_nav {
@@ -50,7 +54,7 @@
     color: #fff;
 
     & > li {
-        margin-left: 20px;
+        margin-left: 50px;
     }
 }
 
@@ -72,6 +76,7 @@
 }
 
 
+
 body.allmenu #header{
     background-color: #07090c;
     // background-color: #0d1117cc;
@@ -81,7 +86,7 @@ body.allmenu #header{
 
 .g_inner.pupup_type1_header {
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 .g_inner.accordion_mo.type1.pd_none {
     margin-bottom: 0px;
@@ -323,9 +328,7 @@ button.header_all_menu {
             }
         }
 
-        & > .bottom {
-            
-        }
+        
     }
     // 첫번쨰는 탭
 
@@ -410,7 +413,18 @@ button.header_all_menu {
 }
 
 
+.sub_page {
+    .header_wrap {
+        padding-left: 0;
+    }
 
+    button.header_all_menu {
+        margin-left: 0px; 
+        position: relative;; 
+        right: auto; 
+        margin-left: auto;
+    }
+}
 
 
 
@@ -420,8 +434,8 @@ button.header_all_menu {
     }
 
     button.header_all_menu {
-        position: relative;
-        right: 0px;
+        position: absolute;
+        right: 50px;
     }
 
     .header_ico {
@@ -439,15 +453,22 @@ button.header_all_menu {
         .g_inner {
             backdrop-filter: blur(30px);
         }
+        .header_wrap {
+            padding-left: 20px;
+        }
     }
     
     .g_inner.accordion_mo.type1.pd_none {
         .item {
             margin-bottom: 0px;
         }
-        .item:last-child {
-            padding: 20px 0;
-        }
+        // .item:last-child {
+        //     padding: 20px 0;
+        // }
     } 
+
+    button.header_all_menu {
+        right: 20px;
+    }
     
 }
