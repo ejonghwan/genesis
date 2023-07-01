@@ -6925,6 +6925,11 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
   transition: 30s;
 }
 
+@media screen and (max-width: 760px) {
+  .evt_banner {
+    background-attachment: inherit;
+  }
+}
 .g_inner.btm_0 {
   margin-bottom: 0;
 }
