@@ -118,7 +118,9 @@
     .load_wrap .right {
         padding: 20px;
         width: 100%;
-
+        strong {
+            font-size: 2rem;
+        }
         p {
             min-height: 0;
         }

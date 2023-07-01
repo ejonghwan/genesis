@@ -57,9 +57,7 @@
         </div>
     </header>
     <!-- //header -->
-
- 
-
+    
     <!-- main -->
     <main id="container">
         <article class="g_inner full">
@@ -228,16 +226,10 @@
                     const prev = document.querySelector('.main_visual .prev')
                     const next = document.querySelector('.main_visual .next')
                     
-
-                    console.log(items)
-                    
                     window.addEventListener('load', e => {
                         items[1].querySelector('video').play();
                         items[1].classList.add('active')
-                        // console.log( document.querySelectorAll('li')[1].querySelector('video'))
                     })
-                    
-
 
                     prev.addEventListener('click', e => {
                         wrap.prepend(wrap.lastElementChild)
@@ -246,10 +238,6 @@
                         setTimeout(() => {
                             prev.classList.remove('on')
                         }, 600)
-                    
-                    
-                    
-                    
                         setTimeout(() => {
                             for(let i = 0; i < items.length; i++) {
                                 items[i].querySelector('video').pause();
@@ -261,8 +249,6 @@
                             wrap.querySelectorAll('.main_visual .list li')[1].querySelector('video').play()
                         }, 600)
                     })
-                
-                    
                     next.addEventListener('click', e => {
                         wrap.append(wrap.firstElementChild)
                         next.classList.add('on');
@@ -270,9 +256,6 @@
                         setTimeout(() => {
                             next.classList.remove('on')
                         }, 600)
-                    
-                        
-                    
                         setTimeout(() => {
                             for(let i = 0; i < items.length; i++) {
                                 items[i].querySelector('video').pause();
@@ -282,8 +265,6 @@
                             wrap.querySelectorAll('.main_visual .list li')[1].classList.add('active')
                             wrap.querySelectorAll('.main_visual .list li')[1].querySelector('video').play()
                         }, 600)
-                        
-                        
                     })
                     
                 })()
@@ -475,13 +456,7 @@
             const progressCircle = document.querySelector(".swiper.type3 .autoplay-progress svg");
             const progressContent = document.querySelector(".swiper.type3  .autoplay-progress span");
             new Swiper(".swiper.type3", {
-              spaceBetween: 30,
-              centeredSlides: true,
-              direction: 'vertical',
-            //   autoplay: {
-            //     delay: 10000,
-            //     disableOnInteraction: false
-            //   },
+          
               pagination: {
                 el: ".swiper.type3 .swiper-pagination",
                 clickable: true
@@ -629,9 +604,6 @@
         
     </main>
     <!-- //main -->
-
-
-
 
     <!-- footer -->
     <footer id="footer">

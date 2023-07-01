@@ -650,6 +650,9 @@ body.popop_active {
     padding-left: 0;
     padding-right: 0;
   }
+  .gl_title {
+    font-size: 2.2rem;
+  }
   .g_inner.mo_full .gl_title {
     margin-left: 20px;
   }
@@ -7036,6 +7039,10 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
   .load_wrap .right {
     padding: 20px;
     width: 100%;
+  }
+  .load_wrap .left strong,
+  .load_wrap .right strong {
+    font-size: 2rem;
   }
   .load_wrap .left p,
   .load_wrap .right p {
