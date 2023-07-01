@@ -7032,6 +7032,10 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
     padding: 20px;
     width: 100%;
   }
+  .load_wrap .left p,
+  .load_wrap .right p {
+    min-height: 0;
+  }
 }
 .g_content ul {
   display: flex;

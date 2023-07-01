@@ -118,6 +118,10 @@
     .load_wrap .right {
         padding: 20px;
         width: 100%;
+
+        p {
+            min-height: 0;
+        }
     }
     
 }
