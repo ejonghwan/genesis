@@ -32,10 +32,10 @@ class Common {
         new Swiper(".noti_Swiper", {
             centeredSlides: true,
             direction: 'vertical',
-              autoplay: {
+            autoplay: {
                 delay: 2000,
                 disableOnInteraction: false
-              },
+            },
             loop: true,
             navigation: {
                 nextEl: ".swiper.noti_Swiper .swiper-button-next",
