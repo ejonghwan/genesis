@@ -47,6 +47,7 @@
                     <li><a href="./location.html" role="button">Contact</a></li>
                     <li><a href="./youtube.html" role="button">Youtube</a></li>
                     <li><a href="./members.html" role="button">Members</a></li>
+                    <li><a href="./product.html" role="button">Product</a></li>
                 </ul>
                
                 <button class="popup_btn header_all_menu" type="button" >
@@ -62,48 +63,57 @@
 
     <!-- main -->
     <main id="container">
-        <article class="g_inner full gall">
-            <section class="sub_visual">
-                <h2 class="sub_visual_title">GENESIS GALLERY</h2>
-                <figure class="main_visual_slide_video">
-                    <video src="../src/assets/images/main/tac.mp4" autoplay muted loop></video>
-                </figure>
-            </section>
-        </article>
-        <article class="g_inner">
-            <!-- 수정 해야됨 -->
-            <section class="content gallery">
-                <figure class="subVisual"></figure>
-                <div class="inner">
-
-                <div class="searchBox">
-                    <input type="text" id="search" placeholder="제네시스를 입력해보세요">
-                    <button class="btnSearch">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                    <!-- <button class="btnSearch">Search</button> -->
+     
+        <div class="container">
+            <ul class="con_header">
+                <li><a href="javascript:;">개요</a></li>
+                <li><a href="javascript:;">사양</a></li>
+                <li><a href="javascript:;">구입하기</a></li>
+            </ul>
+            <section id="sec_0" class="con_section">
+                <h2>sec 1</h2>
+                <div class="con_sticky">
+                    <p>sec 1 text Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto necessitatibus vel iure dolor odit exercitationem mollitia similique? Enim, nesciunt dicta!</p>
                 </div>
-
-                <div class="btnSet">
-                    <!-- <label for="btnInterest"><input id="btnInterest" class="btnInterest" type="radio" name="select">유저 사진</label>
-                    <label for="btnMine"><input id="btnMine" class="btnMine" type="radio" name="select" >제네시스 사진</label> -->
-                    <fieldset>
-                        <input checked id="btnInterest" class="btnInterest" type="radio" name="select" />
-                        <label for="btnInterest">User Gallery</label>
-                        <input id="btnMine" class="btnMine" type="radio" name="select" />
-                        <label for="btnMine">Genesis Gallery</label>
-                      </fieldset>
+                <div class="con_sticky">
+                    <p>sec 1 text Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto necessitatibus vel iure dolor odit exercitationem mollitia similique? Enim, nesciunt dicta!</p>
                 </div>
-
-                <!-- <img src="img/loading.gif" alt="loading" class="loading"> -->
-                <div class="loading"></div>
-                <ul class="wrap"></ul>
+                <div class="con_sticky">
+                    <p>sec 1 text Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto necessitatibus vel iure dolor odit exercitationem mollitia similique? Enim, nesciunt dicta!</p>
+                </div>
+                <div class="con_sticky">
+                    <p>sec 1 text Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto necessitatibus vel iure dolor odit exercitationem mollitia similique? Enim, nesciunt dicta!</p>
                 </div>
             </section>
-             <!-- 수정 해야됨 -->
-        </article>
-
+            <section id="sec_1" class="con_section">
+                <h2> sec 2</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium maiores quo quia sapiente iusto voluptatibus est, ea alias culpa? Nesciunt voluptatum commodi enim qui omnis mollitia maxime inventore at et nisi unde voluptatem porro excepturi eum, reiciendis perspiciatis suscipit necessitatibus? Assumenda, aut perferendis. Nobis fugiat facere impedit velit libero reprehenderit ducimus temporibus doloremque, consequuntur soluta cum dolore aut aperiam. Alias minus eveniet consequuntur non, explicabo ratione praesentium? Distinctio nulla odit dicta officia amet illum architecto accusamus, dolores atque rerum quo quasi dolore ipsam fugiat blanditiis, numquam eius eos natus iure. Culpa, deserunt autem? Nemo blanditiis in praesentium harum, error cumque!</p>
+            </section>
+            <section id="sec_2" class="con_section">
+                <h2> sec 3</h2>
+                <div class="con_sticky description">
+                    <p> Architecto necessitatibus vel iure dolor odit exercitationem mollitia similique? Enim, nesciunt dicta!</p>
+                    <span class="line"></span>
+                </div>
+                <div class="con_sticky description">
+                    <p> Architecto necessitatibus vel iure dolor odit exercitationem mollitia similique? Enim, nesciunt dicta!</p>
+                    <span class="line"></span>
+                </div>
+            </section>
+            <section id="sec_3" class="con_section">
+                <h2> sec 3</h2>
+                <div class="con_sticky">
+                    <strong>hoho</strong>
+                    <p> Architecto necessitatibus vel iure dolor odit exercitationem mollitia similique? Enim, nesciunt dicta!</p>
+                </div>
+                <div class="con_canvas">
+                    <p> Architecto necessitatibus vel iure dolor odit exercitationem mollitia similique? Enim, nesciunt dicta!</p>
+                </div>
+            </section>
+        </div>
         
+        
+      
     </main>
     <!-- //main -->
 
@@ -1056,266 +1066,12 @@
 
 
 
-<script>
-
-
-const wrap = document.querySelector('.gallery .wrap');
-const loading = document.querySelector('.gallery .loading');
-const input = document.querySelector('.gallery #search');
-const btnSearch = document.querySelector('.gallery .btnSearch');
-const btnInterest = document.querySelector('.gallery .btnInterest');
-const btnMine = document.querySelector('.gallery .btnMine');
-const api_key = '034beefa27c4791e6e792d0e7e8d6873';
-const num = 50;
-const myId = '191030940@N02';
-/*
-keydown: 키를 누를때
-keyup: 키를  뗄때 (mac OS 이벤트가 두번씩 발생)
-keypress: 키를 눌렀다가 땔때 (한자같은 특수키 지원안됨) 추천
-*/
-
-fecthData(setURL('interest'));
-
-btnSearch.addEventListener('click', getSearch);
-
-//검색창에 키보드 이벤트 연결
-input.addEventListener('keypress', (e) => e.code === 'Enter' && getSearch());
-
-//사용자 아이디 클릭시 해당 갤러리 확인 이벤트
-document.body.addEventListener('click', (e) => {
-	if (e.target.className === 'userid') fecthData(setURL('user', e.target.innerText));
-	if (e.target.className === 'thumb') createPop(e.target.getAttribute('alt'));
-	if (e.target.className === 'close') removePop();
-});
-
-btnInterest.addEventListener('click', () => fecthData(setURL('interest')));
-btnMine.addEventListener('click', () => fecthData(setURL('user', myId)));
-
-//인수값에 따른 데이터 호출 URL반환 함수
-function setURL(type, opt) {
-	const baseURL = `https://www.flickr.com/services/rest/?format=json&nojsoncallback=1&api_key=${api_key}&per_page=${num}&method=`;
-	const method_interest = 'flickr.interestingness.getList';
-	const method_user = 'flickr.people.getPhotos';
-	const method_search = 'flickr.photos.search';
-
-	if (type === 'interest') return `${baseURL}${method_interest}`;
-	if (type === 'search') return `${baseURL}${method_search}&tags=${opt}`;
-	if (type === 'user') return `${baseURL}${method_user}&user_id=${opt}`;
-}
-
-function getSearch() {
-	const value = input.value.trim();
-	input.value = '';
-	if (value === '') return alert('검색어를 입력해주세요.');
-	fecthData(setURL('search', value));
-}
-
-async function fecthData(url) {
-	loading.classList.remove('off');
-	wrap.classList.remove('on');
-
-	const res = await fetch(url);
-	const json = await res.json();
-	const items = json.photos.photo;
-	if (items.length === 0) {
-		loading.classList.add('off');
-		wrap.classList.add('on');
-		return alert('해당 검색어의 결과이미지가 없습니다.');
-	}
-	createList(items);
-}
-
-function createList(arr) {
-	let tags = '';
-
-	arr.forEach((item) => {
-		tags += `
-        <li class='item'>
-          <div>   
-            <div class="img_box">        
-                 <img class='thumb' src='https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg' alt='https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_b.jpg' />          
-            </div>
-            <div class="txt_box">
-                <article class='profile'>	
-                    <img src='http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg' />				
-                    <button type="button" class='userid'>${item.owner}</button>
-                </article>
-                <p>${item.title === '' ? 'Have a good day!!' : item.title}</p>
-            </div>
-
-          </div>
-        </li>
-      `;
-	});
-	wrap.innerHTML = tags;
-
-	setLoading();
-}
-
-function setLoading() {
-	const imgs = wrap.querySelectorAll('img');
-	let count = 0;
-
-	for (const el of imgs) {
-		//만약 이미지에 엑박이 뜨면 onerror이벤트로 잡아서 디폴트 이미지로 대체
-		el.onerror = () => {
-			el.setAttribute('src', 'https://www.flickr.com/images/buddyicon.gif');
-		};
-		//디폴트로 변경된 이미지까지 포함해서 카운트 (무한로딩에 빠지지 않음)
-		el.onload = () => {
-			count++;
-			count === imgs.length && isoLayout();
-		};
-	}
-}
-
-function isoLayout() {
-	new Isotope(wrap, {
-		itemSelector: '.item',
-		transitionDuration: '0.5s',
-	});
-	wrap.classList.add('on');
-	loading.classList.add('off');
-}
-
-function createPop(url) {
-	document.body.style.overflow = 'hidden';
-	const aside = document.createElement('aside');
-	aside.className = 'yout_pop';
-	const tags = `
-		<div class='con'>
-			<img src='${url}' />
-		</div>
-
-		<span class='close'>close</span>
-	`;
-	aside.innerHTML = tags;
-	document.body.append(aside);
-
-	setTimeout(() => document.querySelector('.yout_pop').classList.add('on'), 0);
-}
-
-function removePop() {
-	document.body.style.overflow = 'auto';
-	const pop = document.querySelector('.yout_pop');
-	pop.classList.remove('on');
-	setTimeout(() => {
-		pop.remove();
-	}, 1000);
-}
-
-</script>
-
-
-
-
 <script type="module" defer>
 
-    import { Tab, Ui, Accordion, Popup, Animete, ClipAni, Loading } from '../src/js/app.js';
-    // const all_warp = document.querySelector('.tab_wrap .tab_all')
-    // const sedan_wrap = document.querySelector('.tab_wrap .tab_sedan')
-    // const suv_wrap = document.querySelector('.tab_wrap .tab_suv')
-    // const ui = new Ui();
-    // let swi = null;
+    import { Tab, Ui, Accordion, Popup, Animete, ClipAni, Loading, ScrollAction } from '../src/js/app.js';
+ 
+     console.log(ScrollAction)
 
-
-    // // 푸터 아코디언
-    // const aco = new Accordion('.footer_sec.all_menu', {
-    //     startTab: false,
-    //     oneTab: true,
-    // })
-
-    // // 햄버거 메뉴 
-    // const allMenuPopup = new Popup('.popup.all_menu', {
-    //     openBtn: '.popup_btn',
-    //     closeBtn: '.popup_btn',
-    //     accList: ['#container', 'footer', '#skip_conts'],
-    //     nextFocus: ".pupup_type1_body",
-    //     prevFocus: ".popup_btn",
-    //     dimd: '.dimd',
-    //     toggle: true,
-    // })
-
-    // // 햄버거 메뉴 안 아코디언
-    // const popupMenu = new Accordion('.footer_sec.all_menu.pop', {
-    //     startTab: false,
-    //     oneTab: true,
-    // })
-
-    // // 네비메뉴
-    // const navMenuPopup = new Popup('.popup.nav_menu', {
-    //     openBtn: '.header_nav',
-    //     closeBtn: '.popup.nav_menu .pop_close',
-    //     accList: ['#container', 'footer', '#skip_conts'],
-    //     nextFocus: ".pupup_type1_body",
-    //     prevFocus: ".popup_btn",
-    //     dimd: '.dimd'
-    // })
-
-    // // 네비 안 탭
-    // const nav_tab = new Tab('.tab.type2', {
-    //     startTab: 0,
-    //     data: {
-    //         url: "./src/js/api/data/car.json", 
-    //         mode: 'cors',
-    //     },
-    //     current: function(idx) {
-    //         // console.log(idx)
-    //     },
-    //     callback: function(idx) {
-    //         // console.log(callback)
-    //         // handleTabClick({ tabType: '.tab_all', })
-    //         // handleTabClick({ tabType: '.tab_sedan', })
-    //         // handleTabClick({ tabType: '.tab_suv', })
-
-    //     console.log('cb idx??', idx)
-
-    //     let all = handleTabClick({ tabType: '.tab_all', })
-    //     let sedan = handleTabClick({ tabType: '.tab_sedan', })
-    //     let suv = handleTabClick({ tabType: '.tab_suv', })
-
-    //     all_warp.addEventListener('click', e =>  all(e) )
-    //     sedan_wrap.addEventListener('click', e => sedan(e) )
-    //     suv_wrap.addEventListener('click', e => suv(e))
-    //     }
-    // })    
-
-    // const nav_swiper = new Swiper(".swiper.header_nav", {
-    //     autoHeight : true,
-    //     pagination: {
-    //         el: ".swiper-pagination",
-    //         clickable: true
-    //     },
-    //     navigation: {
-    //         nextEl: ".swiper.header_nav .swiper-button-next",
-    //         prevEl: ".swiper.header_nav .swiper-button-prev"
-    //     },
-    //     on: {
-    //         init() {
-    //             // console.log('nav swiper init?')
-    //         }
-    //     }
-    // });
-
-
-
-    // const menus = document.querySelectorAll('.header_nav > li');
-
-    // for(let i = 0; i < menus.length; i++) {
-    //     menus[i].addEventListener('click', e => {
-    //         nav_swiper.slideTo(i)
-    //     })
-    // }
-
-
-    const loading_word = new Loading('.loading')
-   
-
-
-// const key = 'AIzaSyChzicx_fRjO6YQhLL-C8tDxCq0E46sxtk'
-// const list = 'PLQytOX-GQNjpnWvXUwth7PTdoEA2kZX16'
-// const num = 10;
-// const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${list}&key=${key}&maxResults=${num}`
 
 </script>
 
@@ -1323,3 +1079,9 @@ function removePop() {
 
 </body>
 </html>
+
+
+
+
+
+
