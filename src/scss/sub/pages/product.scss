@@ -1,10 +1,31 @@
+#show_sec_0 #sec_0 .con_sticky,
+#show_sec_1 #sec_1 .con_sticky,
+#show_sec_2 #sec_2 .con_sticky,
+#show_sec_3 #sec_3 .con_sticky,
+#show_sec_4 #sec_3 .con_sticky {
+    display: block;
+}
+
 .container {
     .con_header {
         position: absolute;
-        top: 70px;
+        // top: 70px;
     }
 
-
+    .con_sticky.message {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        height: 3em;
+        font-size: 2.5rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        .txt {
+            // width: 300px;
+        }
+    }
     
     .con_section {
         padding-top: 50vh;
