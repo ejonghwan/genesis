@@ -7676,10 +7676,15 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
   position: fixed;
   top: 0;
   left: 0;
+  bottom: 0;
+  margin: auto;
   width: 100%;
+  text-align: center;
+  opacity: 0;
 }
 .container .con_section {
   padding-top: 50vh;
+  border: 1px solid red;
 }
 .container #sec_0 {
   background-color: #000;
