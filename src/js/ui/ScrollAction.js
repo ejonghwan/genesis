@@ -17,12 +17,20 @@ class ScrollAction extends Ui {
                 secHeight: 0,
                 els: {
                     wrap: document.querySelector('#sec_0'),
+                    msgH: document.querySelector('#sec_0 .g_sans.m0'), 
                     msgA: document.querySelector('#sec_0 .message.m1'), 
                     msgB: document.querySelector('#sec_0 .message.m2'), 
                     msgC: document.querySelector('#sec_0 .message.m3'), 
-                    msgD: document.querySelector('#sec_0 .message.m4') 
+                    msgD: document.querySelector('#sec_0 .message.m4'),
+                    canvas: document.querySelector('#canvas_01'),
+                    context: document.querySelector('#canvas_01').getContext('2d'),
+                    imagesArr: [],
                 },
                 values: {
+                    imageCount: 206,
+                    imageSequence: [0, 205],
+                    canvas_opacity_out: [1, 0, { start: 0.9, end: 0.99 }],
+                    msgH_scale_out: [1, 50, { start: 0, end: 0.1 }],
                     msgA_opacity_in: [0, 1, { start: 0.1, end: 0.2 }],
                     msgA_opacity_out: [1, 0, { start: 0.3, end: 0.4 }],
                     msgA_transY_in: [20, 0, { start: 0.1, end: 0.2 }],
@@ -54,6 +62,12 @@ class ScrollAction extends Ui {
                 }
             },
         ]
+
+
+        window.addEventListener('load', this.init.bind(this));
+        window.addEventListener('resize', this.setHeight.bind(this));
+        window.addEventListener('scroll', this.handleScroll.bind(this));
+        // window.addEventListener('DOMContentLoaded', this.setHeight.bind(this));
     }
 
 
@@ -61,11 +75,9 @@ class ScrollAction extends Ui {
 
     init() {
         this.setHeight()
-
-        // window.addEventListener('DOMContentLoaded', this.setHeight.bind(this));
-        window.addEventListener('load', this.setHeight.bind(this));
-        window.addEventListener('resize', this.setHeight.bind(this));
-        window.addEventListener('scroll', this.handleScroll.bind(this));
+        this.setImage();
+      
+        this.info[0].els.context.drawImage(info[0].els.imagesArr[0], 0, 0)
     }
 
 
@@ -93,6 +105,8 @@ class ScrollAction extends Ui {
             }
         }
         document.body.setAttribute('id', `show_sec_${this.curNum}`)
+        let heightRatio = window.innerHeight / 1080;
+        this.info[0].els.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio - 0.2})`
 
     }
 
@@ -138,6 +152,7 @@ class ScrollAction extends Ui {
     
         // console.log('val?', values)
 
+
         if(values.length === 3) {
             // part 존재 시
             const partStart = values[2].start * curSecHeight;
@@ -173,7 +188,10 @@ class ScrollAction extends Ui {
         // console.log(curSecRatio)
         switch(this.curNum) {
             case 0: 
-                // console.log('0 ani')
+                let sequence = Math.round(this.calc(values.imageSequence))
+                els.context.drawImage(els.imagesArr[sequence], 0, 0);
+                els.canvas.style.opacity = this.calc(values.canvas_opacity_out)
+                els.msgH.style.transform = `scale(${this.calc(values.msgH_scale_out)})`
                 if(curSecRatio <= 0.25) {
                     els.msgA.style.opacity = this.calc(values.msgA_opacity_in)
                     els.msgA.style.transform = `translateY(${this.calc(values.msgA_transY_in)}px)`
@@ -201,6 +219,31 @@ class ScrollAction extends Ui {
 
             default : 0
         }
+    }
+
+    setImage() {
+        let imgEl = null;
+        for(let i = 0; i < this.info[0].values.imageCount; i++) {
+            imgEl = new Image();
+            // 영상 내보내기 이름 설정 못해서 결국...
+            if(i <= 10) { 
+                imgEl.src = `../src/assets/images/product/s01/gene_s01_000${i}.png` 
+                // console.log('10 이하구간', i)
+            }
+            if(i >= 10 && i < 100) { 
+                imgEl.src = `../src/assets/images/product/s01/gene_s01_00${i}.png` 
+                // console.log('100 이하구간', i)
+            }
+            if(i >= 100 && i < 1000) { 
+                imgEl.src = `../src/assets/images/product/s01/gene_s01_0${i}.png` 
+                // console.log('1000 이하구간', i)
+            }
+            
+            
+            this.info[0].els.imagesArr.push(imgEl)
+        }
+
+        console.log(this.info[0])
     }
 
 }

@@ -7667,30 +7667,48 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
 .container .con_header {
   position: absolute;
 }
-.container .con_sticky.message {
+.container .con_sticky {
   display: none;
-  justify-content: center;
-  align-items: center;
-  height: 3em;
-  font-size: 2.5rem;
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   margin: auto;
   width: 100%;
+}
+.container .con_sticky.message {
+  justify-content: center;
+  align-items: center;
+  height: 3em;
+  font-size: 2.5rem;
+  width: 100%;
   text-align: center;
   opacity: 0;
+  margin: auto;
 }
-.container .con_section {
-  padding-top: 50vh;
-  border: 1px solid red;
+.container .con_sticky.canvas {
+  height: 100%;
+  top: 0;
+}
+.container .con_sticky.canvas > canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 .container #sec_0 {
   background-color: #000;
 }
 .container #sec_0 h2 {
-  font-size: 10rem;
+  font-size: 7vw;
+  z-index: 15;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  opacity: 1;
+  display: block;
+  height: 1.5em;
+  margin: auto;
+  color: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */
