@@ -1119,10 +1119,10 @@ let isTraffic = false;
 
 
 const mapData = async () => {
-    const res = await request({ url: '../src/js/api/data/map.json' })
+    const res = await request({ url: '../src/js/api/data/map.json' });
     // console.log(res)
-    createDOM(region, res)
-    return res
+    createDOM(region, res);
+    return res;
 }
 
 const createDOM = (el, data) => {
