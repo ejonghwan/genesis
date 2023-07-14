@@ -77,7 +77,7 @@ class ScrollAction extends Ui {
         this.setHeight()
         this.setImage();
       
-        this.info[0].els.context.drawImage(info[0].els.imagesArr[0], 0, 0)
+        this.info[0].els.context.drawImage(this.info[0].els.imagesArr[0], 0, 0)
     }
 
 
@@ -107,7 +107,6 @@ class ScrollAction extends Ui {
         document.body.setAttribute('id', `show_sec_${this.curNum}`)
         let heightRatio = window.innerHeight / 1080;
         this.info[0].els.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio - 0.2})`
-
     }
 
     handleScroll() {
@@ -122,15 +121,11 @@ class ScrollAction extends Ui {
         for(let i = 0; i < this.curNum; i++) {
             this.prevHeight += this.info[i].secHeight;
         }
-
         if(this.yOffset > this.prevHeight + this.info[this.curNum].secHeight) {
             this.secChange = true;
             if(this.curNum === this.info.length - 1) return;
             this.curNum++
         }
-
-        
-
         if(this.yOffset < this.prevHeight) {
             this.secChange = true;
             if(this.curNum === 0) return;
@@ -151,8 +146,7 @@ class ScrollAction extends Ui {
         const curSecHeight = this.info[this.curNum].secHeight; //현재 섹션값
     
         // console.log('val?', values)
-
-
+        
         if(values.length === 3) {
             // part 존재 시
             const partStart = values[2].start * curSecHeight;
