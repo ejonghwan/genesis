@@ -7710,5 +7710,35 @@ input[type=radio]:focus + span, input[type=checkbox]:focus + span {
   margin: auto;
   color: #fff;
 }
+.container #sec_1 {
+  background-color: #000;
+}
+.container #sec_1 h2 {
+  font-size: 7vw;
+  z-index: 15;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  opacity: 1;
+  display: block;
+  height: 1.5em;
+  margin: auto;
+  color: #fff;
+}
+.container #sec_2 {
+  background-color: #000;
+}
+.container #sec_2 h2 {
+  font-size: 7vw;
+  z-index: 15;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  opacity: 1;
+  display: block;
+  height: 1.5em;
+  margin: auto;
+  color: #fff;
+}
 
 /*# sourceMappingURL=style.css.map */
