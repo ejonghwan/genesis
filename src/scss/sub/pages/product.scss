@@ -69,24 +69,34 @@
             margin: auto;
             color: #fff;
         }
+
+        .message {
+            top: 250px;
+            strong {
+                font-size: 1vw;
+                font-weight: 400;
+                color: #a2a2a2;
+            }
+            p {
+                margin-top: 5px;
+                font-size: 1.5vw;
+                color: #fff;
+                padding: 0 20px;
+            }
+        }
     }
 
 
 
     
     #sec_1 {
+        padding-top: 50vh;
         background-color: #000;
         h2 {
             font-size: 7vw;
             z-index: 15;
             text-align: center;
-            top: 0;
-            bottom: 0;
-            opacity: 1;
-            display: block;
-            height: 1.5em;
-            margin: auto;
-            color: #fff;
+           
         }
     }
 
@@ -96,13 +106,7 @@
             font-size: 7vw;
             z-index: 15;
             text-align: center;
-            top: 0;
-            bottom: 0;
-            opacity: 1;
-            display: block;
-            height: 1.5em;
-            margin: auto;
-            color: #fff;
+           
         }
     }
    

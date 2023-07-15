@@ -20,8 +20,6 @@ class ScrollAction extends Ui {
                     msgH: document.querySelector('#sec_0 .g_sans.m0'), 
                     msgA: document.querySelector('#sec_0 .message.m1'), 
                     msgB: document.querySelector('#sec_0 .message.m2'), 
-                    msgC: document.querySelector('#sec_0 .message.m3'), 
-                    msgD: document.querySelector('#sec_0 .message.m4'),
                     canvas: document.querySelector('#canvas_01'),
                     context: document.querySelector('#canvas_01').getContext('2d'),
                     imagesArr: [],
@@ -35,6 +33,12 @@ class ScrollAction extends Ui {
                     msgA_opacity_out: [1, 0, { start: 0.3, end: 0.4 }],
                     msgA_transY_in: [20, 0, { start: 0.1, end: 0.2 }],
                     msgA_transY_out: [0, -20, { start: 0.3, end: 0.4 }],
+
+                    msgB_opacity_in: [0, 1, { start: 0.5, end: 0.6 }],
+                    msgB_opacity_out: [1, 0, { start: 0.7, end: 0.8 }],
+                    msgB_transY_in: [20, 0, { start: 0.5, end: 0.6 }],
+                    msgB_transY_out: [0, -20, { start: 0.7, end: 0.8 }],
+
                 }
             },
             {
@@ -192,6 +196,13 @@ class ScrollAction extends Ui {
                 } else {
                     els.msgA.style.opacity = this.calc(values.msgA_opacity_out)
                     els.msgA.style.transform = `translateY(${this.calc(values.msgA_transY_out)}px)`
+                }
+                if(curSecRatio <= 0.6) {
+                    els.msgB.style.opacity = this.calc(values.msgB_opacity_in)
+                    els.msgB.style.transform = `translateY(${this.calc(values.msgB_transY_in)}px)`
+                } else {
+                    els.msgB.style.opacity = this.calc(values.msgB_opacity_out)
+                    els.msgB.style.transform = `translateY(${this.calc(values.msgB_transY_out)}px)`
                 }
                 return 
 
