@@ -95,14 +95,14 @@ class Common {
             // })
 
             // 네비 안 탭
-           new Tab('.tab.type2', {
-                startTab: 0,
-                current: function(idx) {// console.log(idx)
-                },
-                callback: function(idx) {
+        //    new Tab('.tab.type2', {
+        //         startTab: 0,
+        //         current: function(idx) {// console.log(idx)
+        //         },
+        //         callback: function(idx) {
               
-                }
-            })    
+        //         }
+        //     })    
 
             const nav_swiper = new Swiper(".swiper.header_nav", {
                 autoHeight : true,
