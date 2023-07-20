@@ -282,5 +282,29 @@
         }
     }
 
+    .footer_sec.notice {
+    
+        .noti_Swiper {
+            .swiper-button-prev {
+                right: 32px;
+            }
+        
+            .swiper-button-next {
+                right: -10px;
+            }
+        
+            .swiper-state {
+                right: 10px;
+            }
+    
+            .swiper-slide {
+                .noti {
+                    padding: 20px 58px 20px 0px;
+                }
+            }
+        
+        }
+    }
+    
    
 }

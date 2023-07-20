@@ -1423,6 +1423,18 @@ button.header_all_menu.on span.line:before {
   #footer .copyright::before {
     width: 80px;
   }
+  .footer_sec.notice .noti_Swiper .swiper-button-prev {
+    right: 32px;
+  }
+  .footer_sec.notice .noti_Swiper .swiper-button-next {
+    right: -10px;
+  }
+  .footer_sec.notice .noti_Swiper .swiper-state {
+    right: 10px;
+  }
+  .footer_sec.notice .noti_Swiper .swiper-slide .noti {
+    padding: 20px 58px 20px 0px;
+  }
 }
 .loading {
   position: fixed;
