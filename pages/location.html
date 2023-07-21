@@ -55,7 +55,7 @@
    
 </head>
 
-<body class="sub_page">
+<body class="sub_page contact">
     
 
 <!-- skip nav -->
@@ -120,33 +120,23 @@
                         <input type="hidden" name="contact_number"><!-- 고유키값 넘김 -->
 
                         <!-- 사용자 정보 넘김-->
-                        <div class="form_ele">
-                            <div class="ele_tit">
-                                <label for="user_info_name">이름</label>
-                            </div>
-                            <div class="input_wrap">
-                                <input type="text" name="user_name" id="user_info_name">
-                            </div>
+                        <div class='input_wrap'>
+                            <label for="user_info_name"><strong>이름</strong></label>
+                            <input type="text" name="name" id="user_info_name"/>
                         </div>
-                        <div class="form_ele">
-                            <div class="ele_tit">
-                                <label>이메일</label>
-                            </div>
-                            <div class="input_wrap">
-                                <input type="email" name="user_email">
-                            </div>
+                        <div class='input_wrap'>
+                            <label for="user_info_mail"><strong>메일</strong></label>
+                            <input type="email" name="email" id="user_info_mail"/>
                         </div>
-                        <div class="form_ele">
-                            <div class="ele_tit">
-                                <label>문의사항</label>
-                            </div>
-                            <div class="input_wrap">
-                                <textarea name="message"></textarea>
-                            </div>
+                        <div class='input_wrap'>
+                            <label for="user_info_message"><strong>메시지</strong></label>
+                            <textarea name="message" id="user_info_message"></textarea>
                         </div>
                         <div class="btn_wrap align_c">
-                            <button type="submit" class="btn blue">문의사항 보내기</button>
+                            <button type="submit" class="btn blue ">문의사항 보내기</button>
                         </div>
+                       
+                       
                     </div>
                 </form>
 
