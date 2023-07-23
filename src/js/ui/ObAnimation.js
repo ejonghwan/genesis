@@ -6,10 +6,7 @@ class ObAnimation extends Ui {
         super();
         this.els = document.querySelectorAll(els);
         this.className = className;
-
         this.observer();
-
-
     }
 
 
@@ -17,7 +14,6 @@ class ObAnimation extends Ui {
         const observer = new IntersectionObserver(entries => {
             entries.forEach(item => {
                 item.target.classList.toggle(this.className, item.isIntersecting)
-                console.log('item: ', item)
                 if(item.isIntersecting) observer.unobserve(item.target) // 이미 생성된건 유지
             })
             // console.log(entries)
@@ -30,7 +26,7 @@ class ObAnimation extends Ui {
 
 
         this.els.forEach((item, idx) => {
-            console.log(idx)
+            // console.log(idx)
             observer.observe(item)
         })
         

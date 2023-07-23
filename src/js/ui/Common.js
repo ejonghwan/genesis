@@ -16,6 +16,8 @@ class Common {
         this.deviceCheck();
         this.footer();
         this.globalHeader();
+
+       
     }
 
     footer() {
@@ -124,7 +126,6 @@ class Common {
 
 
             const menus = document.querySelectorAll('.header_nav > li');
-
             for(let i = 0; i < menus.length; i++) {
                 menus[i].addEventListener('click', e => {
                     nav_swiper.slideTo(i)
