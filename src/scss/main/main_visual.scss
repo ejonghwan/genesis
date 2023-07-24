@@ -240,8 +240,11 @@ $height: 35vh;
 				}
 
 				.main_visual_slide_img img {
-					width: 100vw;
-					height: auto;
+					// width: 100vw;
+					// height: auto;
+					width: 108vw;
+					height: 100vh;
+					// padding-top: 70px;
 				}
 
 
@@ -628,7 +631,8 @@ $height: 35vh;
 					.pos_btn {
 						bottom: auto;
 						right: auto;
-						top: 330px;
+						// top: 330px;
+						top: 195px;
 						left: 20px;
 						display: block;
 						font-size: 1.2rem;

@@ -93,11 +93,11 @@ body.mobile .device_mo_none {
 }
 
 .pc_none {
-  display: none;
+  display: none !important;
 }
 
 .mo_none {
-  display: block;
+  display: block !important;
 }
 
 .ani.ani_type2 ul {
@@ -649,10 +649,10 @@ body.popop_active {
 }
 @media screen and (max-width: 760px) {
   .pc_none {
-    display: block;
+    display: block !important;
   }
   .mo_none {
-    display: none;
+    display: none !important;
   }
   .mo_full {
     padding-left: 0;
@@ -2698,8 +2698,8 @@ input, textarea {
   border-radius: 0;
 }
 .main_visual .list li:nth-of-type(2) .inner .main_visual_slide_img img {
-  width: 100vw;
-  height: auto;
+  width: 108vw;
+  height: 100vh;
 }
 .main_visual .list li:nth-of-type(2) .inner h2 {
   color: #fff;
@@ -3034,7 +3034,7 @@ input, textarea {
   .main_visual .list li .inner .pos_btn {
     bottom: auto;
     right: auto;
-    top: 330px;
+    top: 195px;
     left: 20px;
     display: block;
     font-size: 1.2rem;

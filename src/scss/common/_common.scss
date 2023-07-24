@@ -48,11 +48,11 @@ body.mobile {
 }
 
 .pc_none {
-    display: none;
+    display: none !important;
 }
 
 .mo_none {
-    display: block;
+    display: block !important;
 }
 
 .ani.ani_type2 {
@@ -663,11 +663,11 @@ body.popop_active {
 
 @include mobile {
     .pc_none {
-        display: block;
+        display: block !important;
     }
     
     .mo_none {
-        display: none;
+        display: none !important;
     }
 
     
