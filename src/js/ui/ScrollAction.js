@@ -9,7 +9,7 @@ class ScrollAction extends Ui {
         this.curNum = 0; //현재 섹션 n
         this.curSecYOffset; // 현재 섹션 y값
         this.secChange = false; //새로운 섹션에서 true
-        
+
         this.info = [
             {
                 type: 'sticky',
@@ -28,7 +28,7 @@ class ScrollAction extends Ui {
                     imageCount: 206,
                     imageSequence: [0, 205],
                     canvas_opacity_out: [1, 0, { start: 0.9, end: 0.99 }],
-                    msgH_scale_out: [1, 50, { start: 0, end: 0.1 }],
+                    msgH_scale_out: [1, 100, { start: 0, end: 0.2 }],
                     msgA_opacity_in: [0, 1, { start: 0.1, end: 0.2 }],
                     msgA_opacity_out: [1, 0, { start: 0.3, end: 0.4 }],
                     msgA_transY_in: [20, 0, { start: 0.1, end: 0.2 }],
@@ -141,6 +141,8 @@ class ScrollAction extends Ui {
         // console.log(this.secChange)
         if(this.secChange) return; //섹션이 변경될 때는 ani를 잠깐 실행 중지
         this.ani()
+        this.conHaeder();
+        
     }
 
     calc(values) {
@@ -148,8 +150,6 @@ class ScrollAction extends Ui {
         let result = null;
         const ratio = this.curSecYOffset / this.info[this.curNum].secHeight;
         const curSecHeight = this.info[this.curNum].secHeight; //현재 섹션값
-    
-        // console.log('val?', values)
         
         if(values.length === 3) {
             // part 존재 시
@@ -197,13 +197,14 @@ class ScrollAction extends Ui {
                     els.msgA.style.opacity = this.calc(values.msgA_opacity_out)
                     els.msgA.style.transform = `translateY(${this.calc(values.msgA_transY_out)}px)`
                 }
-                if(curSecRatio <= 0.6) {
+                if(curSecRatio <= 0.4) {
                     els.msgB.style.opacity = this.calc(values.msgB_opacity_in)
                     els.msgB.style.transform = `translateY(${this.calc(values.msgB_transY_in)}px)`
                 } else {
                     els.msgB.style.opacity = this.calc(values.msgB_opacity_out)
                     els.msgB.style.transform = `translateY(${this.calc(values.msgB_transY_out)}px)`
                 }
+               
                 return 
 
             case 1: 
@@ -249,6 +250,21 @@ class ScrollAction extends Ui {
         }
 
         console.log(this.info[0])
+    }
+
+    conHaeder() {
+        const header = document.querySelector('#header');
+        const conHeader = document.querySelector('.con_header');
+        // content header
+        if(conHeader && header.clientHeight - 30 < this.yOffset) { 
+            conHeader.classList.add('h_sticky') 
+        } else {
+            conHeader.classList.remove('h_sticky')
+        }
+       
+    
+
+        
     }
 
 }
