@@ -77,33 +77,25 @@ class Ui {
 
     imageLazyLoad(els) {
         const lazyEls = document.querySelectorAll(els);
-        console.log(lazyEls)
         const options = {
-            // root: document.querySelector('#scrollArea'),
+            // root: document.querySelector('.sub_visual'),
             // rootMargin: '0px',
-            // threshold: 1.0
+            // threshold: 1
         }
         const callback = (entries, observer) => {
             entries.forEach(entry => {
                 if(entry.isIntersecting) {
-
                     const target = entry.target;
-                    const previousSibling = target.previousElementSibling
-
+                    const previousSibling = target.previousElementSibling;
                     console.log('is inter', previousSibling);
-                    
                     target.src = target.dataset.src;
                     previousSibling.srcset = previousSibling.dataset.srcset;
-
                     if(entry.isIntersecting) observer.unobserve(target)
                 }
             })
         }
-        const observer = new IntersectionObserver(callback, options)
-        lazyEls.forEach(el => observer.observe(el))
-   
-        
-        
+        const observer = new IntersectionObserver(callback, options);
+        lazyEls.forEach(el => observer.observe(el));
     }
 
 
