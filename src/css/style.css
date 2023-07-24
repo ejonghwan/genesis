@@ -2671,7 +2671,6 @@ input, textarea {
 .main_visual .list li:nth-of-type(2) .inner {
   box-shadow: none;
   border-radius: 0px;
-  padding: 5vw;
 }
 .main_visual .list li:nth-of-type(2) .inner .thum {
   display: none;
@@ -2689,6 +2688,10 @@ input, textarea {
 }
 .main_visual .list li:nth-of-type(2) .inner .main_visual_slide_video video {
   border-radius: 0;
+}
+.main_visual .list li:nth-of-type(2) .inner .main_visual_slide_img img {
+  width: 100vw;
+  height: auto;
 }
 .main_visual .list li:nth-of-type(2) .inner h2 {
   color: #fff;
