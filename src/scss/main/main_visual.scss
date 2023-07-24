@@ -120,6 +120,7 @@ $height: 35vh;
 					color: #888;
 					letter-spacing: 1px;
 					transition: .5s 0.5s;
+					// transition-delay: .5s;
                     opacity: 0;
                     font-size: 8rem;
                     transform: translateY(10px);
@@ -139,6 +140,7 @@ $height: 35vh;
                         opacity: 0;
                         transform: translateY(-10px);
                         transition: opacity 1s .3s, transform 1s .3s ;
+						// transition-delay: .5s;
                         width: 300px;
                         margin-top: 20px;
                         height: auto;
@@ -155,6 +157,7 @@ $height: 35vh;
                     opacity: 0;
                     transform: translateY(10px);
                     transition: opacity 1s .5s, transform 1s .5s ;
+					// transition-delay: .5s;
                     left: 80px;
 
                     a:first-child {
