@@ -87,7 +87,7 @@ class Ui {
                 if(entry.isIntersecting) {
                     const target = entry.target;
                     const previousSibling = target.previousElementSibling;
-                    // console.log('is inter', previousSibling);
+                    console.log('is inter', previousSibling);
                     target.src = target.dataset.src;
                     previousSibling.srcset = previousSibling.dataset.srcset;
                     if(entry.isIntersecting) observer.unobserve(target)
