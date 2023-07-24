@@ -40,6 +40,13 @@ html {
     color: $point2 !important;
 }
 
+body.pc {
+    .device_pc_none { display: none; }
+}
+body.mobile {
+    .device_mo_none { display: none; }
+}
+
 .pc_none {
     display: none;
 }
