@@ -1542,9 +1542,10 @@ button.header_all_menu.on span.line:before {
 .popup .sub_menu li > a {
   color: #fff;
   display: block;
+  padding: 15px 0;
 }
-.popup .sub_menu li + li {
-  margin-top: 15px;
+.popup .sub_menu li:first-child > a {
+  padding-top: 0;
 }
 
 .popup.on {
@@ -2697,9 +2698,12 @@ input, textarea {
 .main_visual .list li:nth-of-type(2) .inner .main_visual_slide_video video {
   border-radius: 0;
 }
+.main_visual .list li:nth-of-type(2) .inner .main_visual_slide_img {
+  width: 100%;
+  height: 100%;
+}
 .main_visual .list li:nth-of-type(2) .inner .main_visual_slide_img img {
-  width: 108vw;
-  height: 100vh;
+  object-fit: cover;
 }
 .main_visual .list li:nth-of-type(2) .inner h2 {
   color: #fff;
@@ -2769,7 +2773,7 @@ input, textarea {
 }
 .main_visual .navi {
   position: absolute;
-  top: calc(35vh - 100px);
+  top: calc(35vh - 80px);
   left: 60%;
   z-index: 3;
   padding-left: 10px;
@@ -2777,11 +2781,11 @@ input, textarea {
 .main_visual .navi .prev,
 .main_visual .navi .next {
   display: inline-block;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
   background-color: rgba(0, 0, 0, 0.3);
-  margin-right: 20px;
+  margin-right: 5px;
   position: relative;
 }
 .main_visual .navi .prev::before, .main_visual .navi .prev::after,
@@ -2808,7 +2812,7 @@ input, textarea {
   animation: wrap 0.3s 1;
 }
 .main_visual .navi .prev::before, .main_visual .navi .prev::after {
-  left: 20px;
+  left: 15px;
   transform-origin: left center;
 }
 .main_visual .navi .prev span {
@@ -2818,7 +2822,7 @@ input, textarea {
   animation: prevArrow 0.5s 1;
 }
 .main_visual .navi .next::before, .main_visual .navi .next::after {
-  left: 20px;
+  left: 15px;
   transform-origin: right center;
 }
 .main_visual .navi .next span {
@@ -3007,7 +3011,7 @@ input, textarea {
   .main_visual .list li {
     width: 32vw;
     left: 20%;
-    top: 60%;
+    top: 70%;
     height: 150px;
   }
   .main_visual .list li .inner .pos_txt {
@@ -3034,7 +3038,7 @@ input, textarea {
   .main_visual .list li .inner .pos_btn {
     bottom: auto;
     right: auto;
-    top: 195px;
+    top: 250px;
     left: 20px;
     display: block;
     font-size: 1.2rem;
@@ -3088,7 +3092,8 @@ input, textarea {
   }
   .main_visual .navi {
     left: 20%;
-    top: 79%;
+    top: 64%;
+    padding-left: 5px;
   }
   .main_visual_slide_video video {
     position: absolute;

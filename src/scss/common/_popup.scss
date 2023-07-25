@@ -34,10 +34,12 @@
             > a {
                 color: #fff;
                 display: block;
+                padding: 15px 0;
             }
-           & + li {
-            margin-top: 15px;
-           } 
+            &:first-child {
+                > a { padding-top: 0; }
+            }
+         
         }
     }
     
