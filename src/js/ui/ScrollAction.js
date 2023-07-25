@@ -20,8 +20,8 @@ class ScrollAction extends Ui {
                     msgH: document.querySelector('#sec_0 .g_sans.m0'), 
                     msgA: document.querySelector('#sec_0 .message.m1'), 
                     msgB: document.querySelector('#sec_0 .message.m2'), 
-                    canvas: document.querySelector('#canvas_01'),
-                    context: document.querySelector('#canvas_01').getContext('2d'),
+                    canvas: document.querySelector('#sec_0 #canvas_01'),
+                    context: document.querySelector('#sec_0 #canvas_01').getContext('2d'),
                     imagesArr: [],
                 },
                 values: {
@@ -51,10 +51,19 @@ class ScrollAction extends Ui {
             },
             {
                 type: 'sticky',
-                heightNum: 1,
+                heightNum: 2,
                 secHeight: 0,
                 els: {
-                    wrap: document.querySelector('#sec_2')
+                    wrap: document.querySelector('#sec_2'),
+                    canvas: document.querySelector('#sec_2 #canvas_01'),
+                    context: document.querySelector('#sec_2 #canvas_01').getContext('2d'),
+                    imagesArr: [],
+                },
+                values: {
+                    imageCount: 86,
+                    imageSequence: [0, 85],
+                   
+
                 }
             },
             {
@@ -79,9 +88,11 @@ class ScrollAction extends Ui {
 
     init() {
         this.setHeight()
-        this.setImage();
+        this.setImage(0, '../src/assets/images/product/s01/gene_s01_', 0); //idx, src, fileStartNum
+        this.setImage(2, '../src/assets/images/product/s03d1/gene_s03d_', 188);
       
         this.info[0].els.context.drawImage(this.info[0].els.imagesArr[0], 0, 0)
+        this.info[2].els.context.drawImage(this.info[2].els.imagesArr[0], 0, 0)
     }
 
 
@@ -110,7 +121,10 @@ class ScrollAction extends Ui {
         }
         document.body.setAttribute('id', `show_sec_${this.curNum}`)
         let heightRatio = window.innerHeight / 1080;
+
+        // canvas 설정
         this.info[0].els.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio - 0.2})`
+        this.info[2].els.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio - 0.2})`
     }
 
     handleScroll() {
@@ -186,8 +200,8 @@ class ScrollAction extends Ui {
         // console.log(curSecRatio)
         switch(this.curNum) {
             case 0: 
-                let sequence = Math.round(this.calc(values.imageSequence))
-                els.context.drawImage(els.imagesArr[sequence], 0, 0);
+                let sequence0 = Math.round(this.calc(values.imageSequence))
+                els.context.drawImage(els.imagesArr[sequence0], 0, 0);
                 els.canvas.style.opacity = this.calc(values.canvas_opacity_out)
                 els.msgH.style.transform = `scale(${this.calc(values.msgH_scale_out)})`
                 if(curSecRatio <= 0.25) {
@@ -200,9 +214,11 @@ class ScrollAction extends Ui {
                 if(curSecRatio <= 0.4) {
                     els.msgB.style.opacity = this.calc(values.msgB_opacity_in)
                     els.msgB.style.transform = `translateY(${this.calc(values.msgB_transY_in)}px)`
+                    els.msgH.style.display = 'block';
                 } else {
                     els.msgB.style.opacity = this.calc(values.msgB_opacity_out)
                     els.msgB.style.transform = `translateY(${this.calc(values.msgB_transY_out)}px)`
+                    els.msgH.style.display = 'none';
                 }
                
                 return 
@@ -213,6 +229,12 @@ class ScrollAction extends Ui {
 
             case 2: 
                 // console.log('2 ani')
+                let sequence2 = Math.round(this.calc(values.imageSequence))
+                els.context.drawImage(els.imagesArr[sequence2], 0, 0);
+                if(curSecRatio <= 0.25) {
+                    
+                } else {
+                }
                 return 
 
             case 3: 
@@ -227,29 +249,27 @@ class ScrollAction extends Ui {
         }
     }
 
-    setImage() {
+    setImage(idx, src, startNum) {
         let imgEl = null;
-        for(let i = 0; i < this.info[0].values.imageCount; i++) {
+        for(let i = startNum; i < startNum + this.info[idx].values.imageCount; i++) {
             imgEl = new Image();
-            // 영상 내보내기 이름 설정 못해서 결국...
+            // 영상 내보내기 이름 설정 못해서 
             if(i <= 10) { 
-                imgEl.src = `../src/assets/images/product/s01/gene_s01_000${i}.png` 
+                imgEl.src = `${src}000${i}.png` 
                 // console.log('10 이하구간', i)
             }
             if(i >= 10 && i < 100) { 
-                imgEl.src = `../src/assets/images/product/s01/gene_s01_00${i}.png` 
+                imgEl.src = `${src}00${i}.png` 
                 // console.log('100 이하구간', i)
             }
             if(i >= 100 && i < 1000) { 
-                imgEl.src = `../src/assets/images/product/s01/gene_s01_0${i}.png` 
+                imgEl.src = `${src}0${i}.png` 
                 // console.log('1000 이하구간', i)
             }
-            
-            
-            this.info[0].els.imagesArr.push(imgEl)
+            this.info[idx].els.imagesArr.push(imgEl)
         }
 
-        console.log(this.info[0])
+        console.log(this.info[idx])
     }
 
     conHaeder() {

@@ -459,11 +459,8 @@
 
 <script>
 
-    // 나중에 정리
     const wrap = document.querySelector('.youtube .wrap');
-
         fetchData();
-
         document.body.addEventListener('click', (e) => {
             if (e.target.className === 'thumb') createPop(e.target.getAttribute('alt'));
             if (e.target.className === 'close') removePop();

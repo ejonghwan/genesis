@@ -4253,16 +4253,16 @@ input, textarea {
   color: #fff;
 }
 .container #sec_0 .message {
-  top: 250px;
+  top: 350px;
 }
 .container #sec_0 .message strong {
-  font-size: 1vw;
+  font-size: 17px;
   font-weight: 400;
   color: #a2a2a2;
 }
 .container #sec_0 .message p {
-  margin-top: 5px;
-  font-size: 1.5vw;
+  margin-top: 25px;
+  font-size: 20px;
   color: #fff;
   padding: 0 20px;
 }
@@ -4279,9 +4279,17 @@ input, textarea {
   background-color: #000;
 }
 .container #sec_2 h2 {
-  font-size: 7vw;
+  font-size: 4vw;
   z-index: 15;
   text-align: center;
+  top: 0;
+  bottom: 0;
+  opacity: 1;
+  display: block;
+  height: 1em;
+  line-height: 1;
+  margin: auto;
+  color: #fff;
 }
 
 .contact .btn_wrap {
