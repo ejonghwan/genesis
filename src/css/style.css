@@ -2602,6 +2602,7 @@ input, textarea {
   left: 70px;
   transform: translate(-50%, -50%);
   font-size: 3.2rem;
+  font-weight: 400;
 }
 .main_visual .list li .inner .main_visual_txt .thum > span {
   font-size: 1.3rem;
@@ -2612,7 +2613,6 @@ input, textarea {
   font-weight: 300;
 }
 .main_visual .list li .inner h2 {
-  font: bold 20px/1 "teko";
   color: #888;
   letter-spacing: 1px;
   transition: 0.5s 0.5s;
