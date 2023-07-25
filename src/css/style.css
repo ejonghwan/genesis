@@ -2540,6 +2540,12 @@ input, textarea {
   z-index: 5;
   pointer-events: none;
 }
+.main_visual .list li.active .pos_txt {
+  display: block;
+}
+.main_visual .list li.active .pos_btn {
+  display: flex;
+}
 .main_visual .list li {
   width: 15vw;
   height: 35vh;
@@ -2723,7 +2729,6 @@ input, textarea {
 .main_visual .list li:nth-of-type(3) {
   left: calc(60% + 0vw);
   transition-delay: 0s;
-  border: 10px solid transparent;
   border-radius: 12px;
 }
 .main_visual .list li:nth-of-type(3) .main_visual_slide_video::before {
@@ -2732,7 +2737,6 @@ input, textarea {
 .main_visual .list li:nth-of-type(4) {
   left: calc(60% + 15vw);
   transition-delay: 0.1s;
-  border: 10px solid transparent;
   border-radius: 12px;
 }
 .main_visual .list li:nth-of-type(4) .main_visual_slide_video::before {
@@ -2741,7 +2745,6 @@ input, textarea {
 .main_visual .list li:nth-of-type(5) {
   left: calc(60% + 30vw);
   transition-delay: 0.2s;
-  border: 10px solid transparent;
   border-radius: 12px;
 }
 .main_visual .list li:nth-of-type(5) .main_visual_slide_video::before {
@@ -2750,7 +2753,6 @@ input, textarea {
 .main_visual .list li:nth-of-type(6) {
   left: calc(60% + 45vw);
   transition-delay: 0.3s;
-  border: 10px solid transparent;
   border-radius: 12px;
 }
 .main_visual .list li:nth-of-type(6) .main_visual_slide_video::before {
@@ -2759,7 +2761,6 @@ input, textarea {
 .main_visual .list li:nth-of-type(7) {
   left: calc(60% + 60vw);
   transition-delay: 0.4s;
-  border: 10px solid transparent;
   border-radius: 12px;
 }
 .main_visual .list li:nth-of-type(7) .main_visual_slide_video::before {
@@ -2768,7 +2769,6 @@ input, textarea {
 .main_visual .list li:nth-of-type(8) {
   left: calc(60% + 75vw);
   transition-delay: 0.5s;
-  border: 10px solid transparent;
   border-radius: 12px;
 }
 .main_visual .list li:nth-of-type(8) .main_visual_slide_video::before {

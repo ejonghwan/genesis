@@ -111,7 +111,7 @@
                         </figure>
                     </div>
                 </li>
-                <li>
+                <li class="active">
                     <div class="inner">
                         <div class="main_visual_txt">
                             <strong class=" thum" aria-hidden="true">G70
@@ -313,6 +313,11 @@
                             }
                             wrap.querySelectorAll('.main_visual .list li')[1].classList.add('active')
                             wrap.querySelectorAll('.main_visual .list li')[1].querySelector('video').play()
+
+                            setTimeout(() => {
+                                let activeEl = document.querySelector('.main_visual .list li.active');
+                                
+                            }, 200)
                         }, 600)
                     })
                     
@@ -833,7 +838,8 @@
             <li><a href="./pages/gallery.html" role="button" class="arrow_btn">Gallery</a></li>
             <li><a href="./pages/location.html" role="button" class="arrow_btn">Contact</a></li>
             <li><a href="./pages/youtube.html" role="button" class="arrow_btn">Youtube</a></li>
-            <li><a href="./pages/members.html" role="button" class="arrow_btn">Members</a></li>
+            <!-- <li><a href="./pages/members.html" role="button" class="arrow_btn">Members</a></li> -->
+            <li><a href="./pages/product.html" role="button" class="arrow_btn">Product</a></li>
         </ul>
 
         <div class="pupup_type1_header g_inner">
