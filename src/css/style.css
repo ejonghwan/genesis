@@ -1221,6 +1221,7 @@ button.header_all_menu.on span.line:before {
   padding-top: 60px;
   position: relative;
   font-size: 1.2rem;
+  color: #999;
 }
 #footer .copyright::before {
   content: "";
@@ -3988,7 +3989,7 @@ input, textarea {
   top: 0;
   left: 0px;
   padding: 100px;
-  z-index: 5;
+  z-index: 11;
   opacity: 0;
   transition: opacity 1s;
 }
