@@ -414,8 +414,10 @@ button.header_all_menu {
 
 
 .sub_page {
-    .header_wrap {
-        padding-left: 0;
+    #header {
+        .header_wrap {
+            padding-left: 0;
+        }
     }
 
     button.header_all_menu {
@@ -429,10 +431,6 @@ button.header_all_menu {
 
 
 @include tablet {
-    header {
-
-    }
-
     button.header_all_menu {
         position: absolute;
         right: 50px;

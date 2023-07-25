@@ -1177,7 +1177,7 @@ button.header_all_menu.on span.line:before {
   right: 0;
 }
 
-.sub_page .header_wrap {
+.sub_page #header .header_wrap {
   padding-left: 0;
 }
 .sub_page button.header_all_menu {
@@ -1442,6 +1442,9 @@ button.header_all_menu.on span.line:before {
   }
   .footer_sec.notice .noti_Swiper .swiper-slide .noti {
     padding: 20px 58px 20px 0px;
+  }
+  .footer_sec.btm {
+    padding: 40px 0;
   }
 }
 .loading {
