@@ -214,11 +214,11 @@ class ScrollAction extends Ui {
                 if(curSecRatio <= 0.4) {
                     els.msgB.style.opacity = this.calc(values.msgB_opacity_in)
                     els.msgB.style.transform = `translateY(${this.calc(values.msgB_transY_in)}px)`
-                    els.msgH.style.display = 'block';
+                    // els.msgH.style.display = 'block';
                 } else {
                     els.msgB.style.opacity = this.calc(values.msgB_opacity_out)
                     els.msgB.style.transform = `translateY(${this.calc(values.msgB_transY_out)}px)`
-                    els.msgH.style.display = 'none';
+                    // els.msgH.style.display = 'none';
                 }
                
                 return 
