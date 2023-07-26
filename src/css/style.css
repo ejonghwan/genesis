@@ -4256,7 +4256,7 @@ input, textarea {
   left: 50%;
 }
 .container .con_section {
-  border: 1px solid red;
+  padding-top: 30vh;
 }
 .container #sec_0 {
   background-color: #000;
@@ -4319,6 +4319,24 @@ input, textarea {
   color: #999;
   font-size: 15px;
 }
+.container #sec_2 #canvas_02 {
+  opacity: 0;
+}
+.container #sec_2 .description {
+  height: 3em;
+  font-size: 20px;
+  text-align: center;
+  opacity: 0;
+  color: #fff;
+}
+.container #sec_2 .description > strong {
+  display: block;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: #999;
+  margin-bottom: 20px;
+}
+
 .contact .btn_wrap {
   margin-top: 30px;
 }

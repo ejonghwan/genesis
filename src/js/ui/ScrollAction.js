@@ -26,8 +26,8 @@ class ScrollAction extends Ui {
                 },
                 values: {
                     imageCount: 206,
-                    imageSequence: [0, 205],
-                    canvas_opacity_out: [1, 0, { start: 0.9, end: 0.99 }],
+                    imageSequence: [0, 205, { start: 0, end: 0.9 }],
+                    canvas_opacity_out: [1, 0, { start: 0.85, end: 0.9 }],
                     msgH_scale_out: [1, 100, { start: 0, end: 0.2 }],
                     msgA_opacity_in: [0, 1, { start: 0.1, end: 0.2 }],
                     msgA_opacity_out: [1, 0, { start: 0.3, end: 0.4 }],
@@ -51,26 +51,38 @@ class ScrollAction extends Ui {
             },
             {
                 type: 'sticky',
-                heightNum: 4,
+                heightNum: 7,
                 secHeight: 0,
                 els: {
                     wrap: document.querySelector('#sec_2'),
                     msgHa: document.querySelector('#sec_2 .m0'), 
+                    msgHa_1: document.querySelector('#sec_2 .m1'), 
                     canvas: document.querySelector('#sec_2 #canvas_01'),
                     context: document.querySelector('#sec_2 #canvas_01').getContext('2d'),
                     imagesArr: [],
+                    canvas_2: document.querySelector('#sec_2 #canvas_02'),
+                    context_2: document.querySelector('#sec_2 #canvas_02').getContext('2d'),
+                    imagesArr_2: [],
                 },
                 values: {
                     imageCount: 86,
-                    imageSequence: [0, 85],
-                    // canvas_opacity_in: [0, 1, { start: 0.01, end: 0.2 }],
-                    // canvas_opacity_out: [1, 0, { start: 0.9, end: 0.99 }],
+                    imageSequence: [0, 85, { start: 0, end: 0.4 }],
+                    imageCount_2: 187,
+                    imageSequence_2: [0, 186, { start: 0.4, end: 0.95 }],
+                    canvas_opacity_in: [0, 1, { start: 0, end: 0.1 }],
+                    canvas_opacity_out: [1, 0, { start: 0.2, end: 0.3 }],
 
-                    // msgH_filter_in: [10, 0, { start: 0.01, end: 0.2 }],
-                    // msgH_filter_out: [0, 10, { start: 0.2, end: 0.3 }],
-                    msgHa_opacity_in: [0, 1, { start: 0.2, end: 0.4 }],
-                    // msgHa_opacity_out: [1, 0, { start: 0.3, end: 0.4 }],
-                    // msgHa_translateY_in: [0, -150, { start: 0.4, end: 0.6}],
+                    msgHa_filter_in: [10, 0, { start: 0, end: 0.1 }],
+                    msgHa_filter_out: [0, 10, { start: 0.2, end: 0.3 }],
+                    msgHa_opacity_in: [0, 1, { start: 0, end: 0.05}],
+                    msgHa_opacity_out: [1, 0, { start: 0.15, end: 0.2 }],
+                    msgHa_translateY_in: [0, -250, { start: 0.05, end: 0.1}],
+
+                    // 2번쨰 
+                    msgHa_1_opacity_in: [0, 1, { start: 0.1, end: 0.15 }],
+                    msgHa_1_opacity_out: [1, 0, { start: 0.2, end: 0.3 }],
+                    canvas_2_opacity_in: [0, 1, { start: 0.27, end: 0.4 }],
+                    canvas_2_opacity_out: [1, 0, { start: 0.85, end: 0.95 }],
 
                 }
             },
@@ -96,8 +108,11 @@ class ScrollAction extends Ui {
 
     init() {
         this.setHeight()
-        this.setImage(0, '../src/assets/images/product/s01/gene_s01_', 0); //idx, src, fileStartNum
-        this.setImage(2, '../src/assets/images/product/s03d1/gene_s03d_', 188);
+
+        //idx, src, fileStartNum, infoimgCount, arr
+        this.setImage(0, '../src/assets/images/product/s01/gene_s01_', 0, this.info[0].values.imageCount, this.info[0].els.imagesArr); 
+        this.setImage(2, '../src/assets/images/product/s03d1/gene_s03d_', 188, this.info[2].values.imageCount, this.info[2].els.imagesArr);
+        this.setImage(2, '../src/assets/images/product/s03d2/gene_s03d_', 274, this.info[2].values.imageCount_2, this.info[2].els.imagesArr_2);
       
         this.info[0].els.context.drawImage(this.info[0].els.imagesArr[0], 0, 0)
         // this.info[2].els.context.drawImage(this.info[2].els.imagesArr[0], 0, 0)
@@ -107,16 +122,18 @@ class ScrollAction extends Ui {
         const els = this.info[this.curNum].els;
         const values = this.info[this.curNum].values;
         let curSecRatio = this.curSecYOffset / this.info[this.curNum].secHeight;
-        // console.log(curSecRatio)
-        // console.log(this.curSecYOffset)
+
+        // console.log('els?', els)
 
         switch(this.curNum) {
             case 0: 
-                console.log('0 ani')
+                // console.log('0 ani')
                 let sequence0 = Math.round(this.calc(values.imageSequence))
                 els.context.drawImage(els.imagesArr[sequence0], 0, 0);
-                els.canvas.style.opacity = this.calc(values.canvas_opacity_out)
+               
                 els.msgH.style.transform = `scale(${this.calc(values.msgH_scale_out)})`
+                els.canvas.style.opacity = this.calc(values.canvas_opacity_out)
+
                 if(curSecRatio <= 0.25) {
                     els.msgA.style.opacity = this.calc(values.msgA_opacity_in)
                     els.msgA.style.transform = `translateY(${this.calc(values.msgA_transY_in)}px)`
@@ -136,29 +153,43 @@ class ScrollAction extends Ui {
                 return 
 
             case 1: 
-                console.log('1 ani')
-                console.log(this.curSecYOffset)
+                // console.log('1 ani')
+                // console.log(this.curSecYOffset)
                 return 
 
             case 2: 
-                console.log('2 ani')
+                // console.log('2 ani')
+                // 첫번쨰 캔버스
                 let sequence2 = Math.round(this.calc(values.imageSequence))
                 els.context.drawImage(els.imagesArr[sequence2], 0, 0);
-                // console.log(values.imageSequence)
-                console.log(this.curSecYOffset)
+                els.canvas.style.opacity = this.calc(values.canvas_opacity_out)
 
-                // els.canvas.style.opacity = this.calc(values.canvas_opacity_out)
-                if(curSecRatio <= 0.5) {
-                    // console.log('o', this.calc(values.msgH_opacity_in))
-                    // console.log('ccc?', this.calc(values.msgH_opacity_in))
+                // 두번쨰 캔버스
+                let sequence3 = Math.round(this.calc(values.imageSequence_2))
+                els.context_2.drawImage(els.imagesArr_2[sequence3], 0, 0);
+
+                if(curSecRatio <= 0.1) {
                     els.msgHa.style.opacity = this.calc(values.msgHa_opacity_in)
-                    // els.msgH.style.filter = `blur(${this.calc(values.msgH_filter_in)}px)`
-                    // els.canvas.style.opacity = this.calc(values.canvas_opacity_in)
+                    els.msgHa.style.filter = `blur(${this.calc(values.msgHa_filter_in)}px)`
+                    els.msgHa.style.transform = `translateY(${this.calc(values.msgHa_translateY_in)}px)`
+                    els.canvas.style.opacity = this.calc(values.canvas_opacity_in)
                 } else {
-                    // console.log('x', this.calc(values.msgH_opacity_in))
+                    els.msgHa.style.opacity = this.calc(values.msgHa_opacity_out)
                 }
                
+                if(curSecRatio <= 0.2) { 
+                    // console.log(els.msgHa_1)
+                    els.msgHa_1.style.opacity = this.calc(values.msgHa_1_opacity_in)
+                } else {
+                    els.msgHa_1.style.opacity = this.calc(values.msgHa_1_opacity_out)
+                }
 
+                if(curSecRatio <= 0.5) { 
+                    // console.log(els.msgHa_1)
+                    els.canvas_2.style.opacity = this.calc(values.canvas_2_opacity_in)
+                } else {
+                    els.canvas_2.style.opacity = this.calc(values.canvas_2_opacity_out)
+                }
                 
                 return 
 
@@ -204,13 +235,12 @@ class ScrollAction extends Ui {
         // canvas 설정
         this.info[0].els.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio - 0.2})`
         this.info[2].els.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio - 0.2})`
+        this.info[2].els.canvas_2.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio - 0.2})`
     }
 
     handleScroll() {
         this.yOffset = window.pageYOffset;
         this.curSecYOffset = Math.abs(this.yOffset - this.prevHeight);
-
-      
         if(this.secChange === true ) this.curSecYOffset = 0; //해결. 섹션 변경될때 섹션 옵셋 0으로 초기화 
         this.scrollLoop();
     }
@@ -232,9 +262,7 @@ class ScrollAction extends Ui {
             this.curNum--
         }
         document.body.setAttribute('id', `show_sec_${this.curNum}`)
-        // console.log(this.curSecYOffset, this.secChange)
 
-        // console.log(this.secChange)
         if(this.secChange) return; //섹션이 변경될 때는 ani를 잠깐 실행 중지
         this.ani()
         this.conHaeder();
@@ -275,9 +303,9 @@ class ScrollAction extends Ui {
     
     
 
-    setImage(idx, src, startNum) {
+    setImage(idx, src, startNum, imageCount, arr) {
         let imgEl = null;
-        for(let i = startNum; i < startNum + this.info[idx].values.imageCount; i++) {
+        for(let i = startNum; i < startNum + imageCount; i++) {
             imgEl = new Image();
             // 영상 내보내기 이름 설정 못해서 
             if(i <= 10) { 
@@ -292,7 +320,7 @@ class ScrollAction extends Ui {
                 imgEl.src = `${src}0${i}.png` 
                 // console.log('1000 이하구간', i)
             }
-            this.info[idx].els.imagesArr.push(imgEl)
+            arr.push(imgEl)
         }
     }
 
