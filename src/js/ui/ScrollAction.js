@@ -51,10 +51,11 @@ class ScrollAction extends Ui {
             },
             {
                 type: 'sticky',
-                heightNum: 2,
+                heightNum: 4,
                 secHeight: 0,
                 els: {
                     wrap: document.querySelector('#sec_2'),
+                    msgHa: document.querySelector('#sec_2 .m0'), 
                     canvas: document.querySelector('#sec_2 #canvas_01'),
                     context: document.querySelector('#sec_2 #canvas_01').getContext('2d'),
                     imagesArr: [],
@@ -62,7 +63,14 @@ class ScrollAction extends Ui {
                 values: {
                     imageCount: 86,
                     imageSequence: [0, 85],
-                   
+                    // canvas_opacity_in: [0, 1, { start: 0.01, end: 0.2 }],
+                    // canvas_opacity_out: [1, 0, { start: 0.9, end: 0.99 }],
+
+                    // msgH_filter_in: [10, 0, { start: 0.01, end: 0.2 }],
+                    // msgH_filter_out: [0, 10, { start: 0.2, end: 0.3 }],
+                    msgHa_opacity_in: [0, 1, { start: 0.2, end: 0.4 }],
+                    // msgHa_opacity_out: [1, 0, { start: 0.3, end: 0.4 }],
+                    // msgHa_translateY_in: [0, -150, { start: 0.4, end: 0.6}],
 
                 }
             },
@@ -92,7 +100,72 @@ class ScrollAction extends Ui {
         this.setImage(2, '../src/assets/images/product/s03d1/gene_s03d_', 188);
       
         this.info[0].els.context.drawImage(this.info[0].els.imagesArr[0], 0, 0)
-        this.info[2].els.context.drawImage(this.info[2].els.imagesArr[0], 0, 0)
+        // this.info[2].els.context.drawImage(this.info[2].els.imagesArr[0], 0, 0)
+    }
+
+    ani() {
+        const els = this.info[this.curNum].els;
+        const values = this.info[this.curNum].values;
+        let curSecRatio = this.curSecYOffset / this.info[this.curNum].secHeight;
+        // console.log(curSecRatio)
+        // console.log(this.curSecYOffset)
+        switch(this.curNum) {
+            case 0: 
+                let sequence0 = Math.round(this.calc(values.imageSequence))
+                els.context.drawImage(els.imagesArr[sequence0], 0, 0);
+                els.canvas.style.opacity = this.calc(values.canvas_opacity_out)
+                els.msgH.style.transform = `scale(${this.calc(values.msgH_scale_out)})`
+                if(curSecRatio <= 0.25) {
+                    els.msgA.style.opacity = this.calc(values.msgA_opacity_in)
+                    els.msgA.style.transform = `translateY(${this.calc(values.msgA_transY_in)}px)`
+                } else {
+                    els.msgA.style.opacity = this.calc(values.msgA_opacity_out)
+                    els.msgA.style.transform = `translateY(${this.calc(values.msgA_transY_out)}px)`
+                }
+                if(curSecRatio <= 0.4) {
+                    els.msgB.style.opacity = this.calc(values.msgB_opacity_in)
+                    els.msgB.style.transform = `translateY(${this.calc(values.msgB_transY_in)}px)`
+                    // els.msgH.style.display = 'block';
+                } else {
+                    els.msgB.style.opacity = this.calc(values.msgB_opacity_out)
+                    els.msgB.style.transform = `translateY(${this.calc(values.msgB_transY_out)}px)`
+                    // els.msgH.style.display = 'none';
+                }
+                return 
+
+            case 1: 
+                // console.log('1 ani')
+                return 
+
+            case 2: 
+                // console.log('2 ani')
+                // let sequence2 = Math.round(this.calc(values.imageSequence))
+                // els.context.drawImage(els.imagesArr[sequence2], 0, 0);
+                // els.canvas.style.opacity = this.calc(values.canvas_opacity_out)
+                if(curSecRatio <= 0.5) {
+                    // console.log('o', this.calc(values.msgH_opacity_in))
+                    // console.log('ccc?', this.calc(values.msgH_opacity_in))
+                    els.msgHa.style.opacity = this.calc(values.msgHa_opacity_in)
+                    // els.msgH.style.filter = `blur(${this.calc(values.msgH_filter_in)}px)`
+                    // els.canvas.style.opacity = this.calc(values.canvas_opacity_in)
+                } else {
+                    // console.log('x', this.calc(values.msgH_opacity_in))
+                }
+               
+
+                
+                return 
+
+            case 3: 
+                // console.log('3 ani')
+                return 
+            
+            case 4: 
+                // console.log('4 ani')
+                return 
+
+            default : 0
+        }
     }
 
 
@@ -129,7 +202,7 @@ class ScrollAction extends Ui {
 
     handleScroll() {
         this.yOffset = window.pageYOffset;
-        this.curSecYOffset = this.yOffset - this.prevHeight;
+        this.curSecYOffset = Math.abs(this.yOffset - this.prevHeight);
         this.scrollLoop();
     }
 
@@ -164,7 +237,7 @@ class ScrollAction extends Ui {
         let result = null;
         const ratio = this.curSecYOffset / this.info[this.curNum].secHeight;
         const curSecHeight = this.info[this.curNum].secHeight; //현재 섹션값
-        
+        console.log('?????', result)
         if(values.length === 3) {
             // part 존재 시
             const partStart = values[2].start * curSecHeight;
@@ -175,7 +248,6 @@ class ScrollAction extends Ui {
                 // part 구간
                 let partRatio = (this.curSecYOffset - partStart) / partHeight;
                 result = partRatio * (values[1] - values[0]) + values[0];
-                // console.log('part?', result)
             } else if(this.curSecYOffset <= partStart) {
                 // part 전 구간
                 result = values[0];
@@ -183,71 +255,18 @@ class ScrollAction extends Ui {
                 // part 후 구간
                 result = values[1];
             }
+            console.log('re??', result)
         } else {
             // part가 없을 시 
             result = ratio * (values[1] - values[0]) + values[0];
         }
 
-        // console.log('re??', result)
+    
         return result;
     }
 
     
-    ani() {
-        const els = this.info[this.curNum].els;
-        const values = this.info[this.curNum].values;
-        let curSecRatio = this.curSecYOffset / this.info[this.curNum].secHeight;
-        // console.log(curSecRatio)
-        switch(this.curNum) {
-            case 0: 
-                let sequence0 = Math.round(this.calc(values.imageSequence))
-                els.context.drawImage(els.imagesArr[sequence0], 0, 0);
-                els.canvas.style.opacity = this.calc(values.canvas_opacity_out)
-                els.msgH.style.transform = `scale(${this.calc(values.msgH_scale_out)})`
-                if(curSecRatio <= 0.25) {
-                    els.msgA.style.opacity = this.calc(values.msgA_opacity_in)
-                    els.msgA.style.transform = `translateY(${this.calc(values.msgA_transY_in)}px)`
-                } else {
-                    els.msgA.style.opacity = this.calc(values.msgA_opacity_out)
-                    els.msgA.style.transform = `translateY(${this.calc(values.msgA_transY_out)}px)`
-                }
-                if(curSecRatio <= 0.4) {
-                    els.msgB.style.opacity = this.calc(values.msgB_opacity_in)
-                    els.msgB.style.transform = `translateY(${this.calc(values.msgB_transY_in)}px)`
-                    // els.msgH.style.display = 'block';
-                } else {
-                    els.msgB.style.opacity = this.calc(values.msgB_opacity_out)
-                    els.msgB.style.transform = `translateY(${this.calc(values.msgB_transY_out)}px)`
-                    // els.msgH.style.display = 'none';
-                }
-               
-                return 
-
-            case 1: 
-                // console.log('1 ani')
-                return 
-
-            case 2: 
-                // console.log('2 ani')
-                let sequence2 = Math.round(this.calc(values.imageSequence))
-                els.context.drawImage(els.imagesArr[sequence2], 0, 0);
-                if(curSecRatio <= 0.25) {
-                    
-                } else {
-                }
-                return 
-
-            case 3: 
-                // console.log('3 ani')
-                return 
-            
-            case 4: 
-                // console.log('4 ani')
-                return 
-
-            default : 0
-        }
-    }
+    
 
     setImage(idx, src, startNum) {
         let imgEl = null;

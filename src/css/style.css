@@ -2623,6 +2623,7 @@ input, textarea {
 .main_visual .list li .inner h2 {
   color: #888;
   letter-spacing: 1px;
+  transition: 0.5s 0.5s;
   opacity: 0;
   font-size: 8rem;
   transform: translateY(10px);
@@ -2732,6 +2733,9 @@ input, textarea {
   transition-delay: 0s;
   border-radius: 12px;
 }
+.main_visual .list li:nth-of-type(3) .pos_txt {
+  overflow: hidden;
+}
 .main_visual .list li:nth-of-type(3) .pos_txt .pos_txt_sub {
   font-size: 0px;
 }
@@ -2745,6 +2749,9 @@ input, textarea {
   left: calc(60% + (15vw + 10px) * 1);
   transition-delay: 0.1s;
   border-radius: 12px;
+}
+.main_visual .list li:nth-of-type(4) .pos_txt {
+  overflow: hidden;
 }
 .main_visual .list li:nth-of-type(4) .pos_txt .pos_txt_sub {
   font-size: 0px;
@@ -2760,6 +2767,9 @@ input, textarea {
   transition-delay: 0.2s;
   border-radius: 12px;
 }
+.main_visual .list li:nth-of-type(5) .pos_txt {
+  overflow: hidden;
+}
 .main_visual .list li:nth-of-type(5) .pos_txt .pos_txt_sub {
   font-size: 0px;
 }
@@ -2773,6 +2783,9 @@ input, textarea {
   left: calc(60% + (15vw + 10px) * 3);
   transition-delay: 0.3s;
   border-radius: 12px;
+}
+.main_visual .list li:nth-of-type(6) .pos_txt {
+  overflow: hidden;
 }
 .main_visual .list li:nth-of-type(6) .pos_txt .pos_txt_sub {
   font-size: 0px;
@@ -2788,6 +2801,9 @@ input, textarea {
   transition-delay: 0.4s;
   border-radius: 12px;
 }
+.main_visual .list li:nth-of-type(7) .pos_txt {
+  overflow: hidden;
+}
 .main_visual .list li:nth-of-type(7) .pos_txt .pos_txt_sub {
   font-size: 0px;
 }
@@ -2801,6 +2817,9 @@ input, textarea {
   left: calc(60% + (15vw + 10px) * 5);
   transition-delay: 0.5s;
   border-radius: 12px;
+}
+.main_visual .list li:nth-of-type(8) .pos_txt {
+  overflow: hidden;
 }
 .main_visual .list li:nth-of-type(8) .pos_txt .pos_txt_sub {
   font-size: 0px;
@@ -4236,6 +4255,9 @@ input, textarea {
   top: 50%;
   left: 50%;
 }
+.container .con_section {
+  border: 1px solid red;
+}
 .container #sec_0 {
   background-color: #000;
 }
@@ -4283,12 +4305,20 @@ input, textarea {
   text-align: center;
   top: 0;
   bottom: 0;
-  opacity: 1;
-  display: block;
   height: 1em;
   line-height: 1;
   margin: auto;
   color: #fff;
+  font-weight: 300;
+  letter-spacing: 10px;
+  opacity: 0;
+}
+.container #sec_2 h2 .sub_txt {
+  color: #999;
+  font-size: 15px;
+}
+.container #sec_2 #canvas_01 {
+  opacity: 0;
 }
 
 .contact .btn_wrap {
