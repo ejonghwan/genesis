@@ -7,7 +7,7 @@ class ScrollAction extends Ui {
         this.yOffset = 0; // 총 y 값
         this.prevHeight = 0; // 지나온 값
         this.curNum = 0; //현재 섹션 n
-        this.curSecYOffset; // 현재 섹션 y값
+        this.curSecYOffset = 0; // 현재 섹션 y값
         this.secChange = false; //새로운 섹션에서 true
 
         this.info = [
@@ -109,8 +109,10 @@ class ScrollAction extends Ui {
         let curSecRatio = this.curSecYOffset / this.info[this.curNum].secHeight;
         // console.log(curSecRatio)
         // console.log(this.curSecYOffset)
+
         switch(this.curNum) {
             case 0: 
+                console.log('0 ani')
                 let sequence0 = Math.round(this.calc(values.imageSequence))
                 els.context.drawImage(els.imagesArr[sequence0], 0, 0);
                 els.canvas.style.opacity = this.calc(values.canvas_opacity_out)
@@ -134,13 +136,17 @@ class ScrollAction extends Ui {
                 return 
 
             case 1: 
-                // console.log('1 ani')
+                console.log('1 ani')
+                console.log(this.curSecYOffset)
                 return 
 
             case 2: 
-                // console.log('2 ani')
-                // let sequence2 = Math.round(this.calc(values.imageSequence))
-                // els.context.drawImage(els.imagesArr[sequence2], 0, 0);
+                console.log('2 ani')
+                let sequence2 = Math.round(this.calc(values.imageSequence))
+                els.context.drawImage(els.imagesArr[sequence2], 0, 0);
+                // console.log(values.imageSequence)
+                console.log(this.curSecYOffset)
+
                 // els.canvas.style.opacity = this.calc(values.canvas_opacity_out)
                 if(curSecRatio <= 0.5) {
                     // console.log('o', this.calc(values.msgH_opacity_in))
@@ -203,6 +209,9 @@ class ScrollAction extends Ui {
     handleScroll() {
         this.yOffset = window.pageYOffset;
         this.curSecYOffset = Math.abs(this.yOffset - this.prevHeight);
+
+      
+        if(this.secChange === true ) this.curSecYOffset = 0; //해결. 섹션 변경될때 섹션 옵셋 0으로 초기화 
         this.scrollLoop();
     }
 
@@ -237,7 +246,6 @@ class ScrollAction extends Ui {
         let result = null;
         const ratio = this.curSecYOffset / this.info[this.curNum].secHeight;
         const curSecHeight = this.info[this.curNum].secHeight; //현재 섹션값
-        console.log('?????', result)
         if(values.length === 3) {
             // part 존재 시
             const partStart = values[2].start * curSecHeight;
@@ -255,7 +263,6 @@ class ScrollAction extends Ui {
                 // part 후 구간
                 result = values[1];
             }
-            console.log('re??', result)
         } else {
             // part가 없을 시 
             result = ratio * (values[1] - values[0]) + values[0];
@@ -287,8 +294,6 @@ class ScrollAction extends Ui {
             }
             this.info[idx].els.imagesArr.push(imgEl)
         }
-
-        console.log(this.info[idx])
     }
 
     conHaeder() {

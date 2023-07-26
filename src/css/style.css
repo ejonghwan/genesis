@@ -4314,13 +4314,11 @@ input, textarea {
   opacity: 0;
 }
 .container #sec_2 h2 .sub_txt {
+  display: block;
+  margin-bottom: 40px;
   color: #999;
   font-size: 15px;
 }
-.container #sec_2 #canvas_01 {
-  opacity: 0;
-}
-
 .contact .btn_wrap {
   margin-top: 30px;
 }
