@@ -31,13 +31,13 @@ class ScrollAction extends Ui {
                     msgH_scale_out: [1, 100, { start: 0, end: 0.2 }],
                     msgA_opacity_in: [0, 1, { start: 0.1, end: 0.2 }],
                     msgA_opacity_out: [1, 0, { start: 0.3, end: 0.4 }],
-                    msgA_transY_in: [20, 0, { start: 0.1, end: 0.2 }],
-                    msgA_transY_out: [0, -20, { start: 0.3, end: 0.4 }],
+                    msgA_transY_in: [40, 0, { start: 0.1, end: 0.2 }],
+                    msgA_transY_out: [0, -40, { start: 0.3, end: 0.4 }],
 
                     msgB_opacity_in: [0, 1, { start: 0.5, end: 0.6 }],
                     msgB_opacity_out: [1, 0, { start: 0.7, end: 0.8 }],
-                    msgB_transY_in: [20, 0, { start: 0.5, end: 0.6 }],
-                    msgB_transY_out: [0, -20, { start: 0.7, end: 0.8 }],
+                    msgB_transY_in: [40, 0, { start: 0.5, end: 0.6 }],
+                    msgB_transY_out: [0, -40, { start: 0.7, end: 0.8 }],
 
                 }
             },
@@ -55,7 +55,7 @@ class ScrollAction extends Ui {
                 secHeight: 0,
                 els: {
                     wrap: document.querySelector('#sec_2'),
-                    msgHa: document.querySelector('#sec_2 .m0'), 
+                    msgHa_0: document.querySelector('#sec_2 .m0'), 
                     msgHa_1: document.querySelector('#sec_2 .m1'), 
                     canvas: document.querySelector('#sec_2 #canvas_01'),
                     context: document.querySelector('#sec_2 #canvas_01').getContext('2d'),
@@ -72,17 +72,21 @@ class ScrollAction extends Ui {
                     canvas_opacity_in: [0, 1, { start: 0, end: 0.1 }],
                     canvas_opacity_out: [1, 0, { start: 0.2, end: 0.3 }],
 
-                    msgHa_filter_in: [10, 0, { start: 0, end: 0.1 }],
-                    msgHa_filter_out: [0, 10, { start: 0.2, end: 0.3 }],
-                    msgHa_opacity_in: [0, 1, { start: 0, end: 0.05}],
-                    msgHa_opacity_out: [1, 0, { start: 0.15, end: 0.2 }],
-                    msgHa_translateY_in: [0, -250, { start: 0.05, end: 0.1}],
+                    msgHa_0_filter_in: [10, 0, { start: 0, end: 0.1 }],
+                    msgHa_0_filter_out: [0, 10, { start: 0.2, end: 0.3 }],
+
+                    msgHa_0_opacity_in: [0, 1, { start: 0, end: 0.1 }],
+                    msgHa_0_opacity_out: [1, 0, { start: 0.2, end: 0.3 }],
+                    msgHa_0_transY_in: [40, 0, { start: 0.05, end: 0.1 }],
+                    msgHa_0_transY_out: [0, -40, { start: 0.25, end: 0.35 }],
 
                     // 2번쨰 
                     msgHa_1_opacity_in: [0, 1, { start: 0.1, end: 0.15 }],
                     msgHa_1_opacity_out: [1, 0, { start: 0.2, end: 0.3 }],
-                    canvas_2_opacity_in: [0, 1, { start: 0.27, end: 0.4 }],
+                    canvas_2_opacity_in: [0, 1, { start: 0.25, end: 0.4 }],
                     canvas_2_opacity_out: [1, 0, { start: 0.85, end: 0.95 }],
+                    // msgHb_opacity_in: [0, 1, { start: 0, end: 0.05}],
+                    // msgHb_opacity_out: [1, 0, { start: 0.15, end: 0.2 }],
 
                 }
             },
@@ -113,6 +117,7 @@ class ScrollAction extends Ui {
         this.setImage(0, '../src/assets/images/product/s01/gene_s01_', 0, this.info[0].values.imageCount, this.info[0].els.imagesArr); 
         this.setImage(2, '../src/assets/images/product/s03d1/gene_s03d_', 188, this.info[2].values.imageCount, this.info[2].els.imagesArr);
         this.setImage(2, '../src/assets/images/product/s03d2/gene_s03d_', 274, this.info[2].values.imageCount_2, this.info[2].els.imagesArr_2);
+       
       
         this.info[0].els.context.drawImage(this.info[0].els.imagesArr[0], 0, 0)
         // this.info[2].els.context.drawImage(this.info[2].els.imagesArr[0], 0, 0)
@@ -141,7 +146,7 @@ class ScrollAction extends Ui {
                     els.msgA.style.opacity = this.calc(values.msgA_opacity_out)
                     els.msgA.style.transform = `translateY(${this.calc(values.msgA_transY_out)}px)`
                 }
-                if(curSecRatio <= 0.4) {
+                if(curSecRatio <= 0.65) {
                     els.msgB.style.opacity = this.calc(values.msgB_opacity_in)
                     els.msgB.style.transform = `translateY(${this.calc(values.msgB_transY_in)}px)`
                     // els.msgH.style.display = 'block';
@@ -169,13 +174,19 @@ class ScrollAction extends Ui {
                 els.context_2.drawImage(els.imagesArr_2[sequence3], 0, 0);
 
                 if(curSecRatio <= 0.1) {
-                    els.msgHa.style.opacity = this.calc(values.msgHa_opacity_in)
-                    els.msgHa.style.filter = `blur(${this.calc(values.msgHa_filter_in)}px)`
-                    els.msgHa.style.transform = `translateY(${this.calc(values.msgHa_translateY_in)}px)`
+                    els.msgHa_0.style.filter = `blur(${this.calc(values.msgHa_0_filter_in)}px)`
                     els.canvas.style.opacity = this.calc(values.canvas_opacity_in)
+                } 
+
+                // txt 0
+                if(curSecRatio <= 0.2) {
+                    els.msgHa_0.style.opacity = this.calc(values.msgHa_0_opacity_in)
+                    els.msgHa_0.style.transform = `translateY(${this.calc(values.msgHa_0_transY_in)}px)`
                 } else {
-                    els.msgHa.style.opacity = this.calc(values.msgHa_opacity_out)
+                    els.msgHa_0.style.opacity = this.calc(values.msgHa_0_opacity_out)
+                    els.msgHa_0.style.transform = `translateY(${this.calc(values.msgHa_0_transY_out)}px)`
                 }
+
                
                 if(curSecRatio <= 0.2) { 
                     // console.log(els.msgHa_1)
@@ -234,15 +245,20 @@ class ScrollAction extends Ui {
 
         // canvas 설정
         this.info[0].els.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio - 0.2})`
-        this.info[2].els.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio - 0.2})`
-        this.info[2].els.canvas_2.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio - 0.2})`
+        this.info[2].els.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio - 0.25})`
+        this.info[2].els.canvas_2.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio - 0})`
     }
 
     handleScroll() {
         this.yOffset = window.pageYOffset;
         this.curSecYOffset = Math.abs(this.yOffset - this.prevHeight);
-        if(this.secChange === true ) this.curSecYOffset = 0; //해결. 섹션 변경될때 섹션 옵셋 0으로 초기화 
+        if(this.secChange === true ) this.sectionChange(); //해결. 섹션 변경될때 섹션 옵셋 0으로 초기화 
         this.scrollLoop();
+    }
+
+    sectionChange() {
+        this.curSecYOffset = 0;
+      
     }
 
     scrollLoop() {
@@ -320,6 +336,8 @@ class ScrollAction extends Ui {
                 imgEl.src = `${src}0${i}.png` 
                 // console.log('1000 이하구간', i)
             }
+            imgEl.setAttribute('loading', 'lazy')
+            // console.log(imgEl)
             arr.push(imgEl)
         }
     }
