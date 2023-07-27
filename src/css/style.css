@@ -4297,6 +4297,24 @@ input, textarea {
   z-index: 15;
   text-align: center;
 }
+.container #sec_1 .con_sticky.m0 {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  height: 500px;
+  font-size: 30px;
+  /* text-align: center; */
+  width: 50%;
+  border: 1px solid red;
+}
+.container #sec_1 .con_sticky.m0 > span.on {
+  color: #fff;
+}
 .container #sec_2 {
   background-color: #000;
 }
@@ -4318,14 +4336,14 @@ input, textarea {
   display: block;
   margin-bottom: 20px;
   color: #999;
-  font-size: 15px;
-  letter-spacing: 5px;
+  font-size: 20px;
+  letter-spacing: 0px;
 }
 .container #sec_2 #canvas_02 {
   opacity: 0;
 }
 .container #sec_2 .description {
-  height: 3em;
+  height: 5em;
   font-size: 20px;
   text-align: center;
   opacity: 0;
@@ -4340,6 +4358,19 @@ input, textarea {
 }
 .container #sec_2 .con_sticky.m0 {
   bottom: 60%;
+}
+.container .dimd_sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+  backdrop-filter: blur(20px);
+  opacity: 0;
+}
+.container #sec_3 {
+  background-color: #000;
 }
 
 .contact .btn_wrap {

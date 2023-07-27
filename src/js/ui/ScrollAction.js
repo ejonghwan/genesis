@@ -42,8 +42,8 @@ class ScrollAction extends Ui {
                 }
             },
             {
-                type: 'normal',
-                heightNum: 2,
+                type: 'sticky',
+                heightNum: 4,
                 secHeight: 0,
                 els: {
                     wrap: document.querySelector('#sec_1')
@@ -55,8 +55,11 @@ class ScrollAction extends Ui {
                 secHeight: 0,
                 els: {
                     wrap: document.querySelector('#sec_2'),
+                    dimd: document.querySelector('#sec_2 .dimd_sticky'),
                     msgHa_0: document.querySelector('#sec_2 .m0'), 
                     msgHa_1: document.querySelector('#sec_2 .m1'), 
+                    msgHa_2: document.querySelector('#sec_2 .m2'), 
+                    msgHa_3: document.querySelector('#sec_2 .m3'), 
                     canvas: document.querySelector('#sec_2 #canvas_01'),
                     context: document.querySelector('#sec_2 #canvas_01').getContext('2d'),
                     imagesArr: [],
@@ -83,10 +86,16 @@ class ScrollAction extends Ui {
                     // 2번쨰 
                     msgHa_1_opacity_in: [0, 1, { start: 0.1, end: 0.15 }],
                     msgHa_1_opacity_out: [1, 0, { start: 0.2, end: 0.3 }],
-                    canvas_2_opacity_in: [0, 1, { start: 0.25, end: 0.4 }],
+                    msgHa_2_opacity_in: [0, 1, { start: 0.5, end: 0.6 }],
+                    msgHa_2_transY_in: [40, 0, { start: 0.5, end: 0.6 }],
+                    msgHa_2_opacity_out: [1, 0, { start: 0.7, end: 0.75 }],
+                    msgHa_2_transY_out: [0, -40, { start: 0.7, end: 0.75 }],
+                    msgHa_3_opacity_in: [0, 1, { start: 0.7, end: 0.75 }],
+                    msgHa_3_transY_in: [40, 0, { start: 0.7, end: 0.75 }],
+                    msgHa_3_opacity_out: [1, 0, { start: 0.9, end: 0.95 }],
+                    msgHa_3_transY_out: [0, -40, { start: 0.9, end: 0.95 }],
+                    canvas_2_opacity_in: [0, 1, { start: 0.23, end: 0.35 }],
                     canvas_2_opacity_out: [1, 0, { start: 0.85, end: 0.95 }],
-                    // msgHb_opacity_in: [0, 1, { start: 0, end: 0.05}],
-                    // msgHb_opacity_out: [1, 0, { start: 0.15, end: 0.2 }],
 
                 }
             },
@@ -96,6 +105,14 @@ class ScrollAction extends Ui {
                 secHeight: 0,
                 els: {
                     wrap: document.querySelector('#sec_3')
+                }
+            },
+            {
+                type: 'normal',
+                heightNum: 2,
+                secHeight: 0,
+                els: {
+                    wrap: document.querySelector('#sec_4')
                 }
             },
         ]
@@ -182,19 +199,14 @@ class ScrollAction extends Ui {
                 if(curSecRatio <= 0.2) {
                     els.msgHa_0.style.opacity = this.calc(values.msgHa_0_opacity_in)
                     els.msgHa_0.style.transform = `translateY(${this.calc(values.msgHa_0_transY_in)}px)`
+                    els.msgHa_1.style.opacity = this.calc(values.msgHa_1_opacity_in)
                 } else {
                     els.msgHa_0.style.opacity = this.calc(values.msgHa_0_opacity_out)
                     els.msgHa_0.style.transform = `translateY(${this.calc(values.msgHa_0_transY_out)}px)`
-                }
-
-               
-                if(curSecRatio <= 0.2) { 
-                    // console.log(els.msgHa_1)
-                    els.msgHa_1.style.opacity = this.calc(values.msgHa_1_opacity_in)
-                } else {
                     els.msgHa_1.style.opacity = this.calc(values.msgHa_1_opacity_out)
                 }
 
+                // canvas
                 if(curSecRatio <= 0.5) { 
                     // console.log(els.msgHa_1)
                     els.canvas_2.style.opacity = this.calc(values.canvas_2_opacity_in)
@@ -202,6 +214,25 @@ class ScrollAction extends Ui {
                     els.canvas_2.style.opacity = this.calc(values.canvas_2_opacity_out)
                 }
                 
+                // txt 1
+                if(curSecRatio <= 0.65) { 
+                    els.msgHa_2.style.opacity = this.calc(values.msgHa_2_opacity_in)
+                    els.msgHa_2.style.transform = `translateY(${this.calc(values.msgHa_2_transY_in)}px)`
+                } else {
+                    els.msgHa_2.style.opacity = this.calc(values.msgHa_2_opacity_out)
+                    els.msgHa_2.style.transform = `translateY(${this.calc(values.msgHa_2_transY_out)}px)`
+                }
+
+                 // txt 2
+                 if(curSecRatio <= 0.85) { 
+                    els.msgHa_3.style.opacity = this.calc(values.msgHa_3_opacity_in)
+                    els.msgHa_3.style.transform = `translateY(${this.calc(values.msgHa_3_transY_in)}px)`
+                } else {
+                    els.msgHa_3.style.opacity = this.calc(values.msgHa_3_opacity_out)
+                    els.msgHa_3.style.transform = `translateY(${this.calc(values.msgHa_3_transY_out)}px)`
+                }
+
+            
                 return 
 
             case 3: 
