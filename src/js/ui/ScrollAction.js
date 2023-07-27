@@ -8,7 +8,7 @@ class ScrollAction extends Ui {
         this.prevHeight = 0; // 지나온 값
         this.curNum = 0; //현재 섹션 n
         this.curSecYOffset = 0; // 현재 섹션 y값
-        this.secChange = false; //새로운 섹션에서 true
+        this.secChange = true; //새로운 섹션에서 true
 
         this.info = [
             {

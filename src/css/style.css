@@ -4256,6 +4256,7 @@ input, textarea {
   left: 50%;
 }
 .container .con_section {
+  border-bottom: 1px solid red;
   padding-top: 30vh;
 }
 .container #sec_0 {
