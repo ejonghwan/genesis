@@ -87,7 +87,7 @@
     #sec_0 {
         background-color: #000;
         h2 {
-            font-size: 4vw;
+            font-size: 50px;
             z-index: 15;
             text-align: center;
             top: 0;
@@ -98,6 +98,7 @@
             line-height: 1;
             margin: auto;
             color: #fff;
+            letter-spacing: 30px;
         }
 
         .message {
@@ -142,7 +143,8 @@
             font-size: 30px;
             /* text-align: center; */
             width: 50%;
-            border: 1px solid red;
+            // border: 1px solid red;
+            opacity: 0;
 
             & > span {
                 &.on {

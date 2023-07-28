@@ -4263,7 +4263,7 @@ input, textarea {
   background-color: #000;
 }
 .container #sec_0 h2 {
-  font-size: 4vw;
+  font-size: 50px;
   z-index: 15;
   text-align: center;
   top: 0;
@@ -4273,6 +4273,7 @@ input, textarea {
   line-height: 1;
   margin: auto;
   color: #fff;
+  letter-spacing: 30px;
 }
 .container #sec_0 .message {
   top: 350px;
@@ -4310,7 +4311,7 @@ input, textarea {
   font-size: 30px;
   /* text-align: center; */
   width: 50%;
-  border: 1px solid red;
+  opacity: 0;
 }
 .container #sec_1 .con_sticky.m0 > span.on {
   color: #fff;
