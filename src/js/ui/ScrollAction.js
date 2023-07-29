@@ -29,9 +29,10 @@ class ScrollAction extends Ui {
                     imageSequence: [0, 205, { start: 0, end: 0.9 }],
                     canvas_opacity_out: [1, 0, { start: 0.85, end: 0.9 }],
                     // msgH_scale_out: [1, 10, { start: 0, end: 0.2 }],
-                    msgH_filter_out: [0, 10, { start: 0.02, end: 0.14 }],
+                    msgH_filter_out: [0, 15, { start: 0.02, end: 0.14 }],
                     msgH_opacity_out: [1, 0, { start: 0.07, end: 0.14 }],
                     msgH_transY_out: [0, -40, { start: 0, end: 0.1 }],
+                    msgH_letter_out: [30, 0, { start: 0, end: 0.2 }],
                     msgA_opacity_in: [0, 1, { start: 0.1, end: 0.2 }],
                     msgA_opacity_out: [1, 0, { start: 0.3, end: 0.4 }],
                     msgA_transY_in: [40, 0, { start: 0.1, end: 0.2 }],
@@ -52,12 +53,13 @@ class ScrollAction extends Ui {
                     wrap: document.querySelector('#sec_1'),
                     msg_1: document.querySelector('#sec_1 .con_sticky.m0'),
                     msg_1_all: document.querySelectorAll('#sec_1 .con_sticky.m0 > span'),
+                    vid: document.querySelector('#sec_1 .vid0'),
                 },
                 values: {
                     msg_1_opacity_in: [0, 1, { start: 0, end: 0.1 }],
                     msg_1_transY_in: [-40, 0, { start: 0, end: 0.1 }],
                     msg_1_opacity_out: [1, 0, { start: 0.9, end: 1 }],
-                    msg_1_transY_out: [0, 40, { start: 0.9, end: 1 }],
+                    msg_1_transY_out: [0, -40, { start: 0.9, end: 1 }],
                 }
             },
             {
@@ -111,7 +113,7 @@ class ScrollAction extends Ui {
                 }
             },
             {
-                type: 'sticky',
+                type: 'normal',
                 heightNum: 5,
                 secHeight: 0,
                 els: {
@@ -168,7 +170,8 @@ class ScrollAction extends Ui {
                 els.msgH.style.opacity = this.calc(values.msgH_opacity_out)
                 els.msgH.style.filter = `blur(${this.calc(values.msgH_filter_out)}px)`;
                 els.msgH.style.transform = `translateY(${this.calc(values.msgH_transY_out)}px)`;
-                els.canvas.style.opacity = this.calc(values.canvas_opacity_out)
+                els.msgH.style.letterSpacing = `${this.calc(values.msgH_letter_out)}px`;
+                els.canvas.style.opacity = this.calc(values.canvas_opacity_out);
                 
                 if(curSecRatio <= 0.25) {
                     els.msgA.style.opacity = this.calc(values.msgA_opacity_in)
@@ -193,32 +196,34 @@ class ScrollAction extends Ui {
                 if(curSecRatio <= 0.5) {
                     els.msg_1.style.opacity = this.calc(values.msg_1_opacity_in)
                     els.msg_1.style.transform = `translateY(${this.calc(values.msg_1_transY_in)}px)`
+                    els.vid.style.opacity = this.calc(values.msg_1_opacity_in)
                 } else {
                     els.msg_1.style.opacity = this.calc(values.msg_1_opacity_out)
                     els.msg_1.style.transform = `translateY(${this.calc(values.msg_1_transY_out)}px)`
+                    els.vid.style.opacity = this.calc(values.msg_1_opacity_out)
                 }
                 if(curSecRatio <= 0.19) {
-                    console.log('0 몇번출력?')
+                    // console.log('0 몇번출력?')
                     for(let i = 0; i < els.msg_1_all.length; i++) { els.msg_1_all[i].classList.remove('on') }
                     els.msg_1_all[0].classList.add('on')
                 }
-                if(curSecRatio >= 0.2 && curSecRatio <= 0.21) {
-                    console.log('1 몇번출력?')
+                if(curSecRatio >= 0.2 && curSecRatio <= 0.25) {
+                    // console.log('1 몇번출력?')
                     for(let i = 0; i < els.msg_1_all.length; i++) { els.msg_1_all[i].classList.remove('on') }
                     els.msg_1_all[1].classList.add('on')
                 }
-                if(curSecRatio >= 0.4 && curSecRatio <= 0.41) {
-                    console.log('1 몇번출력?')
+                if(curSecRatio >= 0.4 && curSecRatio <= 0.45) {
+                    // console.log('1 몇번출력?')
                     for(let i = 0; i < els.msg_1_all.length; i++) { els.msg_1_all[i].classList.remove('on') }
                     els.msg_1_all[2].classList.add('on')
                 }
-                if(curSecRatio >= 0.6 && curSecRatio <= 0.61) {
-                    console.log('1 몇번출력?')
+                if(curSecRatio >= 0.6 && curSecRatio <= 0.65) {
+                    // console.log('1 몇번출력?')
                     for(let i = 0; i < els.msg_1_all.length; i++) { els.msg_1_all[i].classList.remove('on') }
                     els.msg_1_all[3].classList.add('on')
                 }
-                if(curSecRatio >= 0.8 && curSecRatio <= 0.81) {
-                    console.log('1 몇번출력?')
+                if(curSecRatio >= 0.8 && curSecRatio <= 0.85) {
+                    // console.log('1 몇번출력?')
                     for(let i = 0; i < els.msg_1_all.length; i++) { els.msg_1_all[i].classList.remove('on') }
                     els.msg_1_all[4].classList.add('on')
                 }
@@ -328,6 +333,7 @@ class ScrollAction extends Ui {
     handleScroll() {
         this.yOffset = window.pageYOffset;
         this.curSecYOffset = Math.abs(this.yOffset - this.prevHeight);
+        // console.log( this.curSecYOffset )
         if(this.secChange === true ) this.sectionChange(); //해결. 섹션 변경될때 섹션 옵셋 0으로 초기화 
         this.scrollLoop();
     }
