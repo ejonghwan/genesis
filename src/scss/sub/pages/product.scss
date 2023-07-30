@@ -2,7 +2,7 @@
 #show_sec_1 #sec_1 .con_sticky,
 #show_sec_2 #sec_2 .con_sticky,
 #show_sec_3 #sec_3 .con_sticky,
-#show_sec_4 #sec_3 .con_sticky {
+#show_sec_4 #sec_4 .con_sticky {
     display: block;
 }
 
@@ -37,6 +37,64 @@
             left: 0;
             width: 100%;
             border-top: none;
+        }
+    }
+
+    .list01 {
+        display: flex;
+        height: 300px;
+        gap: 40px;
+        margin-top: 100px;
+
+        .img_wrap {
+            flex: 1 1 auto;
+            img {object-fit: cover;}
+            &.order {order: 2;}
+        }
+        .txt_wrap {
+            flex: 0 0 auto;
+            width: 35%;
+            strong { font-size: 20px; color: #fff; }
+            p { color: #ccc; margin-top: 50px;}
+        }
+    }
+
+    .list02 {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 30px;
+        gap: 20px;
+        li {
+            flex: 1 1 auto;
+            width: calc(50% - 20px);
+
+            .img_wrap {
+                height: 200px;
+                img { object-fit: cover; }
+            }
+
+            .txt_wrap {
+                margin-top: 20px;
+                margin-bottom: 40px;
+                color: #ccc;
+            }
+           
+        }
+    }
+
+    .tit {
+        h2 {
+            font-size: 50px;
+            color: #fff;
+        }
+        span {
+            font-size: 20px;
+            color: #999;
+        }
+        p {
+            font-size: 30px;
+            color: #ccc;
+            margin-top: 50px;
         }
     }
 
@@ -121,7 +179,7 @@
 
     
     #sec_1 {
-        padding-top: 50vh;
+        // padding-top: 20vh;
         background-color: #000;
         h2 {
             font-size: 7vw;
@@ -141,6 +199,7 @@
             width: 100%;
             height: 500px;
             font-size: 30px;
+            font-weight: 500;
             /* text-align: center; */
             width: 50%;
             // border: 1px solid red;
@@ -201,6 +260,8 @@
                 letter-spacing: 0px;
             }
         }
+
+        
         
         #canvas_01 {
             // opacity: 0;
@@ -229,6 +290,7 @@
 
         .con_sticky.m0 {
             bottom: 60%;
+            
         }
     }
    
@@ -249,5 +311,15 @@
     #sec_3 {
         background-color: #000;
     }
+
+
+    #sec_4 {
+        background-color: #000;
+    }
+
+
+
+
+    
 }
 
