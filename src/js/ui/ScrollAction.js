@@ -122,7 +122,7 @@ class ScrollAction extends Ui {
             },
             {
                 type: 'sticky',
-                heightNum: 7,
+                heightNum: 17,
                 secHeight: 0,
                 els: {
                     wrap: document.querySelector('#sec_4'),
@@ -139,30 +139,37 @@ class ScrollAction extends Ui {
                     context_3: document.querySelector('#sec_4 #canvas_04').getContext('2d'),
                     imagesArr_3: [],
                 }, 
-                values: {
+                values: { 
                     imageCount: 164,
-                    imageSequence: [0, 163, { start: 0, end: 0.4 }],
-                    canvas_opacity_in: [0, 1, { start: 0, end: 0.1 }],
-                    canvas_opacity_out: [1, 0, { start: 0.2, end: 0.3 }],
+                    imageSequence: [0, 163, { start: 0, end: 0.25 }],
+                    canvas_opacity_in: [0, 1, { start: 0, end: 0.05 }],
+                    canvas_opacity_out: [1, 0, { start: 0.2, end: 0.25 }],
 
                     imageCount_1: 33,
-                    imageSequence_1: [0, 32, { start: 0.4, end: 0.6 }],
-                    canvas_1_opacity_in: [0, 1, { start: 0, end: 0.1 }],
-                    canvas_1_opacity_out: [1, 0, { start: 0.2, end: 0.3 }],
+                    imageSequence_1: [0, 32, { start: 0.25, end: 0.45 }],
+                    canvas_1_opacity_in: [0, 1, { start: 0.25, end: 0.3}],
+                    canvas_1_opacity_out: [1, 0, { start: 0.4, end: 0.45 }],
 
                     imageCount_2: 88,
-                    imageSequence_2: [0, 87, { start: 0, end: 0.7 }],
-                    canvas_2_opacity_in: [0, 1, { start: 0, end: 0.1 }],
-                    canvas_2_opacity_out: [1, 0, { start: 0.2, end: 0.3 }],
+                    imageSequence_2: [0, 87, { start: 0.45, end: 0.7 }],
+                    canvas_2_opacity_in: [0, 1, { start: 0.45, end: 0.5 }],
+                    canvas_2_opacity_out: [1, 0, { start: 0.65, end: 0.7 }],
 
                     imageCount_3: 220,
-                    imageSequence_3: [0, 219, { start: 0, end: 1 }],
-                    canvas_3_opacity_in: [0, 1, { start: 0, end: 0.1 }],
-                    canvas_3_opacity_out: [1, 0, { start: 0.2, end: 0.3 }],
+                    imageSequence_3: [0, 219, { start: 0.8, end: 0.93 }],
+                    canvas_3_opacity_in: [0, 1, { start: 0.7, end: 0.75 }],
+                    canvas_3_opacity_out: [1, 0, { start: 0.98, end: 1 }],
                 }
             },
-        ]
-
+            {
+                type: 'normal',
+                heightNum: 5,
+                secHeight: 0,
+                els: {
+                    wrap: document.querySelector('#sec_5')
+                }
+            },
+        ],
 
         window.addEventListener('load', this.init.bind(this));
         window.addEventListener('resize', this.setHeight.bind(this));
@@ -175,19 +182,14 @@ class ScrollAction extends Ui {
 
     init() {
         this.setHeight()
-
-        //idx, src, fileStartNum, infoimgCount, arr, filetpye
+        //idx, src, fileStartNum, infoimgCount, arr, filetpye, iszero
         this.setImage(0, '../src/assets/images/product/s01/gene_s01_', 0, this.info[0].values.imageCount, this.info[0].els.imagesArr, 'png'); 
-
-        console.log(this.info[0].els.imagesArr)
         this.setImage(2, '../src/assets/images/product/s03d1/gene_s03d_', 188, this.info[2].values.imageCount, this.info[2].els.imagesArr, 'png');
         this.setImage(2, '../src/assets/images/product/s03d2/gene_s03d_', 274, this.info[2].values.imageCount_2, this.info[2].els.imagesArr_2, 'png');
         this.setImage(4, '../src/assets/images/product/s03d3/gene_s04d_', 428, this.info[4].values.imageCount, this.info[4].els.imagesArr, 'jpg');
-
         this.setImage(4, '../src/assets/images/product/s03d4/gene_s04d_', 792, this.info[4].values.imageCount_1, this.info[4].els.imagesArr_1, 'jpg');
         this.setImage(4, '../src/assets/images/product/s03d5/gene_s04d_', 1372, this.info[4].values.imageCount_2, this.info[4].els.imagesArr_2, 'jpg', true);
         this.setImage(4, '../src/assets/images/product/s03d6/gene_s04d_', 1460, this.info[4].values.imageCount_3, this.info[4].els.imagesArr_3, 'jpg', true);
-       
       
         this.info[0].els.context.drawImage(this.info[0].els.imagesArr[0], 0, 0)
         // this.info[2].els.context.drawImage(this.info[2].els.imagesArr[0], 0, 0)
@@ -267,7 +269,7 @@ class ScrollAction extends Ui {
                     for(let i = 0; i < els.msg_1_all.length; i++) { els.msg_1_all[i].classList.remove('on') }
                     els.msg_1_all[4].classList.add('on')
                 }
-                return 
+                return; 
 
             case 2: 
                 // console.log('2 ani')
@@ -331,27 +333,48 @@ class ScrollAction extends Ui {
             
             case 4: 
                 // console.log('4 ani')
-                 // 첫번쨰 캔버스
-                 let sequence4 = Math.round(this.calc(values.imageSequence))
-                 els.context.drawImage(els.imagesArr[sequence4], 0, 0);
-                //  els.canvas.style.opacity = this.calc(values.canvas_opacity_out)
+                // 첫번쨰 캔버스
+                let sequence4 = Math.round(this.calc(values.imageSequence))
+                els.context.drawImage(els.imagesArr[sequence4], 0, 0);
+                
+                // 두번쨰 캔버스
+                let sequence5 = Math.round(this.calc(values.imageSequence_1))
+                els.context_1.drawImage(els.imagesArr_1[sequence5], 0, 0);
 
-                 // 두번쨰 캔버스
-                 let sequence5 = Math.round(this.calc(values.imageSequence_1))
-                 els.context_1.drawImage(els.imagesArr_1[sequence5], 0, 0);
 
+                // 세번쨰 캔버스
+                let sequence6 = Math.round(this.calc(values.imageSequence_2))
+                els.context_2.drawImage(els.imagesArr_2[sequence6], 0, 0);
 
-                  // 세번쨰 캔버스
-                //   let sequence6 = Math.round(this.calc(values.imageSequence_2))
-                //   els.context_2.drawImage(els.imagesArr_2[sequence6], 0, 0);
+                // 네번쨰 캔버스
+                let sequence7 = Math.round(this.calc(values.imageSequence_3))
+                els.context_3.drawImage(els.imagesArr_3[sequence7], 0, 0);
 
-                //   console.log(sequence6)
+        
+                if(curSecRatio <= 0.15) {
+                    els.canvas.style.opacity = this.calc(values.canvas_opacity_in)
+                } else {
+                    els.canvas.style.opacity = this.calc(values.canvas_opacity_out)
+                }
 
-                   // 네번쨰 캔버스
-                 let sequence7 = Math.round(this.calc(values.imageSequence_3))
-                 els.context_3.drawImage(els.imagesArr_3[sequence7], 0, 0);
+                if(curSecRatio <= 0.3) {
+                    els.canvas_1.style.opacity = this.calc(values.canvas_1_opacity_in)
+                } else {
+                    els.canvas_1.style.opacity = this.calc(values.canvas_1_opacity_out)
+                }
 
-                 console.log(els.imagesArr_3[sequence7])
+                if(curSecRatio <= 0.5) {
+                    els.canvas_2.style.opacity = this.calc(values.canvas_2_opacity_in)
+                } else {
+                    els.canvas_2.style.opacity = this.calc(values.canvas_2_opacity_out)
+                }
+                
+                if(curSecRatio <= 0.85) {
+                    els.canvas_3.style.opacity = this.calc(values.canvas_3_opacity_in)
+                } else {
+                    els.canvas_3.style.opacity = this.calc(values.canvas_3_opacity_out)
+                }
+                
                 return 
 
             default : 0
@@ -389,10 +412,10 @@ class ScrollAction extends Ui {
         this.info[0].els.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio - 0.2})`
         this.info[2].els.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio - 0.25})`
         this.info[2].els.canvas_2.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio - 0})`
-        this.info[4].els.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio - 0.2})`
-        this.info[4].els.canvas_1.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio - 0.2})`
-        this.info[4].els.canvas_2.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio - 0.2})`
-        this.info[4].els.canvas_3.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio - 0.2})`
+        this.info[4].els.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio - 0})`
+        this.info[4].els.canvas_1.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio - 0})`
+        this.info[4].els.canvas_2.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio - 0})`
+        this.info[4].els.canvas_3.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio - 0})`
     }
 
     handleScroll() {
@@ -484,7 +507,7 @@ class ScrollAction extends Ui {
                 imgEl.src = `${src}0${i}.${fileType}` 
                 // console.log('1000 이하구간', i)
             }
-            imgEl.setAttribute('loading', 'lazy')
+            // imgEl.setAttribute('loading', 'lazy')
             // console.log(imgEl)
             arr.push(imgEl)
         }
@@ -500,10 +523,7 @@ class ScrollAction extends Ui {
         } else {
             conHeader.classList.remove('h_sticky')
         }
-       
-    
 
-        
     }
 
 }

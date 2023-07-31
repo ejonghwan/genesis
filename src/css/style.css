@@ -4456,6 +4456,10 @@ input, textarea {
 .container #sec_4 {
   background-color: #000;
 }
+.container #sec_5 {
+  background-color: #000;
+  padding-top: 50vh;
+}
 
 .contact .btn_wrap {
   margin-top: 30px;
