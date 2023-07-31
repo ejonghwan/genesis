@@ -4317,7 +4317,6 @@ input, textarea {
   left: 50%;
 }
 .container .con_section {
-  border-bottom: 1px solid red;
   padding-top: 30vh;
 }
 .container #sec_0 {
@@ -4454,7 +4453,22 @@ input, textarea {
   background-color: #000;
 }
 .container #sec_4 {
+  padding-top: 0vh;
   background-color: #000;
+}
+.container #sec_4 .message {
+  opacity: 0;
+  color: #fff;
+}
+.container #sec_4 .message strong {
+  font-weight: 400;
+  font-size: 40px;
+}
+.container #sec_4 .message p {
+  font-size: 25px;
+}
+.container #sec_4 .message.m5 {
+  left: -280px;
 }
 .container #sec_5 {
   background-color: #000;

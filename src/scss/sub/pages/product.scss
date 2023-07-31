@@ -137,7 +137,7 @@
     }
     
     .con_section {
-        border-bottom: 1px solid red;
+        // border-bottom: 1px solid red;
         padding-top: 30vh;
     }
 
@@ -314,12 +314,31 @@
 
 
     #sec_4 {
+        padding-top: 0vh;
         background-color: #000;
+        .message {
+            opacity: 0;
+            color: #fff;
+
+            strong {
+                font-weight: 400;
+                font-size: 40px;
+            }
+            p {
+                font-size: 25px;
+            }
+
+            &.m5 {
+                left: -280px;
+            }
+        }
     }
 
     #sec_5 {
         background-color: #000;
         padding-top: 50vh;
+
+       
     }
 
 

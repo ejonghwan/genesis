@@ -122,7 +122,7 @@ class ScrollAction extends Ui {
             },
             {
                 type: 'sticky',
-                heightNum: 17,
+                heightNum: 15,
                 secHeight: 0,
                 els: {
                     wrap: document.querySelector('#sec_4'),
@@ -138,27 +138,60 @@ class ScrollAction extends Ui {
                     canvas_3: document.querySelector('#sec_4 #canvas_04'),
                     context_3: document.querySelector('#sec_4 #canvas_04').getContext('2d'),
                     imagesArr_3: [],
+
+                    msg_0: document.querySelector('#sec_4 .message.m0'),
+                    msg_1: document.querySelector('#sec_4 .message.m1'),
+                    msg_2: document.querySelector('#sec_4 .message.m2'),
+                    msg_3: document.querySelector('#sec_4 .message.m3'),
+                    msg_4: document.querySelector('#sec_4 .message.m4'),
+                    msg_5: document.querySelector('#sec_4 .message.m5'),
                 }, 
                 values: { 
                     imageCount: 164,
                     imageSequence: [0, 163, { start: 0, end: 0.25 }],
                     canvas_opacity_in: [0, 1, { start: 0, end: 0.05 }],
                     canvas_opacity_out: [1, 0, { start: 0.2, end: 0.25 }],
+                    msg_0_opacity_in: [0, 1, { start: 0, end: 0.01 }],
+                    msg_0_opacity_out: [1, 0, { start: 0.02, end: 0.025 }],
+                    msg_0_scale_out: [1, 10, { start: 0.02, end: 0.04 }],
+                    msg_1_opacity_in: [0, 1, { start: 0.15, end: 0.17 }],
+                    msg_1_transY_in: [50, 0, { start: 0.15, end: 0.17 }],
+                    msg_1_opacity_out: [1, 0, { start: 0.24, end: 0.27 }],
+                    msg_1_transY_out: [0, -50, { start: 0.24, end: 0.27 }],
+
 
                     imageCount_1: 33,
                     imageSequence_1: [0, 32, { start: 0.25, end: 0.45 }],
                     canvas_1_opacity_in: [0, 1, { start: 0.25, end: 0.3}],
-                    canvas_1_opacity_out: [1, 0, { start: 0.4, end: 0.45 }],
+                    canvas_1_opacity_out: [1, 0, { start: 0.4, end: 0.55 }],
+                    msg_2_opacity_in: [0, 1, { start: 0.33, end: 0.35 }],
+                    msg_2_transY_in: [50, 0, { start: 0.33, end: 0.35 }],
+                    msg_2_opacity_out: [1, 0, { start: 0.4, end: 0.55 }],
+                    msg_2_transY_out: [0, -50, { start: 0.4, end: 0.55 }],
 
                     imageCount_2: 88,
                     imageSequence_2: [0, 87, { start: 0.45, end: 0.7 }],
                     canvas_2_opacity_in: [0, 1, { start: 0.45, end: 0.5 }],
-                    canvas_2_opacity_out: [1, 0, { start: 0.65, end: 0.7 }],
+                    canvas_2_opacity_out: [1, 0, { start: 0.7, end: 0.75 }],
+                    msg_3_opacity_in: [0, 1, { start: 0.55, end: 0.6 }],
+                    msg_3_transY_in: [50, 0, { start: 0.55, end: 0.6 }],
+                    msg_3_opacity_out: [1, 0, { start: 0.65, end: 0.75 }],
+                    msg_3_transY_out: [0, -50, { start: 0.65, end: 0.75 }],
 
                     imageCount_3: 220,
-                    imageSequence_3: [0, 219, { start: 0.8, end: 0.93 }],
-                    canvas_3_opacity_in: [0, 1, { start: 0.7, end: 0.75 }],
-                    canvas_3_opacity_out: [1, 0, { start: 0.98, end: 1 }],
+                    imageSequence_3: [0, 219, { start: 0.75, end: 0.93 }],
+                    canvas_3_opacity_in: [0, 1, { start: 0.75, end: 0.8 }],
+                    canvas_3_opacity_out: [1, 0, { start: 0.95, end: 1 }],
+                    msg_4_opacity_in: [0, 1, { start: 0.75, end: 0.8 }],
+                    msg_4_transY_in: [50, 0, { start: 0.75, end: 0.8 }],
+                    msg_4_opacity_out: [1, 0, { start: 0.85, end: 0.9 }],
+                    msg_4_transY_out: [0, -50, { start: 0.85, end: 0.9 }],
+                    msg_5_opacity_in: [0, 1, { start: 0.88, end: 0.93 }],
+                    msg_5_transX_in: [150, 0, { start: 0.88, end: 0.93 }],
+                    msg_5_opacity_out: [1, 0, { start: 0.97, end: 1 }],
+                    // msg_5_transX_out: [0, -100, { start: 0.97, end: 1 }],
+
+                    
                 }
             },
             {
@@ -350,6 +383,12 @@ class ScrollAction extends Ui {
                 let sequence7 = Math.round(this.calc(values.imageSequence_3))
                 els.context_3.drawImage(els.imagesArr_3[sequence7], 0, 0);
 
+                if(curSecRatio <= 0.01) {
+                    els.msg_0.style.opacity = this.calc(values.msg_0_opacity_in)
+                } else {
+                    els.msg_0.style.opacity = this.calc(values.msg_0_opacity_out)
+                    els.msg_0.style.transform = `scale(${this.calc(values.msg_0_scale_out)})`
+                }
         
                 if(curSecRatio <= 0.15) {
                     els.canvas.style.opacity = this.calc(values.canvas_opacity_in)
@@ -357,22 +396,53 @@ class ScrollAction extends Ui {
                     els.canvas.style.opacity = this.calc(values.canvas_opacity_out)
                 }
 
-                if(curSecRatio <= 0.3) {
-                    els.canvas_1.style.opacity = this.calc(values.canvas_1_opacity_in)
+                if(curSecRatio <= 0.22) {
+                    els.msg_1.style.opacity = this.calc(values.msg_1_opacity_in)
+                    els.msg_1.style.transform = `translateY(${this.calc(values.msg_1_transY_in)}px)`
                 } else {
-                    els.canvas_1.style.opacity = this.calc(values.canvas_1_opacity_out)
+                    els.msg_1.style.opacity = this.calc(values.msg_1_opacity_out)
+                    els.msg_1.style.transform = `translateY(${this.calc(values.msg_1_transY_out)}px)`
                 }
 
-                if(curSecRatio <= 0.5) {
+
+                if(curSecRatio <= 0.35) {
+                    els.canvas_1.style.opacity = this.calc(values.canvas_1_opacity_in)
+                    els.msg_2.style.opacity = this.calc(values.msg_2_opacity_in)
+                    els.msg_2.style.transform = `translateY(${this.calc(values.msg_2_transY_in)}px)`
+                } else {
+                    els.canvas_1.style.opacity = this.calc(values.canvas_1_opacity_out)
+                    els.msg_2.style.opacity = this.calc(values.msg_2_opacity_out)
+                    els.msg_2.style.transform = `translateY(${this.calc(values.msg_2_transY_out)}px)`
+                    
+                }
+
+                if(curSecRatio <= 0.6) {
                     els.canvas_2.style.opacity = this.calc(values.canvas_2_opacity_in)
+                    els.msg_3.style.opacity = this.calc(values.msg_3_opacity_in)
+                    els.msg_3.style.transform = `translateY(${this.calc(values.msg_3_transY_in)}px)`
                 } else {
                     els.canvas_2.style.opacity = this.calc(values.canvas_2_opacity_out)
+                    els.msg_3.style.opacity = this.calc(values.msg_3_opacity_out)
+                    els.msg_3.style.transform = `translateY(${this.calc(values.msg_3_transY_out)}px)`
                 }
                 
                 if(curSecRatio <= 0.85) {
                     els.canvas_3.style.opacity = this.calc(values.canvas_3_opacity_in)
+                    els.msg_4.style.opacity = this.calc(values.msg_4_opacity_in)
+                    els.msg_4.style.transform = `translateY(${this.calc(values.msg_4_transY_in)}px)`
                 } else {
                     els.canvas_3.style.opacity = this.calc(values.canvas_3_opacity_out)
+                    els.msg_4.style.opacity = this.calc(values.msg_4_opacity_out)
+                    els.msg_4.style.transform = `translateY(${this.calc(values.msg_4_transY_out)}px)`
+                }
+
+                
+                if(curSecRatio <= 0.96) {
+                    els.msg_5.style.opacity = this.calc(values.msg_5_opacity_in)
+                    els.msg_5.style.transform = `translateX(${this.calc(values.msg_5_transX_in)}px)`
+                } else {
+                    els.msg_5.style.opacity = this.calc(values.msg_5_opacity_out)
+                    // els.msg_5.style.transform = `translateX(${this.calc(values.msg_5_transX_out)}px)`
                 }
                 
                 return 
