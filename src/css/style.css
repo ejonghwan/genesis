@@ -1079,13 +1079,13 @@ button.header_all_menu.on span.line:before {
 }
 .header_nav_menu .tab_wrap > .right .car_list_all > li > .txt > p {
   font-size: 1.2rem;
-  color: #626262;
+  color: #949494;
   display: inline-block;
   padding-left: 5px;
 }
 .header_nav_menu .tab_wrap > .right .car_list_all > li > .txt .ev, .header_nav_menu .tab_wrap > .right .car_list_all > li > .txt .new {
   position: absolute;
-  top: 0;
+  top: 7px;
   right: 0;
   display: inline-block;
   padding: 1px 4px 0px;
@@ -4199,6 +4199,9 @@ input, textarea {
   display: block;
 }
 
+.container {
+  color: #cbcbcb;
+}
 .container .con_header {
   position: absolute;
   top: 70px;
@@ -4373,6 +4376,7 @@ input, textarea {
   width: 50%;
   opacity: 0;
   z-index: 10;
+  color: #343434;
 }
 .container #sec_1 .con_sticky.m0 > span.on {
   color: #fff;
@@ -4459,10 +4463,13 @@ input, textarea {
 .container #sec_4 .message {
   opacity: 0;
   color: #fff;
+  height: 10em;
 }
 .container #sec_4 .message strong {
   font-weight: 400;
   font-size: 40px;
+  display: block;
+  margin-bottom: 20px;
 }
 .container #sec_4 .message p {
   font-size: 25px;
@@ -4473,8 +4480,68 @@ input, textarea {
 .container #sec_5 {
   background-color: #000;
   padding-top: 50vh;
+  padding-bottom: 50px;
+}
+.container #sec_5 .tab_type1 .tab_header {
+  width: 50%;
+  margin: 0 auto 60px;
 }
 
+@media screen and (max-width: 760px) {
+  .container #sec_0 h2 {
+    font-size: 30px;
+  }
+  .container #sec_1 .con_sticky.m0 {
+    font-size: 20px;
+    width: 70%;
+  }
+  .container #sec_2 .description {
+    padding: 0 40px;
+  }
+  .container #sec_3 .tit h2 {
+    font-size: 30px;
+  }
+  .container #sec_3 .tit span {
+    font-size: 17px;
+  }
+  .container #sec_3 .tit p {
+    font-size: 20px;
+  }
+  .container #sec_3 .list01 {
+    margin-top: 50px;
+    display: block;
+  }
+  .container #sec_3 .list01 .txt_wrap {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .container #sec_3 .list01 .txt_wrap p {
+    margin-top: 10px;
+  }
+  .container #sec_3 .list02 {
+    display: block;
+  }
+  .container #sec_3 .list02 > li {
+    width: 100%;
+  }
+  .container #sec_4 .message strong {
+    font-size: 20px;
+  }
+  .container #sec_4 .message p {
+    padding: 0 20px;
+    font-size: 16px;
+  }
+  .container #sec_4 .message.m5 {
+    left: 0;
+  }
+  .container #sec_5 .header_nav_menu .tab_wrap > .right .car_list_all > li {
+    padding: 10px;
+    width: 50%;
+  }
+  .container #sec_5 .tab_type1 .tab_header {
+    width: 100%;
+  }
+}
 .contact .btn_wrap {
   margin-top: 30px;
 }

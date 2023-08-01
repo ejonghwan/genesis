@@ -9,12 +9,14 @@ class ScrollAction extends Ui {
         this.curNum = 0; //현재 섹션 n
         this.curSecYOffset = 0; // 현재 섹션 y값
         this.secChange = true; //새로운 섹션에서 true
+        this.title = document.querySelector('.con_hader_cur');
 
         this.info = [
             {
                 type: 'sticky',
                 heightNum: 5,
                 secHeight: 0,
+                title: "제네시스 브랜드",
                 els: {
                     wrap: document.querySelector('#sec_0'),
                     msgH: document.querySelector('#sec_0 .g_sans.m0'), 
@@ -48,6 +50,7 @@ class ScrollAction extends Ui {
             {
                 type: 'sticky',
                 heightNum: 2,
+                title: "제네시스 브랜드",
                 secHeight: 0,
                 els: {
                     wrap: document.querySelector('#sec_1'),
@@ -66,6 +69,7 @@ class ScrollAction extends Ui {
                 type: 'sticky',
                 heightNum: 7,
                 secHeight: 0,
+                title: "디자인",
                 els: {
                     wrap: document.querySelector('#sec_2'),
                     dimd: document.querySelector('#sec_2 .dimd_sticky'),
@@ -116,6 +120,7 @@ class ScrollAction extends Ui {
                 type: 'normal',
                 heightNum: 5,
                 secHeight: 0,
+                title: "제네시스 테크놀로지",
                 els: {
                     wrap: document.querySelector('#sec_3')
                 }
@@ -124,6 +129,7 @@ class ScrollAction extends Ui {
                 type: 'sticky',
                 heightNum: 15,
                 secHeight: 0,
+                title: "제네시스 엔진",
                 els: {
                     wrap: document.querySelector('#sec_4'),
                     canvas: document.querySelector('#sec_4 #canvas_01'),
@@ -198,6 +204,7 @@ class ScrollAction extends Ui {
                 type: 'normal',
                 heightNum: 5,
                 secHeight: 0,
+                title: "제네시스 모델",
                 els: {
                     wrap: document.querySelector('#sec_5')
                 }
@@ -476,6 +483,7 @@ class ScrollAction extends Ui {
             }
         }
         document.body.setAttribute('id', `show_sec_${this.curNum}`)
+        this.title.innerHTML = this.info[this.curNum].title;
         let heightRatio = window.innerHeight / 1080;
 
         // canvas 설정
@@ -510,11 +518,13 @@ class ScrollAction extends Ui {
         if(this.yOffset > this.prevHeight + this.info[this.curNum].secHeight) {
             this.secChange = true;
             if(this.curNum === this.info.length - 1) return;
+            this.title.innerHTML = this.info[this.curNum + 1].title;
             this.curNum++
         }
         if(this.yOffset < this.prevHeight) {
             this.secChange = true;
             if(this.curNum === 0) return;
+            this.title.innerHTML = this.info[this.curNum - 1].title;
             this.curNum--
         }
         document.body.setAttribute('id', `show_sec_${this.curNum}`)

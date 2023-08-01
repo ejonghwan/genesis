@@ -7,6 +7,7 @@
 }
 
 .container {
+    color: #cbcbcb;
     .con_header {
         position: absolute;
         top: 70px;
@@ -205,6 +206,7 @@
             // border: 1px solid red;
             opacity: 0;
             z-index: 10;
+            color: #343434;
             & > span {
                
                 &.on {
@@ -319,10 +321,13 @@
         .message {
             opacity: 0;
             color: #fff;
-
+            height: 10em;
             strong {
                 font-weight: 400;
                 font-size: 40px;
+                display: block;
+                margin-bottom: 20px;
+            
             }
             p {
                 font-size: 25px;
@@ -337,14 +342,101 @@
     #sec_5 {
         background-color: #000;
         padding-top: 50vh;
+        padding-bottom: 50px;
 
-       
+        .tab_type1 {
+            .tab_header {
+                width: 50%;
+                margin: 0 auto 60px;
+            }
+        }
     }
+}
 
 
 
 
 
-    
+
+@include mobile {
+    .container {
+        #sec_0 {
+            h2 {
+                font-size: 30px;
+            }
+        }
+
+        #sec_1 {
+            .con_sticky.m0 {
+                font-size: 20px;
+                width: 70%;
+            }
+        }
+
+        #sec_2 {
+            .description {
+                padding: 0 40px;
+            }
+        }
+
+        #sec_3 {
+            .tit {
+                h2 {font-size: 30px;}
+                span {font-size: 17px;}
+                p {font-size: 20px;}
+            }
+
+            .list01 {
+                margin-top: 50px;
+                display: block;
+
+                .txt_wrap {
+                    width: 100%;
+                    margin-top: 20px;
+                    p {margin-top: 10px;}
+                }
+            }
+
+            .list02 {
+                display: block;
+                & > li {
+                    width: 100%;
+                }
+            }
+        }
+
+        #sec_4 {
+            .message {
+                strong {
+                    font-size: 20px;
+                }
+                p {
+                    padding: 0 20px;
+                    font-size: 16px;
+                }
+            }
+
+            .message.m5 {
+                left: 0;
+            }
+        }
+
+        #sec_5 {
+
+            .header_nav_menu {
+                .tab_wrap > .right {
+                    .car_list_all > li {
+                        padding: 10px;
+                        width: 50%;
+                    }
+                }
+            }
+            .tab_type1 {
+                .tab_header {
+                    width: 100%;
+                }
+            }
+        }
+    }
 }
 
