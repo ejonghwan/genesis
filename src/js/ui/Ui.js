@@ -77,11 +77,7 @@ class Ui {
 
     imageLazyLoad(els) {
         const lazyEls = document.querySelectorAll(els);
-        const options = {
-            // root: document.querySelector('.sub_visual'),
-            // rootMargin: '0px',
-            // threshold: 1
-        }
+        const options = {}
         const callback = (entries, observer) => {
             entries.forEach(entry => {
                 if(entry.isIntersecting) {
@@ -100,11 +96,7 @@ class Ui {
 
     bgLazyLoad(els) {
         const lazyEls = document.querySelectorAll(els);
-        const options = {
-            // root: document.querySelector('.sub_visual'),
-            // rootMargin: '0px',
-            // threshold: 1
-        }
+        const options = {}
         const callback = (entries, observer) => {
             entries.forEach(entry => {
                 if(entry.isIntersecting) {

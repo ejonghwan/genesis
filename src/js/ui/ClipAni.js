@@ -31,11 +31,6 @@ class ClipAni extends Ui {
     }
 
 
-    resize() {
-
-    }
-
-
     animate(time) {
         let timelast = time - this.startTime;
 		let progress = timelast / this.duration || 500;
