@@ -3432,6 +3432,7 @@ input, textarea {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  background-color: black;
   margin-bottom: 60px;
 }
 .evt_banner .tit {
@@ -3486,11 +3487,11 @@ input, textarea {
   margin-top: 20px;
 }
 .load_wrap .left {
-  background-color: rgb(94, 140, 181);
   flex: 0 0 auto;
   width: 50%;
   color: #fff;
   padding: 30px 30px 30px 50px;
+  background-color: black;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -3507,11 +3508,11 @@ input, textarea {
   min-height: 110px;
 }
 .load_wrap .right {
-  background-color: rgb(61, 95, 124);
   flex: 0 0 auto;
   width: 50%;
   color: #fff;
   padding: 30px 30px 30px 50px;
+  background-color: black;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

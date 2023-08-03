@@ -14,12 +14,13 @@
         // text-decoration: underline;
     }
     .left {
-        background-color: rgb(94, 140, 181);
+        // background-color: rgb(94, 140, 181);
         flex: 0 0 auto;
         width: 50%;
         color: #fff;
         padding: 30px 30px 30px 50px;
         // background: url('../../src/assets/images/main/genesis-motorshow-guangzhou-ectrified-gv70-1920x960.jpg') no-repeat center/cover;
+        background-color: black;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -37,12 +38,13 @@
     }
 
     .right {
-        background-color: rgb(61, 95, 124);
+        // background-color: rgb(61, 95, 124);
         flex: 0 0 auto;
         width: 50%;
         color: #fff;
         padding: 30px 30px 30px 50px;
         // background: url('../../src/assets/images/main/genesis-kr-main-genesis-events-17-desktop-1920x960-ko-2.jpg') no-repeat center/cover;
+        background-color: black;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
