@@ -3428,7 +3428,9 @@ input, textarea {
 }
 .evt_banner {
   padding: 60px 0 100px;
-  background: black url("../../src/assets/images/main/genesis-ev-service-package-01-pr-center.jpg") no-repeat center/cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   background-attachment: fixed;
   margin-bottom: 60px;
 }
@@ -3489,7 +3491,9 @@ input, textarea {
   width: 50%;
   color: #fff;
   padding: 30px 30px 30px 50px;
-  background: url("../../src/assets/images/main/genesis-motorshow-guangzhou-ectrified-gv70-1920x960.jpg") no-repeat center/cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .load_wrap .left strong {
   font-size: 2.5rem;
@@ -3508,7 +3512,9 @@ input, textarea {
   width: 50%;
   color: #fff;
   padding: 30px 30px 30px 50px;
-  background: url("../../src/assets/images/main/genesis-kr-main-genesis-events-17-desktop-1920x960-ko-2.jpg") no-repeat center/cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .load_wrap .right strong {
   font-size: 2.5rem;
@@ -3520,50 +3526,6 @@ input, textarea {
   margin-top: 5px;
   max-width: 300px;
   min-height: 110px;
-}
-
-.award {
-  height: 350px !important;
-  position: relative;
-}
-.award .swiper-slide .item {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: url("../../src/assets/images/main/genesis-kr-gallery-g80-sport-IT2A-01-desktop-1220xflexible.jpg") no-repeat center/cover;
-}
-.award .swiper-slide .item::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: black;
-  opacity: 0.5;
-}
-.award .swiper-slide .item .tit {
-  position: absolute;
-  top: 67px;
-  left: 60px;
-  margin: auto;
-  z-index: 5;
-  text-align: left;
-}
-.award .swiper-slide:nth-child(2) .item {
-  background: url("../../src/assets/images/main/genesis-kr-main-car-award-23-convertible-desktop-1920x960.png") no-repeat center/cover;
-}
-.award .swiper-slide:nth-child(3) .item {
-  background: url("../../src/assets/images/main/genesis-kr-main-reddot-car-award-23-desktop-1920x960.jpg") no-repeat center/cover;
-}
-.award .swiper-slide:nth-child(4) .item {
-  background: url("../../src/assets/images/main/genesis-kr-main-motortrend-award-23-desktop-1920x960.jpg") no-repeat center/cover;
-}
-.award .swiper-slide:nth-child(5) .item {
-  background: url("../../src/assets/images/main/genesis-kr-highlights-g90-gallery-desktop-1920x960-ko.jpg") no-repeat center/cover;
 }
 
 @media screen and (max-width: 760px) {

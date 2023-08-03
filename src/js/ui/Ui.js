@@ -98,6 +98,26 @@ class Ui {
         lazyEls.forEach(el => observer.observe(el));
     }
 
+    bgLazyLoad(els) {
+        const lazyEls = document.querySelectorAll(els);
+        const options = {
+            // root: document.querySelector('.sub_visual'),
+            // rootMargin: '0px',
+            // threshold: 1
+        }
+        const callback = (entries, observer) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    const target = entry.target;
+                    target.style.backgroundImage = `url(${target.dataset.src})`
+                    if(entry.isIntersecting) observer.unobserve(target)
+                }
+            })
+        }
+        const observer = new IntersectionObserver(callback, options);
+        lazyEls.forEach(el => observer.observe(el));
+    }
+
 
     throttle(cb) {
         let rAfTimeout = null;
