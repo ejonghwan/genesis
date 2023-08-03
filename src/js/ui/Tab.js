@@ -46,7 +46,6 @@ class Tab extends Ui {
         
     }
 
-
     action(e) {
         e.preventDefault()
         e.stopPropagation()
@@ -67,10 +66,6 @@ class Tab extends Ui {
         return data;
     }
 
-
-
-    
-    
 }
 
 export default Tab;
