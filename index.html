@@ -957,7 +957,7 @@
 
 
 <script type="module">
-    import { Tab, Ui, Accordion, Popup, Animete, ClipAni, ObAnimation } from './src/js/app.js';
+    import { Tab, Ui, Accordion, Popup, ClipAni } from './src/js/app.js';
     const all_warp = document.querySelector('.tab_wrap .tab_all')
     const sedan_wrap = document.querySelector('.tab_wrap .tab_sedan')
     const suv_wrap = document.querySelector('.tab_wrap .tab_suv')
@@ -965,10 +965,6 @@
     let swi = null;
 
 
-    new ObAnimation('.ani', {
-        className: 'show',
-    })
-    
     ui.bgLazyLoad('.bg_lazy');
 
     // tab
@@ -982,10 +978,7 @@
             // console.log(idx)
         },
         callback: function(idx) {
-            // console.log(callback)
-
         // console.log('cb idx??', idx)
-
         let all = handleTabClick({ tabType: '.tab_all', })
         let sedan = handleTabClick({ tabType: '.tab_sedan', })
         let suv = handleTabClick({ tabType: '.tab_suv', })
@@ -1190,33 +1183,6 @@
     // }, 500))
 
 
-
-    // // 메인 비주얼
-    const main_visual = new Swiper(".mySwiper", {
-        spaceBetween: 30,
-        effect: "fade",
-        loop: true,
-        navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-        el: ".swiper-pagination",
-        type: "progressbar",
-        clickable: true,
-        },
-
-    
-        scrollbar: {
-            el: ".swiper-scrollbar",
-            hide: true,
-        },
-
-        on: {
-            slideChange: function() {
-        }
-        }
-    });
 
 
 </script>
