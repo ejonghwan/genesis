@@ -497,8 +497,6 @@ keypress: 키를 눌렀다가 땔때 (한자같은 특수키 지원안됨) 추�
 fecthData(setURL('interest'));
 
 btnSearch.addEventListener('click', getSearch);
-
-//검색창에 키보드 이벤트 연결
 input.addEventListener('keypress', (e) => e.code === 'Enter' && getSearch());
 
 //사용자 아이디 클릭시 해당 갤러리 확인 이벤트
@@ -511,7 +509,6 @@ document.body.addEventListener('click', (e) => {
 btnInterest.addEventListener('click', () => fecthData(setURL('interest')));
 btnMine.addEventListener('click', () => fecthData(setURL('user', myId)));
 
-//인수값에 따른 데이터 호출 URL반환 함수
 function setURL(type, opt) {
 	const baseURL = `https://www.flickr.com/services/rest/?format=json&nojsoncallback=1&api_key=${api_key}&per_page=${num}&method=`;
 	const method_interest = 'flickr.interestingness.getList';
@@ -581,7 +578,6 @@ function setLoading() {
 		el.onerror = () => {
 			el.setAttribute('src', 'https://www.flickr.com/images/buddyicon.gif');
 		};
-		//디폴트로 변경된 이미지까지 포함해서 카운트 (무한로딩에 빠지지 않음)
 		el.onload = () => {
 			count++;
 			count === imgs.length && isoLayout();
@@ -630,7 +626,7 @@ function removePop() {
 
 
 <script type="module">
-    import { Tab, Ui, Accordion, Popup, Animete, ClipAni, Loading } from '../src/js/app.js';
+    import { Loading } from '../src/js/app.js';
     const loading_word = new Loading('.loading')
 
 </script>

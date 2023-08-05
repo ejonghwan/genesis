@@ -466,7 +466,6 @@
             if (e.target.className === 'close') removePop();
         });
 
-        //데이터 fetching함수
         async function fetchData() {
         const key = 'AIzaSyChzicx_fRjO6YQhLL-C8tDxCq0E46sxtk'
         const list = 'PLQytOX-GQNjpnWvXUwth7PTdoEA2kZX16'
@@ -478,7 +477,6 @@
             createList(json.items);
         }
 
-        //동적으로 목록 생성함수
         function createList(arr) {
             let tags = '';
 
@@ -521,12 +519,10 @@
             pop.className = 'yout_pop';
             pop.innerHTML = tags;
             document.body.append(pop);
-            //특정 코드를 강제로 동기화시키고 싶을때는 setTimeout에 delay를 0초로 지정해서 코드를 패키징 (강제로 wep api에 넘어갔다가 다시 콜스택 젤 마지막에 등록)
             setTimeout(() => document.querySelector('.yout_pop').classList.add('on'), 0);
             document.body.style.overflow = 'hidden';
         }
 
-        //팝업제거 함수
         function removePop() {
             document.querySelector('.yout_pop').classList.remove('on');
             setTimeout(() => document.querySelector('.yout_pop').remove(), 1000);

@@ -216,8 +216,6 @@ class ScrollAction extends Ui {
         window.addEventListener('scroll', this.handleScroll.bind(this));
         // window.addEventListener('DOMContentLoaded', this.setHeight.bind(this));
     }
-
-
     
 
     init() {
@@ -458,7 +456,6 @@ class ScrollAction extends Ui {
         }
     }
 
-
     setHeight() {
         let totalHeight = 0;
         this.yOffset = window.pageYOffset;
@@ -564,8 +561,6 @@ class ScrollAction extends Ui {
 
         return result;
     }
-
-    
 
     setImage(idx, src, startNum, imageCount, arr, fileType, noneZero) {
         let imgEl = null;

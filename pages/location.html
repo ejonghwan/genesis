@@ -54,9 +54,9 @@
                 // 서비스 아이디, 템플릿 아이디
                 emailjs.sendForm('service_rq833zr', 'template_iav35ok', this)
                     .then(function() {
-                        console.log('SUCCESS!');
+                        alert('문의 내용이 전송되었습니다')
                     }, function(error) {
-                        console.log('FAILED...', error);
+                        alert(`문의 내용이 실패했습니다. ${error}`)
                     });
             });
         }
@@ -603,10 +603,11 @@ const handleResize = (map, moveLatLon) => {
     map.setCenter(moveLatLon);
 }
 
-
 mapData().then(d => {
     const map_move = document.querySelectorAll('.map_move')
     let map_idx = 0;
+
+    console.log(d)
 
     const region_info = []
     d.map(i => i.items.map(info => info.info.map(item => region_info.push(item))))
@@ -634,6 +635,7 @@ mapData().then(d => {
         });
         marker.setMap(map);
 
+        
         // 인포윈도우를 생성
         const infowindow = new kakao.maps.InfoWindow({
             position : new kakao.maps.LatLng(info.letlong.lat, info.letlong.long), 
@@ -669,9 +671,9 @@ mapData().then(d => {
 
     // 리사이즈시 센터로
     window.addEventListener('resize', ui.lastCallDebounce(
-            () => handleResize(map, new kakao.maps.LatLng(region_info[map_idx].letlong.lat, region_info[map_idx].letlong.long)), 
-            300 
-        ))
+        () => handleResize(map, new kakao.maps.LatLng(region_info[map_idx].letlong.lat, region_info[map_idx].letlong.long)), 
+        300 
+    ))
 
     // 트래픽 보기
     btn_traffic.addEventListener('click', e => {
@@ -692,7 +694,6 @@ mapData().then(d => {
 })
 
 
-window.addEventListener( 'scroll', ui.setThrottle(() => console.log('inner ??'), 'b') )
 
 
 </script>
