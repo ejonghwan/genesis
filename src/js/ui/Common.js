@@ -27,10 +27,6 @@ class Common {
             oneTab: true,
         })
 
-        // 푸터 공지
-
-        
-        
         new Swiper(".noti_Swiper", {
             centeredSlides: true,
             direction: 'vertical',
@@ -117,9 +113,7 @@ class Common {
                     prevEl: ".swiper.header_nav .swiper-button-prev"
                 },
                 on: {
-                    init() {
-                        // console.log('nav swiper init?')
-                    }
+                    init() {}
                 }
             });
 

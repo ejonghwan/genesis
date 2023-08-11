@@ -18,8 +18,6 @@ class Popup extends Ui {
         this.accList = accList;
         this.acc = new Accessibility(this.accList);
 
-        // this.init();
-        window.addEventListener('resize', this.init.bind(this))
         this.openBtn.addEventListener('click', this.popOpen.bind(this))
         this.dimd.addEventListener('click', this.popClose.bind(this))
         for(let i = 0; i < this.closeBtn.length; i++) {
@@ -27,17 +25,9 @@ class Popup extends Ui {
         }
     }
 
-    init() {
-        // console.log('popup class')
-    }
-
     resize() {
         this.popClose();
     }
-
-
-
-
 
     popOpen() {
 

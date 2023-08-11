@@ -16,17 +16,10 @@ class ObAnimation extends Ui {
                 item.target.classList.toggle(this.className, item.isIntersecting)
                 if(item.isIntersecting) observer.unobserve(item.target) // 이미 생성된건 유지
             })
-            // console.log(entries)
-        }, {
-            // threshold: 1, // 임계값 0 ~ 1
-            // rootMargin: '-100px', // 엘리먼트가 사라져있는 위치
-            // root: ,
-            // threshold: 1,
-        })
+        },)
 
 
         this.els.forEach((item, idx) => {
-            // console.log(idx)
             observer.observe(item)
         })
         

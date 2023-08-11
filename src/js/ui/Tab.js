@@ -14,10 +14,8 @@ class Tab extends Ui {
         this.callback = callback;
         this.current = current ;
 
-        // console.log('this.data:', this.data)
 
         this.init();
-        // console.log('??????????????????',this.el)
         this.el.addEventListener('click', this.action.bind(this), false)
 
     }
@@ -62,6 +60,7 @@ class Tab extends Ui {
     }
 
     async render() {
+        // data가 붙는 탭
         const data = await request(this.data);
         return data;
     }

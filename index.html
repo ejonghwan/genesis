@@ -1000,7 +1000,6 @@
 
     // 돔 생성
     function createDOM(el, data) {
-        console.log(data)
         const target = document.querySelector(el)
         let str = '';
         for(let i = 0; i < data.length; i++) {
@@ -1117,7 +1116,6 @@
                 let num = Number(dataset.substr(dataset.length - 1))
                 carImage[num].style.clip = `rect(0px, ${0}px, 610px, 0px)`
 
-                // console.log(carImage)
                 const ani = new ClipAni(carImage[num], {
                     limit: w_width,
                     els: carImage,

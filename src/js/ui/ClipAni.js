@@ -15,8 +15,6 @@ class ClipAni extends Ui {
         this.prev_el = prev_el;
         this.callback = callback;
 
-        // console.log('constr???', prev_el)
-
         this.init();
         requestAnimationFrame(this.animate.bind(this))
         
@@ -38,9 +36,6 @@ class ClipAni extends Ui {
         progress < 0 && (progress = 0);
 		progress > 1 && (progress = 1);
         progress < 1 ? requestAnimationFrame(this.animate.bind(this)) : this.callback && setTimeout(this.callback, 0);
-
-        // console.log('next?', progress)
-
         this.el.style.clip = `rect(0px, ${progress * this.limit}px, 610px, 0px)`
     }
 

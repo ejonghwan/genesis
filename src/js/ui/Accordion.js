@@ -15,7 +15,6 @@ class Accordion extends Ui {
 
 
     init() {
-        // console.log('Accordion init')
         for(let i = 0; i < this.heads.length; i++) {
             this.setAttr(this.heads[i], 'data-acco_head', i)
             

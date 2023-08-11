@@ -1,7 +1,5 @@
 class Ui {
-    constructor() {
-        // this.eventBlocker = true;
-    }
+    constructor() {}
 
    
     emit(el, event, data) {
@@ -34,7 +32,6 @@ class Ui {
     }
 
     toggleClass(removeEls, addEl, className) {
-        // if(!this.typeCheck(removeEls, Array)) removeEls = [removeEls];
         for(let i = 0; i < removeEls.length; i++) {
             this.removeClass(removeEls[i], className);
             for(let j = 0; j < removeEls.length; j++) {
@@ -45,7 +42,6 @@ class Ui {
     }
 
     toggleAttr(removeEls, addEl, attrName, removeStr, addStr) {
-        // if(!this.typeCheck(removeEls, Array)) removeEls = [removeEls];
         for(let i = 0; i < removeEls.length; i++) {
             this.setAttr(removeEls[i], attrName, removeStr)
             for(let j = 0; j < removeEls.length; j++) {
@@ -83,7 +79,6 @@ class Ui {
                 if(entry.isIntersecting) {
                     const target = entry.target;
                     const previousSibling = target.previousElementSibling;
-                    // console.log('is inter', previousSibling);
                     target.src = target.dataset.src;
                     previousSibling.srcset = previousSibling.dataset.srcset;
                     if(entry.isIntersecting) observer.unobserve(target)
@@ -120,26 +115,6 @@ class Ui {
         }
       }
 
-    setThrottle(cb, wait) {
-        // setTimeout return 값이 카운트가 담기면 true. 
-        // true일때만 작동하는 throttle 함수
-        // 이거 손봐야됨
-
-        cb()
-        
-            // let eventBlocker = true
-            // if(!eventBlocker) return;
-            // eventBlocker = setTimeout(() => {
-            //     console.log(cb, wait)
-            //     cb();
-            //     console.log(123123)
-            //     eventBlocker = null;
-            // }, wait)
-
-
-        console.log(cb, wait)
-        
-    }
 
     startCallDebounce(cb, wait) {
         let timeout = null;

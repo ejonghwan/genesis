@@ -9,7 +9,6 @@ import ClipAni from './ui/ClipAni.js'
 import Loading from './ui/Loading.js'
 import ObAnimation from './ui/ObAnimation.js'
 import ScrollAction from './ui/ScrollAction.js'
-import Test from './ui/Test.js'
 
 
 
@@ -27,7 +26,6 @@ export {
     Animete,
     ClipAni,
     Loading,
-    Test,
     ObAnimation,
     ScrollAction,
 }

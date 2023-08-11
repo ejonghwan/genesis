@@ -537,13 +537,11 @@ let isTraffic = false;
 
 const mapData = async () => {
     const res = await request({ url: '../src/js/api/data/map.json' })
-    // console.log(res)
     createDOM(region, res)
     return res
 }
 
 const createDOM = (el, data) => {
-    // console.log(el, data)   
     let t = '';
 
     t += `
@@ -589,11 +587,8 @@ const createDOM = (el, data) => {
 
     const tab = new Tab('#map_tab', {
         startTab: 0,
-       
-        current: function(idx) { // console.log(idx)
-        },
-        callback: function(idx) {
-        }
+        current: function(idx) {},
+        callback: function(idx) {}
     })      
 
 
@@ -606,8 +601,6 @@ const handleResize = (map, moveLatLon) => {
 mapData().then(d => {
     const map_move = document.querySelectorAll('.map_move')
     let map_idx = 0;
-
-    console.log(d)
 
     const region_info = []
     d.map(i => i.items.map(info => info.info.map(item => region_info.push(item))))
@@ -662,7 +655,6 @@ mapData().then(d => {
         map_move[idx].addEventListener('click', e => {
             map.panTo( new kakao.maps.LatLng(region_info[idx].letlong.lat, region_info[idx].letlong.long) );
             map_idx = idx;
-            // console.log(idx)
         });
        
     })
