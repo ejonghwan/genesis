@@ -1,6 +1,14 @@
 import Ui from './Ui.js'
 
-
+/*
+    el : element wrap
+    limit, : 어디까지 이동할지 최대점
+    els, : 슬라이드 할 요소들 배열 혹은 노드 리스트
+    prev_el, : 이전에 이동했던 엘리먼트
+    duration, : 진행속도
+    callback : 애니메이션 진행 후 실행될 기능
+    }
+*/
 
 class ClipAni extends Ui {
     constructor(el, { limit, els, prev_el, duration, callback }) {

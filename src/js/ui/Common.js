@@ -1,5 +1,3 @@
-import Ui from './Ui.js'
-import Tab from './Tab.js'
 import Accordion from './Accordion.js'
 import Popup from './Popup.js'
 
@@ -79,7 +77,6 @@ class Common {
             // 햄버거 메뉴 안 아코디언
             new Accordion('.footer_sec.all_menu.pop', {
                 startTab: false,
-                oneTab: true,
             })
 
             // 네비메뉴

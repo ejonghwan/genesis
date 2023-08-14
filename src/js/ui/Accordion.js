@@ -1,7 +1,9 @@
 import Ui from './Ui.js'
 
 class Accordion extends Ui {
-    constructor(el, { startTab, oneTab }) {
+    constructor(el, { startTab = false }) {
+        // el = element wrap
+        // startTab = false || number
         super();
         this.selectName = el;
         this.startTab = startTab;
@@ -11,6 +13,7 @@ class Accordion extends Ui {
 
         this.init();
         this.el.addEventListener('click', this.action.bind(this))
+        Object.freeze(this)
     }
 
 
