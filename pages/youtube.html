@@ -487,11 +487,11 @@
 
                 tags += `
                 <article>
-                    <div class='img_box'>
+                    <button type="button" class='img_box'>
                         <img class='thumb' src=${item.snippet.thumbnails.standard.url} alt=${
-                        item.snippet.resourceId.videoId
-                    } />
-                </div> 
+                            item.snippet.resourceId.videoId
+                        } />
+                    </button> 
                 <div class="txt_box">
                     <h2>${tit.length > 50 ? tit.substr(0, 50) + '...' : tit}</h2>
                     <div class='txt'>
