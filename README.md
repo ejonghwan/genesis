@@ -15,18 +15,18 @@ HTML5, SASS, Javascript, 카카오맵 API, EmailJS, 플리커 API, 유튜브 API
 
 ## 폴더구조 
 ### 전체 구조
-<img src="https://github.com/ejonghwan/genesis/assets/53946298/4fbe6455-3837-4dd7-862f-dc2aa850696c" width="auto" height="500px" />
+<img src="https://github.com/ejonghwan/genesis/assets/53946298/4fbe6455-3837-4dd7-862f-dc2aa850696c" width="auto" height="500px"></img>
 ### SASS 구조 
-<img src="https://github.com/ejonghwan/genesis/assets/53946298/c627cfc4-5290-41be-ae01-d74ed5e1cd2e" width="auto" height="500px" />
+<img src="https://github.com/ejonghwan/genesis/assets/53946298/c627cfc4-5290-41be-ae01-d74ed5e1cd2e" width="auto" height="500px"></img>
 ### JS 구조
-<img src="https://github.com/ejonghwan/genesis/assets/53946298/53b13c77-217d-4a29-80ae-028d66bf29fb" width="auto" height="500px" />
+<img src="https://github.com/ejonghwan/genesis/assets/53946298/53b13c77-217d-4a29-80ae-028d66bf29fb" width="auto" height="500px"></img>
 
 ## 기능
 ### 1. 반응형 작업
 ![반응형](https://github.com/ejonghwan/genesis/assets/53946298/9b7ddc73-225e-4f99-93dc-d0f54f8e8a1a)
 
 ### 2. 최적화 작업
-<img src="https://github.com/ejonghwan/genesis/assets/53946298/505f39ed-21e0-4faf-b587-eda2d9dbb5d0" width="auto" height="500px" />
+<img src="https://github.com/ejonghwan/genesis/assets/53946298/505f39ed-21e0-4faf-b587-eda2d9dbb5d0" width="auto" height="500px"></img>
 #### 성능 개선을 위해 고민한 부분들
 사이트 특성상 동영상, 이미지의 퀄리티를 포기할 수 없는데 그대로 쓰기에는 너무 무겁고 양도 많아서 아래 사항들을 개선   
 * 첫 로딩 시 화면에 필요한 리소스만 가져올 수 있을까 ?  (Performance 20% 가량 개선) 
@@ -99,10 +99,10 @@ HTML5, SASS, Javascript, 카카오맵 API, EmailJS, 플리커 API, 유튜브 API
 
 ## UI 제작 예시 
 ### 탭 UI (접근성, 사용성 고려하여 작업)
-<img src="https://github.com/ejonghwan/genesis/assets/53946298/56225029-a28c-4927-9d15-f4cd83c528f0" width="auto" height="500px" />
+<img src="https://github.com/ejonghwan/genesis/assets/53946298/56225029-a28c-4927-9d15-f4cd83c528f0" width="auto" height="500px"></img>
 
 ### 아코디언 UI (접근성, 사용성 고려하여 작업)
-<img src="https://github.com/ejonghwan/genesis/assets/53946298/7964b175-9a69-4745-b26e-bd7675417809" width="auto" height="500px" />
+<img src="https://github.com/ejonghwan/genesis/assets/53946298/7964b175-9a69-4745-b26e-bd7675417809" width="auto" height="500px"></img>
 
 
 
