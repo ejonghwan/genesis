@@ -55,7 +55,7 @@ HTML5, SASS, Javascript, 카카오맵 API, EmailJS, 플리커 API, 유튜브 API
 
 
 ### 3. 메인
-<video src="https://github.com/ejonghwan/genesis/assets/53946298/06947db2-01f1-4a1e-b888-4ce66b777549" width="500" muted  60%play loop></video>
+<video src="https://github.com/ejonghwan/genesis/assets/53946298/06947db2-01f1-4a1e-b888-4ce66b777549" width="500" muted  autoplay loop></video>
 ##### 기능 설명
 * 메인은 풀 사이즈 동영상 리소스를 활용했습니다.
 * 첫 번째 DOM 요소는 이전 요소로 숨겨져 있고 다음 버튼을 누르면 DOM 순서 변경됩니다.
@@ -66,7 +66,7 @@ HTML5, SASS, Javascript, 카카오맵 API, EmailJS, 플리커 API, 유튜브 API
 
 
 ### 4. 갤러리
-<video src="https://github.com/ejonghwan/genesis/assets/53946298/f6a7c0fc-ad66-4dae-845f-fed092b6bc1e" width="500" muted  60%play loop></video>
+<video src="https://github.com/ejonghwan/genesis/assets/53946298/f6a7c0fc-ad66-4dae-845f-fed092b6bc1e" width="500" muted  autoplay loop></video>
 ##### 기능 설명
 * 플리커 API를 활용하여 내 갤러리에 제네시스 IMG를 등록 후 제네시스 갤러리를 만들었습니다.
 * 검색 기능에서 제네시스를 검색하면 다른 유저들이 올린 제네시스 IMG를 볼 수 있습니다.
@@ -74,7 +74,7 @@ HTML5, SASS, Javascript, 카카오맵 API, EmailJS, 플리커 API, 유튜브 API
 
 
 ### 5. 콘택
-<video src="https://github.com/ejonghwan/genesis/assets/53946298/0d2e9299-0931-42f5-a18a-67a6d1483e6e" width="500" muted  60%play loop></video>
+<video src="https://github.com/ejonghwan/genesis/assets/53946298/0d2e9299-0931-42f5-a18a-67a6d1483e6e" width="500" muted  autoplay loop></video>
 ##### 기능 설명
 * map info json의 데이터를 받아 동적으로 지점, 주소, 전화, 보유차량 등을 뿌려주는데 Kakao API와 연결하는데 순서 주의하며 작업했습니다.
 * Data를 JSON파일로 관리하며 각 지점 클릭시 맵을 이동 시킵니다.
@@ -83,14 +83,14 @@ HTML5, SASS, Javascript, 카카오맵 API, EmailJS, 플리커 API, 유튜브 API
 
 
 ### 6. 유튜브
-<video src="https://github.com/ejonghwan/genesis/assets/53946298/d9007bc2-beec-4d96-87c9-4ce93562ef04" width="500" muted  60%play loop></video>
+<video src="https://github.com/ejonghwan/genesis/assets/53946298/d9007bc2-beec-4d96-87c9-4ce93562ef04" width="500" muted  autoplay loop></video>
 ##### 기능 설명
 * Youtube API를 활용하여 특정 목록을 화면에 노출시켰습니다.
 * 동영상 썸네일을 클릭하면 팝업이 뜨고 유튜브 영상을 볼 수 있습니다.
 
 
 ### 7. 상품
-<video src="https://github.com/ejonghwan/genesis/assets/53946298/62d7437d-3e0e-47f3-b5ee-b1c85b95874f" width="500" muted  60%play loop></video>
+<video src="https://github.com/ejonghwan/genesis/assets/53946298/62d7437d-3e0e-47f3-b5ee-b1c85b95874f" width="500" muted  autoplay loop></video>
 ##### 기능 설명
 * 스크롤에 반응하여 인터렉션을 넣었습니다. 
 * 많은 스크롤과 위치 정보량을 한곳에서 관리하게끔 작업했고 특정 계산을 하는 함수를 재사용하여 작업했습니다. 
