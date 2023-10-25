@@ -1,31 +1,36 @@
 # 제네시스 프로모션 사이트
 
-## 소개 
+## 1. 소개 
 제네시스 사이트의 프로모션 사이트를 가상으로 생각하고 제작했습니다.
    
-
+****
    
-## 배포주소
+## 2. 배포주소
 [https://ejonghwan.github.io/genesis/](https://ejonghwan.github.io/genesis/)
    
+****
 
-
-## 사용기술 
+## 3. 사용기술 
 HTML5, SASS, Javascript, 카카오맵 API, EmailJS, 플리커 API, 유튜브 API
 
-## 폴더구조 
-### 전체
+****
+
+## 4. 폴더구조 
+### 4-1. 전체
 <img src="https://github.com/ejonghwan/genesis/assets/53946298/4fbe6455-3837-4dd7-862f-dc2aa850696c" width="60%" height="auto"></img>
-### SASS 
+### 4-2. SASS 
 <img src="https://github.com/ejonghwan/genesis/assets/53946298/c627cfc4-5290-41be-ae01-d74ed5e1cd2e" width="60%" height="auto"></img>
-### JS
+### 4-3. JS
 <img src="https://github.com/ejonghwan/genesis/assets/53946298/53b13c77-217d-4a29-80ae-028d66bf29fb" width="60%" height="auto"></img>
 
-## 기능
-### 1. 반응형 작업
+****
+
+
+## 5. 기능
+### 5-1. 반응형 작업
 ![반응형](https://github.com/ejonghwan/genesis/assets/53946298/9b7ddc73-225e-4f99-93dc-d0f54f8e8a1a)
 
-### 2. 최적화 작업
+### 5-2. 최적화 작업
 <img src="https://github.com/ejonghwan/genesis/assets/53946298/505f39ed-21e0-4faf-b587-eda2d9dbb5d0" width="40%" height="auto"></img>
 #### 성능 개선을 위해 고민한 부분들
 사이트 특성상 동영상, 이미지의 퀄리티를 포기할 수 없는데 그대로 쓰기에는 너무 무겁고 양도 많아서 아래 사항들을 개선   
@@ -54,7 +59,7 @@ HTML5, SASS, Javascript, 카카오맵 API, EmailJS, 플리커 API, 유튜브 API
 
 
 
-### 3. 메인
+### 5-3. 메인
 <video src="https://github.com/ejonghwan/genesis/assets/53946298/06947db2-01f1-4a1e-b888-4ce66b777549" width="500" muted  autoplay loop></video>
 ##### 기능 설명
 * 메인은 풀 사이즈 동영상 리소스를 활용했습니다.
@@ -65,7 +70,7 @@ HTML5, SASS, Javascript, 카카오맵 API, EmailJS, 플리커 API, 유튜브 API
 
 
 
-### 4. 갤러리
+### 5-4. 갤러리
 <video src="https://github.com/ejonghwan/genesis/assets/53946298/f6a7c0fc-ad66-4dae-845f-fed092b6bc1e" width="500" muted  autoplay loop></video>
 ##### 기능 설명
 * 플리커 API를 활용하여 내 갤러리에 제네시스 IMG를 등록 후 제네시스 갤러리를 만들었습니다.
@@ -73,7 +78,7 @@ HTML5, SASS, Javascript, 카카오맵 API, EmailJS, 플리커 API, 유튜브 API
 * IMG List 클릭 시 팝업 생성되며 본 사이즈 IMG 리소스를 화면에 표시합니다.
 
 
-### 5. 콘택
+### 5-5. 콘택
 <video src="https://github.com/ejonghwan/genesis/assets/53946298/0d2e9299-0931-42f5-a18a-67a6d1483e6e" width="500" muted  autoplay loop></video>
 ##### 기능 설명
 * map info json의 데이터를 받아 동적으로 지점, 주소, 전화, 보유차량 등을 뿌려주는데 Kakao API와 연결하는데 순서 주의하며 작업했습니다.
@@ -82,14 +87,14 @@ HTML5, SASS, Javascript, 카카오맵 API, EmailJS, 플리커 API, 유튜브 API
 * 브라우저 리사이즈할 때 맵을 가운데로 이동시키는데 debounce 적용했습니다.
 
 
-### 6. 유튜브
+### 5-6. 유튜브
 <video src="https://github.com/ejonghwan/genesis/assets/53946298/d9007bc2-beec-4d96-87c9-4ce93562ef04" width="500" muted  autoplay loop></video>
 ##### 기능 설명
 * Youtube API를 활용하여 특정 목록을 화면에 노출시켰습니다.
 * 동영상 썸네일을 클릭하면 팝업이 뜨고 유튜브 영상을 볼 수 있습니다.
 
 
-### 7. 상품
+### 5-7. 상품
 <video src="https://github.com/ejonghwan/genesis/assets/53946298/62d7437d-3e0e-47f3-b5ee-b1c85b95874f" width="500" muted  autoplay loop></video>
 ##### 기능 설명
 * 스크롤에 반응하여 인터렉션을 넣었습니다. 
