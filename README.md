@@ -29,11 +29,11 @@ HTML5, SASS, Javascript, 카카오맵 API, EmailJS, 플리커 API, 유튜브 API
 
 ## 4. 폴더구조 
 ### 4-1. 전체
-<img src="https://github.com/ejonghwan/genesis/assets/53946298/4fbe6455-3837-4dd7-862f-dc2aa850696c" width="60%" height="auto"></img>
+<img src="https://github.com/ejonghwan/genesis/assets/53946298/4fbe6455-3837-4dd7-862f-dc2aa850696c" width="80%" height="auto"></img>
 ### 4-2. SASS 
-<img src="https://github.com/ejonghwan/genesis/assets/53946298/c627cfc4-5290-41be-ae01-d74ed5e1cd2e" width="60%" height="auto"></img>
+<img src="https://github.com/ejonghwan/genesis/assets/53946298/c627cfc4-5290-41be-ae01-d74ed5e1cd2e" width="80%" height="auto"></img>
 ### 4-3. JS
-<img src="https://github.com/ejonghwan/genesis/assets/53946298/53b13c77-217d-4a29-80ae-028d66bf29fb" width="60%" height="auto"></img>
+<img src="https://github.com/ejonghwan/genesis/assets/53946298/53b13c77-217d-4a29-80ae-028d66bf29fb" width="80%" height="auto"></img>
 
 &nbsp;
 &nbsp;
@@ -90,7 +90,7 @@ HTML5, SASS, Javascript, 카카오맵 API, EmailJS, 플리커 API, 유튜브 API
 * 메인에서 필요한 2개의 폰트와 Poster 이미지 2개는 Preload하여  LCP 개선 및  FOIT, FOUT 최소화 했습니다.
 * 슬라이드의 동영상은 재생되고 있는 부분을 제외한 영상들 모두 reset & stop 동적 제어됩니다.
 * 이전/다음 버튼을 누르기 전 리소스들은 IMG로 대체. 무거운 동영상 파일 요청하지 않게 최적화 했습니다.
-
+* 자동차 정보가 있는 탭은 기능상 몇백장이 넘는 고화질 이미지가 사용되는데 처음에 보이는 이미지 외엔 모두 필요할 때 다운받게끔 작업했습니다.
 
 &nbsp;
 &nbsp;
@@ -152,10 +152,10 @@ HTML5, SASS, Javascript, 카카오맵 API, EmailJS, 플리커 API, 유튜브 API
 
 ## UI는 접근성과 사용성을 고려해서 아래 처럼 제작했습니다. 
 ### 탭 UI 
-<img src="https://github.com/ejonghwan/genesis/assets/53946298/56225029-a28c-4927-9d15-f4cd83c528f0" width="60%" height="auto"></img>
+<img src="https://github.com/ejonghwan/genesis/assets/53946298/56225029-a28c-4927-9d15-f4cd83c528f0" width="80%" height="auto"></img>
 
 ### 아코디언 UI 
-<img src="https://github.com/ejonghwan/genesis/assets/53946298/7964b175-9a69-4745-b26e-bd7675417809" width="60%" height="auto"></img>
+<img src="https://github.com/ejonghwan/genesis/assets/53946298/7964b175-9a69-4745-b26e-bd7675417809" width="80%" height="auto"></img>
 
 
 
