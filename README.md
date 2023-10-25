@@ -3,17 +3,29 @@
 ## 1. 소개 
 제네시스 사이트의 프로모션 사이트를 가상으로 생각하고 제작했습니다.
    
+&nbsp;
+&nbsp;
 ****
+&nbsp;
+&nbsp;
    
 ## 2. 배포주소
 [https://ejonghwan.github.io/genesis/](https://ejonghwan.github.io/genesis/)
    
+&nbsp;
+&nbsp;
 ****
+&nbsp;
+&nbsp;
 
 ## 3. 사용기술 
 HTML5, SASS, Javascript, 카카오맵 API, EmailJS, 플리커 API, 유튜브 API
 
+&nbsp;
+&nbsp;
 ****
+&nbsp;
+&nbsp;
 
 ## 4. 폴더구조 
 ### 4-1. 전체
@@ -23,12 +35,20 @@ HTML5, SASS, Javascript, 카카오맵 API, EmailJS, 플리커 API, 유튜브 API
 ### 4-3. JS
 <img src="https://github.com/ejonghwan/genesis/assets/53946298/53b13c77-217d-4a29-80ae-028d66bf29fb" width="60%" height="auto"></img>
 
+&nbsp;
+&nbsp;
 ****
+&nbsp;
+&nbsp;
 
 
 ## 5. 기능
 ### 5-1. 반응형 작업
 ![반응형](https://github.com/ejonghwan/genesis/assets/53946298/9b7ddc73-225e-4f99-93dc-d0f54f8e8a1a)
+
+&nbsp;
+&nbsp;
+&nbsp;
 
 ### 5-2. 최적화 작업
 <img src="https://github.com/ejonghwan/genesis/assets/53946298/505f39ed-21e0-4faf-b587-eda2d9dbb5d0" width="40%" height="auto"></img>
@@ -57,6 +77,9 @@ HTML5, SASS, Javascript, 카카오맵 API, EmailJS, 플리커 API, 유튜브 API
 자주 호출되는 이벤트에 쓰로틀, 디바운스 적용   
 
 
+&nbsp;
+&nbsp;
+&nbsp;
 
 
 ### 5-3. 메인
@@ -69,6 +92,11 @@ HTML5, SASS, Javascript, 카카오맵 API, EmailJS, 플리커 API, 유튜브 API
 * 이전/다음 버튼을 누르기 전 리소스들은 IMG로 대체. 무거운 동영상 파일 요청하지 않게 최적화 했습니다.
 
 
+&nbsp;
+&nbsp;
+&nbsp;
+
+
 
 ### 5-4. 갤러리
 <video src="https://github.com/ejonghwan/genesis/assets/53946298/f6a7c0fc-ad66-4dae-845f-fed092b6bc1e" width="500" muted  autoplay loop></video>
@@ -76,6 +104,11 @@ HTML5, SASS, Javascript, 카카오맵 API, EmailJS, 플리커 API, 유튜브 API
 * 플리커 API를 활용하여 내 갤러리에 제네시스 IMG를 등록 후 제네시스 갤러리를 만들었습니다.
 * 검색 기능에서 제네시스를 검색하면 다른 유저들이 올린 제네시스 IMG를 볼 수 있습니다.
 * IMG List 클릭 시 팝업 생성되며 본 사이즈 IMG 리소스를 화면에 표시합니다.
+
+
+&nbsp;
+&nbsp;
+&nbsp;
 
 
 ### 5-5. 콘택
@@ -86,6 +119,11 @@ HTML5, SASS, Javascript, 카카오맵 API, EmailJS, 플리커 API, 유튜브 API
 * Email JS  서비스를 이용해서 사용자가 문의를 보내면 내 이메일로 전송되게 작업했습니다.
 * 브라우저 리사이즈할 때 맵을 가운데로 이동시키는데 debounce 적용했습니다.
 
+&nbsp;
+&nbsp;
+&nbsp;
+
+
 
 ### 5-6. 유튜브
 <video src="https://github.com/ejonghwan/genesis/assets/53946298/d9007bc2-beec-4d96-87c9-4ce93562ef04" width="500" muted  autoplay loop></video>
@@ -93,12 +131,22 @@ HTML5, SASS, Javascript, 카카오맵 API, EmailJS, 플리커 API, 유튜브 API
 * Youtube API를 활용하여 특정 목록을 화면에 노출시켰습니다.
 * 동영상 썸네일을 클릭하면 팝업이 뜨고 유튜브 영상을 볼 수 있습니다.
 
+&nbsp;
+&nbsp;
+&nbsp;
+
+
 
 ### 5-7. 상품
 <video src="https://github.com/ejonghwan/genesis/assets/53946298/62d7437d-3e0e-47f3-b5ee-b1c85b95874f" width="500" muted  autoplay loop></video>
 ##### 기능 설명
 * 스크롤에 반응하여 인터렉션을 넣었습니다. 
 * 많은 스크롤과 위치 정보량을 한곳에서 관리하게끔 작업했고 특정 계산을 하는 함수를 재사용하여 작업했습니다. 
+
+
+&nbsp;
+&nbsp;
+&nbsp;
 
 
 
