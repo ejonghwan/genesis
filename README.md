@@ -53,7 +53,7 @@ HTML5, SASS, Javascript, 카카오맵 API, EmailJS, 플리커 API, 유튜브 API
 ### 5-2. 최적화 작업
 <img src="https://github.com/ejonghwan/genesis/assets/53946298/505f39ed-21e0-4faf-b587-eda2d9dbb5d0" width="40%" height="auto"></img>
 #### 성능 개선을 위해 고민한 부분들
-사이트 특성상 동영상, 이미지의 퀄리티를 포기할 수 없는데 그대로 쓰기에는 너무 무겁고 양도 많아서 아래 사항들을 개선   
+사이트 특성상 동영상, 이미지의 퀄리티를 포기할 수 없는데 그대로 쓰기에는 너무 무겁고 양도 많아서 아래 사항들을 개선했습니다.   
 * 첫 로딩 시 화면에 필요한 리소스만 가져올 수 있을까 ?  (Performance 20% 가량 개선) 
   * 메인 비주얼 6개의 동영상 중 처음 재생되는 동영상만 metadata를 로드하고 제외하고 모두 preload: none 적용.
   * 다른 동영상을 로드하지 않으니 빈 박스로 보이는 이슈 발생. video poster로 해결
