@@ -14,11 +14,11 @@
 HTML5, SASS, Javascript, 카카오맵 API, EmailJS, 플리커 API, 유튜브 API
 
 ## 폴더구조 
-### 전체 구조
+### 전체
 <img src="https://github.com/ejonghwan/genesis/assets/53946298/4fbe6455-3837-4dd7-862f-dc2aa850696c" width="auto" height="500px"></img>
-### SASS 구조 
+### SASS 
 <img src="https://github.com/ejonghwan/genesis/assets/53946298/c627cfc4-5290-41be-ae01-d74ed5e1cd2e" width="auto" height="500px"></img>
-### JS 구조
+### JS
 <img src="https://github.com/ejonghwan/genesis/assets/53946298/53b13c77-217d-4a29-80ae-028d66bf29fb" width="auto" height="500px"></img>
 
 ## 기능
@@ -82,14 +82,14 @@ HTML5, SASS, Javascript, 카카오맵 API, EmailJS, 플리커 API, 유튜브 API
 * 브라우저 리사이즈할 때 맵을 가운데로 이동시키는데 debounce 적용했습니다.
 
 
-### 5. 유튜브
+### 6. 유튜브
 <video src="https://github.com/ejonghwan/genesis/assets/53946298/d9007bc2-beec-4d96-87c9-4ce93562ef04" width="500" muted  autoplay loop></video>
 ##### 기능 설명
 * Youtube API를 활용하여 특정 목록을 화면에 노출시켰습니다.
 * 동영상 썸네일을 클릭하면 팝업이 뜨고 유튜브 영상을 볼 수 있습니다.
 
 
-### 5. 상품
+### 7. 상품
 <video src="https://github.com/ejonghwan/genesis/assets/53946298/62d7437d-3e0e-47f3-b5ee-b1c85b95874f" width="500" muted  autoplay loop></video>
 ##### 기능 설명
 * 스크롤에 반응하여 인터렉션을 넣었습니다. 
@@ -97,11 +97,11 @@ HTML5, SASS, Javascript, 카카오맵 API, EmailJS, 플리커 API, 유튜브 API
 
 
 
-## UI 제작 예시 
-### 탭 UI (접근성, 사용성 고려하여 작업)
+## UI는 접근성과 사용성을 고려해서 아래 처럼 제작했습니다. 
+### 탭 UI 
 <img src="https://github.com/ejonghwan/genesis/assets/53946298/56225029-a28c-4927-9d15-f4cd83c528f0" width="auto" height="500px"></img>
 
-### 아코디언 UI (접근성, 사용성 고려하여 작업)
+### 아코디언 UI 
 <img src="https://github.com/ejonghwan/genesis/assets/53946298/7964b175-9a69-4745-b26e-bd7675417809" width="auto" height="500px"></img>
 
 
