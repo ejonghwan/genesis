@@ -1,6 +1,6 @@
 import Ui from './Ui.js'
 
-
+//  스와이프 접근성도 나중에 만들기
 // 팝업같은 형태의 UI에서 형제, 자식 aria-hidden과 tabindex 토글 해주는 객체
 class Accessibility extends Ui {
     constructor(els) {
@@ -40,7 +40,6 @@ class Accessibility extends Ui {
           
            this.removeAttr(this.els[i], 'aria-hidden', 'true')
            this.removeAttr(this.els[i], 'tabindex', '-1')
-
        }
     }
 
